@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  GasketMomentFactor.xml
+  ======================
+  Moment Factor F_M for ASME VIII-1 UG-44 nozzle external-load check.
+
+  Two data sets are provided:
+    Table id="UG-44-1"   – per-NPS values derived from ASME VIII-1 Table UG-44-1
+    CodeCase id="2901-1" – per-NPS values per ASME Code Case 2901-1
+                           (supersedes Table UG-44-1 when the Code Case is invoked)
+
+  Both sections share identical XML structure:
+    <Standard id="B16.5 | B16.47">
+      <Size NPS="..." DN="...">
+        <Rating class="150|300|600|900|1500|2500" FM="..." />
+      </Size>
+    </Standard>
+  For B16.47, <Size> elements are nested inside <Series id="A|B">.
+
+  Scope: <Rating> elements are omitted for class/size combinations outside scope
+  of the applicable table or code case.
+
+  Notes:
+    B16.47 Series B, Table UG-44-1:
+      Classes 150/300 for NPS 26-46: FM = 0.1 + (48 - NPS) / 56  (pre-computed below)
+      Classes 600/900 for NPS 26-46: FM = 0.13
+      NPS 48-60:  Class 150 = 0.10; Class 300 = 0.10, except NPS 60 = 0.03
+-->
+<GasketMomentFactors>
+
+  <!-- ================================================================== -->
+  <!--  Shared Notes                                                        -->
+  <!-- ================================================================== -->
+  <Notes>
+    <Note id="a">Rating elements are omitted for class/size combinations outside the scope of the applicable table or code case.</Note>
+    <Note id="b">The designer should consider reducing F_M if loading is primarily sustained and gasket creep/relaxation is significant at operating temperature.</Note>
+  </Notes>
+
+  <!-- ================================================================== -->
+  <!--  TABLE UG-44-1  –  ASME VIII-1 Table UG-44-1                       -->
+  <!--                                                                      -->
+  <!--  B16.5   NPS ≤ 12 : all classes (150–2500)                          -->
+  <!--  B16.5   NPS 14–24 : classes 150–1500 (class 2500 outside scope)    -->
+  <!--  B16.47A : classes 150–900 (1500 and 2500 outside scope)            -->
+  <!--  B16.47B NPS 26–46 : classes 150–900; FM(150)=FM(300) from formula  -->
+  <!--  B16.47B NPS 48–60 : classes 150 and 300 only                       -->
+  <!-- ================================================================== -->
+  <Table id="UG-44-1" source="ASME VIII-1 Table UG-44-1">
+
+    <!-- ── B16.5 ──────────────────────────────────────────────────────── -->
+    <Standard id="B16.5">
+
+      <Size NPS="0.5"  DN="15">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="0.75" DN="20">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="1.0"  DN="25">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="1.25" DN="32">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="1.5"  DN="40">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="2.0"  DN="50">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="2.5"  DN="65">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="3.0"  DN="80">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="3.5"  DN="90">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="4.0"  DN="100">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="5.0"  DN="125">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="6.0"  DN="150">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="8.0"  DN="200">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="10.0" DN="250">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+      <Size NPS="12.0" DN="300">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.5" />
+        <Rating class="1500" FM="0.5" />
+        <Rating class="2500" FM="0.5" />
+      </Size>
+
+      <!-- NPS 14–24: class 2500 outside scope -->
+      <Size NPS="14.0" DN="350">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.3" />
+        <Rating class="1500" FM="0.3" />
+      </Size>
+      <Size NPS="16.0" DN="400">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.3" />
+        <Rating class="1500" FM="0.3" />
+      </Size>
+      <Size NPS="18.0" DN="450">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.3" />
+        <Rating class="1500" FM="0.3" />
+      </Size>
+      <Size NPS="20.0" DN="500">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.3" />
+        <Rating class="1500" FM="0.3" />
+      </Size>
+      <Size NPS="22.0" DN="550">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.3" />
+        <Rating class="1500" FM="0.3" />
+      </Size>
+      <Size NPS="24.0" DN="600">
+        <Rating class="150"  FM="1.2" />
+        <Rating class="300"  FM="0.5" />
+        <Rating class="600"  FM="0.5" />
+        <Rating class="900"  FM="0.3" />
+        <Rating class="1500" FM="0.3" />
+      </Size>
+
+    </Standard>
+
+    <!-- ── B16.47 ─────────────────────────────────────────────────────── -->
+    <!-- Classes 1500 and 2500 outside scope for all B16.47 sizes.        -->
+    <Standard id="B16.47">
+
+      <!-- Series A: fixed FM values for all sizes -->
+      <Series id="A">
+        <Size NPS="26"  DN="650">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="28"  DN="700">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="30"  DN="750">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="32"  DN="800">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="34"  DN="850">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="36"  DN="900">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="38"  DN="950">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="40"  DN="1000">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="42"  DN="1050">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="44"  DN="1100">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="46"  DN="1150">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="48"  DN="1200">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="50"  DN="1250">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="52"  DN="1300">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="54"  DN="1350">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="56"  DN="1400">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="58"  DN="1450">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+        <Size NPS="60"  DN="1500">
+          <Rating class="150" FM="0.6" />
+          <Rating class="300" FM="0.1" />
+          <Rating class="600" FM="0.1" />
+          <Rating class="900" FM="0.1" />
+        </Size>
+      </Series>
+
+      <!-- Series B:                                                       -->
+      <!-- NPS 26–46: FM(150) = FM(300) = 0.1 + (48–NPS)/56 (pre-computed) -->
+      <!--            FM(600) = FM(900) = 0.13                             -->
+      <!-- NPS 48–60: FM(150) = 0.10; FM(300) = 0.10 (NPS 60 → 0.03)     -->
+      <Series id="B">
+        <Size NPS="26"  DN="650">  <!-- 0.1 + 22/56 = 0.493 -->
+          <Rating class="150" FM="0.493" />
+          <Rating class="300" FM="0.493" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="28"  DN="700">  <!-- 0.1 + 20/56 = 0.457 -->
+          <Rating class="150" FM="0.457" />
+          <Rating class="300" FM="0.457" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="30"  DN="750">  <!-- 0.1 + 18/56 = 0.421 -->
+          <Rating class="150" FM="0.421" />
+          <Rating class="300" FM="0.421" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="32"  DN="800">  <!-- 0.1 + 16/56 = 0.386 -->
+          <Rating class="150" FM="0.386" />
+          <Rating class="300" FM="0.386" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="34"  DN="850">  <!-- 0.1 + 14/56 = 0.350 -->
+          <Rating class="150" FM="0.350" />
+          <Rating class="300" FM="0.350" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="36"  DN="900">  <!-- 0.1 + 12/56 = 0.314 -->
+          <Rating class="150" FM="0.314" />
+          <Rating class="300" FM="0.314" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="38"  DN="950">  <!-- 0.1 + 10/56 = 0.279 -->
+          <Rating class="150" FM="0.279" />
+          <Rating class="300" FM="0.279" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="40"  DN="1000"> <!-- 0.1 +  8/56 = 0.243 -->
+          <Rating class="150" FM="0.243" />
+          <Rating class="300" FM="0.243" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="42"  DN="1050"> <!-- 0.1 +  6/56 = 0.207 -->
+          <Rating class="150" FM="0.207" />
+          <Rating class="300" FM="0.207" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="44"  DN="1100"> <!-- 0.1 +  4/56 = 0.171 -->
+          <Rating class="150" FM="0.171" />
+          <Rating class="300" FM="0.171" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <Size NPS="46"  DN="1150"> <!-- 0.1 +  2/56 = 0.136 -->
+          <Rating class="150" FM="0.136" />
+          <Rating class="300" FM="0.136" />
+          <Rating class="600" FM="0.13"  />
+          <Rating class="900" FM="0.13"  />
+        </Size>
+        <!-- NPS ≥ 48: classes 600 and 900 outside scope -->
+        <Size NPS="48"  DN="1200">
+          <Rating class="150" FM="0.10" />
+          <Rating class="300" FM="0.10" />
+        </Size>
+        <Size NPS="50"  DN="1250">
+          <Rating class="150" FM="0.10" />
+          <Rating class="300" FM="0.10" />
+        </Size>
+        <Size NPS="52"  DN="1300">
+          <Rating class="150" FM="0.10" />
+          <Rating class="300" FM="0.10" />
+        </Size>
+        <Size NPS="54"  DN="1350">
+          <Rating class="150" FM="0.10" />
+          <Rating class="300" FM="0.10" />
+        </Size>
+        <Size NPS="56"  DN="1400">
+          <Rating class="150" FM="0.10" />
+          <Rating class="300" FM="0.10" />
+        </Size>
+        <Size NPS="58"  DN="1450">
+          <Rating class="150" FM="0.10" />
+          <Rating class="300" FM="0.10" />
+        </Size>
+        <Size NPS="60"  DN="1500">
+          <Rating class="150" FM="0.10" />
+          <Rating class="300" FM="0.03" />
+        </Size>
+      </Series>
+
+    </Standard>
+
+  </Table>
+
+  <!-- ================================================================== -->
+  <!--  CODE CASE 2901-1  –  per-NPS tabulated F_M values                 -->
+  <!--  Use when Code Case 2901-1 is invoked in lieu of Table UG-44-1.    -->
+  <!--  Sizes absent from this section are outside scope of the Code Case. -->
+  <!--  NPS 1-1/4 (DN 32), NPS 3-1/2 (DN 90), NPS 22 (DN 550):          -->
+  <!--    not listed in Code Case 2901-1 Table 1.                         -->
+  <!--  B16.47B NPS 48–60: not covered in available table data.           -->
+  <!-- ================================================================== -->
+  <Table id="2901-1" source="ASME Code Case 2901-1, Table 1">
+
+    <!-- ── B16.5 ──────────────────────────────────────────────────────── -->
+    <Standard id="B16.5">
+
+      <Size NPS="0.5"  DN="15">
+        <Rating class="150"  FM="23.0"  />
+        <Rating class="300"  FM="11.5"  />
+        <Rating class="600"  FM="5.7"   />
+        <Rating class="900"  FM="7.1"   />
+        <Rating class="1500" FM="4.2"   />
+        <Rating class="2500" FM="2.5"   />
+      </Size>
+      <Size NPS="0.75" DN="20">
+        <Rating class="150"  FM="15.3"  />
+        <Rating class="300"  FM="19.1"  />
+        <Rating class="600"  FM="4.4"   />
+        <Rating class="900"  FM="4.3"   />
+        <Rating class="1500" FM="2.5"   />
+        <Rating class="2500" FM="1.5"   />
+      </Size>
+      <Size NPS="1.0"  DN="25">
+        <Rating class="150"  FM="13.9"  />
+        <Rating class="300"  FM="7.8"   />
+        <Rating class="600"  FM="3.7"   />
+        <Rating class="900"  FM="3.9"   />
+        <Rating class="1500" FM="2.3"   />
+        <Rating class="2500" FM="1.4"   />
+      </Size>
+      <Size NPS="1.5"  DN="40">
+        <Rating class="150"  FM="5.5"   />
+        <Rating class="300"  FM="5.1"   />
+        <Rating class="600"  FM="2.4"   />
+        <Rating class="900"  FM="2.7"   />
+        <Rating class="1500" FM="1.5"   />
+        <Rating class="2500" FM="1.0"   />
+      </Size>
+      <Size NPS="2.0"  DN="50">
+        <Rating class="150"  FM="5.6"   />
+        <Rating class="300"  FM="4.3"   />
+        <Rating class="600"  FM="2.1"   />
+        <Rating class="900"  FM="2.7"   />
+        <Rating class="1500" FM="1.6"   />
+        <Rating class="2500" FM="1.0"   />
+      </Size>
+      <Size NPS="2.5"  DN="65">
+        <Rating class="150"  FM="4.0"   />
+        <Rating class="300"  FM="3.8"   />
+        <Rating class="600"  FM="1.8"   />
+        <Rating class="900"  FM="2.4"   />
+        <Rating class="1500" FM="0.73"  />
+        <Rating class="2500" FM="0.98"  />
+      </Size>
+      <Size NPS="3.0"  DN="80">
+        <Rating class="150"  FM="2.5"   />
+        <Rating class="300"  FM="3.0"   />
+        <Rating class="600"  FM="1.4"   />
+        <Rating class="900"  FM="1.4"   />
+        <Rating class="1500" FM="1.0"   />
+        <Rating class="2500" FM="0.75"  />
+      </Size>
+      <Size NPS="4.0"  DN="100">
+        <Rating class="150"  FM="3.3"   />
+        <Rating class="300"  FM="1.8"   />
+        <Rating class="600"  FM="1.3"   />
+        <Rating class="900"  FM="1.3"   />
+        <Rating class="1500" FM="0.84"  />
+        <Rating class="2500" FM="0.66"  />
+      </Size>
+      <Size NPS="5.0"  DN="125">
+        <Rating class="150"  FM="3.4"   />
+        <Rating class="300"  FM="1.1"   />
+        <Rating class="600"  FM="1.1"   />
+        <Rating class="900"  FM="1.1"   />
+        <Rating class="1500" FM="0.75"  />
+        <Rating class="2500" FM="0.64"  />
+      </Size>
+      <Size NPS="6.0"  DN="150">
+        <Rating class="150"  FM="2.3"   />
+        <Rating class="300"  FM="1.2"   />
+        <Rating class="600"  FM="1.2"   />
+        <Rating class="900"  FM="1.0"   />
+        <Rating class="1500" FM="0.66"  />
+        <Rating class="2500" FM="0.59"  />
+      </Size>
+      <Size NPS="8.0"  DN="200">
+        <Rating class="150"  FM="1.2"   />
+        <Rating class="300"  FM="0.94"  />
+        <Rating class="600"  FM="0.85"  />
+        <Rating class="900"  FM="0.8"   />
+        <Rating class="1500" FM="0.54"  />
+        <Rating class="2500" FM="0.57"  />
+      </Size>
+      <Size NPS="10.0" DN="250">
+        <Rating class="150"  FM="1.9"   />
+        <Rating class="300"  FM="1.2"   />
+        <Rating class="600"  FM="1.0"   />
+        <Rating class="900"  FM="0.59"  />
+        <Rating class="1500" FM="0.47"  />
+        <Rating class="2500" FM="0.64"  />
+      </Size>
+      <Size NPS="12.0" DN="300">
+        <Rating class="150"  FM="1.2"   />
+        <Rating class="300"  FM="1.1"   />
+        <Rating class="600"  FM="0.84"  />
+        <Rating class="900"  FM="0.61"  />
+        <Rating class="1500" FM="0.53"  />
+        <Rating class="2500" FM="0.5"   />
+      </Size>
+      <!-- Class 2500 outside scope for NPS >= 14 -->
+      <Size NPS="14.0" DN="350">
+        <Rating class="150"  FM="1.4"   />
+        <Rating class="300"  FM="1.2"   />
+        <Rating class="600"  FM="0.9"   />
+        <Rating class="900"  FM="0.54"  />
+        <Rating class="1500" FM="0.6"   />
+      </Size>
+      <Size NPS="16.0" DN="400">
+        <Rating class="150"  FM="1.4"   />
+        <Rating class="300"  FM="1.1"   />
+        <Rating class="600"  FM="0.79"  />
+        <Rating class="900"  FM="0.41"  />
+        <Rating class="1500" FM="0.52"  />
+      </Size>
+      <Size NPS="18.0" DN="450">
+        <Rating class="150"  FM="1.4"   />
+        <Rating class="300"  FM="0.98"  />
+        <Rating class="600"  FM="0.66"  />
+        <Rating class="900"  FM="0.46"  />
+        <Rating class="1500" FM="0.44"  />
+      </Size>
+      <Size NPS="20.0" DN="500">
+        <Rating class="150"  FM="1.5"   />
+        <Rating class="300"  FM="0.72"  />
+        <Rating class="600"  FM="0.65"  />
+        <Rating class="900"  FM="0.32"  />
+        <Rating class="1500" FM="0.42"  />
+      </Size>
+      <Size NPS="24.0" DN="600">
+        <Rating class="150"  FM="1.3"   />
+        <Rating class="300"  FM="0.78"  />
+        <Rating class="600"  FM="0.51"  />
+        <Rating class="900"  FM="0.37"  />
+        <Rating class="1500" FM="0.38"  />
+      </Size>
+
+    </Standard>
+
+    <!-- ── B16.47 ─────────────────────────────────────────────────────── -->
+    <!-- Classes 1500 and 2500 outside scope for all B16.47 sizes.        -->
+    <Standard id="B16.47">
+
+      <Series id="A">
+        <!-- Class 900 outside scope for NPS >= 50 -->
+        <Size NPS="26"  DN="650">
+          <Rating class="150" FM="0.90" />
+          <Rating class="300" FM="0.50" />
+          <Rating class="600" FM="0.33" />
+          <Rating class="900" FM="0.34" />
+        </Size>
+        <Size NPS="28"  DN="700">
+          <Rating class="150" FM="0.85" />
+          <Rating class="300" FM="0.42" />
+          <Rating class="600" FM="0.28" />
+          <Rating class="900" FM="0.38" />
+        </Size>
+        <Size NPS="30"  DN="750">
+          <Rating class="150" FM="0.74" />
+          <Rating class="300" FM="0.43" />
+          <Rating class="600" FM="0.22" />
+          <Rating class="900" FM="0.26" />
+        </Size>
+        <Size NPS="32"  DN="800">
+          <Rating class="150" FM="1.1"  />
+          <Rating class="300" FM="0.44" />
+          <Rating class="600" FM="0.21" />
+          <Rating class="900" FM="0.29" />
+        </Size>
+        <Size NPS="34"  DN="850">
+          <Rating class="150" FM="1.1"  />
+          <Rating class="300" FM="0.49" />
+          <Rating class="600" FM="0.25" />
+          <Rating class="900" FM="0.32" />
+        </Size>
+        <Size NPS="36"  DN="900">
+          <Rating class="150" FM="0.90" />
+          <Rating class="300" FM="0.50" />
+          <Rating class="600" FM="0.22" />
+          <Rating class="900" FM="0.23" />
+        </Size>
+        <Size NPS="38"  DN="950">
+          <Rating class="150" FM="0.76" />
+          <Rating class="300" FM="0.25" />
+          <Rating class="600" FM="0.20" />
+          <Rating class="900" FM="0.21" />
+        </Size>
+        <Size NPS="40"  DN="1000">
+          <Rating class="150" FM="0.79" />
+          <Rating class="300" FM="0.29" />
+          <Rating class="600" FM="0.22" />
+          <Rating class="900" FM="0.16" />
+        </Size>
+        <Size NPS="42"  DN="1050">
+          <Rating class="150" FM="0.72" />
+          <Rating class="300" FM="0.22" />
+          <Rating class="600" FM="0.20" />
+          <Rating class="900" FM="0.20" />
+        </Size>
+        <Size NPS="44"  DN="1100">
+          <Rating class="150" FM="0.66" />
+          <Rating class="300" FM="0.24" />
+          <Rating class="600" FM="0.23" />
+          <Rating class="900" FM="0.13" />
+        </Size>
+        <Size NPS="46"  DN="1150">
+          <Rating class="150" FM="0.62" />
+          <Rating class="300" FM="0.21" />
+          <Rating class="600" FM="0.17" />
+          <Rating class="900" FM="0.15" />
+        </Size>
+        <Size NPS="48"  DN="1200">
+          <Rating class="150" FM="0.64" />
+          <Rating class="300" FM="0.23" />
+          <Rating class="600" FM="0.15" />
+          <Rating class="900" FM="0.10" />
+        </Size>
+        <Size NPS="50"  DN="1250">
+          <Rating class="150" FM="0.92" />
+          <Rating class="300" FM="0.25" />
+          <Rating class="600" FM="0.14" />
+        </Size>
+        <Size NPS="52"  DN="1300">
+          <Rating class="150" FM="0.82" />
+          <Rating class="300" FM="0.20" />
+          <Rating class="600" FM="0.18" />
+        </Size>
+        <Size NPS="54"  DN="1350">
+          <Rating class="150" FM="0.72" />
+          <Rating class="300" FM="0.22" />
+          <Rating class="600" FM="0.13" />
+        </Size>
+        <Size NPS="56"  DN="1400">
+          <Rating class="150" FM="0.75" />
+          <Rating class="300" FM="0.17" />
+          <Rating class="600" FM="0.20" />
+        </Size>
+        <Size NPS="58"  DN="1450">
+          <Rating class="150" FM="0.66" />
+          <Rating class="300" FM="0.18" />
+          <Rating class="600" FM="0.14" />
+        </Size>
+        <Size NPS="60"  DN="1500">
+          <Rating class="150" FM="0.68" />
+          <Rating class="300" FM="0.16" />
+          <Rating class="600" FM="0.11" />
+        </Size>
+      </Series>
+
+      <Series id="B">
+        <!-- Class 600 and 900 outside scope for NPS >= 38 -->
+        <Size NPS="26"  DN="650">
+          <Rating class="150" FM="0.47" />
+          <Rating class="300" FM="0.55" />
+          <Rating class="600" FM="0.16" />
+          <Rating class="900" FM="0.14" />
+        </Size>
+        <Size NPS="28"  DN="700">
+          <Rating class="150" FM="0.44" />
+          <Rating class="300" FM="0.53" />
+          <Rating class="600" FM="0.20" />
+          <Rating class="900" FM="0.18" />
+        </Size>
+        <Size NPS="30"  DN="750">
+          <Rating class="150" FM="0.35" />
+          <Rating class="300" FM="0.57" />
+          <Rating class="600" FM="0.15" />
+          <Rating class="900" FM="0.22" />
+        </Size>
+        <Size NPS="32"  DN="800">
+          <Rating class="150" FM="0.37" />
+          <Rating class="300" FM="0.55" />
+          <Rating class="600" FM="0.16" />
+          <Rating class="900" FM="0.13" />
+        </Size>
+        <Size NPS="34"  DN="850">
+          <Rating class="150" FM="0.36" />
+          <Rating class="300" FM="0.46" />
+          <Rating class="600" FM="0.14" />
+          <Rating class="900" FM="0.16" />
+        </Size>
+        <Size NPS="36"  DN="900">
+          <Rating class="150" FM="0.36" />
+          <Rating class="300" FM="0.43" />
+          <Rating class="600" FM="0.18" />
+          <Rating class="900" FM="0.15" />
+        </Size>
+        <Size NPS="38"  DN="950">
+          <Rating class="150" FM="0.42" />
+          <Rating class="300" FM="0.29" />
+        </Size>
+        <Size NPS="40"  DN="1000">
+          <Rating class="150" FM="0.41" />
+          <Rating class="300" FM="0.25" />
+        </Size>
+        <Size NPS="42"  DN="1050">
+          <Rating class="150" FM="0.41" />
+          <Rating class="300" FM="0.22" />
+        </Size>
+        <Size NPS="44"  DN="1100">
+          <Rating class="150" FM="0.39" />
+          <Rating class="300" FM="0.20" />
+        </Size>
+      </Series>
+
+    </Standard>
+
+  </Table>
+
+</GasketMomentFactors>

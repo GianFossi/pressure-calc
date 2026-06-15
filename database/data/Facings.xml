@@ -1,0 +1,3222 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Facings standard="ASME B16.5 / B16.47" unit="mm" merged="true" source="Merged from ASME_B16_5_FlangeFacings_Compact.xml, Flanges.xml and Gaskets.xml" rf_h_c300="2.0" rf_h_o300="7.0" lmf_h="7.0" smf_h="7.0" lff_h="5.0" sff_h="5.0" ltf_h="7.0" stf_h="7.0" lgf_h="5.0" sgf_h="5.0">
+  <!--
+    Units and interpretation:
+    * All linear dimensions in this file are in mm.
+    * nps is nominal pipe size in inches; dn is nominal diameter in mm.
+    * Root attributes ending in _h are standard facing heights or recess depths.
+    RaisedFaceDimensions element:
+    * Data are normalized into separate facing sections by type.
+    * Available groups are RaisedFaceFacings, LargeMaleFacings,
+      SmallMaleFacings, LargeFemaleFacings, SmallFemaleFacings,
+      LargeTongueFacings, SmallTongueFacings, LargeGrooveFacings,
+      and SmallGrooveFacings.
+    * Each Facing row is keyed by NPS and optional DN.
+    * Each Rating child stores the relevant diameters plus face height or recess depth.
+    * RaisedFaceFacings covers B16.5 classes 150-2500 and B16.47 classes 75-900.
+    * Large-diameter B16.47 RF rows below use the verified Series A source values from Flanges.xml
+      so the merged runtime table remains keyed by NPS.
+    * OD and ID refer to facing diameters; gasketOD and gasketID are groove-gasket envelope diameters.
+    Notes and warnings:
+    * Values are nominal standard lookup dimensions for design screening.
+    * They should not be used as manufacturing tolerances or inspection limits.
+  -->
+  <RaisedFaceDimensions>
+    <!-- Normalized facing tables grouped by facing type with explicit ASME class records. -->
+    <RaisedFaceFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="35.1" height="2.0" />
+        <Rating id="300" OD="35.1" height="2.0" />
+        <Rating id="400" OD="35.1" height="7.0" />
+        <Rating id="600" OD="35.1" height="7.0" />
+        <Rating id="900" OD="35.1" height="7.0" />
+        <Rating id="1500" OD="35.1" height="7.0" />
+        <Rating id="2500" OD="35.1" height="7.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="42.9" height="2.0" />
+        <Rating id="300" OD="42.9" height="2.0" />
+        <Rating id="400" OD="42.9" height="7.0" />
+        <Rating id="600" OD="42.9" height="7.0" />
+        <Rating id="900" OD="42.9" height="7.0" />
+        <Rating id="1500" OD="42.9" height="7.0" />
+        <Rating id="2500" OD="42.9" height="7.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="50.8" height="2.0" />
+        <Rating id="300" OD="50.8" height="2.0" />
+        <Rating id="400" OD="50.8" height="7.0" />
+        <Rating id="600" OD="50.8" height="7.0" />
+        <Rating id="900" OD="50.8" height="7.0" />
+        <Rating id="1500" OD="50.8" height="7.0" />
+        <Rating id="2500" OD="50.8" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="63.5" height="2.0" />
+        <Rating id="300" OD="63.5" height="2.0" />
+        <Rating id="400" OD="63.5" height="7.0" />
+        <Rating id="600" OD="63.5" height="7.0" />
+        <Rating id="900" OD="63.5" height="7.0" />
+        <Rating id="1500" OD="63.5" height="7.0" />
+        <Rating id="2500" OD="63.5" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="73.0" height="2.0" />
+        <Rating id="300" OD="73.0" height="2.0" />
+        <Rating id="400" OD="73.0" height="7.0" />
+        <Rating id="600" OD="73.0" height="7.0" />
+        <Rating id="900" OD="73.0" height="7.0" />
+        <Rating id="1500" OD="73.0" height="7.0" />
+        <Rating id="2500" OD="73.0" height="7.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="91.9" height="2.0" />
+        <Rating id="300" OD="91.9" height="2.0" />
+        <Rating id="400" OD="91.9" height="7.0" />
+        <Rating id="600" OD="91.9" height="7.0" />
+        <Rating id="900" OD="91.9" height="7.0" />
+        <Rating id="1500" OD="91.9" height="7.0" />
+        <Rating id="2500" OD="91.9" height="7.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="104.6" height="2.0" />
+        <Rating id="300" OD="104.6" height="2.0" />
+        <Rating id="400" OD="104.6" height="7.0" />
+        <Rating id="600" OD="104.6" height="7.0" />
+        <Rating id="900" OD="104.6" height="7.0" />
+        <Rating id="1500" OD="104.6" height="7.0" />
+        <Rating id="2500" OD="104.6" height="7.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="127.0" height="2.0" />
+        <Rating id="300" OD="127.0" height="2.0" />
+        <Rating id="400" OD="127.0" height="7.0" />
+        <Rating id="600" OD="127.0" height="7.0" />
+        <Rating id="900" OD="127.0" height="7.0" />
+        <Rating id="1500" OD="127.0" height="7.0" />
+        <Rating id="2500" OD="127.0" height="7.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="139.7" height="2.0" />
+        <Rating id="300" OD="139.7" height="2.0" />
+        <Rating id="400" OD="139.7" height="7.0" />
+        <Rating id="600" OD="139.7" height="7.0" />
+        <Rating id="900" OD="139.7" height="7.0" />
+        <Rating id="1500" OD="139.7" height="7.0" />
+        <Rating id="2500" OD="139.7" height="7.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="157.2" height="2.0" />
+        <Rating id="300" OD="157.2" height="2.0" />
+        <Rating id="400" OD="157.2" height="7.0" />
+        <Rating id="600" OD="157.2" height="7.0" />
+        <Rating id="900" OD="157.2" height="7.0" />
+        <Rating id="1500" OD="157.2" height="7.0" />
+        <Rating id="2500" OD="157.2" height="7.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="185.7" height="2.0" />
+        <Rating id="300" OD="185.7" height="2.0" />
+        <Rating id="400" OD="185.7" height="7.0" />
+        <Rating id="600" OD="185.7" height="7.0" />
+        <Rating id="900" OD="185.7" height="7.0" />
+        <Rating id="1500" OD="185.7" height="7.0" />
+        <Rating id="2500" OD="185.7" height="7.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="215.9" height="2.0" />
+        <Rating id="300" OD="215.9" height="2.0" />
+        <Rating id="400" OD="215.9" height="7.0" />
+        <Rating id="600" OD="215.9" height="7.0" />
+        <Rating id="900" OD="215.9" height="7.0" />
+        <Rating id="1500" OD="215.9" height="7.0" />
+        <Rating id="2500" OD="215.9" height="7.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="269.7" height="2.0" />
+        <Rating id="300" OD="269.7" height="2.0" />
+        <Rating id="400" OD="269.7" height="7.0" />
+        <Rating id="600" OD="269.7" height="7.0" />
+        <Rating id="900" OD="269.7" height="7.0" />
+        <Rating id="1500" OD="269.7" height="7.0" />
+        <Rating id="2500" OD="269.7" height="7.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="323.8" height="2.0" />
+        <Rating id="300" OD="323.8" height="2.0" />
+        <Rating id="400" OD="323.8" height="7.0" />
+        <Rating id="600" OD="323.8" height="7.0" />
+        <Rating id="900" OD="323.8" height="7.0" />
+        <Rating id="1500" OD="323.8" height="7.0" />
+        <Rating id="2500" OD="323.8" height="7.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="381.0" height="2.0" />
+        <Rating id="300" OD="381.0" height="2.0" />
+        <Rating id="400" OD="381.0" height="7.0" />
+        <Rating id="600" OD="381.0" height="7.0" />
+        <Rating id="900" OD="381.0" height="7.0" />
+        <Rating id="1500" OD="381.0" height="7.0" />
+        <Rating id="2500" OD="381.0" height="7.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="412.8" height="2.0" />
+        <Rating id="300" OD="412.8" height="2.0" />
+        <Rating id="400" OD="412.8" height="7.0" />
+        <Rating id="600" OD="412.8" height="7.0" />
+        <Rating id="900" OD="412.8" height="7.0" />
+        <Rating id="1500" OD="412.8" height="7.0" />
+        <Rating id="2500" OD="412.8" height="7.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="469.9" height="2.0" />
+        <Rating id="300" OD="469.9" height="2.0" />
+        <Rating id="400" OD="469.9" height="7.0" />
+        <Rating id="600" OD="469.9" height="7.0" />
+        <Rating id="900" OD="469.9" height="7.0" />
+        <Rating id="1500" OD="469.9" height="7.0" />
+        <Rating id="2500" OD="469.9" height="7.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="533.4" height="2.0" />
+        <Rating id="300" OD="533.4" height="2.0" />
+        <Rating id="400" OD="533.4" height="7.0" />
+        <Rating id="600" OD="533.4" height="7.0" />
+        <Rating id="900" OD="533.4" height="7.0" />
+        <Rating id="1500" OD="533.4" height="7.0" />
+        <Rating id="2500" OD="533.4" height="7.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="584.2" height="2.0" />
+        <Rating id="300" OD="584.2" height="2.0" />
+        <Rating id="400" OD="584.2" height="7.0" />
+        <Rating id="600" OD="584.2" height="7.0" />
+        <Rating id="900" OD="584.2" height="7.0" />
+        <Rating id="1500" OD="584.2" height="7.0" />
+        <Rating id="2500" OD="584.2" height="7.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="692.2" height="2.0" />
+        <Rating id="300" OD="692.2" height="2.0" />
+        <Rating id="400" OD="692.2" height="7.0" />
+        <Rating id="600" OD="692.2" height="7.0" />
+        <Rating id="900" OD="692.2" height="7.0" />
+        <Rating id="1500" OD="692.2" height="7.0" />
+        <Rating id="2500" OD="692.2" height="7.0" />
+      </Facing>
+      <!-- ASME B16.47 large-diameter RF extension, using Series A facing diameters. -->
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="727.1" height="2.0" />
+        <Rating id="150" OD="749.3" height="2.0" />
+        <Rating id="300" OD="749.3" height="2.0" />
+        <Rating id="400" OD="749.3" height="7.0" />
+        <Rating id="600" OD="749.3" height="7.0" />
+        <Rating id="900" OD="749.3" height="7.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="777.9" height="2.0" />
+        <Rating id="150" OD="800.1" height="2.0" />
+        <Rating id="300" OD="800.1" height="2.0" />
+        <Rating id="400" OD="800.1" height="7.0" />
+        <Rating id="600" OD="800.1" height="7.0" />
+        <Rating id="900" OD="800.1" height="7.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="828.7" height="2.0" />
+        <Rating id="150" OD="857.3" height="2.0" />
+        <Rating id="300" OD="857.3" height="2.0" />
+        <Rating id="400" OD="857.3" height="7.0" />
+        <Rating id="600" OD="857.3" height="7.0" />
+        <Rating id="900" OD="857.3" height="7.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="889.0" height="2.0" />
+        <Rating id="150" OD="914.4" height="2.0" />
+        <Rating id="300" OD="914.4" height="2.0" />
+        <Rating id="400" OD="914.4" height="7.0" />
+        <Rating id="600" OD="914.4" height="7.0" />
+        <Rating id="900" OD="914.4" height="7.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="939.8" height="2.0" />
+        <Rating id="150" OD="965.2" height="2.0" />
+        <Rating id="300" OD="965.2" height="2.0" />
+        <Rating id="400" OD="965.2" height="7.0" />
+        <Rating id="600" OD="965.2" height="7.0" />
+        <Rating id="900" OD="965.2" height="7.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="990.6" height="2.0" />
+        <Rating id="150" OD="1022.4" height="2.0" />
+        <Rating id="300" OD="1022.4" height="2.0" />
+        <Rating id="400" OD="1022.4" height="7.0" />
+        <Rating id="600" OD="1022.4" height="7.0" />
+        <Rating id="900" OD="1022.4" height="7.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1073.2" height="2.0" />
+        <Rating id="300" OD="1028.7" height="2.0" />
+        <Rating id="400" OD="1035.1" height="7.0" />
+        <Rating id="600" OD="1054.1" height="7.0" />
+        <Rating id="900" OD="1098.6" height="7.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1124.0" height="2.0" />
+        <Rating id="300" OD="1085.9" height="2.0" />
+        <Rating id="400" OD="1092.2" height="7.0" />
+        <Rating id="600" OD="1111.3" height="7.0" />
+        <Rating id="900" OD="1162.1" height="7.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1155.7" height="2.0" />
+        <Rating id="150" OD="1193.8" height="2.0" />
+        <Rating id="300" OD="1136.7" height="2.0" />
+        <Rating id="400" OD="1143.0" height="7.0" />
+        <Rating id="600" OD="1168.4" height="7.0" />
+        <Rating id="900" OD="1212.9" height="7.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1244.6" height="2.0" />
+        <Rating id="300" OD="1193.8" height="2.0" />
+        <Rating id="400" OD="1200.2" height="7.0" />
+        <Rating id="600" OD="1225.6" height="7.0" />
+        <Rating id="900" OD="1270.0" height="7.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1295.4" height="2.0" />
+        <Rating id="300" OD="1244.6" height="2.0" />
+        <Rating id="400" OD="1257.3" height="7.0" />
+        <Rating id="600" OD="1276.4" height="7.0" />
+        <Rating id="900" OD="1333.5" height="7.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1308.1" height="2.0" />
+        <Rating id="150" OD="1358.9" height="2.0" />
+        <Rating id="300" OD="1301.8" height="2.0" />
+        <Rating id="400" OD="1308.1" height="7.0" />
+        <Rating id="600" OD="1333.5" height="7.0" />
+        <Rating id="900" OD="1384.3" height="7.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1409.7" height="2.0" />
+        <Rating id="300" OD="1358.9" height="2.0" />
+        <Rating id="400" OD="1361.9" height="7.0" />
+        <Rating id="600" OD="1384.3" height="7.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1460.5" height="2.0" />
+        <Rating id="300" OD="1409.7" height="2.0" />
+        <Rating id="400" OD="1412.7" height="7.0" />
+        <Rating id="600" OD="1435.1" height="7.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1466.9" height="2.0" />
+        <Rating id="150" OD="1511.3" height="2.0" />
+        <Rating id="300" OD="1466.9" height="2.0" />
+        <Rating id="400" OD="1470.2" height="7.0" />
+        <Rating id="600" OD="1492.3" height="7.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1574.8" height="2.0" />
+        <Rating id="300" OD="1517.7" height="2.0" />
+        <Rating id="400" OD="1527.0" height="7.0" />
+        <Rating id="600" OD="1543.1" height="7.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1625.6" height="2.0" />
+        <Rating id="300" OD="1574.8" height="2.0" />
+        <Rating id="400" OD="1577.8" height="7.0" />
+        <Rating id="600" OD="1600.2" height="7.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1619.3" height="2.0" />
+        <Rating id="150" OD="1676.4" height="2.0" />
+        <Rating id="300" OD="1625.6" height="2.0" />
+        <Rating id="400" OD="1635.3" height="7.0" />
+        <Rating id="600" OD="1657.4" height="7.0" />
+      </Facing>
+    </RaisedFaceFacings>
+    <LargeMaleFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="35.1" height="7.0" />
+        <Rating id="300" OD="35.1" height="7.0" />
+        <Rating id="400" OD="35.1" height="7.0" />
+        <Rating id="600" OD="35.1" height="7.0" />
+        <Rating id="900" OD="35.1" height="7.0" />
+        <Rating id="1500" OD="35.1" height="7.0" />
+        <Rating id="2500" OD="35.1" height="7.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="42.9" height="7.0" />
+        <Rating id="300" OD="42.9" height="7.0" />
+        <Rating id="400" OD="42.9" height="7.0" />
+        <Rating id="600" OD="42.9" height="7.0" />
+        <Rating id="900" OD="42.9" height="7.0" />
+        <Rating id="1500" OD="42.9" height="7.0" />
+        <Rating id="2500" OD="42.9" height="7.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="50.8" height="7.0" />
+        <Rating id="300" OD="50.8" height="7.0" />
+        <Rating id="400" OD="50.8" height="7.0" />
+        <Rating id="600" OD="50.8" height="7.0" />
+        <Rating id="900" OD="50.8" height="7.0" />
+        <Rating id="1500" OD="50.8" height="7.0" />
+        <Rating id="2500" OD="50.8" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="63.5" height="7.0" />
+        <Rating id="300" OD="63.5" height="7.0" />
+        <Rating id="400" OD="63.5" height="7.0" />
+        <Rating id="600" OD="63.5" height="7.0" />
+        <Rating id="900" OD="63.5" height="7.0" />
+        <Rating id="1500" OD="63.5" height="7.0" />
+        <Rating id="2500" OD="63.5" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="73.0" height="7.0" />
+        <Rating id="300" OD="73.0" height="7.0" />
+        <Rating id="400" OD="73.0" height="7.0" />
+        <Rating id="600" OD="73.0" height="7.0" />
+        <Rating id="900" OD="73.0" height="7.0" />
+        <Rating id="1500" OD="73.0" height="7.0" />
+        <Rating id="2500" OD="73.0" height="7.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="91.9" height="7.0" />
+        <Rating id="300" OD="91.9" height="7.0" />
+        <Rating id="400" OD="91.9" height="7.0" />
+        <Rating id="600" OD="91.9" height="7.0" />
+        <Rating id="900" OD="91.9" height="7.0" />
+        <Rating id="1500" OD="91.9" height="7.0" />
+        <Rating id="2500" OD="91.9" height="7.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="104.6" height="7.0" />
+        <Rating id="300" OD="104.6" height="7.0" />
+        <Rating id="400" OD="104.6" height="7.0" />
+        <Rating id="600" OD="104.6" height="7.0" />
+        <Rating id="900" OD="104.6" height="7.0" />
+        <Rating id="1500" OD="104.6" height="7.0" />
+        <Rating id="2500" OD="104.6" height="7.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="127.0" height="7.0" />
+        <Rating id="300" OD="127.0" height="7.0" />
+        <Rating id="400" OD="127.0" height="7.0" />
+        <Rating id="600" OD="127.0" height="7.0" />
+        <Rating id="900" OD="127.0" height="7.0" />
+        <Rating id="1500" OD="127.0" height="7.0" />
+        <Rating id="2500" OD="127.0" height="7.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="139.7" height="7.0" />
+        <Rating id="300" OD="139.7" height="7.0" />
+        <Rating id="400" OD="139.7" height="7.0" />
+        <Rating id="600" OD="139.7" height="7.0" />
+        <Rating id="900" OD="139.7" height="7.0" />
+        <Rating id="1500" OD="139.7" height="7.0" />
+        <Rating id="2500" OD="139.7" height="7.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="157.2" height="7.0" />
+        <Rating id="300" OD="157.2" height="7.0" />
+        <Rating id="400" OD="157.2" height="7.0" />
+        <Rating id="600" OD="157.2" height="7.0" />
+        <Rating id="900" OD="157.2" height="7.0" />
+        <Rating id="1500" OD="157.2" height="7.0" />
+        <Rating id="2500" OD="157.2" height="7.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="185.7" height="7.0" />
+        <Rating id="300" OD="185.7" height="7.0" />
+        <Rating id="400" OD="185.7" height="7.0" />
+        <Rating id="600" OD="185.7" height="7.0" />
+        <Rating id="900" OD="185.7" height="7.0" />
+        <Rating id="1500" OD="185.7" height="7.0" />
+        <Rating id="2500" OD="185.7" height="7.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="215.9" height="7.0" />
+        <Rating id="300" OD="215.9" height="7.0" />
+        <Rating id="400" OD="215.9" height="7.0" />
+        <Rating id="600" OD="215.9" height="7.0" />
+        <Rating id="900" OD="215.9" height="7.0" />
+        <Rating id="1500" OD="215.9" height="7.0" />
+        <Rating id="2500" OD="215.9" height="7.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="269.7" height="7.0" />
+        <Rating id="300" OD="269.7" height="7.0" />
+        <Rating id="400" OD="269.7" height="7.0" />
+        <Rating id="600" OD="269.7" height="7.0" />
+        <Rating id="900" OD="269.7" height="7.0" />
+        <Rating id="1500" OD="269.7" height="7.0" />
+        <Rating id="2500" OD="269.7" height="7.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="323.8" height="7.0" />
+        <Rating id="300" OD="323.8" height="7.0" />
+        <Rating id="400" OD="323.8" height="7.0" />
+        <Rating id="600" OD="323.8" height="7.0" />
+        <Rating id="900" OD="323.8" height="7.0" />
+        <Rating id="1500" OD="323.8" height="7.0" />
+        <Rating id="2500" OD="323.8" height="7.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="381.0" height="7.0" />
+        <Rating id="300" OD="381.0" height="7.0" />
+        <Rating id="400" OD="381.0" height="7.0" />
+        <Rating id="600" OD="381.0" height="7.0" />
+        <Rating id="900" OD="381.0" height="7.0" />
+        <Rating id="1500" OD="381.0" height="7.0" />
+        <Rating id="2500" OD="381.0" height="7.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="412.8" height="7.0" />
+        <Rating id="300" OD="412.8" height="7.0" />
+        <Rating id="400" OD="412.8" height="7.0" />
+        <Rating id="600" OD="412.8" height="7.0" />
+        <Rating id="900" OD="412.8" height="7.0" />
+        <Rating id="1500" OD="412.8" height="7.0" />
+        <Rating id="2500" OD="412.8" height="7.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="469.9" height="7.0" />
+        <Rating id="300" OD="469.9" height="7.0" />
+        <Rating id="400" OD="469.9" height="7.0" />
+        <Rating id="600" OD="469.9" height="7.0" />
+        <Rating id="900" OD="469.9" height="7.0" />
+        <Rating id="1500" OD="469.9" height="7.0" />
+        <Rating id="2500" OD="469.9" height="7.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="533.4" height="7.0" />
+        <Rating id="300" OD="533.4" height="7.0" />
+        <Rating id="400" OD="533.4" height="7.0" />
+        <Rating id="600" OD="533.4" height="7.0" />
+        <Rating id="900" OD="533.4" height="7.0" />
+        <Rating id="1500" OD="533.4" height="7.0" />
+        <Rating id="2500" OD="533.4" height="7.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="584.2" height="7.0" />
+        <Rating id="300" OD="584.2" height="7.0" />
+        <Rating id="400" OD="584.2" height="7.0" />
+        <Rating id="600" OD="584.2" height="7.0" />
+        <Rating id="900" OD="584.2" height="7.0" />
+        <Rating id="1500" OD="584.2" height="7.0" />
+        <Rating id="2500" OD="584.2" height="7.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="692.2" height="7.0" />
+        <Rating id="300" OD="692.2" height="7.0" />
+        <Rating id="400" OD="692.2" height="7.0" />
+        <Rating id="600" OD="692.2" height="7.0" />
+        <Rating id="900" OD="692.2" height="7.0" />
+        <Rating id="1500" OD="692.2" height="7.0" />
+        <Rating id="2500" OD="692.2" height="7.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="727.1" height="7.0" />
+        <Rating id="150" OD="749.3" height="7.0" />
+        <Rating id="300" OD="749.3" height="7.0" />
+        <Rating id="400" OD="749.3" height="7.0" />
+        <Rating id="600" OD="749.3" height="7.0" />
+        <Rating id="900" OD="749.3" height="7.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="777.9" height="7.0" />
+        <Rating id="150" OD="800.1" height="7.0" />
+        <Rating id="300" OD="800.1" height="7.0" />
+        <Rating id="400" OD="800.1" height="7.0" />
+        <Rating id="600" OD="800.1" height="7.0" />
+        <Rating id="900" OD="800.1" height="7.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="828.7" height="7.0" />
+        <Rating id="150" OD="857.3" height="7.0" />
+        <Rating id="300" OD="857.3" height="7.0" />
+        <Rating id="400" OD="857.3" height="7.0" />
+        <Rating id="600" OD="857.3" height="7.0" />
+        <Rating id="900" OD="857.3" height="7.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="889.0" height="7.0" />
+        <Rating id="150" OD="914.4" height="7.0" />
+        <Rating id="300" OD="914.4" height="7.0" />
+        <Rating id="400" OD="914.4" height="7.0" />
+        <Rating id="600" OD="914.4" height="7.0" />
+        <Rating id="900" OD="914.4" height="7.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="939.8" height="7.0" />
+        <Rating id="150" OD="965.2" height="7.0" />
+        <Rating id="300" OD="965.2" height="7.0" />
+        <Rating id="400" OD="965.2" height="7.0" />
+        <Rating id="600" OD="965.2" height="7.0" />
+        <Rating id="900" OD="965.2" height="7.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="990.6" height="7.0" />
+        <Rating id="150" OD="1022.4" height="7.0" />
+        <Rating id="300" OD="1022.4" height="7.0" />
+        <Rating id="400" OD="1022.4" height="7.0" />
+        <Rating id="600" OD="1022.4" height="7.0" />
+        <Rating id="900" OD="1022.4" height="7.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1073.2" height="7.0" />
+        <Rating id="300" OD="1028.7" height="7.0" />
+        <Rating id="400" OD="1035.1" height="7.0" />
+        <Rating id="600" OD="1054.1" height="7.0" />
+        <Rating id="900" OD="1098.6" height="7.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1124.0" height="7.0" />
+        <Rating id="300" OD="1085.9" height="7.0" />
+        <Rating id="400" OD="1092.2" height="7.0" />
+        <Rating id="600" OD="1111.3" height="7.0" />
+        <Rating id="900" OD="1162.1" height="7.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1155.7" height="7.0" />
+        <Rating id="150" OD="1193.8" height="7.0" />
+        <Rating id="300" OD="1136.7" height="7.0" />
+        <Rating id="400" OD="1143.0" height="7.0" />
+        <Rating id="600" OD="1168.4" height="7.0" />
+        <Rating id="900" OD="1212.9" height="7.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1244.6" height="7.0" />
+        <Rating id="300" OD="1193.8" height="7.0" />
+        <Rating id="400" OD="1200.2" height="7.0" />
+        <Rating id="600" OD="1225.6" height="7.0" />
+        <Rating id="900" OD="1270.0" height="7.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1295.4" height="7.0" />
+        <Rating id="300" OD="1244.6" height="7.0" />
+        <Rating id="400" OD="1257.3" height="7.0" />
+        <Rating id="600" OD="1276.4" height="7.0" />
+        <Rating id="900" OD="1333.5" height="7.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1308.1" height="7.0" />
+        <Rating id="150" OD="1358.9" height="7.0" />
+        <Rating id="300" OD="1301.8" height="7.0" />
+        <Rating id="400" OD="1308.1" height="7.0" />
+        <Rating id="600" OD="1333.5" height="7.0" />
+        <Rating id="900" OD="1384.3" height="7.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1409.7" height="7.0" />
+        <Rating id="300" OD="1358.9" height="7.0" />
+        <Rating id="400" OD="1361.9" height="7.0" />
+        <Rating id="600" OD="1384.3" height="7.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1460.5" height="7.0" />
+        <Rating id="300" OD="1409.7" height="7.0" />
+        <Rating id="400" OD="1412.7" height="7.0" />
+        <Rating id="600" OD="1435.1" height="7.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1466.9" height="7.0" />
+        <Rating id="150" OD="1511.3" height="7.0" />
+        <Rating id="300" OD="1466.9" height="7.0" />
+        <Rating id="400" OD="1470.2" height="7.0" />
+        <Rating id="600" OD="1492.3" height="7.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1574.8" height="7.0" />
+        <Rating id="300" OD="1517.7" height="7.0" />
+        <Rating id="400" OD="1527.0" height="7.0" />
+        <Rating id="600" OD="1543.1" height="7.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1625.6" height="7.0" />
+        <Rating id="300" OD="1574.8" height="7.0" />
+        <Rating id="400" OD="1577.8" height="7.0" />
+        <Rating id="600" OD="1600.2" height="7.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1619.3" height="7.0" />
+        <Rating id="150" OD="1676.4" height="7.0" />
+        <Rating id="300" OD="1625.6" height="7.0" />
+        <Rating id="400" OD="1635.3" height="7.0" />
+        <Rating id="600" OD="1657.4" height="7.0" />
+      </Facing>
+    </LargeMaleFacings>
+    <SmallMaleFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="18.3" height="7.0" />
+        <Rating id="300" OD="18.3" height="7.0" />
+        <Rating id="400" OD="18.3" height="7.0" />
+        <Rating id="600" OD="18.3" height="7.0" />
+        <Rating id="900" OD="18.3" height="7.0" />
+        <Rating id="1500" OD="18.3" height="7.0" />
+        <Rating id="2500" OD="18.3" height="7.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="23.8" height="7.0" />
+        <Rating id="300" OD="23.8" height="7.0" />
+        <Rating id="400" OD="23.8" height="7.0" />
+        <Rating id="600" OD="23.8" height="7.0" />
+        <Rating id="900" OD="23.8" height="7.0" />
+        <Rating id="1500" OD="23.8" height="7.0" />
+        <Rating id="2500" OD="23.8" height="7.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="30.2" height="7.0" />
+        <Rating id="300" OD="30.2" height="7.0" />
+        <Rating id="400" OD="30.2" height="7.0" />
+        <Rating id="600" OD="30.2" height="7.0" />
+        <Rating id="900" OD="30.2" height="7.0" />
+        <Rating id="1500" OD="30.2" height="7.0" />
+        <Rating id="2500" OD="30.2" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="38.1" height="7.0" />
+        <Rating id="300" OD="38.1" height="7.0" />
+        <Rating id="400" OD="38.1" height="7.0" />
+        <Rating id="600" OD="38.1" height="7.0" />
+        <Rating id="900" OD="38.1" height="7.0" />
+        <Rating id="1500" OD="38.1" height="7.0" />
+        <Rating id="2500" OD="38.1" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="44.4" height="7.0" />
+        <Rating id="300" OD="44.4" height="7.0" />
+        <Rating id="400" OD="44.4" height="7.0" />
+        <Rating id="600" OD="44.4" height="7.0" />
+        <Rating id="900" OD="44.4" height="7.0" />
+        <Rating id="1500" OD="44.4" height="7.0" />
+        <Rating id="2500" OD="44.4" height="7.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="57.2" height="7.0" />
+        <Rating id="300" OD="57.2" height="7.0" />
+        <Rating id="400" OD="57.2" height="7.0" />
+        <Rating id="600" OD="57.2" height="7.0" />
+        <Rating id="900" OD="57.2" height="7.0" />
+        <Rating id="1500" OD="57.2" height="7.0" />
+        <Rating id="2500" OD="57.2" height="7.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="68.3" height="7.0" />
+        <Rating id="300" OD="68.3" height="7.0" />
+        <Rating id="400" OD="68.3" height="7.0" />
+        <Rating id="600" OD="68.3" height="7.0" />
+        <Rating id="900" OD="68.3" height="7.0" />
+        <Rating id="1500" OD="68.3" height="7.0" />
+        <Rating id="2500" OD="68.3" height="7.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="84.1" height="7.0" />
+        <Rating id="300" OD="84.1" height="7.0" />
+        <Rating id="400" OD="84.1" height="7.0" />
+        <Rating id="600" OD="84.1" height="7.0" />
+        <Rating id="900" OD="84.1" height="7.0" />
+        <Rating id="1500" OD="84.1" height="7.0" />
+        <Rating id="2500" OD="84.1" height="7.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="96.8" height="7.0" />
+        <Rating id="300" OD="96.8" height="7.0" />
+        <Rating id="400" OD="96.8" height="7.0" />
+        <Rating id="600" OD="96.8" height="7.0" />
+        <Rating id="900" OD="96.8" height="7.0" />
+        <Rating id="1500" OD="96.8" height="7.0" />
+        <Rating id="2500" OD="96.8" height="7.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="109.5" height="7.0" />
+        <Rating id="300" OD="109.5" height="7.0" />
+        <Rating id="400" OD="109.5" height="7.0" />
+        <Rating id="600" OD="109.5" height="7.0" />
+        <Rating id="900" OD="109.5" height="7.0" />
+        <Rating id="1500" OD="109.5" height="7.0" />
+        <Rating id="2500" OD="109.5" height="7.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="136.5" height="7.0" />
+        <Rating id="300" OD="136.5" height="7.0" />
+        <Rating id="400" OD="136.5" height="7.0" />
+        <Rating id="600" OD="136.5" height="7.0" />
+        <Rating id="900" OD="136.5" height="7.0" />
+        <Rating id="1500" OD="136.5" height="7.0" />
+        <Rating id="2500" OD="136.5" height="7.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="161.9" height="7.0" />
+        <Rating id="300" OD="161.9" height="7.0" />
+        <Rating id="400" OD="161.9" height="7.0" />
+        <Rating id="600" OD="161.9" height="7.0" />
+        <Rating id="900" OD="161.9" height="7.0" />
+        <Rating id="1500" OD="161.9" height="7.0" />
+        <Rating id="2500" OD="161.9" height="7.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="212.9" height="7.0" />
+        <Rating id="300" OD="212.9" height="7.0" />
+        <Rating id="400" OD="212.9" height="7.0" />
+        <Rating id="600" OD="212.9" height="7.0" />
+        <Rating id="900" OD="212.9" height="7.0" />
+        <Rating id="1500" OD="212.9" height="7.0" />
+        <Rating id="2500" OD="212.9" height="7.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="266.7" height="7.0" />
+        <Rating id="300" OD="266.7" height="7.0" />
+        <Rating id="400" OD="266.7" height="7.0" />
+        <Rating id="600" OD="266.7" height="7.0" />
+        <Rating id="900" OD="266.7" height="7.0" />
+        <Rating id="1500" OD="266.7" height="7.0" />
+        <Rating id="2500" OD="266.7" height="7.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="317.5" height="7.0" />
+        <Rating id="300" OD="317.5" height="7.0" />
+        <Rating id="400" OD="317.5" height="7.0" />
+        <Rating id="600" OD="317.5" height="7.0" />
+        <Rating id="900" OD="317.5" height="7.0" />
+        <Rating id="1500" OD="317.5" height="7.0" />
+        <Rating id="2500" OD="317.5" height="7.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="349.2" height="7.0" />
+        <Rating id="300" OD="349.2" height="7.0" />
+        <Rating id="400" OD="349.2" height="7.0" />
+        <Rating id="600" OD="349.2" height="7.0" />
+        <Rating id="900" OD="349.2" height="7.0" />
+        <Rating id="1500" OD="349.2" height="7.0" />
+        <Rating id="2500" OD="349.2" height="7.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="400.0" height="7.0" />
+        <Rating id="300" OD="400.0" height="7.0" />
+        <Rating id="400" OD="400.0" height="7.0" />
+        <Rating id="600" OD="400.0" height="7.0" />
+        <Rating id="900" OD="400.0" height="7.0" />
+        <Rating id="1500" OD="400.0" height="7.0" />
+        <Rating id="2500" OD="400.0" height="7.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="450.8" height="7.0" />
+        <Rating id="300" OD="450.8" height="7.0" />
+        <Rating id="400" OD="450.8" height="7.0" />
+        <Rating id="600" OD="450.8" height="7.0" />
+        <Rating id="900" OD="450.8" height="7.0" />
+        <Rating id="1500" OD="450.8" height="7.0" />
+        <Rating id="2500" OD="450.8" height="7.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="501.6" height="7.0" />
+        <Rating id="300" OD="501.6" height="7.0" />
+        <Rating id="400" OD="501.6" height="7.0" />
+        <Rating id="600" OD="501.6" height="7.0" />
+        <Rating id="900" OD="501.6" height="7.0" />
+        <Rating id="1500" OD="501.6" height="7.0" />
+        <Rating id="2500" OD="501.6" height="7.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="603.2" height="7.0" />
+        <Rating id="300" OD="603.2" height="7.0" />
+        <Rating id="400" OD="603.2" height="7.0" />
+        <Rating id="600" OD="603.2" height="7.0" />
+        <Rating id="900" OD="603.2" height="7.0" />
+        <Rating id="1500" OD="603.2" height="7.0" />
+        <Rating id="2500" OD="603.2" height="7.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="654.1" height="7.0" />
+        <Rating id="150" OD="654.1" height="7.0" />
+        <Rating id="300" OD="654.1" height="7.0" />
+        <Rating id="400" OD="654.1" height="7.0" />
+        <Rating id="600" OD="654.1" height="7.0" />
+        <Rating id="900" OD="654.1" height="7.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="704.9" height="7.0" />
+        <Rating id="150" OD="704.9" height="7.0" />
+        <Rating id="300" OD="704.9" height="7.0" />
+        <Rating id="400" OD="704.9" height="7.0" />
+        <Rating id="600" OD="704.9" height="7.0" />
+        <Rating id="900" OD="704.9" height="7.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="755.7" height="7.0" />
+        <Rating id="150" OD="755.7" height="7.0" />
+        <Rating id="300" OD="755.7" height="7.0" />
+        <Rating id="400" OD="755.7" height="7.0" />
+        <Rating id="600" OD="755.7" height="7.0" />
+        <Rating id="900" OD="755.7" height="7.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="806.5" height="7.0" />
+        <Rating id="150" OD="806.5" height="7.0" />
+        <Rating id="300" OD="806.5" height="7.0" />
+        <Rating id="400" OD="806.5" height="7.0" />
+        <Rating id="600" OD="806.5" height="7.0" />
+        <Rating id="900" OD="806.5" height="7.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="857.3" height="7.0" />
+        <Rating id="150" OD="857.3" height="7.0" />
+        <Rating id="300" OD="857.3" height="7.0" />
+        <Rating id="400" OD="857.3" height="7.0" />
+        <Rating id="600" OD="857.3" height="7.0" />
+        <Rating id="900" OD="857.3" height="7.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="908.1" height="7.0" />
+        <Rating id="150" OD="908.1" height="7.0" />
+        <Rating id="300" OD="908.1" height="7.0" />
+        <Rating id="400" OD="908.1" height="7.0" />
+        <Rating id="600" OD="908.1" height="7.0" />
+        <Rating id="900" OD="908.1" height="7.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="958.9" height="7.0" />
+        <Rating id="300" OD="958.9" height="7.0" />
+        <Rating id="400" OD="958.9" height="7.0" />
+        <Rating id="600" OD="958.9" height="7.0" />
+        <Rating id="900" OD="958.9" height="7.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1009.7" height="7.0" />
+        <Rating id="300" OD="1009.7" height="7.0" />
+        <Rating id="400" OD="1009.7" height="7.0" />
+        <Rating id="600" OD="1009.7" height="7.0" />
+        <Rating id="900" OD="1009.7" height="7.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1060.5" height="7.0" />
+        <Rating id="150" OD="1060.5" height="7.0" />
+        <Rating id="300" OD="1060.5" height="7.0" />
+        <Rating id="400" OD="1060.5" height="7.0" />
+        <Rating id="600" OD="1060.5" height="7.0" />
+        <Rating id="900" OD="1060.5" height="7.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1111.3" height="7.0" />
+        <Rating id="300" OD="1111.3" height="7.0" />
+        <Rating id="400" OD="1111.3" height="7.0" />
+        <Rating id="600" OD="1111.3" height="7.0" />
+        <Rating id="900" OD="1111.3" height="7.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1162.1" height="7.0" />
+        <Rating id="300" OD="1162.1" height="7.0" />
+        <Rating id="400" OD="1162.1" height="7.0" />
+        <Rating id="600" OD="1162.1" height="7.0" />
+        <Rating id="900" OD="1162.1" height="7.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1212.9" height="7.0" />
+        <Rating id="150" OD="1212.9" height="7.0" />
+        <Rating id="300" OD="1212.9" height="7.0" />
+        <Rating id="400" OD="1212.9" height="7.0" />
+        <Rating id="600" OD="1212.9" height="7.0" />
+        <Rating id="900" OD="1212.9" height="7.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1263.7" height="7.0" />
+        <Rating id="300" OD="1263.7" height="7.0" />
+        <Rating id="400" OD="1263.7" height="7.0" />
+        <Rating id="600" OD="1263.7" height="7.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1314.5" height="7.0" />
+        <Rating id="300" OD="1314.5" height="7.0" />
+        <Rating id="400" OD="1314.5" height="7.0" />
+        <Rating id="600" OD="1314.5" height="7.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1358.9" height="7.0" />
+        <Rating id="150" OD="1358.9" height="7.0" />
+        <Rating id="300" OD="1358.9" height="7.0" />
+        <Rating id="400" OD="1358.9" height="7.0" />
+        <Rating id="600" OD="1358.9" height="7.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1409.7" height="7.0" />
+        <Rating id="300" OD="1409.7" height="7.0" />
+        <Rating id="400" OD="1409.7" height="7.0" />
+        <Rating id="600" OD="1409.7" height="7.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1460.5" height="7.0" />
+        <Rating id="300" OD="1460.5" height="7.0" />
+        <Rating id="400" OD="1460.5" height="7.0" />
+        <Rating id="600" OD="1460.5" height="7.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1511.3" height="7.0" />
+        <Rating id="150" OD="1511.3" height="7.0" />
+        <Rating id="300" OD="1511.3" height="7.0" />
+        <Rating id="400" OD="1511.3" height="7.0" />
+        <Rating id="600" OD="1511.3" height="7.0" />
+      </Facing>
+    </SmallMaleFacings>
+    <LargeFemaleFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="46.0" ID="36.5" depth="5.0" />
+        <Rating id="300" OD="46.0" ID="36.5" depth="5.0" />
+        <Rating id="400" OD="46.0" ID="36.5" depth="5.0" />
+        <Rating id="600" OD="46.0" ID="36.5" depth="5.0" />
+        <Rating id="900" OD="46.0" ID="36.5" depth="5.0" />
+        <Rating id="1500" OD="46.0" ID="36.5" depth="5.0" />
+        <Rating id="2500" OD="46.0" ID="36.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="54.0" ID="44.4" depth="5.0" />
+        <Rating id="300" OD="54.0" ID="44.4" depth="5.0" />
+        <Rating id="400" OD="54.0" ID="44.4" depth="5.0" />
+        <Rating id="600" OD="54.0" ID="44.4" depth="5.0" />
+        <Rating id="900" OD="54.0" ID="44.4" depth="5.0" />
+        <Rating id="1500" OD="54.0" ID="44.4" depth="5.0" />
+        <Rating id="2500" OD="54.0" ID="44.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="62.0" ID="52.4" depth="5.0" />
+        <Rating id="300" OD="62.0" ID="52.4" depth="5.0" />
+        <Rating id="400" OD="62.0" ID="52.4" depth="5.0" />
+        <Rating id="600" OD="62.0" ID="52.4" depth="5.0" />
+        <Rating id="900" OD="62.0" ID="52.4" depth="5.0" />
+        <Rating id="1500" OD="62.0" ID="52.4" depth="5.0" />
+        <Rating id="2500" OD="62.0" ID="52.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="75.0" ID="65.1" depth="5.0" />
+        <Rating id="300" OD="75.0" ID="65.1" depth="5.0" />
+        <Rating id="400" OD="75.0" ID="65.1" depth="5.0" />
+        <Rating id="600" OD="75.0" ID="65.1" depth="5.0" />
+        <Rating id="900" OD="75.0" ID="65.1" depth="5.0" />
+        <Rating id="1500" OD="75.0" ID="65.1" depth="5.0" />
+        <Rating id="2500" OD="75.0" ID="65.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="84.0" ID="74.6" depth="5.0" />
+        <Rating id="300" OD="84.0" ID="74.6" depth="5.0" />
+        <Rating id="400" OD="84.0" ID="74.6" depth="5.0" />
+        <Rating id="600" OD="84.0" ID="74.6" depth="5.0" />
+        <Rating id="900" OD="84.0" ID="74.6" depth="5.0" />
+        <Rating id="1500" OD="84.0" ID="74.6" depth="5.0" />
+        <Rating id="2500" OD="84.0" ID="74.6" depth="5.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="103.0" ID="93.7" depth="5.0" />
+        <Rating id="300" OD="103.0" ID="93.7" depth="5.0" />
+        <Rating id="400" OD="103.0" ID="93.7" depth="5.0" />
+        <Rating id="600" OD="103.0" ID="93.7" depth="5.0" />
+        <Rating id="900" OD="103.0" ID="93.7" depth="5.0" />
+        <Rating id="1500" OD="103.0" ID="93.7" depth="5.0" />
+        <Rating id="2500" OD="103.0" ID="93.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="116.0" ID="106.4" depth="5.0" />
+        <Rating id="300" OD="116.0" ID="106.4" depth="5.0" />
+        <Rating id="400" OD="116.0" ID="106.4" depth="5.0" />
+        <Rating id="600" OD="116.0" ID="106.4" depth="5.0" />
+        <Rating id="900" OD="116.0" ID="106.4" depth="5.0" />
+        <Rating id="1500" OD="116.0" ID="106.4" depth="5.0" />
+        <Rating id="2500" OD="116.0" ID="106.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="138.0" ID="128.6" depth="5.0" />
+        <Rating id="300" OD="138.0" ID="128.6" depth="5.0" />
+        <Rating id="400" OD="138.0" ID="128.6" depth="5.0" />
+        <Rating id="600" OD="138.0" ID="128.6" depth="5.0" />
+        <Rating id="900" OD="138.0" ID="128.6" depth="5.0" />
+        <Rating id="1500" OD="138.0" ID="128.6" depth="5.0" />
+        <Rating id="2500" OD="138.0" ID="128.6" depth="5.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="151.0" ID="141.3" depth="5.0" />
+        <Rating id="300" OD="151.0" ID="141.3" depth="5.0" />
+        <Rating id="400" OD="151.0" ID="141.3" depth="5.0" />
+        <Rating id="600" OD="151.0" ID="141.3" depth="5.0" />
+        <Rating id="900" OD="151.0" ID="141.3" depth="5.0" />
+        <Rating id="1500" OD="151.0" ID="141.3" depth="5.0" />
+        <Rating id="2500" OD="151.0" ID="141.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="168.0" ID="158.8" depth="5.0" />
+        <Rating id="300" OD="168.0" ID="158.8" depth="5.0" />
+        <Rating id="400" OD="168.0" ID="158.8" depth="5.0" />
+        <Rating id="600" OD="168.0" ID="158.8" depth="5.0" />
+        <Rating id="900" OD="168.0" ID="158.8" depth="5.0" />
+        <Rating id="1500" OD="168.0" ID="158.8" depth="5.0" />
+        <Rating id="2500" OD="168.0" ID="158.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="197.0" ID="187.3" depth="5.0" />
+        <Rating id="300" OD="197.0" ID="187.3" depth="5.0" />
+        <Rating id="400" OD="197.0" ID="187.3" depth="5.0" />
+        <Rating id="600" OD="197.0" ID="187.3" depth="5.0" />
+        <Rating id="900" OD="197.0" ID="187.3" depth="5.0" />
+        <Rating id="1500" OD="197.0" ID="187.3" depth="5.0" />
+        <Rating id="2500" OD="197.0" ID="187.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="227.0" ID="217.5" depth="5.0" />
+        <Rating id="300" OD="227.0" ID="217.5" depth="5.0" />
+        <Rating id="400" OD="227.0" ID="217.5" depth="5.0" />
+        <Rating id="600" OD="227.0" ID="217.5" depth="5.0" />
+        <Rating id="900" OD="227.0" ID="217.5" depth="5.0" />
+        <Rating id="1500" OD="227.0" ID="217.5" depth="5.0" />
+        <Rating id="2500" OD="227.0" ID="217.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="281.0" ID="271.5" depth="5.0" />
+        <Rating id="300" OD="281.0" ID="271.5" depth="5.0" />
+        <Rating id="400" OD="281.0" ID="271.5" depth="5.0" />
+        <Rating id="600" OD="281.0" ID="271.5" depth="5.0" />
+        <Rating id="900" OD="281.0" ID="271.5" depth="5.0" />
+        <Rating id="1500" OD="281.0" ID="271.5" depth="5.0" />
+        <Rating id="2500" OD="281.0" ID="271.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="335.0" ID="325.4" depth="5.0" />
+        <Rating id="300" OD="335.0" ID="325.4" depth="5.0" />
+        <Rating id="400" OD="335.0" ID="325.4" depth="5.0" />
+        <Rating id="600" OD="335.0" ID="325.4" depth="5.0" />
+        <Rating id="900" OD="335.0" ID="325.4" depth="5.0" />
+        <Rating id="1500" OD="335.0" ID="325.4" depth="5.0" />
+        <Rating id="2500" OD="335.0" ID="325.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="392.0" ID="382.6" depth="5.0" />
+        <Rating id="300" OD="392.0" ID="382.6" depth="5.0" />
+        <Rating id="400" OD="392.0" ID="382.6" depth="5.0" />
+        <Rating id="600" OD="392.0" ID="382.6" depth="5.0" />
+        <Rating id="900" OD="392.0" ID="382.6" depth="5.0" />
+        <Rating id="1500" OD="392.0" ID="382.6" depth="5.0" />
+        <Rating id="2500" OD="392.0" ID="382.6" depth="5.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="424.0" ID="414.3" depth="5.0" />
+        <Rating id="300" OD="424.0" ID="414.3" depth="5.0" />
+        <Rating id="400" OD="424.0" ID="414.3" depth="5.0" />
+        <Rating id="600" OD="424.0" ID="414.3" depth="5.0" />
+        <Rating id="900" OD="424.0" ID="414.3" depth="5.0" />
+        <Rating id="1500" OD="424.0" ID="414.3" depth="5.0" />
+        <Rating id="2500" OD="424.0" ID="414.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="481.0" ID="471.5" depth="5.0" />
+        <Rating id="300" OD="481.0" ID="471.5" depth="5.0" />
+        <Rating id="400" OD="481.0" ID="471.5" depth="5.0" />
+        <Rating id="600" OD="481.0" ID="471.5" depth="5.0" />
+        <Rating id="900" OD="481.0" ID="471.5" depth="5.0" />
+        <Rating id="1500" OD="481.0" ID="471.5" depth="5.0" />
+        <Rating id="2500" OD="481.0" ID="471.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="534.9" ID="535.0" depth="5.0" />
+        <Rating id="300" OD="534.9" ID="535.0" depth="5.0" />
+        <Rating id="400" OD="534.9" ID="535.0" depth="5.0" />
+        <Rating id="600" OD="534.9" ID="535.0" depth="5.0" />
+        <Rating id="900" OD="534.9" ID="535.0" depth="5.0" />
+        <Rating id="1500" OD="534.9" ID="535.0" depth="5.0" />
+        <Rating id="2500" OD="534.9" ID="535.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="595.0" ID="585.8" depth="5.0" />
+        <Rating id="300" OD="595.0" ID="585.8" depth="5.0" />
+        <Rating id="400" OD="595.0" ID="585.8" depth="5.0" />
+        <Rating id="600" OD="595.0" ID="585.8" depth="5.0" />
+        <Rating id="900" OD="595.0" ID="585.8" depth="5.0" />
+        <Rating id="1500" OD="595.0" ID="585.8" depth="5.0" />
+        <Rating id="2500" OD="595.0" ID="585.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="703.0" ID="693.7" depth="5.0" />
+        <Rating id="300" OD="703.0" ID="693.7" depth="5.0" />
+        <Rating id="400" OD="703.0" ID="693.7" depth="5.0" />
+        <Rating id="600" OD="703.0" ID="693.7" depth="5.0" />
+        <Rating id="900" OD="703.0" ID="693.7" depth="5.0" />
+        <Rating id="1500" OD="703.0" ID="693.7" depth="5.0" />
+        <Rating id="2500" OD="703.0" ID="693.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="737.9" ID="728.7" depth="5.0" />
+        <Rating id="150" OD="760.1" ID="750.9" depth="5.0" />
+        <Rating id="300" OD="760.1" ID="750.9" depth="5.0" />
+        <Rating id="400" OD="760.1" ID="750.9" depth="5.0" />
+        <Rating id="600" OD="760.1" ID="750.9" depth="5.0" />
+        <Rating id="900" OD="760.1" ID="750.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="788.7" ID="779.5" depth="5.0" />
+        <Rating id="150" OD="810.9" ID="801.7" depth="5.0" />
+        <Rating id="300" OD="810.9" ID="801.7" depth="5.0" />
+        <Rating id="400" OD="810.9" ID="801.7" depth="5.0" />
+        <Rating id="600" OD="810.9" ID="801.7" depth="5.0" />
+        <Rating id="900" OD="810.9" ID="801.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="839.5" ID="830.3" depth="5.0" />
+        <Rating id="150" OD="868.1" ID="858.9" depth="5.0" />
+        <Rating id="300" OD="868.1" ID="858.9" depth="5.0" />
+        <Rating id="400" OD="868.1" ID="858.9" depth="5.0" />
+        <Rating id="600" OD="868.1" ID="858.9" depth="5.0" />
+        <Rating id="900" OD="868.1" ID="858.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="899.8" ID="890.6" depth="5.0" />
+        <Rating id="150" OD="925.2" ID="916.0" depth="5.0" />
+        <Rating id="300" OD="925.2" ID="916.0" depth="5.0" />
+        <Rating id="400" OD="925.2" ID="916.0" depth="5.0" />
+        <Rating id="600" OD="925.2" ID="916.0" depth="5.0" />
+        <Rating id="900" OD="925.2" ID="916.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="950.6" ID="941.4" depth="5.0" />
+        <Rating id="150" OD="976.0" ID="966.8" depth="5.0" />
+        <Rating id="300" OD="976.0" ID="966.8" depth="5.0" />
+        <Rating id="400" OD="976.0" ID="966.8" depth="5.0" />
+        <Rating id="600" OD="976.0" ID="966.8" depth="5.0" />
+        <Rating id="900" OD="976.0" ID="966.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="1001.4" ID="992.2" depth="5.0" />
+        <Rating id="150" OD="1033.2" ID="1024.0" depth="5.0" />
+        <Rating id="300" OD="1033.2" ID="1024.0" depth="5.0" />
+        <Rating id="400" OD="1033.2" ID="1024.0" depth="5.0" />
+        <Rating id="600" OD="1033.2" ID="1024.0" depth="5.0" />
+        <Rating id="900" OD="1033.2" ID="1024.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1084.0" ID="1074.8" depth="5.0" />
+        <Rating id="300" OD="1039.5" ID="1030.3" depth="5.0" />
+        <Rating id="400" OD="1045.9" ID="1036.7" depth="5.0" />
+        <Rating id="600" OD="1064.9" ID="1055.7" depth="5.0" />
+        <Rating id="900" OD="1109.4" ID="1100.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1134.8" ID="1125.6" depth="5.0" />
+        <Rating id="300" OD="1096.7" ID="1087.5" depth="5.0" />
+        <Rating id="400" OD="1103.0" ID="1093.8" depth="5.0" />
+        <Rating id="600" OD="1122.1" ID="1112.9" depth="5.0" />
+        <Rating id="900" OD="1172.9" ID="1163.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1166.5" ID="1157.3" depth="5.0" />
+        <Rating id="150" OD="1204.6" ID="1195.4" depth="5.0" />
+        <Rating id="300" OD="1147.5" ID="1138.3" depth="5.0" />
+        <Rating id="400" OD="1153.8" ID="1144.6" depth="5.0" />
+        <Rating id="600" OD="1179.2" ID="1170.0" depth="5.0" />
+        <Rating id="900" OD="1223.7" ID="1214.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1255.4" ID="1246.2" depth="5.0" />
+        <Rating id="300" OD="1204.6" ID="1195.4" depth="5.0" />
+        <Rating id="400" OD="1211.0" ID="1201.8" depth="5.0" />
+        <Rating id="600" OD="1236.4" ID="1227.2" depth="5.0" />
+        <Rating id="900" OD="1280.8" ID="1271.6" depth="5.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1306.2" ID="1297.0" depth="5.0" />
+        <Rating id="300" OD="1255.4" ID="1246.2" depth="5.0" />
+        <Rating id="400" OD="1268.1" ID="1258.9" depth="5.0" />
+        <Rating id="600" OD="1287.2" ID="1278.0" depth="5.0" />
+        <Rating id="900" OD="1344.3" ID="1335.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1318.9" ID="1309.7" depth="5.0" />
+        <Rating id="150" OD="1369.7" ID="1360.5" depth="5.0" />
+        <Rating id="300" OD="1312.6" ID="1303.4" depth="5.0" />
+        <Rating id="400" OD="1318.9" ID="1309.7" depth="5.0" />
+        <Rating id="600" OD="1344.3" ID="1335.1" depth="5.0" />
+        <Rating id="900" OD="1395.1" ID="1385.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1420.5" ID="1411.3" depth="5.0" />
+        <Rating id="300" OD="1369.7" ID="1360.5" depth="5.0" />
+        <Rating id="400" OD="1372.7" ID="1363.5" depth="5.0" />
+        <Rating id="600" OD="1395.1" ID="1385.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1471.3" ID="1462.1" depth="5.0" />
+        <Rating id="300" OD="1420.5" ID="1411.3" depth="5.0" />
+        <Rating id="400" OD="1423.5" ID="1414.3" depth="5.0" />
+        <Rating id="600" OD="1445.9" ID="1436.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1477.7" ID="1468.5" depth="5.0" />
+        <Rating id="150" OD="1522.1" ID="1512.9" depth="5.0" />
+        <Rating id="300" OD="1477.7" ID="1468.5" depth="5.0" />
+        <Rating id="400" OD="1481.0" ID="1471.8" depth="5.0" />
+        <Rating id="600" OD="1503.1" ID="1493.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1585.6" ID="1576.4" depth="5.0" />
+        <Rating id="300" OD="1528.5" ID="1519.3" depth="5.0" />
+        <Rating id="400" OD="1537.8" ID="1528.6" depth="5.0" />
+        <Rating id="600" OD="1553.9" ID="1544.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1636.4" ID="1627.2" depth="5.0" />
+        <Rating id="300" OD="1585.6" ID="1576.4" depth="5.0" />
+        <Rating id="400" OD="1588.6" ID="1579.4" depth="5.0" />
+        <Rating id="600" OD="1611.0" ID="1601.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1630.1" ID="1620.9" depth="5.0" />
+        <Rating id="150" OD="1687.2" ID="1678.0" depth="5.0" />
+        <Rating id="300" OD="1636.4" ID="1627.2" depth="5.0" />
+        <Rating id="400" OD="1646.1" ID="1636.9" depth="5.0" />
+        <Rating id="600" OD="1668.2" ID="1659.0" depth="5.0" />
+      </Facing>
+    </LargeFemaleFacings>
+    <SmallFemaleFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="44.0" ID="19.9" depth="5.0" />
+        <Rating id="300" OD="44.0" ID="19.9" depth="5.0" />
+        <Rating id="400" OD="44.0" ID="19.9" depth="5.0" />
+        <Rating id="600" OD="44.0" ID="19.9" depth="5.0" />
+        <Rating id="900" OD="44.0" ID="19.9" depth="5.0" />
+        <Rating id="1500" OD="44.0" ID="19.9" depth="5.0" />
+        <Rating id="2500" OD="44.0" ID="19.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="52.0" ID="25.4" depth="5.0" />
+        <Rating id="300" OD="52.0" ID="25.4" depth="5.0" />
+        <Rating id="400" OD="52.0" ID="25.4" depth="5.0" />
+        <Rating id="600" OD="52.0" ID="25.4" depth="5.0" />
+        <Rating id="900" OD="52.0" ID="25.4" depth="5.0" />
+        <Rating id="1500" OD="52.0" ID="25.4" depth="5.0" />
+        <Rating id="2500" OD="52.0" ID="25.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="57.0" ID="31.8" depth="5.0" />
+        <Rating id="300" OD="57.0" ID="31.8" depth="5.0" />
+        <Rating id="400" OD="57.0" ID="31.8" depth="5.0" />
+        <Rating id="600" OD="57.0" ID="31.8" depth="5.0" />
+        <Rating id="900" OD="57.0" ID="31.8" depth="5.0" />
+        <Rating id="1500" OD="57.0" ID="31.8" depth="5.0" />
+        <Rating id="2500" OD="57.0" ID="31.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="67.0" ID="39.7" depth="5.0" />
+        <Rating id="300" OD="67.0" ID="39.7" depth="5.0" />
+        <Rating id="400" OD="67.0" ID="39.7" depth="5.0" />
+        <Rating id="600" OD="67.0" ID="39.7" depth="5.0" />
+        <Rating id="900" OD="67.0" ID="39.7" depth="5.0" />
+        <Rating id="1500" OD="67.0" ID="39.7" depth="5.0" />
+        <Rating id="2500" OD="67.0" ID="39.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="73.0" ID="46.0" depth="5.0" />
+        <Rating id="300" OD="73.0" ID="46.0" depth="5.0" />
+        <Rating id="400" OD="73.0" ID="46.0" depth="5.0" />
+        <Rating id="600" OD="73.0" ID="46.0" depth="5.0" />
+        <Rating id="900" OD="73.0" ID="46.0" depth="5.0" />
+        <Rating id="1500" OD="73.0" ID="46.0" depth="5.0" />
+        <Rating id="2500" OD="73.0" ID="46.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="92.0" ID="58.8" depth="5.0" />
+        <Rating id="300" OD="92.0" ID="58.8" depth="5.0" />
+        <Rating id="400" OD="92.0" ID="58.8" depth="5.0" />
+        <Rating id="600" OD="92.0" ID="58.8" depth="5.0" />
+        <Rating id="900" OD="92.0" ID="58.8" depth="5.0" />
+        <Rating id="1500" OD="92.0" ID="58.8" depth="5.0" />
+        <Rating id="2500" OD="92.0" ID="58.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="105.0" ID="69.8" depth="5.0" />
+        <Rating id="300" OD="105.0" ID="69.8" depth="5.0" />
+        <Rating id="400" OD="105.0" ID="69.8" depth="5.0" />
+        <Rating id="600" OD="105.0" ID="69.8" depth="5.0" />
+        <Rating id="900" OD="105.0" ID="69.8" depth="5.0" />
+        <Rating id="1500" OD="105.0" ID="69.8" depth="5.0" />
+        <Rating id="2500" OD="105.0" ID="69.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="127.0" ID="85.7" depth="5.0" />
+        <Rating id="300" OD="127.0" ID="85.7" depth="5.0" />
+        <Rating id="400" OD="127.0" ID="85.7" depth="5.0" />
+        <Rating id="600" OD="127.0" ID="85.7" depth="5.0" />
+        <Rating id="900" OD="127.0" ID="85.7" depth="5.0" />
+        <Rating id="1500" OD="127.0" ID="85.7" depth="5.0" />
+        <Rating id="2500" OD="127.0" ID="85.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="140.0" ID="98.4" depth="5.0" />
+        <Rating id="300" OD="140.0" ID="98.4" depth="5.0" />
+        <Rating id="400" OD="140.0" ID="98.4" depth="5.0" />
+        <Rating id="600" OD="140.0" ID="98.4" depth="5.0" />
+        <Rating id="900" OD="140.0" ID="98.4" depth="5.0" />
+        <Rating id="1500" OD="140.0" ID="98.4" depth="5.0" />
+        <Rating id="2500" OD="140.0" ID="98.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="157.0" ID="111.1" depth="5.0" />
+        <Rating id="300" OD="157.0" ID="111.1" depth="5.0" />
+        <Rating id="400" OD="157.0" ID="111.1" depth="5.0" />
+        <Rating id="600" OD="157.0" ID="111.1" depth="5.0" />
+        <Rating id="900" OD="157.0" ID="111.1" depth="5.0" />
+        <Rating id="1500" OD="157.0" ID="111.1" depth="5.0" />
+        <Rating id="2500" OD="157.0" ID="111.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="186.0" ID="138.1" depth="5.0" />
+        <Rating id="300" OD="186.0" ID="138.1" depth="5.0" />
+        <Rating id="400" OD="186.0" ID="138.1" depth="5.0" />
+        <Rating id="600" OD="186.0" ID="138.1" depth="5.0" />
+        <Rating id="900" OD="186.0" ID="138.1" depth="5.0" />
+        <Rating id="1500" OD="186.0" ID="138.1" depth="5.0" />
+        <Rating id="2500" OD="186.0" ID="138.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="216.0" ID="163.5" depth="5.0" />
+        <Rating id="300" OD="216.0" ID="163.5" depth="5.0" />
+        <Rating id="400" OD="216.0" ID="163.5" depth="5.0" />
+        <Rating id="600" OD="216.0" ID="163.5" depth="5.0" />
+        <Rating id="900" OD="216.0" ID="163.5" depth="5.0" />
+        <Rating id="1500" OD="216.0" ID="163.5" depth="5.0" />
+        <Rating id="2500" OD="216.0" ID="163.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="270.0" ID="214.3" depth="5.0" />
+        <Rating id="300" OD="270.0" ID="214.3" depth="5.0" />
+        <Rating id="400" OD="270.0" ID="214.3" depth="5.0" />
+        <Rating id="600" OD="270.0" ID="214.3" depth="5.0" />
+        <Rating id="900" OD="270.0" ID="214.3" depth="5.0" />
+        <Rating id="1500" OD="270.0" ID="214.3" depth="5.0" />
+        <Rating id="2500" OD="270.0" ID="214.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="324.0" ID="268.3" depth="5.0" />
+        <Rating id="300" OD="324.0" ID="268.3" depth="5.0" />
+        <Rating id="400" OD="324.0" ID="268.3" depth="5.0" />
+        <Rating id="600" OD="324.0" ID="268.3" depth="5.0" />
+        <Rating id="900" OD="324.0" ID="268.3" depth="5.0" />
+        <Rating id="1500" OD="324.0" ID="268.3" depth="5.0" />
+        <Rating id="2500" OD="324.0" ID="268.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="381.0" ID="319.1" depth="5.0" />
+        <Rating id="300" OD="381.0" ID="319.1" depth="5.0" />
+        <Rating id="400" OD="381.0" ID="319.1" depth="5.0" />
+        <Rating id="600" OD="381.0" ID="319.1" depth="5.0" />
+        <Rating id="900" OD="381.0" ID="319.1" depth="5.0" />
+        <Rating id="1500" OD="381.0" ID="319.1" depth="5.0" />
+        <Rating id="2500" OD="381.0" ID="319.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="413.0" ID="350.8" depth="5.0" />
+        <Rating id="300" OD="413.0" ID="350.8" depth="5.0" />
+        <Rating id="400" OD="413.0" ID="350.8" depth="5.0" />
+        <Rating id="600" OD="413.0" ID="350.8" depth="5.0" />
+        <Rating id="900" OD="413.0" ID="350.8" depth="5.0" />
+        <Rating id="1500" OD="413.0" ID="350.8" depth="5.0" />
+        <Rating id="2500" OD="413.0" ID="350.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="470.0" ID="401.6" depth="5.0" />
+        <Rating id="300" OD="470.0" ID="401.6" depth="5.0" />
+        <Rating id="400" OD="470.0" ID="401.6" depth="5.0" />
+        <Rating id="600" OD="470.0" ID="401.6" depth="5.0" />
+        <Rating id="900" OD="470.0" ID="401.6" depth="5.0" />
+        <Rating id="1500" OD="470.0" ID="401.6" depth="5.0" />
+        <Rating id="2500" OD="470.0" ID="401.6" depth="5.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="533.0" ID="452.4" depth="5.0" />
+        <Rating id="300" OD="533.0" ID="452.4" depth="5.0" />
+        <Rating id="400" OD="533.0" ID="452.4" depth="5.0" />
+        <Rating id="600" OD="533.0" ID="452.4" depth="5.0" />
+        <Rating id="900" OD="533.0" ID="452.4" depth="5.0" />
+        <Rating id="1500" OD="533.0" ID="452.4" depth="5.0" />
+        <Rating id="2500" OD="533.0" ID="452.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="584.0" ID="503.2" depth="5.0" />
+        <Rating id="300" OD="584.0" ID="503.2" depth="5.0" />
+        <Rating id="400" OD="584.0" ID="503.2" depth="5.0" />
+        <Rating id="600" OD="584.0" ID="503.2" depth="5.0" />
+        <Rating id="900" OD="584.0" ID="503.2" depth="5.0" />
+        <Rating id="1500" OD="584.0" ID="503.2" depth="5.0" />
+        <Rating id="2500" OD="584.0" ID="503.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="692.0" ID="604.8" depth="5.0" />
+        <Rating id="300" OD="692.0" ID="604.8" depth="5.0" />
+        <Rating id="400" OD="692.0" ID="604.8" depth="5.0" />
+        <Rating id="600" OD="692.0" ID="604.8" depth="5.0" />
+        <Rating id="900" OD="692.0" ID="604.8" depth="5.0" />
+        <Rating id="1500" OD="692.0" ID="604.8" depth="5.0" />
+        <Rating id="2500" OD="692.0" ID="604.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="727.1" ID="655.7" depth="5.0" />
+        <Rating id="150" OD="749.3" ID="655.7" depth="5.0" />
+        <Rating id="300" OD="749.3" ID="655.7" depth="5.0" />
+        <Rating id="400" OD="749.3" ID="655.7" depth="5.0" />
+        <Rating id="600" OD="749.3" ID="655.7" depth="5.0" />
+        <Rating id="900" OD="749.3" ID="655.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="777.9" ID="706.5" depth="5.0" />
+        <Rating id="150" OD="800.1" ID="706.5" depth="5.0" />
+        <Rating id="300" OD="800.1" ID="706.5" depth="5.0" />
+        <Rating id="400" OD="800.1" ID="706.5" depth="5.0" />
+        <Rating id="600" OD="800.1" ID="706.5" depth="5.0" />
+        <Rating id="900" OD="800.1" ID="706.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="828.7" ID="757.3" depth="5.0" />
+        <Rating id="150" OD="857.3" ID="757.3" depth="5.0" />
+        <Rating id="300" OD="857.3" ID="757.3" depth="5.0" />
+        <Rating id="400" OD="857.3" ID="757.3" depth="5.0" />
+        <Rating id="600" OD="857.3" ID="757.3" depth="5.0" />
+        <Rating id="900" OD="857.3" ID="757.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="889.0" ID="808.1" depth="5.0" />
+        <Rating id="150" OD="914.4" ID="808.1" depth="5.0" />
+        <Rating id="300" OD="914.4" ID="808.1" depth="5.0" />
+        <Rating id="400" OD="914.4" ID="808.1" depth="5.0" />
+        <Rating id="600" OD="914.4" ID="808.1" depth="5.0" />
+        <Rating id="900" OD="914.4" ID="808.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="939.8" ID="858.9" depth="5.0" />
+        <Rating id="150" OD="965.2" ID="858.9" depth="5.0" />
+        <Rating id="300" OD="965.2" ID="858.9" depth="5.0" />
+        <Rating id="400" OD="965.2" ID="858.9" depth="5.0" />
+        <Rating id="600" OD="965.2" ID="858.9" depth="5.0" />
+        <Rating id="900" OD="965.2" ID="858.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="990.6" ID="909.7" depth="5.0" />
+        <Rating id="150" OD="1022.4" ID="909.7" depth="5.0" />
+        <Rating id="300" OD="1022.4" ID="909.7" depth="5.0" />
+        <Rating id="400" OD="1022.4" ID="909.7" depth="5.0" />
+        <Rating id="600" OD="1022.4" ID="909.7" depth="5.0" />
+        <Rating id="900" OD="1022.4" ID="909.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1073.2" ID="960.5" depth="5.0" />
+        <Rating id="300" OD="1028.7" ID="960.5" depth="5.0" />
+        <Rating id="400" OD="1035.1" ID="960.5" depth="5.0" />
+        <Rating id="600" OD="1054.1" ID="960.5" depth="5.0" />
+        <Rating id="900" OD="1098.6" ID="960.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1124.0" ID="1011.3" depth="5.0" />
+        <Rating id="300" OD="1085.9" ID="1011.3" depth="5.0" />
+        <Rating id="400" OD="1092.2" ID="1011.3" depth="5.0" />
+        <Rating id="600" OD="1111.3" ID="1011.3" depth="5.0" />
+        <Rating id="900" OD="1162.1" ID="1011.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1155.7" ID="1062.1" depth="5.0" />
+        <Rating id="150" OD="1193.8" ID="1062.1" depth="5.0" />
+        <Rating id="300" OD="1136.7" ID="1062.1" depth="5.0" />
+        <Rating id="400" OD="1143.0" ID="1062.1" depth="5.0" />
+        <Rating id="600" OD="1168.4" ID="1062.1" depth="5.0" />
+        <Rating id="900" OD="1212.9" ID="1062.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1244.6" ID="1112.9" depth="5.0" />
+        <Rating id="300" OD="1193.8" ID="1112.9" depth="5.0" />
+        <Rating id="400" OD="1200.2" ID="1112.9" depth="5.0" />
+        <Rating id="600" OD="1225.6" ID="1112.9" depth="5.0" />
+        <Rating id="900" OD="1270.0" ID="1112.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1295.4" ID="1163.7" depth="5.0" />
+        <Rating id="300" OD="1244.6" ID="1163.7" depth="5.0" />
+        <Rating id="400" OD="1257.3" ID="1163.7" depth="5.0" />
+        <Rating id="600" OD="1276.4" ID="1163.7" depth="5.0" />
+        <Rating id="900" OD="1333.5" ID="1163.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1308.1" ID="1214.5" depth="5.0" />
+        <Rating id="150" OD="1358.9" ID="1214.5" depth="5.0" />
+        <Rating id="300" OD="1301.8" ID="1214.5" depth="5.0" />
+        <Rating id="400" OD="1308.1" ID="1214.5" depth="5.0" />
+        <Rating id="600" OD="1333.5" ID="1214.5" depth="5.0" />
+        <Rating id="900" OD="1384.3" ID="1214.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1409.7" ID="1265.3" depth="5.0" />
+        <Rating id="300" OD="1358.9" ID="1265.3" depth="5.0" />
+        <Rating id="400" OD="1361.9" ID="1265.3" depth="5.0" />
+        <Rating id="600" OD="1384.3" ID="1265.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1460.5" ID="1316.1" depth="5.0" />
+        <Rating id="300" OD="1409.7" ID="1316.1" depth="5.0" />
+        <Rating id="400" OD="1412.7" ID="1316.1" depth="5.0" />
+        <Rating id="600" OD="1435.1" ID="1316.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1466.9" ID="1360.5" depth="5.0" />
+        <Rating id="150" OD="1511.3" ID="1360.5" depth="5.0" />
+        <Rating id="300" OD="1466.9" ID="1360.5" depth="5.0" />
+        <Rating id="400" OD="1470.2" ID="1360.5" depth="5.0" />
+        <Rating id="600" OD="1492.3" ID="1360.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1574.8" ID="1411.3" depth="5.0" />
+        <Rating id="300" OD="1517.7" ID="1411.3" depth="5.0" />
+        <Rating id="400" OD="1527.0" ID="1411.3" depth="5.0" />
+        <Rating id="600" OD="1543.1" ID="1411.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1625.6" ID="1462.1" depth="5.0" />
+        <Rating id="300" OD="1574.8" ID="1462.1" depth="5.0" />
+        <Rating id="400" OD="1577.8" ID="1462.1" depth="5.0" />
+        <Rating id="600" OD="1600.2" ID="1462.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1619.3" ID="1512.9" depth="5.0" />
+        <Rating id="150" OD="1676.4" ID="1512.9" depth="5.0" />
+        <Rating id="300" OD="1625.6" ID="1512.9" depth="5.0" />
+        <Rating id="400" OD="1635.3" ID="1512.9" depth="5.0" />
+        <Rating id="600" OD="1657.4" ID="1512.9" depth="5.0" />
+      </Facing>
+    </SmallFemaleFacings>
+    <LargeTongueFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="300" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="400" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="600" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="900" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="1500" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="2500" OD="35.1" ID="25.4" height="7.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="300" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="400" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="600" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="900" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="1500" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="2500" OD="42.9" ID="33.3" height="7.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="50.8" ID="38.1" height="7.0" />
+        <Rating id="300" OD="50.8" ID="38.1" height="7.0" />
+        <Rating id="400" OD="50.8" ID="38.1" height="7.0" />
+        <Rating id="600" OD="50.8" ID="38.1" height="7.0" />
+        <Rating id="900" OD="50.8" ID="38.1" height="7.0" />
+        <Rating id="1500" OD="50.8" ID="38.1" height="7.0" />
+        <Rating id="2500" OD="50.8" ID="38.1" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="63.5" ID="47.8" height="7.0" />
+        <Rating id="300" OD="63.5" ID="47.8" height="7.0" />
+        <Rating id="400" OD="63.5" ID="47.8" height="7.0" />
+        <Rating id="600" OD="63.5" ID="47.8" height="7.0" />
+        <Rating id="900" OD="63.5" ID="47.8" height="7.0" />
+        <Rating id="1500" OD="63.5" ID="47.8" height="7.0" />
+        <Rating id="2500" OD="63.5" ID="47.8" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="73.0" ID="53.8" height="7.0" />
+        <Rating id="300" OD="73.0" ID="53.8" height="7.0" />
+        <Rating id="400" OD="73.0" ID="53.8" height="7.0" />
+        <Rating id="600" OD="73.0" ID="53.8" height="7.0" />
+        <Rating id="900" OD="73.0" ID="53.8" height="7.0" />
+        <Rating id="1500" OD="73.0" ID="53.8" height="7.0" />
+        <Rating id="2500" OD="73.0" ID="53.8" height="7.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="91.9" ID="73.2" height="7.0" />
+        <Rating id="300" OD="91.9" ID="73.2" height="7.0" />
+        <Rating id="400" OD="91.9" ID="73.2" height="7.0" />
+        <Rating id="600" OD="91.9" ID="73.2" height="7.0" />
+        <Rating id="900" OD="91.9" ID="73.2" height="7.0" />
+        <Rating id="1500" OD="91.9" ID="73.2" height="7.0" />
+        <Rating id="2500" OD="91.9" ID="73.2" height="7.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="104.6" ID="85.9" height="7.0" />
+        <Rating id="300" OD="104.6" ID="85.9" height="7.0" />
+        <Rating id="400" OD="104.6" ID="85.9" height="7.0" />
+        <Rating id="600" OD="104.6" ID="85.9" height="7.0" />
+        <Rating id="900" OD="104.6" ID="85.9" height="7.0" />
+        <Rating id="1500" OD="104.6" ID="85.9" height="7.0" />
+        <Rating id="2500" OD="104.6" ID="85.9" height="7.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="127.0" ID="108.0" height="7.0" />
+        <Rating id="300" OD="127.0" ID="108.0" height="7.0" />
+        <Rating id="400" OD="127.0" ID="108.0" height="7.0" />
+        <Rating id="600" OD="127.0" ID="108.0" height="7.0" />
+        <Rating id="900" OD="127.0" ID="108.0" height="7.0" />
+        <Rating id="1500" OD="127.0" ID="108.0" height="7.0" />
+        <Rating id="2500" OD="127.0" ID="108.0" height="7.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="139.7" ID="120.6" height="7.0" />
+        <Rating id="300" OD="139.7" ID="120.6" height="7.0" />
+        <Rating id="400" OD="139.7" ID="120.6" height="7.0" />
+        <Rating id="600" OD="139.7" ID="120.6" height="7.0" />
+        <Rating id="900" OD="139.7" ID="120.6" height="7.0" />
+        <Rating id="1500" OD="139.7" ID="120.6" height="7.0" />
+        <Rating id="2500" OD="139.7" ID="120.6" height="7.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="157.2" ID="131.8" height="7.0" />
+        <Rating id="300" OD="157.2" ID="131.8" height="7.0" />
+        <Rating id="400" OD="157.2" ID="131.8" height="7.0" />
+        <Rating id="600" OD="157.2" ID="131.8" height="7.0" />
+        <Rating id="900" OD="157.2" ID="131.8" height="7.0" />
+        <Rating id="1500" OD="157.2" ID="131.8" height="7.0" />
+        <Rating id="2500" OD="157.2" ID="131.8" height="7.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="185.7" ID="160.3" height="7.0" />
+        <Rating id="300" OD="185.7" ID="160.3" height="7.0" />
+        <Rating id="400" OD="185.7" ID="160.3" height="7.0" />
+        <Rating id="600" OD="185.7" ID="160.3" height="7.0" />
+        <Rating id="900" OD="185.7" ID="160.3" height="7.0" />
+        <Rating id="1500" OD="185.7" ID="160.3" height="7.0" />
+        <Rating id="2500" OD="185.7" ID="160.3" height="7.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="215.9" ID="190.5" height="7.0" />
+        <Rating id="300" OD="215.9" ID="190.5" height="7.0" />
+        <Rating id="400" OD="215.9" ID="190.5" height="7.0" />
+        <Rating id="600" OD="215.9" ID="190.5" height="7.0" />
+        <Rating id="900" OD="215.9" ID="190.5" height="7.0" />
+        <Rating id="1500" OD="215.9" ID="190.5" height="7.0" />
+        <Rating id="2500" OD="215.9" ID="190.5" height="7.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="269.7" ID="238.3" height="7.0" />
+        <Rating id="300" OD="269.7" ID="238.3" height="7.0" />
+        <Rating id="400" OD="269.7" ID="238.3" height="7.0" />
+        <Rating id="600" OD="269.7" ID="238.3" height="7.0" />
+        <Rating id="900" OD="269.7" ID="238.3" height="7.0" />
+        <Rating id="1500" OD="269.7" ID="238.3" height="7.0" />
+        <Rating id="2500" OD="269.7" ID="238.3" height="7.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="323.8" ID="285.8" height="7.0" />
+        <Rating id="300" OD="323.8" ID="285.8" height="7.0" />
+        <Rating id="400" OD="323.8" ID="285.8" height="7.0" />
+        <Rating id="600" OD="323.8" ID="285.8" height="7.0" />
+        <Rating id="900" OD="323.8" ID="285.8" height="7.0" />
+        <Rating id="1500" OD="323.8" ID="285.8" height="7.0" />
+        <Rating id="2500" OD="323.8" ID="285.8" height="7.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="381.0" ID="342.9" height="7.0" />
+        <Rating id="300" OD="381.0" ID="342.9" height="7.0" />
+        <Rating id="400" OD="381.0" ID="342.9" height="7.0" />
+        <Rating id="600" OD="381.0" ID="342.9" height="7.0" />
+        <Rating id="900" OD="381.0" ID="342.9" height="7.0" />
+        <Rating id="1500" OD="381.0" ID="342.9" height="7.0" />
+        <Rating id="2500" OD="381.0" ID="342.9" height="7.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="412.8" ID="374.6" height="7.0" />
+        <Rating id="300" OD="412.8" ID="374.6" height="7.0" />
+        <Rating id="400" OD="412.8" ID="374.6" height="7.0" />
+        <Rating id="600" OD="412.8" ID="374.6" height="7.0" />
+        <Rating id="900" OD="412.8" ID="374.6" height="7.0" />
+        <Rating id="1500" OD="412.8" ID="374.6" height="7.0" />
+        <Rating id="2500" OD="412.8" ID="374.6" height="7.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="469.9" ID="425.4" height="7.0" />
+        <Rating id="300" OD="469.9" ID="425.4" height="7.0" />
+        <Rating id="400" OD="469.9" ID="425.4" height="7.0" />
+        <Rating id="600" OD="469.9" ID="425.4" height="7.0" />
+        <Rating id="900" OD="469.9" ID="425.4" height="7.0" />
+        <Rating id="1500" OD="469.9" ID="425.4" height="7.0" />
+        <Rating id="2500" OD="469.9" ID="425.4" height="7.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="533.4" ID="489.0" height="7.0" />
+        <Rating id="300" OD="533.4" ID="489.0" height="7.0" />
+        <Rating id="400" OD="533.4" ID="489.0" height="7.0" />
+        <Rating id="600" OD="533.4" ID="489.0" height="7.0" />
+        <Rating id="900" OD="533.4" ID="489.0" height="7.0" />
+        <Rating id="1500" OD="533.4" ID="489.0" height="7.0" />
+        <Rating id="2500" OD="533.4" ID="489.0" height="7.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="584.2" ID="533.4" height="7.0" />
+        <Rating id="300" OD="584.2" ID="533.4" height="7.0" />
+        <Rating id="400" OD="584.2" ID="533.4" height="7.0" />
+        <Rating id="600" OD="584.2" ID="533.4" height="7.0" />
+        <Rating id="900" OD="584.2" ID="533.4" height="7.0" />
+        <Rating id="1500" OD="584.2" ID="533.4" height="7.0" />
+        <Rating id="2500" OD="584.2" ID="533.4" height="7.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="692.2" ID="641.4" height="7.0" />
+        <Rating id="300" OD="692.2" ID="641.4" height="7.0" />
+        <Rating id="400" OD="692.2" ID="641.4" height="7.0" />
+        <Rating id="600" OD="692.2" ID="641.4" height="7.0" />
+        <Rating id="900" OD="692.2" ID="641.4" height="7.0" />
+        <Rating id="1500" OD="692.2" ID="641.4" height="7.0" />
+        <Rating id="2500" OD="692.2" ID="641.4" height="7.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="727.1" ID="676.3" height="7.0" />
+        <Rating id="150" OD="749.3" ID="698.5" height="7.0" />
+        <Rating id="300" OD="749.3" ID="698.5" height="7.0" />
+        <Rating id="400" OD="749.3" ID="698.5" height="7.0" />
+        <Rating id="600" OD="749.3" ID="698.5" height="7.0" />
+        <Rating id="900" OD="749.3" ID="698.5" height="7.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="777.9" ID="727.1" height="7.0" />
+        <Rating id="150" OD="800.1" ID="749.3" height="7.0" />
+        <Rating id="300" OD="800.1" ID="749.3" height="7.0" />
+        <Rating id="400" OD="800.1" ID="749.3" height="7.0" />
+        <Rating id="600" OD="800.1" ID="749.3" height="7.0" />
+        <Rating id="900" OD="800.1" ID="749.3" height="7.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="828.7" ID="777.9" height="7.0" />
+        <Rating id="150" OD="857.3" ID="806.5" height="7.0" />
+        <Rating id="300" OD="857.3" ID="806.5" height="7.0" />
+        <Rating id="400" OD="857.3" ID="806.5" height="7.0" />
+        <Rating id="600" OD="857.3" ID="806.5" height="7.0" />
+        <Rating id="900" OD="857.3" ID="806.5" height="7.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="889.0" ID="838.2" height="7.0" />
+        <Rating id="150" OD="914.4" ID="863.6" height="7.0" />
+        <Rating id="300" OD="914.4" ID="863.6" height="7.0" />
+        <Rating id="400" OD="914.4" ID="863.6" height="7.0" />
+        <Rating id="600" OD="914.4" ID="863.6" height="7.0" />
+        <Rating id="900" OD="914.4" ID="863.6" height="7.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="939.8" ID="889.0" height="7.0" />
+        <Rating id="150" OD="965.2" ID="914.4" height="7.0" />
+        <Rating id="300" OD="965.2" ID="914.4" height="7.0" />
+        <Rating id="400" OD="965.2" ID="914.4" height="7.0" />
+        <Rating id="600" OD="965.2" ID="914.4" height="7.0" />
+        <Rating id="900" OD="965.2" ID="914.4" height="7.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="990.6" ID="939.8" height="7.0" />
+        <Rating id="150" OD="1022.4" ID="971.6" height="7.0" />
+        <Rating id="300" OD="1022.4" ID="971.6" height="7.0" />
+        <Rating id="400" OD="1022.4" ID="971.6" height="7.0" />
+        <Rating id="600" OD="1022.4" ID="971.6" height="7.0" />
+        <Rating id="900" OD="1022.4" ID="971.6" height="7.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1073.2" ID="1022.4" height="7.0" />
+        <Rating id="300" OD="1028.7" ID="977.9" height="7.0" />
+        <Rating id="400" OD="1035.1" ID="984.3" height="7.0" />
+        <Rating id="600" OD="1054.1" ID="1003.3" height="7.0" />
+        <Rating id="900" OD="1098.6" ID="1047.8" height="7.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1124.0" ID="1073.2" height="7.0" />
+        <Rating id="300" OD="1085.9" ID="1035.1" height="7.0" />
+        <Rating id="400" OD="1092.2" ID="1041.4" height="7.0" />
+        <Rating id="600" OD="1111.3" ID="1060.5" height="7.0" />
+        <Rating id="900" OD="1162.1" ID="1111.3" height="7.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1155.7" ID="1104.9" height="7.0" />
+        <Rating id="150" OD="1193.8" ID="1143.0" height="7.0" />
+        <Rating id="300" OD="1136.7" ID="1085.9" height="7.0" />
+        <Rating id="400" OD="1143.0" ID="1092.2" height="7.0" />
+        <Rating id="600" OD="1168.4" ID="1117.6" height="7.0" />
+        <Rating id="900" OD="1212.9" ID="1162.1" height="7.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1244.6" ID="1193.8" height="7.0" />
+        <Rating id="300" OD="1193.8" ID="1143.0" height="7.0" />
+        <Rating id="400" OD="1200.2" ID="1149.4" height="7.0" />
+        <Rating id="600" OD="1225.6" ID="1174.8" height="7.0" />
+        <Rating id="900" OD="1270.0" ID="1219.2" height="7.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1295.4" ID="1244.6" height="7.0" />
+        <Rating id="300" OD="1244.6" ID="1193.8" height="7.0" />
+        <Rating id="400" OD="1257.3" ID="1206.5" height="7.0" />
+        <Rating id="600" OD="1276.4" ID="1225.6" height="7.0" />
+        <Rating id="900" OD="1333.5" ID="1282.7" height="7.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1308.1" ID="1257.3" height="7.0" />
+        <Rating id="150" OD="1358.9" ID="1308.1" height="7.0" />
+        <Rating id="300" OD="1301.8" ID="1251.0" height="7.0" />
+        <Rating id="400" OD="1308.1" ID="1257.3" height="7.0" />
+        <Rating id="600" OD="1333.5" ID="1282.7" height="7.0" />
+        <Rating id="900" OD="1384.3" ID="1333.5" height="7.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1409.7" ID="1358.9" height="7.0" />
+        <Rating id="300" OD="1358.9" ID="1308.1" height="7.0" />
+        <Rating id="400" OD="1361.9" ID="1311.1" height="7.0" />
+        <Rating id="600" OD="1384.3" ID="1333.5" height="7.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1460.5" ID="1409.7" height="7.0" />
+        <Rating id="300" OD="1409.7" ID="1358.9" height="7.0" />
+        <Rating id="400" OD="1412.7" ID="1361.9" height="7.0" />
+        <Rating id="600" OD="1435.1" ID="1384.3" height="7.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1466.9" ID="1416.1" height="7.0" />
+        <Rating id="150" OD="1511.3" ID="1460.5" height="7.0" />
+        <Rating id="300" OD="1466.9" ID="1416.1" height="7.0" />
+        <Rating id="400" OD="1470.2" ID="1419.4" height="7.0" />
+        <Rating id="600" OD="1492.3" ID="1441.5" height="7.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1574.8" ID="1524.0" height="7.0" />
+        <Rating id="300" OD="1517.7" ID="1466.9" height="7.0" />
+        <Rating id="400" OD="1527.0" ID="1476.2" height="7.0" />
+        <Rating id="600" OD="1543.1" ID="1492.3" height="7.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1625.6" ID="1574.8" height="7.0" />
+        <Rating id="300" OD="1574.8" ID="1524.0" height="7.0" />
+        <Rating id="400" OD="1577.8" ID="1527.0" height="7.0" />
+        <Rating id="600" OD="1600.2" ID="1549.4" height="7.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1619.3" ID="1568.5" height="7.0" />
+        <Rating id="150" OD="1676.4" ID="1625.6" height="7.0" />
+        <Rating id="300" OD="1625.6" ID="1574.8" height="7.0" />
+        <Rating id="400" OD="1635.3" ID="1584.5" height="7.0" />
+        <Rating id="600" OD="1657.4" ID="1606.6" height="7.0" />
+      </Facing>
+    </LargeTongueFacings>
+    <SmallTongueFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="300" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="400" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="600" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="900" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="1500" OD="35.1" ID="25.4" height="7.0" />
+        <Rating id="2500" OD="35.1" ID="25.4" height="7.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="300" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="400" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="600" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="900" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="1500" OD="42.9" ID="33.3" height="7.0" />
+        <Rating id="2500" OD="42.9" ID="33.3" height="7.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="47.8" ID="38.1" height="7.0" />
+        <Rating id="300" OD="47.8" ID="38.1" height="7.0" />
+        <Rating id="400" OD="47.8" ID="38.1" height="7.0" />
+        <Rating id="600" OD="47.8" ID="38.1" height="7.0" />
+        <Rating id="900" OD="47.8" ID="38.1" height="7.0" />
+        <Rating id="1500" OD="47.8" ID="38.1" height="7.0" />
+        <Rating id="2500" OD="47.8" ID="38.1" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="57.2" ID="47.8" height="7.0" />
+        <Rating id="300" OD="57.2" ID="47.8" height="7.0" />
+        <Rating id="400" OD="57.2" ID="47.8" height="7.0" />
+        <Rating id="600" OD="57.2" ID="47.8" height="7.0" />
+        <Rating id="900" OD="57.2" ID="47.8" height="7.0" />
+        <Rating id="1500" OD="57.2" ID="47.8" height="7.0" />
+        <Rating id="2500" OD="57.2" ID="47.8" height="7.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="63.5" ID="53.8" height="7.0" />
+        <Rating id="300" OD="63.5" ID="53.8" height="7.0" />
+        <Rating id="400" OD="63.5" ID="53.8" height="7.0" />
+        <Rating id="600" OD="63.5" ID="53.8" height="7.0" />
+        <Rating id="900" OD="63.5" ID="53.8" height="7.0" />
+        <Rating id="1500" OD="63.5" ID="53.8" height="7.0" />
+        <Rating id="2500" OD="63.5" ID="53.8" height="7.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="82.6" ID="73.2" height="7.0" />
+        <Rating id="300" OD="82.6" ID="73.2" height="7.0" />
+        <Rating id="400" OD="82.6" ID="73.2" height="7.0" />
+        <Rating id="600" OD="82.6" ID="73.2" height="7.0" />
+        <Rating id="900" OD="82.6" ID="73.2" height="7.0" />
+        <Rating id="1500" OD="82.6" ID="73.2" height="7.0" />
+        <Rating id="2500" OD="82.6" ID="73.2" height="7.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="95.2" ID="85.9" height="7.0" />
+        <Rating id="300" OD="95.2" ID="85.9" height="7.0" />
+        <Rating id="400" OD="95.2" ID="85.9" height="7.0" />
+        <Rating id="600" OD="95.2" ID="85.9" height="7.0" />
+        <Rating id="900" OD="95.2" ID="85.9" height="7.0" />
+        <Rating id="1500" OD="95.2" ID="85.9" height="7.0" />
+        <Rating id="2500" OD="95.2" ID="85.9" height="7.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="117.5" ID="108.0" height="7.0" />
+        <Rating id="300" OD="117.5" ID="108.0" height="7.0" />
+        <Rating id="400" OD="117.5" ID="108.0" height="7.0" />
+        <Rating id="600" OD="117.5" ID="108.0" height="7.0" />
+        <Rating id="900" OD="117.5" ID="108.0" height="7.0" />
+        <Rating id="1500" OD="117.5" ID="108.0" height="7.0" />
+        <Rating id="2500" OD="117.5" ID="108.0" height="7.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="130.2" ID="120.6" height="7.0" />
+        <Rating id="300" OD="130.2" ID="120.6" height="7.0" />
+        <Rating id="400" OD="130.2" ID="120.6" height="7.0" />
+        <Rating id="600" OD="130.2" ID="120.6" height="7.0" />
+        <Rating id="900" OD="130.2" ID="120.6" height="7.0" />
+        <Rating id="1500" OD="130.2" ID="120.6" height="7.0" />
+        <Rating id="2500" OD="130.2" ID="120.6" height="7.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="144.5" ID="131.8" height="7.0" />
+        <Rating id="300" OD="144.5" ID="131.8" height="7.0" />
+        <Rating id="400" OD="144.5" ID="131.8" height="7.0" />
+        <Rating id="600" OD="144.5" ID="131.8" height="7.0" />
+        <Rating id="900" OD="144.5" ID="131.8" height="7.0" />
+        <Rating id="1500" OD="144.5" ID="131.8" height="7.0" />
+        <Rating id="2500" OD="144.5" ID="131.8" height="7.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="173.0" ID="160.3" height="7.0" />
+        <Rating id="300" OD="173.0" ID="160.3" height="7.0" />
+        <Rating id="400" OD="173.0" ID="160.3" height="7.0" />
+        <Rating id="600" OD="173.0" ID="160.3" height="7.0" />
+        <Rating id="900" OD="173.0" ID="160.3" height="7.0" />
+        <Rating id="1500" OD="173.0" ID="160.3" height="7.0" />
+        <Rating id="2500" OD="173.0" ID="160.3" height="7.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="203.2" ID="190.5" height="7.0" />
+        <Rating id="300" OD="203.2" ID="190.5" height="7.0" />
+        <Rating id="400" OD="203.2" ID="190.5" height="7.0" />
+        <Rating id="600" OD="203.2" ID="190.5" height="7.0" />
+        <Rating id="900" OD="203.2" ID="190.5" height="7.0" />
+        <Rating id="1500" OD="203.2" ID="190.5" height="7.0" />
+        <Rating id="2500" OD="203.2" ID="190.5" height="7.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="254.0" ID="238.3" height="7.0" />
+        <Rating id="300" OD="254.0" ID="238.3" height="7.0" />
+        <Rating id="400" OD="254.0" ID="238.3" height="7.0" />
+        <Rating id="600" OD="254.0" ID="238.3" height="7.0" />
+        <Rating id="900" OD="254.0" ID="238.3" height="7.0" />
+        <Rating id="1500" OD="254.0" ID="238.3" height="7.0" />
+        <Rating id="2500" OD="254.0" ID="238.3" height="7.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="304.8" ID="285.8" height="7.0" />
+        <Rating id="300" OD="304.8" ID="285.8" height="7.0" />
+        <Rating id="400" OD="304.8" ID="285.8" height="7.0" />
+        <Rating id="600" OD="304.8" ID="285.8" height="7.0" />
+        <Rating id="900" OD="304.8" ID="285.8" height="7.0" />
+        <Rating id="1500" OD="304.8" ID="285.8" height="7.0" />
+        <Rating id="2500" OD="304.8" ID="285.8" height="7.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="362.0" ID="342.9" height="7.0" />
+        <Rating id="300" OD="362.0" ID="342.9" height="7.0" />
+        <Rating id="400" OD="362.0" ID="342.9" height="7.0" />
+        <Rating id="600" OD="362.0" ID="342.9" height="7.0" />
+        <Rating id="900" OD="362.0" ID="342.9" height="7.0" />
+        <Rating id="1500" OD="362.0" ID="342.9" height="7.0" />
+        <Rating id="2500" OD="362.0" ID="342.9" height="7.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="393.7" ID="374.6" height="7.0" />
+        <Rating id="300" OD="393.7" ID="374.6" height="7.0" />
+        <Rating id="400" OD="393.7" ID="374.6" height="7.0" />
+        <Rating id="600" OD="393.7" ID="374.6" height="7.0" />
+        <Rating id="900" OD="393.7" ID="374.6" height="7.0" />
+        <Rating id="1500" OD="393.7" ID="374.6" height="7.0" />
+        <Rating id="2500" OD="393.7" ID="374.6" height="7.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="447.5" ID="425.4" height="7.0" />
+        <Rating id="300" OD="447.5" ID="425.4" height="7.0" />
+        <Rating id="400" OD="447.5" ID="425.4" height="7.0" />
+        <Rating id="600" OD="447.5" ID="425.4" height="7.0" />
+        <Rating id="900" OD="447.5" ID="425.4" height="7.0" />
+        <Rating id="1500" OD="447.5" ID="425.4" height="7.0" />
+        <Rating id="2500" OD="447.5" ID="425.4" height="7.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="512.0" ID="489.0" height="7.0" />
+        <Rating id="300" OD="512.0" ID="489.0" height="7.0" />
+        <Rating id="400" OD="512.0" ID="489.0" height="7.0" />
+        <Rating id="600" OD="512.0" ID="489.0" height="7.0" />
+        <Rating id="900" OD="512.0" ID="489.0" height="7.0" />
+        <Rating id="1500" OD="512.0" ID="489.0" height="7.0" />
+        <Rating id="2500" OD="512.0" ID="489.0" height="7.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="558.8" ID="533.4" height="7.0" />
+        <Rating id="300" OD="558.8" ID="533.4" height="7.0" />
+        <Rating id="400" OD="558.8" ID="533.4" height="7.0" />
+        <Rating id="600" OD="558.8" ID="533.4" height="7.0" />
+        <Rating id="900" OD="558.8" ID="533.4" height="7.0" />
+        <Rating id="1500" OD="558.8" ID="533.4" height="7.0" />
+        <Rating id="2500" OD="558.8" ID="533.4" height="7.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="666.8" ID="641.4" height="7.0" />
+        <Rating id="300" OD="666.8" ID="641.4" height="7.0" />
+        <Rating id="400" OD="666.8" ID="641.4" height="7.0" />
+        <Rating id="600" OD="666.8" ID="641.4" height="7.0" />
+        <Rating id="900" OD="666.8" ID="641.4" height="7.0" />
+        <Rating id="1500" OD="666.8" ID="641.4" height="7.0" />
+        <Rating id="2500" OD="666.8" ID="641.4" height="7.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="701.7" ID="676.3" height="7.0" />
+        <Rating id="150" OD="723.9" ID="698.5" height="7.0" />
+        <Rating id="300" OD="723.9" ID="698.5" height="7.0" />
+        <Rating id="400" OD="723.9" ID="698.5" height="7.0" />
+        <Rating id="600" OD="723.9" ID="698.5" height="7.0" />
+        <Rating id="900" OD="723.9" ID="698.5" height="7.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="752.5" ID="727.1" height="7.0" />
+        <Rating id="150" OD="774.7" ID="749.3" height="7.0" />
+        <Rating id="300" OD="774.7" ID="749.3" height="7.0" />
+        <Rating id="400" OD="774.7" ID="749.3" height="7.0" />
+        <Rating id="600" OD="774.7" ID="749.3" height="7.0" />
+        <Rating id="900" OD="774.7" ID="749.3" height="7.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="803.3" ID="777.9" height="7.0" />
+        <Rating id="150" OD="831.9" ID="806.5" height="7.0" />
+        <Rating id="300" OD="831.9" ID="806.5" height="7.0" />
+        <Rating id="400" OD="831.9" ID="806.5" height="7.0" />
+        <Rating id="600" OD="831.9" ID="806.5" height="7.0" />
+        <Rating id="900" OD="831.9" ID="806.5" height="7.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="863.6" ID="838.2" height="7.0" />
+        <Rating id="150" OD="889.0" ID="863.6" height="7.0" />
+        <Rating id="300" OD="889.0" ID="863.6" height="7.0" />
+        <Rating id="400" OD="889.0" ID="863.6" height="7.0" />
+        <Rating id="600" OD="889.0" ID="863.6" height="7.0" />
+        <Rating id="900" OD="889.0" ID="863.6" height="7.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="914.4" ID="889.0" height="7.0" />
+        <Rating id="150" OD="939.8" ID="914.4" height="7.0" />
+        <Rating id="300" OD="939.8" ID="914.4" height="7.0" />
+        <Rating id="400" OD="939.8" ID="914.4" height="7.0" />
+        <Rating id="600" OD="939.8" ID="914.4" height="7.0" />
+        <Rating id="900" OD="939.8" ID="914.4" height="7.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="965.2" ID="939.8" height="7.0" />
+        <Rating id="150" OD="997.0" ID="971.6" height="7.0" />
+        <Rating id="300" OD="997.0" ID="971.6" height="7.0" />
+        <Rating id="400" OD="997.0" ID="971.6" height="7.0" />
+        <Rating id="600" OD="997.0" ID="971.6" height="7.0" />
+        <Rating id="900" OD="997.0" ID="971.6" height="7.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1047.8" ID="1022.4" height="7.0" />
+        <Rating id="300" OD="1003.3" ID="977.9" height="7.0" />
+        <Rating id="400" OD="1009.7" ID="984.3" height="7.0" />
+        <Rating id="600" OD="1028.7" ID="1003.3" height="7.0" />
+        <Rating id="900" OD="1073.2" ID="1047.8" height="7.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1098.6" ID="1073.2" height="7.0" />
+        <Rating id="300" OD="1060.5" ID="1035.1" height="7.0" />
+        <Rating id="400" OD="1066.8" ID="1041.4" height="7.0" />
+        <Rating id="600" OD="1085.9" ID="1060.5" height="7.0" />
+        <Rating id="900" OD="1136.7" ID="1111.3" height="7.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1130.3" ID="1104.9" height="7.0" />
+        <Rating id="150" OD="1168.4" ID="1143.0" height="7.0" />
+        <Rating id="300" OD="1111.3" ID="1085.9" height="7.0" />
+        <Rating id="400" OD="1117.6" ID="1092.2" height="7.0" />
+        <Rating id="600" OD="1143.0" ID="1117.6" height="7.0" />
+        <Rating id="900" OD="1187.5" ID="1162.1" height="7.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1219.2" ID="1193.8" height="7.0" />
+        <Rating id="300" OD="1168.4" ID="1143.0" height="7.0" />
+        <Rating id="400" OD="1174.8" ID="1149.4" height="7.0" />
+        <Rating id="600" OD="1200.2" ID="1174.8" height="7.0" />
+        <Rating id="900" OD="1244.6" ID="1219.2" height="7.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1270.0" ID="1244.6" height="7.0" />
+        <Rating id="300" OD="1219.2" ID="1193.8" height="7.0" />
+        <Rating id="400" OD="1231.9" ID="1206.5" height="7.0" />
+        <Rating id="600" OD="1251.0" ID="1225.6" height="7.0" />
+        <Rating id="900" OD="1308.1" ID="1282.7" height="7.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1282.7" ID="1257.3" height="7.0" />
+        <Rating id="150" OD="1333.5" ID="1308.1" height="7.0" />
+        <Rating id="300" OD="1276.4" ID="1251.0" height="7.0" />
+        <Rating id="400" OD="1282.7" ID="1257.3" height="7.0" />
+        <Rating id="600" OD="1308.1" ID="1282.7" height="7.0" />
+        <Rating id="900" OD="1358.9" ID="1333.5" height="7.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1384.3" ID="1358.9" height="7.0" />
+        <Rating id="300" OD="1333.5" ID="1308.1" height="7.0" />
+        <Rating id="400" OD="1336.5" ID="1311.1" height="7.0" />
+        <Rating id="600" OD="1358.9" ID="1333.5" height="7.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1435.1" ID="1409.7" height="7.0" />
+        <Rating id="300" OD="1384.3" ID="1358.9" height="7.0" />
+        <Rating id="400" OD="1387.3" ID="1361.9" height="7.0" />
+        <Rating id="600" OD="1409.7" ID="1384.3" height="7.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1441.5" ID="1416.1" height="7.0" />
+        <Rating id="150" OD="1485.9" ID="1460.5" height="7.0" />
+        <Rating id="300" OD="1441.5" ID="1416.1" height="7.0" />
+        <Rating id="400" OD="1444.8" ID="1419.4" height="7.0" />
+        <Rating id="600" OD="1466.9" ID="1441.5" height="7.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1549.4" ID="1524.0" height="7.0" />
+        <Rating id="300" OD="1492.3" ID="1466.9" height="7.0" />
+        <Rating id="400" OD="1501.6" ID="1476.2" height="7.0" />
+        <Rating id="600" OD="1517.7" ID="1492.3" height="7.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1600.2" ID="1574.8" height="7.0" />
+        <Rating id="300" OD="1549.4" ID="1524.0" height="7.0" />
+        <Rating id="400" OD="1552.4" ID="1527.0" height="7.0" />
+        <Rating id="600" OD="1574.8" ID="1549.4" height="7.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1593.9" ID="1568.5" height="7.0" />
+        <Rating id="150" OD="1651.0" ID="1625.6" height="7.0" />
+        <Rating id="300" OD="1600.2" ID="1574.8" height="7.0" />
+        <Rating id="400" OD="1609.9" ID="1584.5" height="7.0" />
+        <Rating id="600" OD="1632.0" ID="1606.6" height="7.0" />
+      </Facing>
+    </SmallTongueFacings>
+    <LargeGrooveFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="46.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="300" OD="46.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="400" OD="46.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="600" OD="46.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="900" OD="46.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="1500" OD="46.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="2500" OD="46.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="54.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="300" OD="54.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="400" OD="54.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="600" OD="54.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="900" OD="54.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="1500" OD="54.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="2500" OD="54.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="62.0" gasketOD="52.4" gasketID="36.5" depth="5.0" />
+        <Rating id="300" OD="62.0" gasketOD="52.4" gasketID="36.5" depth="5.0" />
+        <Rating id="400" OD="62.0" gasketOD="52.4" gasketID="36.5" depth="5.0" />
+        <Rating id="600" OD="62.0" gasketOD="52.4" gasketID="36.5" depth="5.0" />
+        <Rating id="900" OD="62.0" gasketOD="52.4" gasketID="36.5" depth="5.0" />
+        <Rating id="1500" OD="62.0" gasketOD="52.4" gasketID="36.5" depth="5.0" />
+        <Rating id="2500" OD="62.0" gasketOD="52.4" gasketID="36.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="75.0" gasketOD="65.1" gasketID="46.0" depth="5.0" />
+        <Rating id="300" OD="75.0" gasketOD="65.1" gasketID="46.0" depth="5.0" />
+        <Rating id="400" OD="75.0" gasketOD="65.1" gasketID="46.0" depth="5.0" />
+        <Rating id="600" OD="75.0" gasketOD="65.1" gasketID="46.0" depth="5.0" />
+        <Rating id="900" OD="75.0" gasketOD="65.1" gasketID="46.0" depth="5.0" />
+        <Rating id="1500" OD="75.0" gasketOD="65.1" gasketID="46.0" depth="5.0" />
+        <Rating id="2500" OD="75.0" gasketOD="65.1" gasketID="46.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="84.0" gasketOD="74.6" gasketID="52.4" depth="5.0" />
+        <Rating id="300" OD="84.0" gasketOD="74.6" gasketID="52.4" depth="5.0" />
+        <Rating id="400" OD="84.0" gasketOD="74.6" gasketID="52.4" depth="5.0" />
+        <Rating id="600" OD="84.0" gasketOD="74.6" gasketID="52.4" depth="5.0" />
+        <Rating id="900" OD="84.0" gasketOD="74.6" gasketID="52.4" depth="5.0" />
+        <Rating id="1500" OD="84.0" gasketOD="74.6" gasketID="52.4" depth="5.0" />
+        <Rating id="2500" OD="84.0" gasketOD="74.6" gasketID="52.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="103.0" gasketOD="93.7" gasketID="71.4" depth="5.0" />
+        <Rating id="300" OD="103.0" gasketOD="93.7" gasketID="71.4" depth="5.0" />
+        <Rating id="400" OD="103.0" gasketOD="93.7" gasketID="71.4" depth="5.0" />
+        <Rating id="600" OD="103.0" gasketOD="93.7" gasketID="71.4" depth="5.0" />
+        <Rating id="900" OD="103.0" gasketOD="93.7" gasketID="71.4" depth="5.0" />
+        <Rating id="1500" OD="103.0" gasketOD="93.7" gasketID="71.4" depth="5.0" />
+        <Rating id="2500" OD="103.0" gasketOD="93.7" gasketID="71.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="116.0" gasketOD="106.4" gasketID="84.1" depth="5.0" />
+        <Rating id="300" OD="116.0" gasketOD="106.4" gasketID="84.1" depth="5.0" />
+        <Rating id="400" OD="116.0" gasketOD="106.4" gasketID="84.1" depth="5.0" />
+        <Rating id="600" OD="116.0" gasketOD="106.4" gasketID="84.1" depth="5.0" />
+        <Rating id="900" OD="116.0" gasketOD="106.4" gasketID="84.1" depth="5.0" />
+        <Rating id="1500" OD="116.0" gasketOD="106.4" gasketID="84.1" depth="5.0" />
+        <Rating id="2500" OD="116.0" gasketOD="106.4" gasketID="84.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="138.0" gasketOD="128.6" gasketID="106.4" depth="5.0" />
+        <Rating id="300" OD="138.0" gasketOD="128.6" gasketID="106.4" depth="5.0" />
+        <Rating id="400" OD="138.0" gasketOD="128.6" gasketID="106.4" depth="5.0" />
+        <Rating id="600" OD="138.0" gasketOD="128.6" gasketID="106.4" depth="5.0" />
+        <Rating id="900" OD="138.0" gasketOD="128.6" gasketID="106.4" depth="5.0" />
+        <Rating id="1500" OD="138.0" gasketOD="128.6" gasketID="106.4" depth="5.0" />
+        <Rating id="2500" OD="138.0" gasketOD="128.6" gasketID="106.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="151.0" gasketOD="141.3" gasketID="119.1" depth="5.0" />
+        <Rating id="300" OD="151.0" gasketOD="141.3" gasketID="119.1" depth="5.0" />
+        <Rating id="400" OD="151.0" gasketOD="141.3" gasketID="119.1" depth="5.0" />
+        <Rating id="600" OD="151.0" gasketOD="141.3" gasketID="119.1" depth="5.0" />
+        <Rating id="900" OD="151.0" gasketOD="141.3" gasketID="119.1" depth="5.0" />
+        <Rating id="1500" OD="151.0" gasketOD="141.3" gasketID="119.1" depth="5.0" />
+        <Rating id="2500" OD="151.0" gasketOD="141.3" gasketID="119.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="168.0" gasketOD="158.8" gasketID="130.2" depth="5.0" />
+        <Rating id="300" OD="168.0" gasketOD="158.8" gasketID="130.2" depth="5.0" />
+        <Rating id="400" OD="168.0" gasketOD="158.8" gasketID="130.2" depth="5.0" />
+        <Rating id="600" OD="168.0" gasketOD="158.8" gasketID="130.2" depth="5.0" />
+        <Rating id="900" OD="168.0" gasketOD="158.8" gasketID="130.2" depth="5.0" />
+        <Rating id="1500" OD="168.0" gasketOD="158.8" gasketID="130.2" depth="5.0" />
+        <Rating id="2500" OD="168.0" gasketOD="158.8" gasketID="130.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="197.0" gasketOD="187.3" gasketID="158.8" depth="5.0" />
+        <Rating id="300" OD="197.0" gasketOD="187.3" gasketID="158.8" depth="5.0" />
+        <Rating id="400" OD="197.0" gasketOD="187.3" gasketID="158.8" depth="5.0" />
+        <Rating id="600" OD="197.0" gasketOD="187.3" gasketID="158.8" depth="5.0" />
+        <Rating id="900" OD="197.0" gasketOD="187.3" gasketID="158.8" depth="5.0" />
+        <Rating id="1500" OD="197.0" gasketOD="187.3" gasketID="158.8" depth="5.0" />
+        <Rating id="2500" OD="197.0" gasketOD="187.3" gasketID="158.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="227.0" gasketOD="217.5" gasketID="188.9" depth="5.0" />
+        <Rating id="300" OD="227.0" gasketOD="217.5" gasketID="188.9" depth="5.0" />
+        <Rating id="400" OD="227.0" gasketOD="217.5" gasketID="188.9" depth="5.0" />
+        <Rating id="600" OD="227.0" gasketOD="217.5" gasketID="188.9" depth="5.0" />
+        <Rating id="900" OD="227.0" gasketOD="217.5" gasketID="188.9" depth="5.0" />
+        <Rating id="1500" OD="227.0" gasketOD="217.5" gasketID="188.9" depth="5.0" />
+        <Rating id="2500" OD="227.0" gasketOD="217.5" gasketID="188.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="281.0" gasketOD="271.5" gasketID="236.5" depth="5.0" />
+        <Rating id="300" OD="281.0" gasketOD="271.5" gasketID="236.5" depth="5.0" />
+        <Rating id="400" OD="281.0" gasketOD="271.5" gasketID="236.5" depth="5.0" />
+        <Rating id="600" OD="281.0" gasketOD="271.5" gasketID="236.5" depth="5.0" />
+        <Rating id="900" OD="281.0" gasketOD="271.5" gasketID="236.5" depth="5.0" />
+        <Rating id="1500" OD="281.0" gasketOD="271.5" gasketID="236.5" depth="5.0" />
+        <Rating id="2500" OD="281.0" gasketOD="271.5" gasketID="236.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="335.0" gasketOD="325.4" gasketID="284.2" depth="5.0" />
+        <Rating id="300" OD="335.0" gasketOD="325.4" gasketID="284.2" depth="5.0" />
+        <Rating id="400" OD="335.0" gasketOD="325.4" gasketID="284.2" depth="5.0" />
+        <Rating id="600" OD="335.0" gasketOD="325.4" gasketID="284.2" depth="5.0" />
+        <Rating id="900" OD="335.0" gasketOD="325.4" gasketID="284.2" depth="5.0" />
+        <Rating id="1500" OD="335.0" gasketOD="325.4" gasketID="284.2" depth="5.0" />
+        <Rating id="2500" OD="335.0" gasketOD="325.4" gasketID="284.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="392.0" gasketOD="382.6" gasketID="341.3" depth="5.0" />
+        <Rating id="300" OD="392.0" gasketOD="382.6" gasketID="341.3" depth="5.0" />
+        <Rating id="400" OD="392.0" gasketOD="382.6" gasketID="341.3" depth="5.0" />
+        <Rating id="600" OD="392.0" gasketOD="382.6" gasketID="341.3" depth="5.0" />
+        <Rating id="900" OD="392.0" gasketOD="382.6" gasketID="341.3" depth="5.0" />
+        <Rating id="1500" OD="392.0" gasketOD="382.6" gasketID="341.3" depth="5.0" />
+        <Rating id="2500" OD="392.0" gasketOD="382.6" gasketID="341.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="424.0" gasketOD="414.3" gasketID="373.1" depth="5.0" />
+        <Rating id="300" OD="424.0" gasketOD="414.3" gasketID="373.1" depth="5.0" />
+        <Rating id="400" OD="424.0" gasketOD="414.3" gasketID="373.1" depth="5.0" />
+        <Rating id="600" OD="424.0" gasketOD="414.3" gasketID="373.1" depth="5.0" />
+        <Rating id="900" OD="424.0" gasketOD="414.3" gasketID="373.1" depth="5.0" />
+        <Rating id="1500" OD="424.0" gasketOD="414.3" gasketID="373.1" depth="5.0" />
+        <Rating id="2500" OD="424.0" gasketOD="414.3" gasketID="373.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="481.0" gasketOD="471.5" gasketID="423.9" depth="5.0" />
+        <Rating id="300" OD="481.0" gasketOD="471.5" gasketID="423.9" depth="5.0" />
+        <Rating id="400" OD="481.0" gasketOD="471.5" gasketID="423.9" depth="5.0" />
+        <Rating id="600" OD="481.0" gasketOD="471.5" gasketID="423.9" depth="5.0" />
+        <Rating id="900" OD="481.0" gasketOD="471.5" gasketID="423.9" depth="5.0" />
+        <Rating id="1500" OD="481.0" gasketOD="471.5" gasketID="423.9" depth="5.0" />
+        <Rating id="2500" OD="481.0" gasketOD="471.5" gasketID="423.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="534.9" gasketOD="535.0" gasketID="487.4" depth="5.0" />
+        <Rating id="300" OD="534.9" gasketOD="535.0" gasketID="487.4" depth="5.0" />
+        <Rating id="400" OD="534.9" gasketOD="535.0" gasketID="487.4" depth="5.0" />
+        <Rating id="600" OD="534.9" gasketOD="535.0" gasketID="487.4" depth="5.0" />
+        <Rating id="900" OD="534.9" gasketOD="535.0" gasketID="487.4" depth="5.0" />
+        <Rating id="1500" OD="534.9" gasketOD="535.0" gasketID="487.4" depth="5.0" />
+        <Rating id="2500" OD="534.9" gasketOD="535.0" gasketID="487.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="595.0" gasketOD="585.8" gasketID="531.8" depth="5.0" />
+        <Rating id="300" OD="595.0" gasketOD="585.8" gasketID="531.8" depth="5.0" />
+        <Rating id="400" OD="595.0" gasketOD="585.8" gasketID="531.8" depth="5.0" />
+        <Rating id="600" OD="595.0" gasketOD="585.8" gasketID="531.8" depth="5.0" />
+        <Rating id="900" OD="595.0" gasketOD="585.8" gasketID="531.8" depth="5.0" />
+        <Rating id="1500" OD="595.0" gasketOD="585.8" gasketID="531.8" depth="5.0" />
+        <Rating id="2500" OD="595.0" gasketOD="585.8" gasketID="531.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="703.0" gasketOD="693.7" gasketID="639.8" depth="5.0" />
+        <Rating id="300" OD="703.0" gasketOD="693.7" gasketID="639.8" depth="5.0" />
+        <Rating id="400" OD="703.0" gasketOD="693.7" gasketID="639.8" depth="5.0" />
+        <Rating id="600" OD="703.0" gasketOD="693.7" gasketID="639.8" depth="5.0" />
+        <Rating id="900" OD="703.0" gasketOD="693.7" gasketID="639.8" depth="5.0" />
+        <Rating id="1500" OD="703.0" gasketOD="693.7" gasketID="639.8" depth="5.0" />
+        <Rating id="2500" OD="703.0" gasketOD="693.7" gasketID="639.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="737.9" gasketOD="728.7" gasketID="674.7" depth="5.0" />
+        <Rating id="150" OD="760.1" gasketOD="750.9" gasketID="696.9" depth="5.0" />
+        <Rating id="300" OD="760.1" gasketOD="750.9" gasketID="696.9" depth="5.0" />
+        <Rating id="400" OD="760.1" gasketOD="750.9" gasketID="696.9" depth="5.0" />
+        <Rating id="600" OD="760.1" gasketOD="750.9" gasketID="696.9" depth="5.0" />
+        <Rating id="900" OD="760.1" gasketOD="750.9" gasketID="696.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="788.7" gasketOD="779.5" gasketID="725.5" depth="5.0" />
+        <Rating id="150" OD="810.9" gasketOD="801.7" gasketID="747.7" depth="5.0" />
+        <Rating id="300" OD="810.9" gasketOD="801.7" gasketID="747.7" depth="5.0" />
+        <Rating id="400" OD="810.9" gasketOD="801.7" gasketID="747.7" depth="5.0" />
+        <Rating id="600" OD="810.9" gasketOD="801.7" gasketID="747.7" depth="5.0" />
+        <Rating id="900" OD="810.9" gasketOD="801.7" gasketID="747.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="839.5" gasketOD="830.3" gasketID="776.3" depth="5.0" />
+        <Rating id="150" OD="868.1" gasketOD="858.9" gasketID="804.9" depth="5.0" />
+        <Rating id="300" OD="868.1" gasketOD="858.9" gasketID="804.9" depth="5.0" />
+        <Rating id="400" OD="868.1" gasketOD="858.9" gasketID="804.9" depth="5.0" />
+        <Rating id="600" OD="868.1" gasketOD="858.9" gasketID="804.9" depth="5.0" />
+        <Rating id="900" OD="868.1" gasketOD="858.9" gasketID="804.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="899.8" gasketOD="890.6" gasketID="835.6" depth="5.0" />
+        <Rating id="150" OD="925.2" gasketOD="916.0" gasketID="862.0" depth="5.0" />
+        <Rating id="300" OD="925.2" gasketOD="916.0" gasketID="862.0" depth="5.0" />
+        <Rating id="400" OD="925.2" gasketOD="916.0" gasketID="862.0" depth="5.0" />
+        <Rating id="600" OD="925.2" gasketOD="916.0" gasketID="862.0" depth="5.0" />
+        <Rating id="900" OD="925.2" gasketOD="916.0" gasketID="862.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="950.6" gasketOD="941.4" gasketID="886.4" depth="5.0" />
+        <Rating id="150" OD="976.0" gasketOD="966.8" gasketID="912.8" depth="5.0" />
+        <Rating id="300" OD="976.0" gasketOD="966.8" gasketID="912.8" depth="5.0" />
+        <Rating id="400" OD="976.0" gasketOD="966.8" gasketID="912.8" depth="5.0" />
+        <Rating id="600" OD="976.0" gasketOD="966.8" gasketID="912.8" depth="5.0" />
+        <Rating id="900" OD="976.0" gasketOD="966.8" gasketID="912.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="1001.4" gasketOD="992.2" gasketID="937.2" depth="5.0" />
+        <Rating id="150" OD="1033.2" gasketOD="1024.0" gasketID="970.0" depth="5.0" />
+        <Rating id="300" OD="1033.2" gasketOD="1024.0" gasketID="970.0" depth="5.0" />
+        <Rating id="400" OD="1033.2" gasketOD="1024.0" gasketID="970.0" depth="5.0" />
+        <Rating id="600" OD="1033.2" gasketOD="1024.0" gasketID="970.0" depth="5.0" />
+        <Rating id="900" OD="1033.2" gasketOD="1024.0" gasketID="970.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1084.0" gasketOD="1074.8" gasketID="1020.8" depth="5.0" />
+        <Rating id="300" OD="1039.5" gasketOD="1030.3" gasketID="976.3" depth="5.0" />
+        <Rating id="400" OD="1045.9" gasketOD="1036.7" gasketID="982.7" depth="5.0" />
+        <Rating id="600" OD="1064.9" gasketOD="1055.7" gasketID="1001.7" depth="5.0" />
+        <Rating id="900" OD="1109.4" gasketOD="1100.2" gasketID="1046.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1134.8" gasketOD="1125.6" gasketID="1071.6" depth="5.0" />
+        <Rating id="300" OD="1096.7" gasketOD="1087.5" gasketID="1033.5" depth="5.0" />
+        <Rating id="400" OD="1103.0" gasketOD="1093.8" gasketID="1039.8" depth="5.0" />
+        <Rating id="600" OD="1122.1" gasketOD="1112.9" gasketID="1059.0" depth="5.0" />
+        <Rating id="900" OD="1172.9" gasketOD="1163.7" gasketID="1109.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1166.5" gasketOD="1157.3" gasketID="1103.3" depth="5.0" />
+        <Rating id="150" OD="1204.6" gasketOD="1195.4" gasketID="1141.4" depth="5.0" />
+        <Rating id="300" OD="1147.5" gasketOD="1138.3" gasketID="1084.3" depth="5.0" />
+        <Rating id="400" OD="1153.8" gasketOD="1144.6" gasketID="1090.6" depth="5.0" />
+        <Rating id="600" OD="1179.2" gasketOD="1170.0" gasketID="1116.0" depth="5.0" />
+        <Rating id="900" OD="1223.7" gasketOD="1214.5" gasketID="1160.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1255.4" gasketOD="1246.2" gasketID="1192.2" depth="5.0" />
+        <Rating id="300" OD="1204.6" gasketOD="1195.4" gasketID="1141.4" depth="5.0" />
+        <Rating id="400" OD="1211.0" gasketOD="1201.8" gasketID="1147.8" depth="5.0" />
+        <Rating id="600" OD="1236.4" gasketOD="1227.2" gasketID="1173.2" depth="5.0" />
+        <Rating id="900" OD="1280.8" gasketOD="1271.6" gasketID="1217.6" depth="5.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1306.2" gasketOD="1297.0" gasketID="1243.0" depth="5.0" />
+        <Rating id="300" OD="1255.4" gasketOD="1246.2" gasketID="1192.2" depth="5.0" />
+        <Rating id="400" OD="1268.1" gasketOD="1258.9" gasketID="1204.9" depth="5.0" />
+        <Rating id="600" OD="1287.2" gasketOD="1278.0" gasketID="1224.0" depth="5.0" />
+        <Rating id="900" OD="1344.3" gasketOD="1335.1" gasketID="1281.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1318.9" gasketOD="1309.7" gasketID="1255.7" depth="5.0" />
+        <Rating id="150" OD="1369.7" gasketOD="1360.5" gasketID="1306.5" depth="5.0" />
+        <Rating id="300" OD="1312.6" gasketOD="1303.4" gasketID="1249.4" depth="5.0" />
+        <Rating id="400" OD="1318.9" gasketOD="1309.7" gasketID="1255.7" depth="5.0" />
+        <Rating id="600" OD="1344.3" gasketOD="1335.1" gasketID="1281.1" depth="5.0" />
+        <Rating id="900" OD="1395.1" gasketOD="1385.9" gasketID="1331.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1420.5" gasketOD="1411.3" gasketID="1357.3" depth="5.0" />
+        <Rating id="300" OD="1369.7" gasketOD="1360.5" gasketID="1306.5" depth="5.0" />
+        <Rating id="400" OD="1372.7" gasketOD="1363.5" gasketID="1309.5" depth="5.0" />
+        <Rating id="600" OD="1395.1" gasketOD="1385.9" gasketID="1331.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1471.3" gasketOD="1462.1" gasketID="1408.1" depth="5.0" />
+        <Rating id="300" OD="1420.5" gasketOD="1411.3" gasketID="1357.3" depth="5.0" />
+        <Rating id="400" OD="1423.5" gasketOD="1414.3" gasketID="1360.3" depth="5.0" />
+        <Rating id="600" OD="1445.9" gasketOD="1436.7" gasketID="1382.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1477.7" gasketOD="1468.5" gasketID="1414.5" depth="5.0" />
+        <Rating id="150" OD="1522.1" gasketOD="1512.9" gasketID="1458.9" depth="5.0" />
+        <Rating id="300" OD="1477.7" gasketOD="1468.5" gasketID="1414.5" depth="5.0" />
+        <Rating id="400" OD="1481.0" gasketOD="1471.8" gasketID="1417.8" depth="5.0" />
+        <Rating id="600" OD="1503.1" gasketOD="1493.9" gasketID="1439.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1585.6" gasketOD="1576.4" gasketID="1522.4" depth="5.0" />
+        <Rating id="300" OD="1528.5" gasketOD="1519.3" gasketID="1465.3" depth="5.0" />
+        <Rating id="400" OD="1537.8" gasketOD="1528.6" gasketID="1474.6" depth="5.0" />
+        <Rating id="600" OD="1553.9" gasketOD="1544.7" gasketID="1490.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1636.4" gasketOD="1627.2" gasketID="1573.2" depth="5.0" />
+        <Rating id="300" OD="1585.6" gasketOD="1576.4" gasketID="1522.4" depth="5.0" />
+        <Rating id="400" OD="1588.6" gasketOD="1579.4" gasketID="1525.4" depth="5.0" />
+        <Rating id="600" OD="1611.0" gasketOD="1601.8" gasketID="1547.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1630.1" gasketOD="1620.9" gasketID="1566.9" depth="5.0" />
+        <Rating id="150" OD="1687.2" gasketOD="1678.0" gasketID="1624.0" depth="5.0" />
+        <Rating id="300" OD="1636.4" gasketOD="1627.2" gasketID="1573.2" depth="5.0" />
+        <Rating id="400" OD="1646.1" gasketOD="1636.9" gasketID="1582.9" depth="5.0" />
+        <Rating id="600" OD="1668.2" gasketOD="1659.0" gasketID="1605.0" depth="5.0" />
+      </Facing>
+    </LargeGrooveFacings>
+    <SmallGrooveFacings>
+      <Facing NPS="1/2" DN="15">
+        <Rating id="150" OD="44.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="300" OD="44.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="400" OD="44.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="600" OD="44.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="900" OD="44.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="1500" OD="44.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+        <Rating id="2500" OD="44.0" gasketOD="36.5" gasketID="23.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="3/4" DN="20">
+        <Rating id="150" OD="52.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="300" OD="52.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="400" OD="52.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="600" OD="52.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="900" OD="52.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="1500" OD="52.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+        <Rating id="2500" OD="52.0" gasketOD="44.4" gasketID="31.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="1" DN="25">
+        <Rating id="150" OD="57.0" gasketOD="49.2" gasketID="36.5" depth="5.0" />
+        <Rating id="300" OD="57.0" gasketOD="49.2" gasketID="36.5" depth="5.0" />
+        <Rating id="400" OD="57.0" gasketOD="49.2" gasketID="36.5" depth="5.0" />
+        <Rating id="600" OD="57.0" gasketOD="49.2" gasketID="36.5" depth="5.0" />
+        <Rating id="900" OD="57.0" gasketOD="49.2" gasketID="36.5" depth="5.0" />
+        <Rating id="1500" OD="57.0" gasketOD="49.2" gasketID="36.5" depth="5.0" />
+        <Rating id="2500" OD="57.0" gasketOD="49.2" gasketID="36.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/4" DN="32">
+        <Rating id="150" OD="67.0" gasketOD="58.7" gasketID="46.0" depth="5.0" />
+        <Rating id="300" OD="67.0" gasketOD="58.7" gasketID="46.0" depth="5.0" />
+        <Rating id="400" OD="67.0" gasketOD="58.7" gasketID="46.0" depth="5.0" />
+        <Rating id="600" OD="67.0" gasketOD="58.7" gasketID="46.0" depth="5.0" />
+        <Rating id="900" OD="67.0" gasketOD="58.7" gasketID="46.0" depth="5.0" />
+        <Rating id="1500" OD="67.0" gasketOD="58.7" gasketID="46.0" depth="5.0" />
+        <Rating id="2500" OD="67.0" gasketOD="58.7" gasketID="46.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="1-1/2" DN="40">
+        <Rating id="150" OD="73.0" gasketOD="65.1" gasketID="52.4" depth="5.0" />
+        <Rating id="300" OD="73.0" gasketOD="65.1" gasketID="52.4" depth="5.0" />
+        <Rating id="400" OD="73.0" gasketOD="65.1" gasketID="52.4" depth="5.0" />
+        <Rating id="600" OD="73.0" gasketOD="65.1" gasketID="52.4" depth="5.0" />
+        <Rating id="900" OD="73.0" gasketOD="65.1" gasketID="52.4" depth="5.0" />
+        <Rating id="1500" OD="73.0" gasketOD="65.1" gasketID="52.4" depth="5.0" />
+        <Rating id="2500" OD="73.0" gasketOD="65.1" gasketID="52.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="2" DN="50">
+        <Rating id="150" OD="92.0" gasketOD="84.1" gasketID="71.4" depth="5.0" />
+        <Rating id="300" OD="92.0" gasketOD="84.1" gasketID="71.4" depth="5.0" />
+        <Rating id="400" OD="92.0" gasketOD="84.1" gasketID="71.4" depth="5.0" />
+        <Rating id="600" OD="92.0" gasketOD="84.1" gasketID="71.4" depth="5.0" />
+        <Rating id="900" OD="92.0" gasketOD="84.1" gasketID="71.4" depth="5.0" />
+        <Rating id="1500" OD="92.0" gasketOD="84.1" gasketID="71.4" depth="5.0" />
+        <Rating id="2500" OD="92.0" gasketOD="84.1" gasketID="71.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="2-1/2" DN="65">
+        <Rating id="150" OD="105.0" gasketOD="96.8" gasketID="84.1" depth="5.0" />
+        <Rating id="300" OD="105.0" gasketOD="96.8" gasketID="84.1" depth="5.0" />
+        <Rating id="400" OD="105.0" gasketOD="96.8" gasketID="84.1" depth="5.0" />
+        <Rating id="600" OD="105.0" gasketOD="96.8" gasketID="84.1" depth="5.0" />
+        <Rating id="900" OD="105.0" gasketOD="96.8" gasketID="84.1" depth="5.0" />
+        <Rating id="1500" OD="105.0" gasketOD="96.8" gasketID="84.1" depth="5.0" />
+        <Rating id="2500" OD="105.0" gasketOD="96.8" gasketID="84.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="3" DN="80">
+        <Rating id="150" OD="127.0" gasketOD="119.1" gasketID="106.4" depth="5.0" />
+        <Rating id="300" OD="127.0" gasketOD="119.1" gasketID="106.4" depth="5.0" />
+        <Rating id="400" OD="127.0" gasketOD="119.1" gasketID="106.4" depth="5.0" />
+        <Rating id="600" OD="127.0" gasketOD="119.1" gasketID="106.4" depth="5.0" />
+        <Rating id="900" OD="127.0" gasketOD="119.1" gasketID="106.4" depth="5.0" />
+        <Rating id="1500" OD="127.0" gasketOD="119.1" gasketID="106.4" depth="5.0" />
+        <Rating id="2500" OD="127.0" gasketOD="119.1" gasketID="106.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="3-1/2">
+        <Rating id="150" OD="140.0" gasketOD="131.8" gasketID="119.1" depth="5.0" />
+        <Rating id="300" OD="140.0" gasketOD="131.8" gasketID="119.1" depth="5.0" />
+        <Rating id="400" OD="140.0" gasketOD="131.8" gasketID="119.1" depth="5.0" />
+        <Rating id="600" OD="140.0" gasketOD="131.8" gasketID="119.1" depth="5.0" />
+        <Rating id="900" OD="140.0" gasketOD="131.8" gasketID="119.1" depth="5.0" />
+        <Rating id="1500" OD="140.0" gasketOD="131.8" gasketID="119.1" depth="5.0" />
+        <Rating id="2500" OD="140.0" gasketOD="131.8" gasketID="119.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="4" DN="100">
+        <Rating id="150" OD="157.0" gasketOD="146.0" gasketID="130.2" depth="5.0" />
+        <Rating id="300" OD="157.0" gasketOD="146.0" gasketID="130.2" depth="5.0" />
+        <Rating id="400" OD="157.0" gasketOD="146.0" gasketID="130.2" depth="5.0" />
+        <Rating id="600" OD="157.0" gasketOD="146.0" gasketID="130.2" depth="5.0" />
+        <Rating id="900" OD="157.0" gasketOD="146.0" gasketID="130.2" depth="5.0" />
+        <Rating id="1500" OD="157.0" gasketOD="146.0" gasketID="130.2" depth="5.0" />
+        <Rating id="2500" OD="157.0" gasketOD="146.0" gasketID="130.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="5" DN="125">
+        <Rating id="150" OD="186.0" gasketOD="174.6" gasketID="158.8" depth="5.0" />
+        <Rating id="300" OD="186.0" gasketOD="174.6" gasketID="158.8" depth="5.0" />
+        <Rating id="400" OD="186.0" gasketOD="174.6" gasketID="158.8" depth="5.0" />
+        <Rating id="600" OD="186.0" gasketOD="174.6" gasketID="158.8" depth="5.0" />
+        <Rating id="900" OD="186.0" gasketOD="174.6" gasketID="158.8" depth="5.0" />
+        <Rating id="1500" OD="186.0" gasketOD="174.6" gasketID="158.8" depth="5.0" />
+        <Rating id="2500" OD="186.0" gasketOD="174.6" gasketID="158.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="6" DN="150">
+        <Rating id="150" OD="216.0" gasketOD="204.8" gasketID="188.9" depth="5.0" />
+        <Rating id="300" OD="216.0" gasketOD="204.8" gasketID="188.9" depth="5.0" />
+        <Rating id="400" OD="216.0" gasketOD="204.8" gasketID="188.9" depth="5.0" />
+        <Rating id="600" OD="216.0" gasketOD="204.8" gasketID="188.9" depth="5.0" />
+        <Rating id="900" OD="216.0" gasketOD="204.8" gasketID="188.9" depth="5.0" />
+        <Rating id="1500" OD="216.0" gasketOD="204.8" gasketID="188.9" depth="5.0" />
+        <Rating id="2500" OD="216.0" gasketOD="204.8" gasketID="188.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="8" DN="200">
+        <Rating id="150" OD="270.0" gasketOD="255.6" gasketID="236.5" depth="5.0" />
+        <Rating id="300" OD="270.0" gasketOD="255.6" gasketID="236.5" depth="5.0" />
+        <Rating id="400" OD="270.0" gasketOD="255.6" gasketID="236.5" depth="5.0" />
+        <Rating id="600" OD="270.0" gasketOD="255.6" gasketID="236.5" depth="5.0" />
+        <Rating id="900" OD="270.0" gasketOD="255.6" gasketID="236.5" depth="5.0" />
+        <Rating id="1500" OD="270.0" gasketOD="255.6" gasketID="236.5" depth="5.0" />
+        <Rating id="2500" OD="270.0" gasketOD="255.6" gasketID="236.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="10" DN="250">
+        <Rating id="150" OD="324.0" gasketOD="306.4" gasketID="284.2" depth="5.0" />
+        <Rating id="300" OD="324.0" gasketOD="306.4" gasketID="284.2" depth="5.0" />
+        <Rating id="400" OD="324.0" gasketOD="306.4" gasketID="284.2" depth="5.0" />
+        <Rating id="600" OD="324.0" gasketOD="306.4" gasketID="284.2" depth="5.0" />
+        <Rating id="900" OD="324.0" gasketOD="306.4" gasketID="284.2" depth="5.0" />
+        <Rating id="1500" OD="324.0" gasketOD="306.4" gasketID="284.2" depth="5.0" />
+        <Rating id="2500" OD="324.0" gasketOD="306.4" gasketID="284.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="12" DN="300">
+        <Rating id="150" OD="381.0" gasketOD="363.5" gasketID="341.3" depth="5.0" />
+        <Rating id="300" OD="381.0" gasketOD="363.5" gasketID="341.3" depth="5.0" />
+        <Rating id="400" OD="381.0" gasketOD="363.5" gasketID="341.3" depth="5.0" />
+        <Rating id="600" OD="381.0" gasketOD="363.5" gasketID="341.3" depth="5.0" />
+        <Rating id="900" OD="381.0" gasketOD="363.5" gasketID="341.3" depth="5.0" />
+        <Rating id="1500" OD="381.0" gasketOD="363.5" gasketID="341.3" depth="5.0" />
+        <Rating id="2500" OD="381.0" gasketOD="363.5" gasketID="341.3" depth="5.0" />
+      </Facing>
+      <Facing NPS="14" DN="350">
+        <Rating id="150" OD="413.0" gasketOD="395.3" gasketID="373.1" depth="5.0" />
+        <Rating id="300" OD="413.0" gasketOD="395.3" gasketID="373.1" depth="5.0" />
+        <Rating id="400" OD="413.0" gasketOD="395.3" gasketID="373.1" depth="5.0" />
+        <Rating id="600" OD="413.0" gasketOD="395.3" gasketID="373.1" depth="5.0" />
+        <Rating id="900" OD="413.0" gasketOD="395.3" gasketID="373.1" depth="5.0" />
+        <Rating id="1500" OD="413.0" gasketOD="395.3" gasketID="373.1" depth="5.0" />
+        <Rating id="2500" OD="413.0" gasketOD="395.3" gasketID="373.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="16" DN="400">
+        <Rating id="150" OD="470.0" gasketOD="449.3" gasketID="423.9" depth="5.0" />
+        <Rating id="300" OD="470.0" gasketOD="449.3" gasketID="423.9" depth="5.0" />
+        <Rating id="400" OD="470.0" gasketOD="449.3" gasketID="423.9" depth="5.0" />
+        <Rating id="600" OD="470.0" gasketOD="449.3" gasketID="423.9" depth="5.0" />
+        <Rating id="900" OD="470.0" gasketOD="449.3" gasketID="423.9" depth="5.0" />
+        <Rating id="1500" OD="470.0" gasketOD="449.3" gasketID="423.9" depth="5.0" />
+        <Rating id="2500" OD="470.0" gasketOD="449.3" gasketID="423.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="18" DN="450">
+        <Rating id="150" OD="533.0" gasketOD="512.8" gasketID="487.4" depth="5.0" />
+        <Rating id="300" OD="533.0" gasketOD="512.8" gasketID="487.4" depth="5.0" />
+        <Rating id="400" OD="533.0" gasketOD="512.8" gasketID="487.4" depth="5.0" />
+        <Rating id="600" OD="533.0" gasketOD="512.8" gasketID="487.4" depth="5.0" />
+        <Rating id="900" OD="533.0" gasketOD="512.8" gasketID="487.4" depth="5.0" />
+        <Rating id="1500" OD="533.0" gasketOD="512.8" gasketID="487.4" depth="5.0" />
+        <Rating id="2500" OD="533.0" gasketOD="512.8" gasketID="487.4" depth="5.0" />
+      </Facing>
+      <Facing NPS="20" DN="500">
+        <Rating id="150" OD="584.0" gasketOD="560.4" gasketID="531.8" depth="5.0" />
+        <Rating id="300" OD="584.0" gasketOD="560.4" gasketID="531.8" depth="5.0" />
+        <Rating id="400" OD="584.0" gasketOD="560.4" gasketID="531.8" depth="5.0" />
+        <Rating id="600" OD="584.0" gasketOD="560.4" gasketID="531.8" depth="5.0" />
+        <Rating id="900" OD="584.0" gasketOD="560.4" gasketID="531.8" depth="5.0" />
+        <Rating id="1500" OD="584.0" gasketOD="560.4" gasketID="531.8" depth="5.0" />
+        <Rating id="2500" OD="584.0" gasketOD="560.4" gasketID="531.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="24" DN="600">
+        <Rating id="150" OD="692.0" gasketOD="668.3" gasketID="639.8" depth="5.0" />
+        <Rating id="300" OD="692.0" gasketOD="668.3" gasketID="639.8" depth="5.0" />
+        <Rating id="400" OD="692.0" gasketOD="668.3" gasketID="639.8" depth="5.0" />
+        <Rating id="600" OD="692.0" gasketOD="668.3" gasketID="639.8" depth="5.0" />
+        <Rating id="900" OD="692.0" gasketOD="668.3" gasketID="639.8" depth="5.0" />
+        <Rating id="1500" OD="692.0" gasketOD="668.3" gasketID="639.8" depth="5.0" />
+        <Rating id="2500" OD="692.0" gasketOD="668.3" gasketID="639.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="26" DN="650" standard="B16.47" series="A">
+        <Rating id="75" OD="727.1" gasketOD="703.3" gasketID="674.7" depth="5.0" />
+        <Rating id="150" OD="749.3" gasketOD="725.5" gasketID="696.9" depth="5.0" />
+        <Rating id="300" OD="749.3" gasketOD="725.5" gasketID="696.9" depth="5.0" />
+        <Rating id="400" OD="749.3" gasketOD="725.5" gasketID="696.9" depth="5.0" />
+        <Rating id="600" OD="749.3" gasketOD="725.5" gasketID="696.9" depth="5.0" />
+        <Rating id="900" OD="749.3" gasketOD="725.5" gasketID="696.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="28" DN="700" standard="B16.47" series="A">
+        <Rating id="75" OD="777.9" gasketOD="754.1" gasketID="725.5" depth="5.0" />
+        <Rating id="150" OD="800.1" gasketOD="776.3" gasketID="747.7" depth="5.0" />
+        <Rating id="300" OD="800.1" gasketOD="776.3" gasketID="747.7" depth="5.0" />
+        <Rating id="400" OD="800.1" gasketOD="776.3" gasketID="747.7" depth="5.0" />
+        <Rating id="600" OD="800.1" gasketOD="776.3" gasketID="747.7" depth="5.0" />
+        <Rating id="900" OD="800.1" gasketOD="776.3" gasketID="747.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="30" DN="750" standard="B16.47" series="A">
+        <Rating id="75" OD="828.7" gasketOD="804.9" gasketID="776.3" depth="5.0" />
+        <Rating id="150" OD="857.3" gasketOD="833.5" gasketID="804.9" depth="5.0" />
+        <Rating id="300" OD="857.3" gasketOD="833.5" gasketID="804.9" depth="5.0" />
+        <Rating id="400" OD="857.3" gasketOD="833.5" gasketID="804.9" depth="5.0" />
+        <Rating id="600" OD="857.3" gasketOD="833.5" gasketID="804.9" depth="5.0" />
+        <Rating id="900" OD="857.3" gasketOD="833.5" gasketID="804.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="32" DN="800" standard="B16.47" series="A">
+        <Rating id="75" OD="889.0" gasketOD="865.2" gasketID="835.6" depth="5.0" />
+        <Rating id="150" OD="914.4" gasketOD="890.6" gasketID="862.0" depth="5.0" />
+        <Rating id="300" OD="914.4" gasketOD="890.6" gasketID="862.0" depth="5.0" />
+        <Rating id="400" OD="914.4" gasketOD="890.6" gasketID="862.0" depth="5.0" />
+        <Rating id="600" OD="914.4" gasketOD="890.6" gasketID="862.0" depth="5.0" />
+        <Rating id="900" OD="914.4" gasketOD="890.6" gasketID="862.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="34" DN="850" standard="B16.47" series="A">
+        <Rating id="75" OD="939.8" gasketOD="916.0" gasketID="886.4" depth="5.0" />
+        <Rating id="150" OD="965.2" gasketOD="941.4" gasketID="912.8" depth="5.0" />
+        <Rating id="300" OD="965.2" gasketOD="941.4" gasketID="912.8" depth="5.0" />
+        <Rating id="400" OD="965.2" gasketOD="941.4" gasketID="912.8" depth="5.0" />
+        <Rating id="600" OD="965.2" gasketOD="941.4" gasketID="912.8" depth="5.0" />
+        <Rating id="900" OD="965.2" gasketOD="941.4" gasketID="912.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="36" DN="900" standard="B16.47" series="A">
+        <Rating id="75" OD="990.6" gasketOD="966.8" gasketID="937.2" depth="5.0" />
+        <Rating id="150" OD="1022.4" gasketOD="998.6" gasketID="970.0" depth="5.0" />
+        <Rating id="300" OD="1022.4" gasketOD="998.6" gasketID="970.0" depth="5.0" />
+        <Rating id="400" OD="1022.4" gasketOD="998.6" gasketID="970.0" depth="5.0" />
+        <Rating id="600" OD="1022.4" gasketOD="998.6" gasketID="970.0" depth="5.0" />
+        <Rating id="900" OD="1022.4" gasketOD="998.6" gasketID="970.0" depth="5.0" />
+      </Facing>
+      <Facing NPS="38" DN="950" standard="B16.47" series="A">
+        <Rating id="150" OD="1073.2" gasketOD="1049.4" gasketID="1020.8" depth="5.0" />
+        <Rating id="300" OD="1028.7" gasketOD="1004.9" gasketID="976.3" depth="5.0" />
+        <Rating id="400" OD="1035.1" gasketOD="1011.3" gasketID="982.7" depth="5.0" />
+        <Rating id="600" OD="1054.1" gasketOD="1030.3" gasketID="1001.7" depth="5.0" />
+        <Rating id="900" OD="1098.6" gasketOD="1074.8" gasketID="1046.2" depth="5.0" />
+      </Facing>
+      <Facing NPS="40" DN="1000" standard="B16.47" series="A">
+        <Rating id="150" OD="1124.0" gasketOD="1100.2" gasketID="1071.6" depth="5.0" />
+        <Rating id="300" OD="1085.9" gasketOD="1062.1" gasketID="1033.5" depth="5.0" />
+        <Rating id="400" OD="1092.2" gasketOD="1068.4" gasketID="1039.8" depth="5.0" />
+        <Rating id="600" OD="1111.3" gasketOD="1087.5" gasketID="1059.0" depth="5.0" />
+        <Rating id="900" OD="1162.1" gasketOD="1138.3" gasketID="1109.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="42" DN="1050" standard="B16.47" series="A">
+        <Rating id="75" OD="1155.7" gasketOD="1131.9" gasketID="1103.3" depth="5.0" />
+        <Rating id="150" OD="1193.8" gasketOD="1170.0" gasketID="1141.4" depth="5.0" />
+        <Rating id="300" OD="1136.7" gasketOD="1112.9" gasketID="1084.3" depth="5.0" />
+        <Rating id="400" OD="1143.0" gasketOD="1119.2" gasketID="1090.6" depth="5.0" />
+        <Rating id="600" OD="1168.4" gasketOD="1144.6" gasketID="1116.0" depth="5.0" />
+        <Rating id="900" OD="1212.9" gasketOD="1189.1" gasketID="1160.5" depth="5.0" />
+      </Facing>
+      <Facing NPS="44" DN="1100" standard="B16.47" series="A">
+        <Rating id="150" OD="1244.6" gasketOD="1220.8" gasketID="1192.2" depth="5.0" />
+        <Rating id="300" OD="1193.8" gasketOD="1170.0" gasketID="1141.4" depth="5.0" />
+        <Rating id="400" OD="1200.2" gasketOD="1176.4" gasketID="1147.8" depth="5.0" />
+        <Rating id="600" OD="1225.6" gasketOD="1201.8" gasketID="1173.2" depth="5.0" />
+        <Rating id="900" OD="1270.0" gasketOD="1246.2" gasketID="1217.6" depth="5.0" />
+      </Facing>
+      <Facing NPS="46" DN="1150" standard="B16.47" series="A">
+        <Rating id="150" OD="1295.4" gasketOD="1271.6" gasketID="1243.0" depth="5.0" />
+        <Rating id="300" OD="1244.6" gasketOD="1220.8" gasketID="1192.2" depth="5.0" />
+        <Rating id="400" OD="1257.3" gasketOD="1233.5" gasketID="1204.9" depth="5.0" />
+        <Rating id="600" OD="1276.4" gasketOD="1252.6" gasketID="1224.0" depth="5.0" />
+        <Rating id="900" OD="1333.5" gasketOD="1309.7" gasketID="1281.1" depth="5.0" />
+      </Facing>
+      <Facing NPS="48" DN="1200" standard="B16.47" series="A">
+        <Rating id="75" OD="1308.1" gasketOD="1284.3" gasketID="1255.7" depth="5.0" />
+        <Rating id="150" OD="1358.9" gasketOD="1335.1" gasketID="1306.5" depth="5.0" />
+        <Rating id="300" OD="1301.8" gasketOD="1278.0" gasketID="1249.4" depth="5.0" />
+        <Rating id="400" OD="1308.1" gasketOD="1284.3" gasketID="1255.7" depth="5.0" />
+        <Rating id="600" OD="1333.5" gasketOD="1309.7" gasketID="1281.1" depth="5.0" />
+        <Rating id="900" OD="1384.3" gasketOD="1360.5" gasketID="1331.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="50" DN="1250" standard="B16.47" series="A">
+        <Rating id="150" OD="1409.7" gasketOD="1385.9" gasketID="1357.3" depth="5.0" />
+        <Rating id="300" OD="1358.9" gasketOD="1335.1" gasketID="1306.5" depth="5.0" />
+        <Rating id="400" OD="1361.9" gasketOD="1338.1" gasketID="1309.5" depth="5.0" />
+        <Rating id="600" OD="1384.3" gasketOD="1360.5" gasketID="1331.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="52" DN="1300" standard="B16.47" series="A">
+        <Rating id="150" OD="1460.5" gasketOD="1436.7" gasketID="1408.1" depth="5.0" />
+        <Rating id="300" OD="1409.7" gasketOD="1385.9" gasketID="1357.3" depth="5.0" />
+        <Rating id="400" OD="1412.7" gasketOD="1388.9" gasketID="1360.3" depth="5.0" />
+        <Rating id="600" OD="1435.1" gasketOD="1411.3" gasketID="1382.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="54" DN="1350" standard="B16.47" series="A">
+        <Rating id="75" OD="1466.9" gasketOD="1443.1" gasketID="1414.5" depth="5.0" />
+        <Rating id="150" OD="1511.3" gasketOD="1487.5" gasketID="1458.9" depth="5.0" />
+        <Rating id="300" OD="1466.9" gasketOD="1443.1" gasketID="1414.5" depth="5.0" />
+        <Rating id="400" OD="1470.2" gasketOD="1446.4" gasketID="1417.8" depth="5.0" />
+        <Rating id="600" OD="1492.3" gasketOD="1468.5" gasketID="1439.9" depth="5.0" />
+      </Facing>
+      <Facing NPS="56" DN="1400" standard="B16.47" series="A">
+        <Rating id="150" OD="1574.8" gasketOD="1551.0" gasketID="1522.4" depth="5.0" />
+        <Rating id="300" OD="1517.7" gasketOD="1493.9" gasketID="1465.3" depth="5.0" />
+        <Rating id="400" OD="1527.0" gasketOD="1503.2" gasketID="1474.6" depth="5.0" />
+        <Rating id="600" OD="1543.1" gasketOD="1519.3" gasketID="1490.7" depth="5.0" />
+      </Facing>
+      <Facing NPS="58" DN="1450" standard="B16.47" series="A">
+        <Rating id="150" OD="1625.6" gasketOD="1601.8" gasketID="1573.2" depth="5.0" />
+        <Rating id="300" OD="1574.8" gasketOD="1551.0" gasketID="1522.4" depth="5.0" />
+        <Rating id="400" OD="1577.8" gasketOD="1554.0" gasketID="1525.4" depth="5.0" />
+        <Rating id="600" OD="1600.2" gasketOD="1576.4" gasketID="1547.8" depth="5.0" />
+      </Facing>
+      <Facing NPS="60" DN="1500" standard="B16.47" series="A">
+        <Rating id="75" OD="1619.3" gasketOD="1595.5" gasketID="1566.9" depth="5.0" />
+        <Rating id="150" OD="1676.4" gasketOD="1652.6" gasketID="1624.0" depth="5.0" />
+        <Rating id="300" OD="1625.6" gasketOD="1601.8" gasketID="1573.2" depth="5.0" />
+        <Rating id="400" OD="1635.3" gasketOD="1611.5" gasketID="1582.9" depth="5.0" />
+        <Rating id="600" OD="1657.4" gasketOD="1633.6" gasketID="1605.0" depth="5.0" />
+      </Facing>
+    </SmallGrooveFacings>
+  </RaisedFaceDimensions>
+  <RingJointFacings>
+    <!--
+      Ring joint facing data:
+      * Profiles contains reusable RTJ profile geometries.
+      * Each Profile id such as S1 or S4 identifies a standard groove form.
+      * P = pitch diameter of the RTJ groove; this is also the mean seating diameter G used in the calculations.
+      * K = source flange reference diameter associated with the groove layout, retained for table traceability.
+      * E = groove depth symbol for the seating profile.
+      * F = groove width symbol for the seating profile.
+      * R = groove corner radius.
+      * A = ring width.
+      * B = overall height of the oval ring section.
+      * C = flat width on the octagonal ring section.
+      * H = overall height of the octagonal ring section.
+      * R1 = internal radius on the octagonal ring section.
+      * In each RingJointFacing entry, Rating id is the ASME pressure class.
+      * RingNumber is the standard ring designation used for the facing.
+      * profile links the rating to the matching Profile id.
+      * When a note attribute appears, the source had a special remark,
+        inferred value, or incomplete geometry that should be reviewed.
+    -->
+    <Profiles>
+      <Profile id="S0" E="5.56" F="7.14" R="0.8" A="6.35" C="3.96" H="10.3" B="11.9" R1="1.5" />
+      <Profile id="S1" E="6.35" F="8.74" R="0.8" A="7.95" C="5.23" H="12.7" B="14.2" R1="1.5" />
+      <Profile id="S1b" E="6.35" F="8.74" R="0.8" A="7.95" C="5.23" H="12.7" B="14.2" R1="2.3" />
+      <Profile id="S2" E="7.92" F="11.91" R="0.8" A="11.13" C="7.75" H="16.0" B="17.5" R1="1.5" />
+      <Profile id="S2b" E="11.13" F="15.09" R="1.5" A="14.27" C="9.65" H="17.5" B="19.1" R1="1.5" />
+      <Profile id="S3" E="7.95" F="11.91" R="0.8" A="11.13" C="7.75" H="16.0" B="17.5" R1="1.5" />
+      <Profile id="S4" E="9.53" F="13.49" R="1.5" A="12.7" C="8.66" H="17.5" B="19.1" R1="1.5" />
+      <Profile id="S5" E="11.13" F="16.66" R="1.5" A="15.88" C="10.49" H="20.6" B="22.4" R1="1.5" />
+      <Profile id="S6" E="12.7" F="19.84" R="1.5" A="19.05" C="12.32" H="23.9" B="25.4" R1="1.5" />
+      <Profile id="S7" E="14.27" F="23.01" R="1.5" A="22.23" C="14.81" H="26.9" B="28.7" R1="1.5" />
+      <Profile id="S8a" E="15.88" F="26.97" R="2.4" A="25.4" C="17.3" H="31.8" B="33.3" R1="1.5" />
+      <Profile id="S8b" E="15.88" F="26.97" R="2.4" A="25.4" C="17.3" H="31.8" B="33.3" R1="2.3" />
+      <Profile id="S9" E="17.48" F="30.18" R="2.4" A="28.58" C="19.81" H="35.1" B="36.6" R1="2.3" />
+      <Profile id="S10" E="17.48" F="33.32" R="2.4" A="31.75" C="22.33" H="38.1" B="39.6" R1="2.3" />
+      <Profile id="S11" E="20.62" F="36.53" R="2.4" A="34.93" C="24.82" H="41.4" B="44.5" R1="2.3" />
+    </Profiles>
+    <RingJointFacing NPS="0.5" DN="15">
+      <Rating id="300" RingNumber="11" P="34.14" profile="S0" K="50.8" />
+      <Rating id="600" RingNumber="11" P="34.14" profile="S0" K="50.8" />
+      <Rating id="900" RingNumber="12" P="39.67" profile="S1" K="60.3" />
+      <Rating id="1500" RingNumber="12" P="39.67" profile="S1" K="60.3" />
+      <Rating id="2500" RingNumber="13" P="42.88" profile="S1" K="65.1" />
+    </RingJointFacing>
+    <RingJointFacing NPS="0.75" DN="20">
+      <Rating id="300" RingNumber="13" P="42.88" profile="S1" K="63.0" />
+      <Rating id="600" RingNumber="13" P="42.88" profile="S1" K="63.0" />
+      <Rating id="900" RingNumber="14" P="44.45" profile="S1" K="66.7" />
+      <Rating id="1500" RingNumber="14" P="44.45" profile="S1" K="66.7" />
+      <Rating id="2500" RingNumber="16" P="50.80" profile="S1" K="73.0" />
+    </RingJointFacing>
+    <RingJointFacing NPS="1" DN="25">
+      <Rating id="150" RingNumber="15" P="47.62" profile="S1" K="63.5" />
+      <Rating id="300" RingNumber="16" P="50.80" profile="S1" K="69.8" />
+      <Rating id="600" RingNumber="16" P="50.80" profile="S1" K="69.8" />
+      <Rating id="900" RingNumber="16" P="50.80" profile="S1" K="71.4" />
+      <Rating id="1500" RingNumber="16" P="50.80" profile="S1" K="71.4" />
+      <Rating id="2500" RingNumber="18" P="60.33" profile="S1" K="82.5" />
+    </RingJointFacing>
+    <RingJointFacing NPS="1.25" DN="32">
+      <Rating id="150" RingNumber="17" P="57.15" profile="S1" K="73.0" />
+      <Rating id="300" RingNumber="18" P="60.33" profile="S1" K="79.4" />
+      <Rating id="600" RingNumber="18" P="60.33" profile="S1" K="79.4" />
+      <Rating id="900" RingNumber="18" P="60.33" profile="S1" K="81.0" />
+      <Rating id="1500" RingNumber="18" P="60.33" profile="S1" K="81.0" />
+      <Rating id="2500" RingNumber="21" P="72.24" profile="S2" K="101.6" />
+    </RingJointFacing>
+    <RingJointFacing NPS="1.5" DN="40">
+      <Rating id="150" RingNumber="19" P="65.07" profile="S1" K="82.5" />
+      <Rating id="300" RingNumber="20" P="68.28" profile="S1" K="90.5" />
+      <Rating id="600" RingNumber="20" P="68.28" profile="S1" K="90.5" />
+      <Rating id="900" RingNumber="20" P="68.28" profile="S1" K="92.1" />
+      <Rating id="1500" RingNumber="20" P="68.28" profile="S1" K="92.1" />
+      <Rating id="2500" RingNumber="23" P="82.55" profile="S2" K="114.3" />
+    </RingJointFacing>
+    <RingJointFacing NPS="2" DN="50">
+      <Rating id="150" RingNumber="22" P="82.55" profile="S1" K="101.6" />
+      <Rating id="300" RingNumber="23" P="82.55" profile="S2" K="107.9" />
+      <Rating id="600" RingNumber="23" P="82.55" profile="S2" K="107.9" />
+      <Rating id="900" RingNumber="24" P="95.25" profile="S2" K="123.8" />
+      <Rating id="1500" RingNumber="24" P="95.25" profile="S2" K="123.8" />
+      <Rating id="2500" RingNumber="26" P="101.60" profile="S2" K="133.3" />
+    </RingJointFacing>
+    <RingJointFacing NPS="2.5" DN="65">
+      <Rating id="150" RingNumber="25" P="101.60" profile="S1" K="120.6" />
+      <Rating id="300" RingNumber="26" P="101.60" profile="S2" K="127.0" />
+      <Rating id="600" RingNumber="26" P="101.60" profile="S2" K="127.0" />
+      <Rating id="900" RingNumber="27" P="107.95" profile="S2" K="136.5" />
+      <Rating id="1500" RingNumber="27" P="107.95" profile="S2" K="136.5" />
+      <Rating id="2500" RingNumber="28" P="111.13" profile="S4" K="149.2" />
+    </RingJointFacing>
+    <RingJointFacing NPS="3" DN="80" var="A">
+      <Rating id="150" RingNumber="29" P="114.30" profile="S1" K="133.3" />
+      <Rating id="300" RingNumber="30" P="117.48" profile="S2" K="146.0" />
+      <Rating id="600" RingNumber="30" P="117.48" profile="S2" K="146.0" />
+      <Rating id="900" RingNumber="31" P="123.82" profile="S2" K="155.6" />
+      <Rating id="1500" RingNumber="35" P="136.52" profile="S2" K="168.5" />
+      <Rating id="2500" RingNumber="32" P="127.00" profile="S4" K="168.3" />
+    </RingJointFacing>
+    <RingJointFacing NPS="3" DN="80" var="B">
+      <Rating id="150" RingNumber="29" P="114.30" profile="S1" K="154.0" />
+      <Rating id="300" RingNumber="31" P="123.82" profile="S2" K="158.7" />
+      <Rating id="600" RingNumber="31" P="123.82" profile="S2" K="158.7" />
+      <Rating id="900" RingNumber="31" P="123.82" profile="S2" />
+      <Rating id="1500" RingNumber="35" P="136.52" profile="S2" />
+      <Rating id="2500" RingNumber="32" P="127.00" profile="S4" />
+    </RingJointFacing>
+    <RingJointFacing NPS="3.5" DN="90">
+      <Rating id="150" RingNumber="33" P="131.78" profile="S1" K="171.4" />
+      <Rating id="300" RingNumber="34" P="131.78" profile="S2" K="174.6" />
+      <Rating id="400" RingNumber="34" P="131.78" profile="S2" K="174.6" />
+      <Rating id="600" RingNumber="34" P="131.78" profile="S2" K="174.6" />
+    </RingJointFacing>
+    <RingJointFacing NPS="4" DN="100" var="A">
+      <Rating id="150" RingNumber="33" P="131.78" profile="S1" K="171.4" />
+      <Rating id="300" RingNumber="34" P="131.78" profile="S2" K="174.6" />
+      <Rating id="400" RingNumber="34" P="131.78" profile="S2" K="174.6" />
+      <Rating id="600" RingNumber="34" P="131.78" profile="S2" K="174.6" />
+      <Rating id="900" K="181.0" />
+      <Rating id="1500" K="193.7" />
+      <Rating id="2500" K="203.2" />
+    </RingJointFacing>
+    <RingJointFacing NPS="4" DN="100" var="B">
+      <Rating id="150" RingNumber="36" P="149.22" profile="S1" K="193.7" />
+      <Rating id="300" RingNumber="37" P="149.22" profile="S2" K="209.5" />
+      <Rating id="400" RingNumber="37" P="149.22" profile="S2" K="209.5" />
+      <Rating id="600" RingNumber="37" P="149.22" profile="S2" K="209.5" />
+      <Rating id="900" RingNumber="37" P="149.22" profile="S2" K="215.9" />
+      <Rating id="1500" RingNumber="39" P="161.92" profile="S2" K="228.6" />
+      <Rating id="2500" RingNumber="38" P="157.18" profile="S5" K="241.3" />
+    </RingJointFacing>
+    <RingJointFacing NPS="5" DN="125">
+      <Rating id="150" RingNumber="40" P="171.45" profile="S1" K="219.1" />
+      <Rating id="300" RingNumber="41" P="180.98" profile="S2" K="241.3" />
+      <Rating id="400" RingNumber="41" P="180.98" profile="S2" K="241.3" />
+      <Rating id="600" RingNumber="41" P="180.98" profile="S2" K="241.3" />
+      <Rating id="900" RingNumber="41" P="180.98" profile="S2" K="241.3" />
+      <Rating id="1500" RingNumber="44" P="193.68" profile="S2" K="247.6" />
+      <Rating id="2500" RingNumber="42" P="190.50" profile="S6" K="279.4" />
+    </RingJointFacing>
+    <RingJointFacing NPS="6" DN="150">
+      <Rating id="150" RingNumber="43" P="193.68" profile="S1" K="273.0" />
+      <Rating id="300" RingNumber="45" P="211.12" profile="S2" K="301.6" />
+      <Rating id="400" RingNumber="45" P="211.12" profile="S2" K="301.6" />
+      <Rating id="600" RingNumber="45" P="211.12" profile="S2" K="301.6" />
+      <Rating id="900" RingNumber="45" P="211.12" profile="S2" K="308.0" />
+      <Rating id="1500" RingNumber="46" P="211.14" profile="S4" K="317.5" />
+      <Rating id="2500" RingNumber="47" P="228.60" profile="S6" K="339.7" />
+    </RingJointFacing>
+    <RingJointFacing NPS="8" DN="200">
+      <Rating id="150" RingNumber="48" P="247.65" profile="S1" K="330.2" />
+      <Rating id="300" RingNumber="49" P="269.88" profile="S2" K="355.6" />
+      <Rating id="400" RingNumber="49" P="269.88" profile="S2" K="355.6" />
+      <Rating id="600" RingNumber="49" P="269.88" profile="S2" K="355.6" />
+      <Rating id="900" RingNumber="49" P="269.88" profile="S2" K="361.9" />
+      <Rating id="1500" RingNumber="50" P="269.88" profile="S5" K="371.5" />
+      <Rating id="2500" RingNumber="51" P="279.40" profile="S7" K="425.4" />
+    </RingJointFacing>
+    <RingJointFacing NPS="10" DN="250">
+      <Rating id="150" RingNumber="52" P="304.80" profile="S1" K="406.4" />
+      <Rating id="300" RingNumber="53" P="323.85" profile="S2" K="412.7" />
+      <Rating id="400" RingNumber="53" P="323.85" profile="S2" K="412.7" />
+      <Rating id="600" RingNumber="53" P="323.85" profile="S2" K="412.7" />
+      <Rating id="900" RingNumber="53" P="323.85" profile="S2" K="419.1" />
+      <Rating id="1500" RingNumber="54" P="323.85" profile="S5" K="438.1" />
+      <Rating id="2500" RingNumber="55" P="342.90" profile="S9" K="495.3" />
+    </RingJointFacing>
+    <RingJointFacing NPS="12" DN="300">
+      <Rating id="150" RingNumber="56" P="381.00" profile="S1" K="425.4" />
+      <Rating id="300" RingNumber="57" P="381.00" profile="S2" K="457.2" />
+      <Rating id="400" RingNumber="57" P="381.00" profile="S2" K="457.2" />
+      <Rating id="600" RingNumber="57" P="381.00" profile="S2" K="457.2" />
+      <Rating id="900" RingNumber="57" P="381.00" profile="S2" K="466.7" />
+      <Rating id="1500" RingNumber="58" P="381.00" profile="S7" K="488.9" />
+      <Rating id="2500" RingNumber="60" P="406.40" profile="S10" />
+    </RingJointFacing>
+    <RingJointFacing NPS="14" DN="350">
+      <Rating id="150" RingNumber="59" P="396.88" profile="S1" K="482.6" />
+      <Rating id="300" RingNumber="61" P="419.10" profile="S2" K="508.0" />
+      <Rating id="400" RingNumber="61" P="419.10" profile="S2" K="508.0" />
+      <Rating id="600" RingNumber="61" P="419.10" profile="S2" K="508.0" />
+      <Rating id="900" RingNumber="62" P="419.10" profile="S5" K="523.9" />
+      <Rating id="1500" RingNumber="63" P="419.10" profile="S8a" K="546.1" />
+    </RingJointFacing>
+    <RingJointFacing NPS="16" DN="400">
+      <Rating id="150" RingNumber="64" P="454.03" profile="S1b" K="546.1" />
+      <Rating id="300" RingNumber="65" P="469.90" profile="S2" K="574.7" />
+      <Rating id="400" RingNumber="65" P="469.90" profile="S2" K="574.7" />
+      <Rating id="600" RingNumber="65" P="469.90" profile="S2" K="574.7" />
+      <Rating id="900" RingNumber="66" P="469.90" profile="S5" K="593.7" />
+      <Rating id="1500" RingNumber="67" P="469.90" profile="S9" K="612.8" />
+    </RingJointFacing>
+    <RingJointFacing NPS="18" DN="450">
+      <Rating id="150" RingNumber="68" P="517.53" profile="S1" K="596.9" />
+      <Rating id="300" RingNumber="69" P="533.40" profile="S2" K="635.0" />
+      <Rating id="400" RingNumber="69" P="533.40" profile="S2" K="635.0" />
+      <Rating id="600" RingNumber="69" P="533.40" profile="S2" K="635.0" />
+      <Rating id="900" RingNumber="70" P="533.40" profile="S6" K="647.7" />
+      <Rating id="1500" RingNumber="71" P="533.40" profile="S9" K="673.1" />
+    </RingJointFacing>
+    <RingJointFacing NPS="20" DN="500">
+      <Rating id="150" RingNumber="72" P="558.80" profile="S1" K="647.7" />
+      <Rating id="300" RingNumber="73" P="584.20" profile="S4" K="685.8" />
+      <Rating id="400" RingNumber="73" P="584.20" profile="S4" />
+      <Rating id="600" RingNumber="73" P="584.20" profile="S4" />
+      <Rating id="900" RingNumber="74" P="584.20" profile="S6" note="E missing in source; S6 inferred" />
+      <Rating id="1500" RingNumber="75" P="584.20" profile="S10" />
+    </RingJointFacing>
+    <RingJointFacing NPS="22" DN="550">
+      <Rating id="150" RingNumber="80" P="615.95" profile="S1" K="711.2" note="Seating dims absent; gasket approx S1 (B unspecified)" />
+      <Rating id="300" RingNumber="81" P="635.00" profile="S2b" K="749.3" />
+      <Rating id="400" RingNumber="81" P="635.00" profile="S2b" K="749.3" />
+      <Rating id="600" RingNumber="81" P="635.00" profile="S2b" K="749.3" />
+      <Rating id="400" K="749.3" />
+      <Rating id="600" K="749.3" />
+      <Rating id="900" K="771.5" />
+      <Rating id="1500" K="739.7" />
+    </RingJointFacing>
+    <RingJointFacing NPS="24" DN="600">
+      <Rating id="150" RingNumber="76" P="673.10" profile="S1" />
+      <Rating id="300" RingNumber="77" P="692.15" profile="S5" />
+      <Rating id="400" RingNumber="77" P="692.15" profile="S5" />
+      <Rating id="600" RingNumber="77" P="692.15" profile="S5" />
+      <Rating id="900" RingNumber="78" P="692.15" profile="S8b" />
+      <Rating id="1500" RingNumber="79" P="692.15" profile="S11" />
+    </RingJointFacing>
+    <RingJointFacing NPS="26" DN="650" standard="B16.47" series="A">
+      <Rating id="300" RingNumber="93" P="749.30" profile="S6" />
+      <Rating id="400" RingNumber="93" P="749.30" profile="S6" />
+      <Rating id="600" RingNumber="93" P="749.30" profile="S6" />
+      <Rating id="900" RingNumber="100" P="749.30" profile="S9" />
+    </RingJointFacing>
+    <RingJointFacing NPS="28" DN="700" standard="B16.47" series="A">
+      <Rating id="300" RingNumber="94" P="800.10" profile="S6" />
+      <Rating id="400" RingNumber="94" P="800.10" profile="S6" />
+      <Rating id="600" RingNumber="94" P="800.10" profile="S6" />
+      <Rating id="900" RingNumber="101" P="800.10" profile="S10" />
+    </RingJointFacing>
+    <RingJointFacing NPS="30" DN="750" standard="B16.47" series="A">
+      <Rating id="300" RingNumber="95" P="857.25" profile="S6" />
+      <Rating id="400" RingNumber="95" P="857.25" profile="S6" />
+      <Rating id="600" RingNumber="95" P="857.25" profile="S6" />
+      <Rating id="900" RingNumber="102" P="857.25" profile="S10" />
+    </RingJointFacing>
+    <RingJointFacing NPS="32" DN="800" standard="B16.47" series="A">
+      <Rating id="300" RingNumber="96" P="914.40" profile="S7" />
+      <Rating id="400" RingNumber="96" P="914.40" profile="S7" />
+      <Rating id="600" RingNumber="96" P="914.40" profile="S7" />
+      <Rating id="900" RingNumber="103" P="914.40" profile="S10" />
+    </RingJointFacing>
+    <RingJointFacing NPS="34" DN="850" standard="B16.47" series="A">
+      <Rating id="300" RingNumber="97" P="965.20" profile="S7" />
+      <Rating id="400" RingNumber="97" P="965.20" profile="S7" />
+      <Rating id="600" RingNumber="97" P="965.20" profile="S7" />
+      <Rating id="900" RingNumber="104" P="965.20" profile="S11" />
+    </RingJointFacing>
+    <RingJointFacing NPS="36" DN="900" standard="B16.47" series="A">
+      <Rating id="300" RingNumber="98" P="1022.35" profile="S7" />
+      <Rating id="400" RingNumber="98" P="1022.35" profile="S7" />
+      <Rating id="600" RingNumber="98" P="1022.35" profile="S7" />
+      <Rating id="900" RingNumber="105" P="1022.35" profile="S11" />
+    </RingJointFacing>
+    <RingJointFacing NPS="38" DN="950" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1073.20" />
+      <Rating id="400" P="1073.20" />
+      <Rating id="600" P="1073.20" />
+      <Rating id="900" P="1073.20" />
+    </RingJointFacing>
+    <RingJointFacing NPS="40" DN="1000" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1124.00" />
+      <Rating id="400" P="1124.00" />
+      <Rating id="600" P="1124.00" />
+      <Rating id="900" P="1124.00" />
+    </RingJointFacing>
+    <RingJointFacing NPS="42" DN="1050" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1193.80" />
+      <Rating id="400" P="1193.80" />
+      <Rating id="600" P="1193.80" />
+      <Rating id="900" P="1193.80" />
+    </RingJointFacing>
+    <RingJointFacing NPS="44" DN="1100" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1244.60" />
+      <Rating id="400" P="1244.60" />
+      <Rating id="600" P="1244.60" />
+      <Rating id="900" P="1244.60" />
+    </RingJointFacing>
+    <RingJointFacing NPS="46" DN="1150" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1295.40" />
+      <Rating id="400" P="1295.40" />
+      <Rating id="600" P="1295.40" />
+      <Rating id="900" P="1295.40" />
+    </RingJointFacing>
+    <RingJointFacing NPS="48" DN="1200" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1358.90" />
+      <Rating id="400" P="1358.90" />
+      <Rating id="600" P="1358.90" />
+      <Rating id="900" P="1358.90" />
+    </RingJointFacing>
+    <RingJointFacing NPS="50" DN="1250" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1409.70" />
+      <Rating id="400" P="1409.70" />
+      <Rating id="600" P="1409.70" />
+      <Rating id="900" P="1409.70" />
+    </RingJointFacing>
+    <RingJointFacing NPS="52" DN="1300" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1460.50" />
+      <Rating id="400" P="1460.50" />
+      <Rating id="600" P="1460.50" />
+      <Rating id="900" P="1460.50" />
+    </RingJointFacing>
+    <RingJointFacing NPS="54" DN="1350" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1511.30" />
+      <Rating id="400" P="1511.30" />
+      <Rating id="600" P="1511.30" />
+      <Rating id="900" P="1511.30" />
+    </RingJointFacing>
+    <RingJointFacing NPS="56" DN="1400" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1574.80" />
+      <Rating id="400" P="1574.80" />
+      <Rating id="600" P="1574.80" />
+      <Rating id="900" P="1574.80" />
+    </RingJointFacing>
+    <RingJointFacing NPS="58" DN="1450" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1625.60" />
+      <Rating id="400" P="1625.60" />
+      <Rating id="600" P="1625.60" />
+      <Rating id="900" P="1625.60" />
+    </RingJointFacing>
+    <RingJointFacing NPS="60" DN="1500" standard="B16.47" series="A" note="P values inferred from the B16.47 large-diameter groove alignment already used in this merged facing table; official RTJ ring assignments above NPS 36 are not present in the repo source.">
+      <Rating id="300" P="1676.40" />
+      <Rating id="400" P="1676.40" />
+      <Rating id="600" P="1676.40" />
+      <Rating id="900" P="1676.40" />
+    </RingJointFacing>
+  </RingJointFacings>
+  <!-- RF flat ring gasket seating dimensions (ASME B16.21).
+       G = (gasketOD + gasketID) / 2 = mean gasket seating diameter [mm].
+       gasketOD = raised-face OD (matches class-150 facing OD per NPS).
+       gasketID = gasket bore; for B16.5 approximated from ASME B36.10 Sch-STD pipe bore;
+                  for B16.47 interpolated from verified test anchor values (NPS 30, 60).
+       Validation at load time: gasketOD <= facing_OD and gasketID >= 0.85 × NPS_mm. -->
+  <RaisedFaceGaskets unit="mm" standard="ASME B16.21">
+    <!-- ASME B16.5 range (NPS 1/2 – 24) -->
+    <Gasket NPS="1/2"   gasketOD="35.1"   gasketID="15.8"   />
+    <Gasket NPS="3/4"   gasketOD="42.9"   gasketID="20.9"   />
+    <Gasket NPS="1"     gasketOD="50.8"   gasketID="26.6"   />
+    <Gasket NPS="1-1/4" gasketOD="63.5"   gasketID="35.1"   />
+    <Gasket NPS="1-1/2" gasketOD="73.0"   gasketID="40.9"   />
+    <Gasket NPS="2"     gasketOD="91.9"   gasketID="52.5"   />
+    <Gasket NPS="2-1/2" gasketOD="104.6"  gasketID="62.7"   />
+    <Gasket NPS="3"     gasketOD="127.0"  gasketID="77.9"   />
+    <Gasket NPS="3-1/2" gasketOD="139.7"  gasketID="90.1"   />
+    <Gasket NPS="4"     gasketOD="157.2"  gasketID="102.3"  />
+    <Gasket NPS="5"     gasketOD="185.7"  gasketID="128.2"  />
+    <Gasket NPS="6"     gasketOD="215.9"  gasketID="154.1"  />
+    <Gasket NPS="8"     gasketOD="269.7"  gasketID="212.9"  />
+    <Gasket NPS="10"    gasketOD="323.8"  gasketID="254.5"  />
+    <Gasket NPS="12"    gasketOD="381.0"  gasketID="304.8"  />
+    <Gasket NPS="14"    gasketOD="412.8"  gasketID="339.7"  />
+    <Gasket NPS="16"    gasketOD="469.9"  gasketID="406.4"  />
+    <Gasket NPS="18"    gasketOD="533.4"  gasketID="463.6"  />
+    <Gasket NPS="20"    gasketOD="584.2"  gasketID="501.65" />
+    <Gasket NPS="22"    gasketOD="641.4"  gasketID="558.8"  />
+    <Gasket NPS="24"    gasketOD="692.2"  gasketID="609.6"  />
+    <!-- ASME B16.47 Series A (NPS 26 – 60): gasketOD = class-150 facing OD;
+         gasketID interpolated linearly from anchor values NPS 30→730.2 and NPS 60→1435.1. -->
+    <Gasket NPS="26"    gasketOD="749.3"  gasketID="636.2"  />
+    <Gasket NPS="28"    gasketOD="800.1"  gasketID="683.2"  />
+    <Gasket NPS="30"    gasketOD="857.3"  gasketID="730.2"  />
+    <Gasket NPS="32"    gasketOD="914.4"  gasketID="777.2"  />
+    <Gasket NPS="34"    gasketOD="965.2"  gasketID="824.2"  />
+    <Gasket NPS="36"    gasketOD="1022.4" gasketID="871.2"  />
+    <Gasket NPS="38"    gasketOD="1073.2" gasketID="918.2"  />
+    <Gasket NPS="40"    gasketOD="1124.0" gasketID="965.2"  />
+    <Gasket NPS="42"    gasketOD="1193.8" gasketID="1012.2" />
+    <Gasket NPS="44"    gasketOD="1244.6" gasketID="1059.2" />
+    <Gasket NPS="46"    gasketOD="1295.4" gasketID="1106.2" />
+    <Gasket NPS="48"    gasketOD="1358.9" gasketID="1153.2" />
+    <Gasket NPS="50"    gasketOD="1409.7" gasketID="1200.2" />
+    <Gasket NPS="52"    gasketOD="1460.5" gasketID="1247.2" />
+    <Gasket NPS="54"    gasketOD="1511.3" gasketID="1294.2" />
+    <Gasket NPS="56"    gasketOD="1574.8" gasketID="1341.2" />
+    <Gasket NPS="58"    gasketOD="1625.6" gasketID="1388.2" />
+    <Gasket NPS="60"    gasketOD="1676.4" gasketID="1435.1" />
+  </RaisedFaceGaskets>
+</Facings>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ASME Flange Properties — B16.5 / B16.47</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;background:#f4f6f8;color:#1a1a1a}
+header{background:#1a3a5c;color:#e8f0f8;padding:14px 20px;display:flex;align-items:baseline;gap:16px}
+header h1{font-size:16px;font-weight:600}
+header span{font-size:11px;color:#8ab0d0}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 16px;background:#fff;border-bottom:1px solid #dde2e8;position:sticky;top:0;z-index:10}
+.toolbar label{font-size:11px;color:#556;margin-right:2px}
+.toolbar select,.toolbar input[type=text]{font-size:12px;padding:4px 8px;border:1px solid #c5ccd4;border-radius:4px;background:#fff;color:#1a1a1a;height:28px}
+.toolbar input[type=text]{width:150px}
+.sep{width:1px;height:22px;background:#dde2e8;margin:0 4px}
+.stats{margin-left:auto;font-size:11px;color:#667;white-space:nowrap}
+.btn{font-size:11px;padding:4px 12px;border-radius:4px;cursor:pointer;border:1px solid #c5ccd4;background:#f0f4f8;color:#1a3a5c;height:28px;font-weight:500}
+.btn:hover{background:#dde8f4}
+.btn.primary{background:#1a3a5c;color:#e8f0f8;border-color:#1a3a5c}
+.btn.primary:hover{background:#234b78}
+.table-wrap{overflow:auto;max-height:calc(100vh - 110px)}
+table{border-collapse:collapse;width:100%;white-space:nowrap;font-size:12px}
+thead{position:sticky;top:0;z-index:5}
+thead tr.mh th{background:#1a3a5c;color:#d8e8f5;font-size:11.5px;font-weight:600;padding:7px 10px;border-right:1px solid rgba(255,255,255,0.12);cursor:pointer;user-select:none}
+thead tr.mh th:hover{background:#234b78}
+thead tr.mh th.asc::after{content:" ▲";font-size:9px}
+thead tr.mh th.desc::after{content:" ▼";font-size:9px}
+thead tr.uh th{background:#0e2640;color:#6a96bb;font-size:10px;font-weight:400;padding:3px 10px;border-right:1px solid rgba(255,255,255,0.08)}
+tbody tr{border-bottom:1px solid #e8ecf0}
+tbody tr:nth-child(even){background:#f9fbfd}
+tbody tr:hover{background:#e6f1fb}
+td{padding:5px 10px;border-right:1px solid #e8ecf0;vertical-align:middle}
+td.num{text-align:right;font-family:'Consolas','Courier New',monospace;font-size:11.5px}
+td.nps{font-weight:600}
+.badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:10px;font-weight:600}
+.b165{background:#dceefb;color:#0c447c;border:1px solid #b5d4f4}
+.b1647{background:#d8f2e9;color:#085041;border:1px solid #9fe1cb}
+.no-data{text-align:center;padding:40px;color:#667;font-size:13px}
+#toast{position:fixed;bottom:24px;right:24px;background:#1a3a5c;color:#e8f0f8;padding:10px 18px;border-radius:6px;font-size:12px;font-weight:500;opacity:0;pointer-events:none;transition:opacity 0.3s;z-index:999}
+#toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>ASME Flange Properties</h1>
+  <span>B16.5:2020 &nbsp;|&nbsp; B16.47:2017 &nbsp;&mdash;&nbsp; Weld Neck (WN)</span>
+</header>
+<div class="toolbar">
+  <label>Standard</label><select id="selStd"><option value="">All</option></select>
+  <label>Rating</label><select id="selRating"><option value="">All</option></select>
+  <label>Series</label><select id="selSeries"><option value="">All</option></select>
+  <div class="sep"></div>
+  <label>Search</label><input type="text" id="search" placeholder="NPS / DN / Rating">
+  <div class="sep"></div>
+  <button class="btn" onclick="copyTSV()">Copy TSV (Excel)</button>
+  <button class="btn primary" onclick="copyCSV()">Copy CSV</button>
+  <span class="stats" id="stats">Loading&hellip;</span>
+</div>
+<div class="table-wrap">
+<table id="tbl">
+<thead>
+<tr class="mh">
+  <th data-col="NPS">NPS</th>
+  <th data-col="DN">DN</th>
+  <th data-col="Rating">Rating</th>
+  <th data-col="Standard">Standard</th>
+  <th data-col="Series">Series</th>
+  <th data-col="RingOD">O</th>
+  <th data-col="RingWT">tf</th>
+  <th data-col="HubLargeDiam">X</th>
+  <th data-col="HubSmallDiam">ODPipe</th>
+  <th data-col="HubLength">Hub L</th>
+  <th data-col="Height_WN">Y</th>
+  <th data-col="Height_LWN">Y (LWN)</th>
+  <th data-col="BoltCircDiam">W</th>
+  <th data-col="BoltHoleDiam2">Dh</th>
+  <th data-col="BoltNum">Nh</th>
+  <th data-col="BoltNomSize2">Bolt &Oslash;</th>
+  <th data-col="FacingDiamRF">D1</th>
+  <th data-col="FacingHeight">W1</th>
+  <th data-col="BoltMinLenRF">Bolt L RF</th>
+  <th data-col="BoltMinLenRJ">Bolt L RJ</th>
+</tr>
+<tr class="uh">
+  <th>[in]</th><th>[mm]</th><th>[-]</th><th></th><th></th>
+  <th>[mm]</th><th>[mm]</th><th>[mm]</th><th>[mm]</th><th>[mm]</th>
+  <th>[mm]</th><th>[mm]</th><th>[mm]</th><th>[mm]</th><th>[-]</th>
+  <th>[mm]</th><th>[mm]</th><th>[mm]</th><th>[mm]</th><th>[mm]</th>
+</tr>
+</thead>
+<tbody id="tbody"><tr><td colspan="20" class="no-data">Loading XML&hellip;</td></tr></tbody>
+</table>
+</div>
+<div id="toast"></div>
+<script>
+var NPS_MAP={0.125:'1/8',0.25:'1/4',0.375:'3/8',0.5:'1/2',0.75:'3/4',1.25:'1 1/4',1.5:'1 1/2',2.5:'2 1/2',3.5:'3 1/2'};
+function fmtNPS(v){var n=parseFloat(v);if(NPS_MAP[n])return NPS_MAP[n];if(n===Math.floor(n))return String(n);return String(n);}
+function gTxt(el,tag){var e=el.querySelector(tag);return e?e.textContent.trim():'';}
+function fmtNum(s,dec){dec=dec==null?2:dec;if(s===''||s==null)return'';var n=parseFloat(s);if(isNaN(n))return s;if(n===Math.floor(n))return String(n);return n.toFixed(dec);}
+var allData=[],sortCol='NPSraw',sortDir=1,currentFiltered=[];
+
+function parseXML(text){
+  var parser=new DOMParser();
+  var doc=parser.parseFromString(text,'application/xml');
+  var flanges=doc.querySelectorAll('Flange');
+  var rows=[];
+  flanges.forEach(function(f){
+    var rfNodes=f.querySelectorAll('FacingDiamRF');
+    var npsRaw=parseFloat(gTxt(f,'NPS'))||0;
+    var blrj=gTxt(f,'BoltMinLenRJ');
+    rows.push({
+      NPS:fmtNPS(gTxt(f,'NPS')),NPSraw:npsRaw,
+      DN:parseInt(gTxt(f,'DN'))||0,
+      Rating:parseInt(gTxt(f,'Rating'))||0,
+      Standard:f.getAttribute('Standard')||'',
+      Series:f.getAttribute('Series')||'',
+      RingOD:fmtNum(gTxt(f,'RingOD')),
+      RingWT:fmtNum(gTxt(f,'RingWT')),
+      HubLargeDiam:fmtNum(gTxt(f,'HubLargeDiam')),
+      HubSmallDiam:fmtNum(gTxt(f,'HubSmallDiam')),
+      HubLength:fmtNum(gTxt(f,'HubLength')),
+      Height_WN:fmtNum(gTxt(f,'Height_WN')),
+      Height_LWN:fmtNum(gTxt(f,'Height_LWN')),
+      BoltCircDiam:fmtNum(gTxt(f,'BoltCircDiam'),1),
+      BoltHoleDiam2:fmtNum(gTxt(f,'BoltHoleDiam2')),
+      BoltNum:parseInt(gTxt(f,'BoltNum'))||0,
+      BoltNomSize2:fmtNum(gTxt(f,'BoltNomSize2')),
+      FacingDiamRF:rfNodes[0]?fmtNum(rfNodes[0].textContent):'',
+      FacingHeight:rfNodes[1]?fmtNum(rfNodes[1].textContent):'',
+      BoltMinLenRF:fmtNum(gTxt(f,'BoltMinLenRF')),
+      BoltMinLenRJ:(blrj&&parseFloat(blrj)>0)?fmtNum(blrj):''
+    });
+  });
+  return rows;
+}
+
+function populateFilters(){
+  var stds=[...new Set(allData.map(function(r){return r.Standard;}))].sort();
+  var ratings=[...new Set(allData.map(function(r){return r.Rating;}))].sort(function(a,b){return a-b;});
+  var series=[...new Set(allData.map(function(r){return r.Series;}).filter(Boolean))].sort();
+  var ss=document.getElementById('selStd');
+  stds.forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent=s;ss.appendChild(o);});
+  var sr=document.getElementById('selRating');
+  ratings.forEach(function(r){var o=document.createElement('option');o.value=r;o.textContent=r;sr.appendChild(o);});
+  var se=document.getElementById('selSeries');
+  series.forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent='Series '+s;se.appendChild(o);});
+}
+
+function getFiltered(){
+  var std=document.getElementById('selStd').value;
+  var rating=document.getElementById('selRating').value;
+  var series=document.getElementById('selSeries').value;
+  var q=document.getElementById('search').value.toLowerCase().trim();
+  return allData.filter(function(r){
+    if(std&&r.Standard!==std)return false;
+    if(rating&&r.Rating!=rating)return false;
+    if(series&&r.Series!==series)return false;
+    if(q&&!r.NPS.toLowerCase().includes(q)&&!String(r.DN).includes(q)&&!String(r.Rating).includes(q))return false;
+    return true;
+  });
+}
+
+function sortData(data){
+  return [...data].sort(function(a,b){
+    var av=a[sortCol],bv=b[sortCol];
+    if(sortCol==='NPS'){av=a.NPSraw;bv=b.NPSraw;}
+    if(typeof av==='number'&&typeof bv==='number')return(av-bv)*sortDir;
+    return String(av).localeCompare(String(bv))*sortDir;
+  });
+}
+
+function renderTable(){
+  currentFiltered=sortData(getFiltered());
+  var tbody=document.getElementById('tbody');
+  document.getElementById('stats').textContent=currentFiltered.length+' rows';
+  if(currentFiltered.length===0){tbody.innerHTML='<tr><td colspan="20" class="no-data">No rows match the filters.</td></tr>';return;}
+  tbody.innerHTML=currentFiltered.map(function(r){
+    var sc=r.Standard.replace('ASME ','').replace(':','·');
+    var bc=r.Standard.includes('B16.5')?'b165':'b1647';
+    return '<tr>'
+      +'<td class="nps">'+r.NPS+'</td>'
+      +'<td class="num">'+r.DN+'</td>'
+      +'<td class="num">'+r.Rating+'</td>'
+      +'<td><span class="badge '+bc+'">'+sc+'</span></td>'
+      +'<td style="text-align:center">'+(r.Series||'—')+'</td>'
+      +'<td class="num">'+r.RingOD+'</td>'
+      +'<td class="num">'+r.RingWT+'</td>'
+      +'<td class="num">'+r.HubLargeDiam+'</td>'
+      +'<td class="num">'+r.HubSmallDiam+'</td>'
+      +'<td class="num">'+r.HubLength+'</td>'
+      +'<td class="num">'+r.Height_WN+'</td>'
+      +'<td class="num">'+r.Height_LWN+'</td>'
+      +'<td class="num">'+r.BoltCircDiam+'</td>'
+      +'<td class="num">'+r.BoltHoleDiam2+'</td>'
+      +'<td class="num">'+r.BoltNum+'</td>'
+      +'<td class="num">'+r.BoltNomSize2+'</td>'
+      +'<td class="num">'+r.FacingDiamRF+'</td>'
+      +'<td class="num">'+r.FacingHeight+'</td>'
+      +'<td class="num">'+r.BoltMinLenRF+'</td>'
+      +'<td class="num">'+r.BoltMinLenRJ+'</td>'
+      +'</tr>';
+  }).join('');
+}
+
+function bindSort(){
+  document.querySelectorAll('thead tr.mh th[data-col]').forEach(function(th){
+    th.addEventListener('click',function(){
+      var col=th.dataset.col;
+      if(sortCol===col)sortDir*=-1;else{sortCol=col;sortDir=1;}
+      document.querySelectorAll('thead tr.mh th').forEach(function(t){t.classList.remove('asc','desc');});
+      th.classList.add(sortDir===1?'asc':'desc');
+      renderTable();
+    });
+  });
+}
+
+var HDRS=['NPS','DN','Rating','Standard','Series','O','tf','X','ODPipe','HubLength','Y','Y_LWN','W','Dh','Nh','BoltNomSize','D1','W1','BoltMinLen_RF','BoltMinLen_RJ'];
+var UNITS=['[in]','[mm]','[-]','','','[mm]','[mm]','[mm]','[mm]','[mm]','[mm]','[mm]','[mm]','[mm]','[-]','[mm]','[mm]','[mm]','[mm]','[mm]'];
+function rowArr(r){return[r.NPS,r.DN,r.Rating,r.Standard,r.Series,r.RingOD,r.RingWT,r.HubLargeDiam,r.HubSmallDiam,r.HubLength,r.Height_WN,r.Height_LWN,r.BoltCircDiam,r.BoltHoleDiam2,r.BoltNum,r.BoltNomSize2,r.FacingDiamRF,r.FacingHeight,r.BoltMinLenRF,r.BoltMinLenRJ];}
+function buildDelim(sep){
+  var lines=[HDRS.join(sep),UNITS.join(sep)];
+  currentFiltered.forEach(function(r){lines.push(rowArr(r).join(sep));});
+  return lines.join('\r\n');
+}
+function copyTSV(){navigator.clipboard.writeText(buildDelim('\t')).then(function(){toast('TSV copied — paste into Excel or AutoCAD');}).catch(function(){toast('Copy failed — try right-click > copy');});}
+function copyCSV(){
+  var csv=currentFiltered.map(function(r){return rowArr(r).map(function(v){var s=String(v);return(s.includes(',')||s.includes('"'))?'"'+s.replace(/"/g,'""')+'"':s;}).join(',');});
+  var full=[HDRS.join(','),UNITS.join(',')].concat(csv).join('\r\n');
+  navigator.clipboard.writeText(full).then(function(){toast('CSV copied!');}).catch(function(){toast('Copy failed');});
+}
+function toast(msg){var el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(function(){el.classList.remove('show');},3200);}
+
+async function init(){
+  var xmlText='';
+  for(var url of['Flanges.xml','./Flanges.xml']){
+    try{var r=await fetch(url);if(r.ok){xmlText=await r.text();break;}}catch(e){}
+  }
+  if(!xmlText){
+    document.getElementById('tbody').innerHTML='<tr><td colspan="20" class="no-data">'
+      +'<b>Flanges.xml not found.</b><br>'
+      +'Place <code>Flanges.xml</code> in the same folder as this HTML file and reload.<br><br>'
+      +'Or drop it here: <input type="file" id="fileIn" accept=".xml" style="font-size:12px">'
+      +'</td></tr>';
+    document.getElementById('fileIn').addEventListener('change',function(e){
+      var f=e.target.files[0];if(!f)return;
+      var rd=new FileReader();rd.onload=function(ev){processXML(ev.target.result);};rd.readAsText(f);
+    });
+    return;
+  }
+  processXML(xmlText);
+}
+
+function processXML(text){
+  allData=parseXML(text);
+  populateFilters();
+  renderTable();
+  bindSort();
+  ['selStd','selRating','selSeries','search'].forEach(function(id){
+    document.getElementById(id).addEventListener('input',renderTable);
+  });
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  GasketDesignParameters.xml
+  ==========================
+  Gasket factors m (dimensionless) and minimum seating stress y [psi]
+  per ASME VIII-1 Appendix 2, Table 2-5.1 and manufacturer data.
+
+  Attributes per <Gasket> element:
+    m           – gasket factor (dimensionless)
+    y           – minimum design seating stress [psi]
+    description – gasket type and material
+-->
+<GasketDesignParameters unit_y="psi" source="ASME VIII-1 App.2 Table 2-5.1; Flexitallic, Lamons, Garlock manufacturer data">
+
+  <!-- ================================================================== -->
+  <Manufacturer id="ASME" source="ASME Boiler and Pressure Vessel Code, Section VIII Division 1, Appendix 2">
+
+    <!-- Self energizing -->
+    <Gasket m="0.00" y="0.0"     description="Self energizing type (O rings, elastomers etc.)" />
+
+    <!-- Elastomers – plain -->
+    <Gasket m="0.50" y="0.0"     description="Elastomer without fabric or high % of mineral fiber, Shore Durometer &lt; 75A" />
+    <Gasket m="1.00" y="200.0"   description="Elastomer without fabric or high % of mineral fiber, Shore Durometer &gt; 75A" />
+
+    <!-- Compressed asbestos-free / mineral fibre (CAF) -->
+    <Gasket m="2.00" y="1600.0"  description="Mineral fiber with suitable binder (CAF) 1/8 inch" />
+    <Gasket m="2.75" y="3700.0"  description="Mineral fiber with suitable binder (CAF) 1/16 inch" />
+    <Gasket m="3.75" y="6500.0"  description="Mineral fiber with suitable binder (CAF) 1/32 inch" />
+
+    <!-- Elastomers with fabric insertion -->
+    <Gasket m="1.25" y="400.0"   description="Elastomers with cotton fabric insertion" />
+    <Gasket m="2.25" y="2200.0"  description="Elastomers with fiber fabric insertion, 3-ply" />
+    <Gasket m="2.50" y="2900.0"  description="Elastomers with fiber fabric insertion, 2-ply" />
+    <Gasket m="2.75" y="3700.0"  description="Elastomers with fiber fabric insertion, 1-ply" />
+
+    <!-- Vegetable fiber -->
+    <Gasket m="1.75" y="1100.0"  description="Vegetable fiber" />
+
+    <!-- Spiral wound metal -->
+    <Gasket m="2.50" y="10000.0" description="Spiral wound metal, fiber filled: Carbon" />
+    <Gasket m="3.00" y="10000.0" description="Spiral wound metal, fiber filled: Monel and Nickel-base alloys" />
+
+    <!-- Corrugated metal, fiber inserted or corrugated (MJAF) -->
+    <Gasket m="2.50" y="2900.0"  description="Corrugated metal, fiber inserted or corrugated (MJAF): Soft Aluminum" />
+    <Gasket m="2.75" y="3700.0"  description="Corrugated metal, fiber inserted or corrugated (MJAF): Soft Copper or Brass" />
+    <Gasket m="3.00" y="4500.0"  description="Corrugated metal, fiber inserted or corrugated (MJAF): Iron or Soft Steel" />
+    <Gasket m="3.25" y="5500.0"  description="Corrugated metal, fiber inserted or corrugated (MJAF): Monel or 4%-6% Chrome" />
+    <Gasket m="3.50" y="6500.0"  description="Corrugated metal, fiber inserted or corrugated (MJAF): S/S and Nickel-base" />
+
+    <!-- Corrugated metal (plain) -->
+    <Gasket m="2.75" y="3700.0"  description="Corrugated metal: Soft Aluminum" />
+    <Gasket m="3.00" y="4500.0"  description="Corrugated metal: Soft Copper or Brass" />
+    <Gasket m="3.25" y="5500.0"  description="Corrugated metal: Iron or Soft Steel" />
+    <Gasket m="3.50" y="6500.0"  description="Corrugated metal: Monel or 4%-6% Chrome" />
+    <Gasket m="3.75" y="7600.0"  description="Corrugated metal: S/S and Nickel-base" />
+
+    <!-- Flat metal jacketed, mineral fiber filled -->
+    <Gasket m="3.25" y="5500.0"  description="Flat metal, jacketed mineral fiber filled: Soft Aluminum" />
+    <Gasket m="3.50" y="6500.0"  description="Flat metal, jacketed mineral fiber filled: Soft Copper or Brass" />
+    <Gasket m="3.75" y="7600.0"  description="Flat metal, jacketed mineral fiber filled: Iron or Soft Steel" />
+    <Gasket m="3.50" y="8000.0"  description="Flat metal, jacketed mineral fiber filled: Monel" />
+    <Gasket m="3.75" y="9000.0"  description="Flat metal, jacketed mineral fiber filled: 4%-6% Chrome" />
+    <Gasket m="3.75" y="9000.0"  description="Flat metal, jacketed mineral fiber filled: S/S and Nickel-base" />
+
+    <!-- Grooved metal -->
+    <Gasket m="3.25" y="5500.0"  description="Grooved metal: Soft Aluminum" />
+    <Gasket m="3.50" y="6500.0"  description="Grooved metal: Soft Copper or Brass" />
+    <Gasket m="3.75" y="7600.0"  description="Grooved metal: Iron or Soft Steel" />
+    <Gasket m="3.75" y="9000.0"  description="Grooved metal: Monel or 4%-6% Chrome" />
+    <Gasket m="4.25" y="10100.0" description="Grooved metal: S/S and Nickel-base" />
+
+    <!-- Solid flat metal -->
+    <Gasket m="4.00" y="8800.0"  description="Solid flat metal: Soft Aluminum" />
+    <Gasket m="4.75" y="13000.0" description="Solid flat metal: Soft Copper or Brass" />
+    <Gasket m="5.50" y="18000.0" description="Solid flat metal: Iron or Soft Steel" />
+    <Gasket m="6.00" y="21800.0" description="Solid flat metal: Monel or 4%-6% Chrome" />
+    <Gasket m="6.50" y="26000.0" description="Solid flat metal: S/S and Nickel-base" />
+
+    <!-- Ring joint -->
+    <Gasket m="5.50" y="18000.0" description="Ring Joint: Iron or Soft Steel" />
+    <Gasket m="6.00" y="21800.0" description="Ring Joint: Monel or 4%-6% Chrome" />
+    <Gasket m="6.50" y="26000.0" description="Ring Joint: S/S and Nickel-base" />
+
+  </Manufacturer>
+
+  <!-- ================================================================== -->
+  <Manufacturer id="Flexitallic" source="Flexitallic Gasket Design Manual">
+
+    <!-- Spiral wound -->
+    <Gasket m="3.00" y="10000.0" description="CG, CGI, R, RIR – Spiral Wound gaskets" />
+    <Gasket m="3.00" y="10000.0" description="CG-RJ, CGI-RJ – Spiral Wound Ring gaskets" />
+    <Gasket m="3.00" y="10000.0" description="HE-CGI, HE-CG – Spiral Wound gaskets for heat exchangers" />
+    <Gasket m="3.00" y="10000.0" description="Spiral Wound Styles M, MC and MCS for Boiler Manhole Assemblies" />
+    <Gasket m="3.00" y="10000.0" description="Spiral Wound Style T for Boiler handhole and Tubecap Assemblies" />
+    <Gasket m="3.00" y="10000.0" description="Baker gasket for HF Acid &amp; Hazardous Chemical applications" />
+    <Gasket m="3.00" y="5000.0"  description="LS, LSI – Spiral Wound Low Stress gaskets" />
+
+    <!-- Thermiculite series -->
+    <Gasket m="3.00" y="4200.0"  description="Thermiculite 715: Coreless sheet, 1/16 in thick (high temperature)" />
+    <Gasket m="3.00" y="10000.0" description="Thermiculite 735: Spiral Wound filler (high temperature)" />
+    <Gasket m="2.00" y="2500.0"  description="Thermiculite 815: Tanged sheet, 1/16 in thick (high temperature)" />
+    <Gasket m="3.00" y="10000.0" description="Thermiculite 835: Spiral Wound filler (high temperature)" />
+    <Gasket m="2.00" y="2500.0"  description="Thermiculite 845: Flexpro (Kammprofile) facing (high temperature)" />
+
+    <!-- Sigma PTFE series -->
+    <Gasket m="1.40" y="1885.0"  description="Sigma 500: PTFE, Glass Microspheres, 1/32 in thick" />
+    <Gasket m="1.40" y="2320.0"  description="Sigma 511: PTFE, Silica, 1/32 in thick" />
+    <Gasket m="1.40" y="1885.0"  description="Sigma 522: PTFE, Barium Sulfate, 1/16 in thick" />
+    <Gasket m="1.40" y="2320.0"  description="Sigma 533: PTFE, Barium Sulfate, 1/32 in thick" />
+    <Gasket m="1.40" y="1595.0"  description="Sigma 588: PTFE, 1/16 in thick" />
+    <Gasket m="1.40" y="1885.0"  description="Sigma 599: PTFE, Glass Microspheres, 1/16 in thick" />
+    <Gasket m="1.40" y="1595.0"  description="Sigma 600: PTFE, 1/32 to 1/4 in thick" />
+
+    <!-- Compressed fiber sheet (SF series) -->
+    <Gasket m="3.20" y="2900.0"  description="SF 2401: Compressed Fiber Sheet, Synthetic, NBR" />
+    <Gasket m="3.20" y="2900.0"  description="SF 2420: Compressed Fiber Sheet, Synthetic, SBR" />
+    <Gasket m="3.70" y="3335.0"  description="SF 3300: Compressed Fiber Sheet, Aramid, Glass, NBR" />
+    <Gasket m="3.70" y="3335.0"  description="SF 3500: Compressed Fiber Sheet, Aramid, Glass, NBR" />
+    <Gasket m="3.70" y="3335.0"  description="SF 5000: Compressed Fiber Sheet, Carbon, Aramid, NBR" />
+
+    <!-- Flexicarb graphite sheet -->
+    <Gasket m="2.00" y="900.0"   description="Flexicarb NR: Compressed Fiber Sheet, Flexible Graphite" />
+    <Gasket m="2.00" y="900.0"   description="Flexicarb SR: Flexible Graphite, Flat 316SS Core" />
+    <Gasket m="2.00" y="2500.0"  description="Flexicarb ST: Flexible Graphite, Tanged 316SS Core" />
+
+    <!-- Flexpro Kammprofile -->
+    <Gasket m="2.00" y="2500.0"  description="Flexpro (Kammprofile): Flexicarb Flexible Graphite facing" />
+    <Gasket m="2.00" y="2500.0"  description="Flexpro (Kammprofile): PTFE facing" />
+    <Gasket m="2.00" y="2500.0"  description="Flexpro (Kammprofile): Soft Materials facing" />
+
+    <!-- MRG -->
+    <Gasket m="2.00" y="2500.0"  description="MRG – Metal Reinforced Gasket" />
+
+    <!-- RTJ -->
+    <Gasket m="5.50" y="18000.0" description="RTJ (Ring Type Joint): Iron or Soft Steel" />
+    <Gasket m="6.00" y="21800.0" description="RTJ (Ring Type Joint): Monel or 4%-6% Chrome" />
+    <Gasket m="6.50" y="26000.0" description="RTJ (Ring Type Joint): Stainless Steel or Nickel-base alloys" />
+
+  </Manufacturer>
+
+  <!-- ================================================================== -->
+  <Manufacturer id="Lamons" source="Lamons Gasket Company product data">
+
+    <!-- Spiral wound -->
+    <Gasket m="3.00" y="10000.0" description="SpiralSeal W, WR, WRI-HTG – Spiral Wound" />
+    <Gasket m="3.00" y="5000.0"  description="SpiralSeal WRI-LP – Spiral Wound, Low Compression with corrosion protection" />
+    <Gasket m="3.00" y="5000.0"  description="SpiralSeal WRI-LC – Spiral Wound, Low Compression" />
+
+    <!-- Kammprofile -->
+    <Gasket m="2.75" y="3700.0"  description="Kammpro LP-1, LP-2, LP-3 – Kammprofile" />
+    <Gasket m="2.75" y="3700.0"  description="Kammpro-ORJ, Kammpro-HTG – Kammprofile" />
+
+    <!-- Corrugated metal with graphite -->
+    <Gasket m="2.75" y="3700.0"  description="CMG – Corrugated Metal with graphite layers" />
+    <Gasket m="2.75" y="3700.0"  description="CMGT – Corrugated Metal with graphite layers and PTFE inner ring" />
+    <Gasket m="2.75" y="3700.0"  description="CMG-EX – Corrugated Metal for thermal fluctuations" />
+    <Gasket m="2.75" y="2500.0"  description="CMG-PTFE – Corrugated Metal with PTFE layers" />
+
+    <!-- Metal Reinforced Flexible Graphite -->
+    <Gasket m="2.00" y="900.0"   description="LG-SS – Metal Reinforced Flexible Graphite" />
+    <Gasket m="2.00" y="2500.0"  description="LG-TC – Metal Reinforced Flexible Graphite with tanged insert" />
+
+  </Manufacturer>
+
+  <!-- ================================================================== -->
+  <Manufacturer id="Garlock" source="Garlock Sealing Technologies product data">
+
+    <!-- Compressed Non-Asbestos -->
+    <Gasket m="4.00"  y="2500.0"  description="Compressed Non-Asbestos 700" />
+    <Gasket m="4.00"  y="1800.0"  description="Compressed Non-Asbestos 2550, 1/16 in &amp; Under" />
+    <Gasket m="7.00"  y="3500.0"  description="Compressed Non-Asbestos 2550, 1/8 in" />
+    <Gasket m="10.00" y="5000.0"  description="Compressed Non-Asbestos 2900, 1/16 in &amp; Under" />
+    <Gasket m="24.00" y="7000.0"  description="Compressed Non-Asbestos 2900, 1/8 in" />
+    <Gasket m="6.00"  y="4500.0"  description="Compressed Non-Asbestos 2930, 1/16 in &amp; Under" />
+    <Gasket m="4.50"  y="3000.0"  description="Compressed Non-Asbestos 2950, 1/16 in &amp; Under" />
+    <Gasket m="7.00"  y="4000.0"  description="Compressed Non-Asbestos 2950, 1/8 in" />
+    <Gasket m="4.20"  y="3050.0"  description="Compressed Non-Asbestos 3000, 1/16 in &amp; Under" />
+    <Gasket m="5.20"  y="4400.0"  description="Compressed Non-Asbestos 3000, 1/8 in" />
+    <Gasket m="3.50"  y="2100.0"  description="Compressed Non-Asbestos 3200/3400, 1/16 in &amp; Under" />
+    <Gasket m="6.60"  y="3000.0"  description="Compressed Non-Asbestos 3200/3400, 1/8 in" />
+    <Gasket m="2.10"  y="3050.0"  description="Compressed Non-Asbestos 3300, 1/16 in &amp; Under" />
+    <Gasket m="4.00"  y="3500.0"  description="Compressed Non-Asbestos 3300, 1/8 in" />
+    <Gasket m="3.50"  y="2800.0"  description="Compressed Non-Asbestos 3700, 1/16 in &amp; Under" />
+    <Gasket m="6.70"  y="4200.0"  description="Compressed Non-Asbestos 3700, 1/8 in" />
+    <Gasket m="8.10"  y="2500.0"  description="Compressed Non-Asbestos 3760, 1/16 in &amp; Under" />
+    <Gasket m="7.40"  y="2300.0"  description="Compressed Non-Asbestos 3760, 1/8 in" />
+    <Gasket m="2.00"  y="2000.0"  description="Compressed Non-Asbestos 3800, 1/16 in &amp; Under" />
+    <Gasket m="1.50"  y="1800.0"  description="Compressed Non-Asbestos CP-3900, 1/16 in &amp; Under" />
+    <Gasket m="1.50"  y="3600.0"  description="Compressed Non-Asbestos CP-3900, 1/8 in" />
+    <Gasket m="6.60"  y="2600.0"  description="Compressed Non-Asbestos IFG-5500, 1/16 in &amp; Under" />
+    <Gasket m="6.60"  y="3300.0"  description="Compressed Non-Asbestos IFG-5500, 1/8 in" />
+    <Gasket m="3.50"  y="2400.0"  description="Compressed Non-Asbestos IFG-5507, 1/16 in &amp; Under" />
+    <Gasket m="5.50"  y="3900.0"  description="Compressed Non-Asbestos IFG-5507, 1/8 in" />
+    <Gasket m="3.50"  y="2350.0"  description="Compressed Non-Asbestos HTC-9800, 1/16 in &amp; Under" />
+    <Gasket m="8.00"  y="3200.0"  description="Compressed Non-Asbestos HTC-9800, 1/8 in" />
+    <Gasket m="6.50"  y="2550.0"  description="Compressed Non-Asbestos HTC-9850, 1/16 in &amp; Under" />
+    <Gasket m="8.00"  y="2800.0"  description="Compressed Non-Asbestos HTC-9850, 1/8 in" />
+    <Gasket m="4.50"  y="4100.0"  description="Compressed Non-Asbestos G-9900, 1/16 in &amp; Under" />
+    <Gasket m="6.00"  y="4100.0"  description="Compressed Non-Asbestos G-9900, 1/8 in" />
+    <Gasket m="11.40" y="4800.0"  description="Compressed Non-Asbestos ST-706, 1/16 in &amp; Under" />
+    <Gasket m="22.00" y="6500.0"  description="Compressed Non-Asbestos ST-706, 1/8 in" />
+
+    <!-- GYLON PTFE series -->
+    <Gasket m="5.00" y="2750.0"  description="GYLON Fawn series, 1/16 in &amp; Under" />
+    <Gasket m="5.00" y="3500.0"  description="GYLON Fawn series, 1/8 in" />
+    <Gasket m="3.00" y="1650.0"  description="GYLON 3504 Blue, 1/16 in &amp; Under" />
+    <Gasket m="2.50" y="3000.0"  description="GYLON 3504 Blue, 1/8 in, 3/16 in, 1/4 in" />
+    <Gasket m="2.00" y="2350.0"  description="GYLON 3510 Off-White, 1/16 in &amp; Under" />
+    <Gasket m="2.00" y="2500.0"  description="GYLON 3510 Off-White, 1/8 in, 3/16 in, 1/4 in" />
+    <Gasket m="2.80" y="1650.0"  description="GYLON 3530 Black, 1/16 in &amp; Under" />
+    <Gasket m="2.00" y="1600.0"  description="GYLON 3530 Black, 1/8 in, 3/16 in, 1/4 in" />
+    <Gasket m="3.00" y="1700.0"  description="GYLON 3540, 1/16 in &amp; Under" />
+    <Gasket m="3.00" y="2200.0"  description="GYLON 3540, 1/8 in" />
+    <Gasket m="2.00" y="2200.0"  description="GYLON 3540, 3/16 in" />
+    <Gasket m="2.00" y="2500.0"  description="GYLON 3540, 1/4 in" />
+    <Gasket m="2.60" y="1500.0"  description="GYLON 3545, 1/16 in &amp; Under" />
+    <Gasket m="2.00" y="2200.0"  description="GYLON 3545, 1/8 in" />
+    <Gasket m="2.00" y="2200.0"  description="GYLON 3545, 3/16 in" />
+    <Gasket m="7.00" y="3700.0"  description="GYLON 3545, 1/4 in" />
+    <Gasket m="2.00" y="800.0"   description="GYLON 3545, 1/8 in (in envelope)" />
+
+    <!-- ENVELON series -->
+    <Gasket m="2.80" y="1400.0"  description="ENVELON 3565, 1/16 in &amp; Under" />
+    <Gasket m="3.70" y="2300.0"  description="ENVELON 3565, 1/8 in" />
+    <Gasket m="5.50" y="2800.0"  description="ENVELON 3565, 3/16 in" />
+    <Gasket m="6.00" y="2800.0"  description="ENVELON 3565, 1/4 in" />
+    <Gasket m="5.00" y="3500.0"  description="ENVELON 3560, 1/16 in &amp; Under" />
+    <Gasket m="5.00" y="4000.0"  description="ENVELON 3560, 1/8 in" />
+    <Gasket m="5.00" y="3500.0"  description="ENVELON 3561, 1/16 in &amp; Under" />
+    <Gasket m="5.00" y="4000.0"  description="ENVELON 3561, 1/8 in" />
+
+    <!-- GYLONGen2 -->
+    <Gasket m="3.00" y="1650.0"  description="GYLONGen2 3594, 1/16 in &amp; Under" />
+    <Gasket m="3.00" y="2500.0"  description="GYLONGen2 3594, 1/8 in" />
+
+    <!-- PTFE -->
+    <Gasket m="3.00" y="1500.0"  description="PTFE 8764, 1/16 in &amp; Under" />
+    <Gasket m="3.00" y="1700.0"  description="PTFE 8764, 1/8 in" />
+
+  </Manufacturer>
+
+</GasketDesignParameters>

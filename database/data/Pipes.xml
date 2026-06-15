@@ -1,0 +1,5716 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Legend:
+  NPS  = Nominal Pipe Size, in.
+  DN   = Nominal Pipe Diameter, mm.
+  SCH  = Nominal Pipe Thickness (schedule).
+  OD   = Pipe Outside Diameter, mm.
+  WT   = Pipe Wall Thickness, mm.
+  MASS = Pipe mass for unit of length, kg/m.
+  
+ *** WARNING ***
+ 1) Use the dot symbol as decimal separator!
+ 2) Do not use thousand separator!
+ 
+ -->
+<PIPES>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.1250</NPS>
+  <DN>6</DN>
+  <SCH>10</SCH>
+  <OD>10.30</OD>
+  <WT>1.24</WT>
+  <MASS>0.28</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.1250</NPS>
+  <DN>6</DN>
+  <SCH>30</SCH>
+  <OD>10.30</OD>
+  <WT>1.45</WT>
+  <MASS>0.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.1250</NPS>
+  <DN>6</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>10.30</OD>
+  <WT>1.73</WT>
+  <MASS>0.37</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.1250</NPS>
+  <DN>6</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>10.30</OD>
+  <WT>2.41</WT>
+  <MASS>0.47</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.1250</NPS>
+  <DN>6</DN>
+  <SCH>160</SCH>
+  <OD>10.30</OD>
+  <WT>3.15</WT>
+  <MASS>0.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.1250</NPS>
+  <DN>6</DN>
+  <API>XXS</API>
+  <OD>10.30</OD>
+  <WT>4.83</WT>
+  <MASS>0.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.2500</NPS>
+  <DN>8</DN>
+  <SCH>10</SCH>
+  <OD>13.70</OD>
+  <WT>1.65</WT>
+  <MASS>0.49</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.2500</NPS>
+  <DN>8</DN>
+  <SCH>30</SCH>
+  <OD>13.70</OD>
+  <WT>1.85</WT>
+  <MASS>0.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.2500</NPS>
+  <DN>8</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>13.70</OD>
+  <WT>2.24</WT>
+  <MASS>0.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.2500</NPS>
+  <DN>8</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>13.70</OD>
+  <WT>3.02</WT>
+  <MASS>0.80</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.2500</NPS>
+  <DN>8</DN>
+  <SCH>160</SCH>
+  <OD>13.70</OD>
+  <WT>3.68</WT>
+  <MASS>0.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.2500</NPS>
+  <DN>8</DN>
+  <API>XXS</API>
+  <OD>13.70</OD>
+  <WT>6.05</WT>
+  <MASS>1.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.3750</NPS>
+  <DN>10</DN>
+  <SCH>10</SCH>
+  <OD>17.10</OD>
+  <WT>1.65</WT>
+  <MASS>0.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.3750</NPS>
+  <DN>10</DN>
+  <SCH>30</SCH>
+  <OD>17.10</OD>
+  <WT>1.85</WT>
+  <MASS>0.70</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.3750</NPS>
+  <DN>10</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>17.10</OD>
+  <WT>2.31</WT>
+  <MASS>0.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.3750</NPS>
+  <DN>10</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>17.10</OD>
+  <WT>3.20</WT>
+  <MASS>1.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.3750</NPS>
+  <DN>10</DN>
+  <SCH>160</SCH>
+  <OD>17.10</OD>
+  <WT>4.01</WT>
+  <MASS>1.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.3750</NPS>
+  <DN>10</DN>
+  <API>XXS</API>
+  <OD>17.10</OD>
+  <WT>6.40</WT>
+  <MASS>1.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.5000</NPS>
+  <DN>15</DN>
+  <SCH>5</SCH>
+  <OD>21.30</OD>
+  <WT>1.65</WT>
+  <MASS>0.80</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.5000</NPS>
+  <DN>15</DN>
+  <SCH>10</SCH>
+  <OD>21.30</OD>
+  <WT>2.11</WT>
+  <MASS>1.00</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.5000</NPS>
+  <DN>15</DN>
+  <SCH>30</SCH>
+  <OD>21.30</OD>
+  <WT>2.41</WT>
+  <MASS>1.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.5000</NPS>
+  <DN>15</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>21.30</OD>
+  <WT>2.77</WT>
+  <MASS>1.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.5000</NPS>
+  <DN>15</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>21.30</OD>
+  <WT>3.73</WT>
+  <MASS>1.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.5000</NPS>
+  <DN>15</DN>
+  <SCH>160</SCH>
+  <OD>21.30</OD>
+  <WT>4.78</WT>
+  <MASS>1.95</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.5000</NPS>
+  <DN>15</DN>
+  <API>XXS</API>
+  <OD>21.30</OD>
+  <WT>7.47</WT>
+  <MASS>2.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.7500</NPS>
+  <DN>20</DN>
+  <SCH>5</SCH>
+  <OD>26.70</OD>
+  <WT>1.65</WT>
+  <MASS>1.02</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.7500</NPS>
+  <DN>20</DN>
+  <SCH>10</SCH>
+  <OD>26.70</OD>
+  <WT>2.11</WT>
+  <MASS>1.28</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.7500</NPS>
+  <DN>20</DN>
+  <SCH>30</SCH>
+  <OD>26.70</OD>
+  <WT>2.41</WT>
+  <MASS>1.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.7500</NPS>
+  <DN>20</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>26.70</OD>
+  <WT>2.87</WT>
+  <MASS>1.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.7500</NPS>
+  <DN>20</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>26.70</OD>
+  <WT>3.91</WT>
+  <MASS>2.20</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.7500</NPS>
+  <DN>20</DN>
+  <SCH>160</SCH>
+  <OD>26.70</OD>
+  <WT>5.56</WT>
+  <MASS>2.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>0.7500</NPS>
+  <DN>20</DN>
+  <API>XXS</API>
+  <OD>26.70</OD>
+  <WT>7.82</WT>
+  <MASS>3.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.0000</NPS>
+  <DN>25</DN>
+  <SCH>5</SCH>
+  <OD>33.40</OD>
+  <WT>1.65</WT>
+  <MASS>1.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.0000</NPS>
+  <DN>25</DN>
+  <SCH>10</SCH>
+  <OD>33.40</OD>
+  <WT>2.77</WT>
+  <MASS>2.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.0000</NPS>
+  <DN>25</DN>
+  <SCH>30</SCH>
+  <OD>33.40</OD>
+  <WT>2.90</WT>
+  <MASS>2.18</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.0000</NPS>
+  <DN>25</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>33.40</OD>
+  <WT>3.38</WT>
+  <MASS>2.50</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.0000</NPS>
+  <DN>25</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>33.40</OD>
+  <WT>4.55</WT>
+  <MASS>3.24</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.0000</NPS>
+  <DN>25</DN>
+  <SCH>160</SCH>
+  <OD>33.40</OD>
+  <WT>6.35</WT>
+  <MASS>4.24</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.0000</NPS>
+  <DN>25</DN>
+  <API>XXS</API>
+  <OD>33.40</OD>
+  <WT>9.09</WT>
+  <MASS>5.45</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.2500</NPS>
+  <DN>32</DN>
+  <SCH>5</SCH>
+  <OD>42.20</OD>
+  <WT>1.65</WT>
+  <MASS>1.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.2500</NPS>
+  <DN>32</DN>
+  <SCH>10</SCH>
+  <OD>42.20</OD>
+  <WT>2.77</WT>
+  <MASS>2.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.2500</NPS>
+  <DN>32</DN>
+  <SCH>30</SCH>
+  <OD>42.20</OD>
+  <WT>2.97</WT>
+  <MASS>2.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.2500</NPS>
+  <DN>32</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>42.20</OD>
+  <WT>3.56</WT>
+  <MASS>3.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.2500</NPS>
+  <DN>32</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>42.20</OD>
+  <WT>4.85</WT>
+  <MASS>4.47</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.2500</NPS>
+  <DN>32</DN>
+  <SCH>160</SCH>
+  <OD>42.20</OD>
+  <WT>6.35</WT>
+  <MASS>5.61</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.2500</NPS>
+  <DN>32</DN>
+  <API>XXS</API>
+  <OD>42.20</OD>
+  <WT>9.70</WT>
+  <MASS>7.77</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.5000</NPS>
+  <DN>40</DN>
+  <SCH>5</SCH>
+  <OD>48.30</OD>
+  <WT>1.65</WT>
+  <MASS>1.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.5000</NPS>
+  <DN>40</DN>
+  <SCH>10</SCH>
+  <OD>48.30</OD>
+  <WT>2.77</WT>
+  <MASS>3.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.5000</NPS>
+  <DN>40</DN>
+  <SCH>30</SCH>
+  <OD>48.30</OD>
+  <WT>3.18</WT>
+  <MASS>3.53</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.5000</NPS>
+  <DN>40</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>48.30</OD>
+  <WT>3.68</WT>
+  <MASS>4.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.5000</NPS>
+  <DN>40</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>48.30</OD>
+  <WT>5.08</WT>
+  <MASS>5.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.5000</NPS>
+  <DN>40</DN>
+  <SCH>160</SCH>
+  <OD>48.30</OD>
+  <WT>7.14</WT>
+  <MASS>7.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>1.5000</NPS>
+  <DN>40</DN>
+  <API>XXS</API>
+  <OD>48.30</OD>
+  <WT>10.15</WT>
+  <MASS>9.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <SCH>5</SCH>
+  <OD>60.30</OD>
+  <WT>1.65</WT>
+  <MASS>2.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <OD>60.30</OD>
+  <WT>2.11</WT>
+  <MASS>3.03</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <SCH>10</SCH>
+  <OD>60.30</OD>
+  <WT>2.77</WT>
+  <MASS>3.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <SCH>30</SCH>
+  <OD>60.30</OD>
+  <WT>3.18</WT>
+  <MASS>4.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <OD>60.30</OD>
+  <WT>3.58</WT>
+  <MASS>5.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>60.30</OD>
+  <WT>3.91</WT>
+  <MASS>5.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <OD>60.30</OD>
+  <WT>4.37</WT>
+  <MASS>6.03</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <OD>60.30</OD>
+  <WT>4.78</WT>
+  <MASS>6.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>60.30</OD>
+  <WT>5.54</WT>
+  <MASS>7.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <OD>60.30</OD>
+  <WT>6.35</WT>
+  <MASS>8.45</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <OD>60.30</OD>
+  <WT>7.14</WT>
+  <MASS>9.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <SCH>160</SCH>
+  <OD>60.30</OD>
+  <WT>8.74</WT>
+  <MASS>11.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.0000</NPS>
+  <DN>50</DN>
+  <API>XXS</API>
+  <OD>60.30</OD>
+  <WT>11.07</WT>
+  <MASS>13.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <SCH>5</SCH>
+  <OD>73.00</OD>
+  <WT>2.11</WT>
+  <MASS>3.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <OD>73.00</OD>
+  <WT>2.77</WT>
+  <MASS>4.80</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <SCH>10</SCH>
+  <OD>73.00</OD>
+  <WT>3.05</WT>
+  <MASS>5.26</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <OD>73.00</OD>
+  <WT>3.18</WT>
+  <MASS>5.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <OD>73.00</OD>
+  <WT>3.58</WT>
+  <MASS>6.13</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <OD>73.00</OD>
+  <WT>3.96</WT>
+  <MASS>6.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <OD>73.00</OD>
+  <WT>4.37</WT>
+  <MASS>7.40</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <SCH>30</SCH>
+  <OD>73.00</OD>
+  <WT>4.78</WT>
+  <MASS>8.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>73.00</OD>
+  <WT>5.16</WT>
+  <MASS>8.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <OD>73.00</OD>
+  <WT>5.49</WT>
+  <MASS>9.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <OD>73.00</OD>
+  <WT>6.35</WT>
+  <MASS>10.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>73.00</OD>
+  <WT>7.01</WT>
+  <MASS>11.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <SCH>160</SCH>
+  <OD>73.00</OD>
+  <WT>9.53</WT>
+  <MASS>14.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>2.5000</NPS>
+  <DN>65</DN>
+  <API>XXS</API>
+  <OD>73.00</OD>
+  <WT>14.02</WT>
+  <MASS>20.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <SCH>5</SCH>
+  <OD>88.90</OD>
+  <WT>2.11</WT>
+  <MASS>4.52</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <OD>88.90</OD>
+  <WT>2.77</WT>
+  <MASS>5.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <SCH>10</SCH>
+  <OD>88.90</OD>
+  <WT>3.05</WT>
+  <MASS>6.46</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <OD>88.90</OD>
+  <WT>3.18</WT>
+  <MASS>6.72</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <OD>88.90</OD>
+  <WT>3.58</WT>
+  <MASS>7.53</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <OD>88.90</OD>
+  <WT>3.96</WT>
+  <MASS>8.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <OD>88.90</OD>
+  <WT>4.37</WT>
+  <MASS>9.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <SCH>30</SCH>
+  <OD>88.90</OD>
+  <WT>4.78</WT>
+  <MASS>9.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>88.90</OD>
+  <WT>5.49</WT>
+  <MASS>11.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <OD>88.90</OD>
+  <WT>6.35</WT>
+  <MASS>12.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <OD>88.90</OD>
+  <WT>7.14</WT>
+  <MASS>14.40</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>88.90</OD>
+  <WT>7.62</WT>
+  <MASS>15.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <SCH>160</SCH>
+  <OD>88.90</OD>
+  <WT>11.13</WT>
+  <MASS>21.35</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.0000</NPS>
+  <DN>80</DN>
+  <API>XXS</API>
+  <OD>88.90</OD>
+  <WT>15.24</WT>
+  <MASS>27.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <SCH>5</SCH>
+  <OD>101.60</OD>
+  <WT>2.11</WT>
+  <MASS>5.18</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <OD>101.60</OD>
+  <WT>2.77</WT>
+  <MASS>6.75</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <SCH>10</SCH>
+  <OD>101.60</OD>
+  <WT>3.05</WT>
+  <MASS>7.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <OD>101.60</OD>
+  <WT>3.18</WT>
+  <MASS>7.72</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <OD>101.60</OD>
+  <WT>3.58</WT>
+  <MASS>8.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <OD>101.60</OD>
+  <WT>3.96</WT>
+  <MASS>9.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <OD>101.60</OD>
+  <WT>4.37</WT>
+  <MASS>10.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <SCH>30</SCH>
+  <OD>101.60</OD>
+  <WT>4.78</WT>
+  <MASS>11.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>101.60</OD>
+  <WT>5.74</WT>
+  <MASS>13.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <OD>101.60</OD>
+  <WT>6.35</WT>
+  <MASS>14.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <OD>101.60</OD>
+  <WT>7.14</WT>
+  <MASS>16.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>3.5000</NPS>
+  <DN>90</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>101.60</OD>
+  <WT>8.08</WT>
+  <MASS>18.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <SCH>5</SCH>
+  <OD>114.30</OD>
+  <WT>2.11</WT>
+  <MASS>5.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>2.77</WT>
+  <MASS>7.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <SCH>10</SCH>
+  <OD>114.30</OD>
+  <WT>3.05</WT>
+  <MASS>8.37</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>3.18</WT>
+  <MASS>8.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>3.58</WT>
+  <MASS>9.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>3.96</WT>
+  <MASS>10.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>4.37</WT>
+  <MASS>11.85</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <SCH>30</SCH>
+  <OD>114.30</OD>
+  <WT>4.78</WT>
+  <MASS>12.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>5.16</WT>
+  <MASS>13.89</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>5.56</WT>
+  <MASS>14.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>114.30</OD>
+  <WT>6.02</WT>
+  <MASS>16.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>6.35</WT>
+  <MASS>16.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>7.14</WT>
+  <MASS>18.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <OD>114.30</OD>
+  <WT>7.92</WT>
+  <MASS>20.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>114.30</OD>
+  <WT>8.56</WT>
+  <MASS>22.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <SCH>120</SCH>
+  <OD>114.30</OD>
+  <WT>11.13</WT>
+  <MASS>28.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <SCH>160</SCH>
+  <OD>114.30</OD>
+  <WT>13.49</WT>
+  <MASS>33.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>4.0000</NPS>
+  <DN>100</DN>
+  <API>XXS</API>
+  <OD>114.30</OD>
+  <WT>17.12</WT>
+  <MASS>41.03</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>2.11</WT>
+  <MASS>7.24</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <SCH>5</SCH>
+  <OD>141.30</OD>
+  <WT>2.77</WT>
+  <MASS>9.46</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>3.18</WT>
+  <MASS>10.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <SCH>10</SCH>
+  <OD>141.30</OD>
+  <WT>3.40</WT>
+  <MASS>11.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>3.96</WT>
+  <MASS>13.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>4.78</WT>
+  <MASS>16.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>5.56</WT>
+  <MASS>18.61</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>141.30</OD>
+  <WT>6.55</WT>
+  <MASS>21.77</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>7.14</WT>
+  <MASS>23.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>7.92</WT>
+  <MASS>26.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <OD>141.30</OD>
+  <WT>8.74</WT>
+  <MASS>28.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>141.30</OD>
+  <WT>9.53</WT>
+  <MASS>30.97</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <SCH>120</SCH>
+  <OD>141.30</OD>
+  <WT>12.70</WT>
+  <MASS>40.28</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <SCH>160</SCH>
+  <OD>141.30</OD>
+  <WT>15.88</WT>
+  <MASS>49.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>5.0000</NPS>
+  <DN>125</DN>
+  <API>XXS</API>
+  <OD>141.30</OD>
+  <WT>19.05</WT>
+  <MASS>57.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>2.11</WT>
+  <MASS>8.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <SCH>5</SCH>
+  <OD>168.30</OD>
+  <WT>2.77</WT>
+  <MASS>11.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>3.18</WT>
+  <MASS>12.95</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <SCH>10</SCH>
+  <OD>168.30</OD>
+  <WT>3.40</WT>
+  <MASS>13.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>3.58</WT>
+  <MASS>14.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>3.96</WT>
+  <MASS>16.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>4.37</WT>
+  <MASS>17.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>4.78</WT>
+  <MASS>19.28</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>5.16</WT>
+  <MASS>20.76</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>5.56</WT>
+  <MASS>22.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>6.35</WT>
+  <MASS>25.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>168.30</OD>
+  <WT>7.11</WT>
+  <MASS>28.26</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>7.92</WT>
+  <MASS>31.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>8.74</WT>
+  <MASS>34.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>9.53</WT>
+  <MASS>37.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>168.30</OD>
+  <WT>10.97</WT>
+  <MASS>42.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>12.70</WT>
+  <MASS>48.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <SCH>120</SCH>
+  <OD>168.30</OD>
+  <WT>14.27</WT>
+  <MASS>54.21</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>15.88</WT>
+  <MASS>59.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <SCH>160</SCH>
+  <OD>168.30</OD>
+  <WT>18.26</WT>
+  <MASS>67.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>19.05</WT>
+  <MASS>70.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <API>XXS</API>
+  <OD>168.30</OD>
+  <WT>21.95</WT>
+  <MASS>79.22</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>6.0000</NPS>
+  <DN>150</DN>
+  <OD>168.30</OD>
+  <WT>22.23</WT>
+  <MASS>80.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>5</SCH>
+  <OD>219.10</OD>
+  <WT>2.77</WT>
+  <MASS>14.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>3.18</WT>
+  <MASS>16.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>10</SCH>
+  <OD>219.10</OD>
+  <WT>3.76</WT>
+  <MASS>19.97</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>3.96</WT>
+  <MASS>21.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>4.78</WT>
+  <MASS>25.26</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>5.16</WT>
+  <MASS>27.22</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>5.56</WT>
+  <MASS>29.28</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>20</SCH>
+  <OD>219.10</OD>
+  <WT>6.35</WT>
+  <MASS>33.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>30</SCH>
+  <OD>219.10</OD>
+  <WT>7.04</WT>
+  <MASS>36.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>7.92</WT>
+  <MASS>41.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>219.10</OD>
+  <WT>8.18</WT>
+  <MASS>42.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>8.74</WT>
+  <MASS>45.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>9.53</WT>
+  <MASS>49.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>60</SCH>
+  <OD>219.10</OD>
+  <WT>10.31</WT>
+  <MASS>53.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>11.13</WT>
+  <MASS>57.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <API>XS</API>
+  <SCH>80</SCH>
+  <OD>219.10</OD>
+  <WT>12.70</WT>
+  <MASS>64.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>14.27</WT>
+  <MASS>72.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>100</SCH>
+  <OD>219.10</OD>
+  <WT>15.09</WT>
+  <MASS>75.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>15.88</WT>
+  <MASS>79.59</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>120</SCH>
+  <OD>219.10</OD>
+  <WT>18.26</WT>
+  <MASS>90.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>19.05</WT>
+  <MASS>93.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>140</SCH>
+  <OD>219.10</OD>
+  <WT>20.62</WT>
+  <MASS>100.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <API>XXS</API>
+  <OD>219.10</OD>
+  <WT>22.23</WT>
+  <MASS>107.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <SCH>160</SCH>
+  <OD>219.10</OD>
+  <WT>23.01</WT>
+  <MASS>111.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>8.0000</NPS>
+  <DN>200</DN>
+  <OD>219.10</OD>
+  <WT>25.40</WT>
+  <MASS>121.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>5</SCH>
+  <OD>273.00</OD>
+  <WT>3.40</WT>
+  <MASS>22.61</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>3.96</WT>
+  <MASS>26.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>10</SCH>
+  <OD>273.00</OD>
+  <WT>4.19</WT>
+  <MASS>27.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>4.78</WT>
+  <MASS>31.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>5.16</WT>
+  <MASS>34.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>5.56</WT>
+  <MASS>36.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>20</SCH>
+  <OD>273.00</OD>
+  <WT>6.35</WT>
+  <MASS>41.76</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>7.09</WT>
+  <MASS>46.49</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>30</SCH>
+  <OD>273.00</OD>
+  <WT>7.80</WT>
+  <MASS>51.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>8.74</WT>
+  <MASS>56.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <API>STD</API>
+  <SCH>40</SCH>
+  <OD>273.00</OD>
+  <WT>9.27</WT>
+  <MASS>60.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>11.13</WT>
+  <MASS>71.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <API>XS</API>
+  <SCH>60</SCH>
+  <OD>273.00</OD>
+  <WT>12.70</WT>
+  <MASS>81.53</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>14.27</WT>
+  <MASS>91.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>80</SCH>
+  <OD>273.00</OD>
+  <WT>15.09</WT>
+  <MASS>95.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>15.88</WT>
+  <MASS>100.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>100</SCH>
+  <OD>273.00</OD>
+  <WT>18.26</WT>
+  <MASS>114.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>20.62</WT>
+  <MASS>128.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>120</SCH>
+  <OD>273.00</OD>
+  <WT>21.44</WT>
+  <MASS>133.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>22.23</WT>
+  <MASS>137.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>23.83</WT>
+  <MASS>146.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <API>XXS</API>
+  <SCH>140</SCH>
+  <OD>273.00</OD>
+  <WT>25.40</WT>
+  <MASS>155.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <SCH>160</SCH>
+  <OD>273.00</OD>
+  <WT>28.58</WT>
+  <MASS>172.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>10.0000</NPS>
+  <DN>250</DN>
+  <OD>273.00</OD>
+  <WT>31.75</WT>
+  <MASS>188.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>5</SCH>
+  <OD>323.80</OD>
+  <WT>3.96</WT>
+  <MASS>31.24</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>4.37</WT>
+  <MASS>34.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>10</SCH>
+  <OD>323.80</OD>
+  <WT>4.57</WT>
+  <MASS>35.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>4.78</WT>
+  <MASS>37.61</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>5.16</WT>
+  <MASS>40.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>5.56</WT>
+  <MASS>43.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>20</SCH>
+  <OD>323.80</OD>
+  <WT>6.35</WT>
+  <MASS>49.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>7.14</WT>
+  <MASS>55.76</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>7.92</WT>
+  <MASS>61.70</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>30</SCH>
+  <OD>323.80</OD>
+  <WT>8.38</WT>
+  <MASS>65.19</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>8.74</WT>
+  <MASS>67.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <API>STD</API>
+  <OD>323.80</OD>
+  <WT>9.53</WT>
+  <MASS>73.86</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>40</SCH>
+  <OD>323.80</OD>
+  <WT>10.31</WT>
+  <MASS>79.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>11.13</WT>
+  <MASS>85.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <API>XS</API>
+  <OD>323.80</OD>
+  <WT>12.70</WT>
+  <MASS>97.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>60</SCH>
+  <OD>323.80</OD>
+  <WT>14.27</WT>
+  <MASS>108.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>15.88</WT>
+  <MASS>120.59</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>80</SCH>
+  <OD>323.80</OD>
+  <WT>17.48</WT>
+  <MASS>132.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>19.05</WT>
+  <MASS>143.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>20.62</WT>
+  <MASS>154.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>100</SCH>
+  <OD>323.80</OD>
+  <WT>21.44</WT>
+  <MASS>159.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>22.23</WT>
+  <MASS>165.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>23.83</WT>
+  <MASS>176.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <API>XXS</API>
+  <SCH>120</SCH>
+  <OD>323.80</OD>
+  <WT>25.40</WT>
+  <MASS>186.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>26.97</WT>
+  <MASS>197.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>140</SCH>
+  <OD>323.80</OD>
+  <WT>28.58</WT>
+  <MASS>208.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <OD>323.80</OD>
+  <WT>31.75</WT>
+  <MASS>228.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>12.0000</NPS>
+  <DN>300</DN>
+  <SCH>160</SCH>
+  <OD>323.80</OD>
+  <WT>33.32</WT>
+  <MASS>238.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>5</SCH>
+  <OD>355.60</OD>
+  <WT>3.96</WT>
+  <MASS>34.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>4.78</WT>
+  <MASS>41.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>5.16</WT>
+  <MASS>44.59</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>5.33</WT>
+  <MASS>46.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>5.56</WT>
+  <MASS>48.00</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>10</SCH>
+  <OD>355.60</OD>
+  <WT>6.35</WT>
+  <MASS>54.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>7.14</WT>
+  <MASS>61.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>20</SCH>
+  <OD>355.60</OD>
+  <WT>7.92</WT>
+  <MASS>67.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>8.74</WT>
+  <MASS>74.76</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <API>STD</API>
+  <SCH>30</SCH>
+  <OD>355.60</OD>
+  <WT>9.53</WT>
+  <MASS>81.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>10.31</WT>
+  <MASS>87.79</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>40</SCH>
+  <OD>355.60</OD>
+  <WT>11.13</WT>
+  <MASS>94.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>11.91</WT>
+  <MASS>100.95</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <API>XS</API>
+  <OD>355.60</OD>
+  <WT>12.70</WT>
+  <MASS>107.40</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>14.27</WT>
+  <MASS>120.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>60</SCH>
+  <OD>355.60</OD>
+  <WT>15.09</WT>
+  <MASS>126.72</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>15.88</WT>
+  <MASS>133.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>17.48</WT>
+  <MASS>145.76</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>80</SCH>
+  <OD>355.60</OD>
+  <WT>19.05</WT>
+  <MASS>158.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>20.62</WT>
+  <MASS>170.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>22.23</WT>
+  <MASS>182.76</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>100</SCH>
+  <OD>355.60</OD>
+  <WT>23.83</WT>
+  <MASS>194.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>25.40</WT>
+  <MASS>206.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>26.97</WT>
+  <MASS>218.58</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>120</SCH>
+  <OD>355.60</OD>
+  <WT>27.79</WT>
+  <MASS>224.66</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>28.58</WT>
+  <MASS>230.49</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>140</SCH>
+  <OD>355.60</OD>
+  <WT>31.75</WT>
+  <MASS>253.58</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <SCH>160</SCH>
+  <OD>355.60</OD>
+  <WT>35.71</WT>
+  <MASS>281.72</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>50.80</WT>
+  <MASS>381.85</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>53.98</WT>
+  <MASS>401.52</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>55.88</WT>
+  <MASS>413.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>14.0000</NPS>
+  <DN>350</DN>
+  <OD>355.60</OD>
+  <WT>63.50</WT>
+  <MASS>457.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>5</SCH>
+  <OD>406.40</OD>
+  <WT>4.19</WT>
+  <MASS>41.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>4.78</WT>
+  <MASS>47.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>5.16</WT>
+  <MASS>51.06</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>5.56</WT>
+  <MASS>54.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>10</SCH>
+  <OD>406.40</OD>
+  <WT>6.35</WT>
+  <MASS>62.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>7.14</WT>
+  <MASS>70.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>20</SCH>
+  <OD>406.40</OD>
+  <WT>7.92</WT>
+  <MASS>77.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>8.74</WT>
+  <MASS>85.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <API>STD</API>
+  <SCH>30</SCH>
+  <OD>406.40</OD>
+  <WT>9.53</WT>
+  <MASS>93.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>10.31</WT>
+  <MASS>100.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>11.13</WT>
+  <MASS>108.49</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>11.91</WT>
+  <MASS>115.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <API>XS</API>
+  <SCH>40</SCH>
+  <OD>406.40</OD>
+  <WT>12.70</WT>
+  <MASS>123.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>14.27</WT>
+  <MASS>138.00</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>15.88</WT>
+  <MASS>152.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>60</SCH>
+  <OD>406.40</OD>
+  <WT>16.66</WT>
+  <MASS>160.13</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>17.48</WT>
+  <MASS>167.66</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>19.05</WT>
+  <MASS>181.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>20.62</WT>
+  <MASS>196.18</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>80</SCH>
+  <OD>406.40</OD>
+  <WT>21.44</WT>
+  <MASS>203.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>22.23</WT>
+  <MASS>210.61</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>23.83</WT>
+  <MASS>224.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>25.40</WT>
+  <MASS>238.66</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>100</SCH>
+  <OD>406.40</OD>
+  <WT>26.19</WT>
+  <MASS>245.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>26.97</WT>
+  <MASS>252.37</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>28.58</WT>
+  <MASS>266.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>30.18</WT>
+  <MASS>280.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>120</SCH>
+  <OD>406.40</OD>
+  <WT>30.96</WT>
+  <MASS>286.66</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <OD>406.40</OD>
+  <WT>31.75</WT>
+  <MASS>293.35</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>140</SCH>
+  <OD>406.40</OD>
+  <WT>36.53</WT>
+  <MASS>333.21</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>16.0000</NPS>
+  <DN>400</DN>
+  <SCH>160</SCH>
+  <OD>406.40</OD>
+  <WT>40.49</WT>
+  <MASS>365.38</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>5</SCH>
+  <OD>457.00</OD>
+  <WT>4.19</WT>
+  <MASS>46.79</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>4.78</WT>
+  <MASS>53.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>5.56</WT>
+  <MASS>61.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>10</SCH>
+  <OD>457.00</OD>
+  <WT>6.35</WT>
+  <MASS>70.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>7.14</WT>
+  <MASS>79.21</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>20</SCH>
+  <OD>457.00</OD>
+  <WT>7.92</WT>
+  <MASS>87.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>8.74</WT>
+  <MASS>96.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <API>STD</API>
+  <OD>457.00</OD>
+  <WT>9.53</WT>
+  <MASS>105.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>10.31</WT>
+  <MASS>113.58</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>30</SCH>
+  <OD>457.00</OD>
+  <WT>11.13</WT>
+  <MASS>122.38</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>11.91</WT>
+  <MASS>130.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <API>XS</API>
+  <OD>457.00</OD>
+  <WT>12.70</WT>
+  <MASS>139.16</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>40</SCH>
+  <OD>457.00</OD>
+  <WT>14.27</WT>
+  <MASS>155.81</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>15.88</WT>
+  <MASS>172.75</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>17.48</WT>
+  <MASS>189.47</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>60</SCH>
+  <OD>457.00</OD>
+  <WT>19.05</WT>
+  <MASS>205.75</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>20.62</WT>
+  <MASS>221.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>22.23</WT>
+  <MASS>238.35</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>80</SCH>
+  <OD>457.00</OD>
+  <WT>23.83</WT>
+  <MASS>254.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>25.40</WT>
+  <MASS>270.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>26.97</WT>
+  <MASS>286.02</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>28.58</WT>
+  <MASS>301.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>100</SCH>
+  <OD>457.00</OD>
+  <WT>29.36</WT>
+  <MASS>309.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>30.18</WT>
+  <MASS>317.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <OD>457.00</OD>
+  <WT>31.75</WT>
+  <MASS>332.97</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>120</SCH>
+  <OD>457.00</OD>
+  <WT>34.93</WT>
+  <MASS>363.58</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>140</SCH>
+  <OD>457.00</OD>
+  <WT>39.67</WT>
+  <MASS>408.28</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>18.0000</NPS>
+  <DN>450</DN>
+  <SCH>160</SCH>
+  <OD>457.00</OD>
+  <WT>45.24</WT>
+  <MASS>459.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>5</SCH>
+  <OD>508.00</OD>
+  <WT>4.78</WT>
+  <MASS>59.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>5.56</WT>
+  <MASS>68.89</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>10</SCH>
+  <OD>508.00</OD>
+  <WT>6.35</WT>
+  <MASS>78.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>7.14</WT>
+  <MASS>88.19</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>7.92</WT>
+  <MASS>97.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>8.74</WT>
+  <MASS>107.61</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <API>STD</API>
+  <SCH>20</SCH>
+  <OD>508.00</OD>
+  <WT>9.53</WT>
+  <MASS>117.15</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>10.31</WT>
+  <MASS>126.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>11.13</WT>
+  <MASS>136.38</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>11.91</WT>
+  <MASS>145.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <API>XS</API>
+  <SCH>30</SCH>
+  <OD>508.00</OD>
+  <WT>12.70</WT>
+  <MASS>155.13</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>14.27</WT>
+  <MASS>173.75</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>40</SCH>
+  <OD>508.00</OD>
+  <WT>15.09</WT>
+  <MASS>183.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>15.88</WT>
+  <MASS>192.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>17.48</WT>
+  <MASS>211.45</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>19.05</WT>
+  <MASS>229.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>60</SCH>
+  <OD>508.00</OD>
+  <WT>20.62</WT>
+  <MASS>247.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>22.23</WT>
+  <MASS>266.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>23.83</WT>
+  <MASS>284.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>25.40</WT>
+  <MASS>302.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>80</SCH>
+  <OD>508.00</OD>
+  <WT>26.19</WT>
+  <MASS>311.19</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>26.97</WT>
+  <MASS>319.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>28.58</WT>
+  <MASS>337.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>30.18</WT>
+  <MASS>355.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>31.75</WT>
+  <MASS>372.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>100</SCH>
+  <OD>508.00</OD>
+  <WT>32.54</WT>
+  <MASS>381.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>33.32</WT>
+  <MASS>390.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <OD>508.00</OD>
+  <WT>34.93</WT>
+  <MASS>407.51</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>120</SCH>
+  <OD>508.00</OD>
+  <WT>38.10</WT>
+  <MASS>441.52</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>140</SCH>
+  <OD>508.00</OD>
+  <WT>44.45</WT>
+  <MASS>508.15</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>20.0000</NPS>
+  <DN>500</DN>
+  <SCH>160</SCH>
+  <OD>508.00</OD>
+  <WT>50.01</WT>
+  <MASS>564.85</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>5</SCH>
+  <OD>559.00</OD>
+  <WT>4.78</WT>
+  <MASS>65.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>5.56</WT>
+  <MASS>75.89</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>10</SCH>
+  <OD>559.00</OD>
+  <WT>6.35</WT>
+  <MASS>86.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>7.14</WT>
+  <MASS>97.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>7.92</WT>
+  <MASS>107.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>8.74</WT>
+  <MASS>118.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <API>STD</API>
+  <SCH>20</SCH>
+  <OD>559.00</OD>
+  <WT>9.53</WT>
+  <MASS>129.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>10.31</WT>
+  <MASS>139.51</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>11.13</WT>
+  <MASS>150.38</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>11.91</WT>
+  <MASS>160.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <API>XS</API>
+  <SCH>30</SCH>
+  <OD>559.00</OD>
+  <WT>12.70</WT>
+  <MASS>171.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>14.27</WT>
+  <MASS>191.70</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>15.88</WT>
+  <MASS>212.70</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>17.48</WT>
+  <MASS>233.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>19.05</WT>
+  <MASS>253.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>20.62</WT>
+  <MASS>273.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>60</SCH>
+  <OD>559.00</OD>
+  <WT>22.23</WT>
+  <MASS>294.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>23.83</WT>
+  <MASS>314.51</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>25.40</WT>
+  <MASS>334.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>26.97</WT>
+  <MASS>353.86</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>80</SCH>
+  <OD>559.00</OD>
+  <WT>28.58</WT>
+  <MASS>373.85</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>30.18</WT>
+  <MASS>393.59</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>31.75</WT>
+  <MASS>412.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>33.32</WT>
+  <MASS>431.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>100</SCH>
+  <OD>559.00</OD>
+  <WT>34.93</WT>
+  <MASS>451.45</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>36.53</WT>
+  <MASS>470.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <OD>559.00</OD>
+  <WT>38.10</WT>
+  <MASS>489.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>120</SCH>
+  <OD>559.00</OD>
+  <WT>41.28</WT>
+  <MASS>527.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>140</SCH>
+  <OD>559.00</OD>
+  <WT>47.63</WT>
+  <MASS>600.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>22.0000</NPS>
+  <DN>550</DN>
+  <SCH>160</SCH>
+  <OD>559.00</OD>
+  <WT>53.98</WT>
+  <MASS>672.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>5</SCH>
+  <OD>610.00</OD>
+  <WT>5.54</WT>
+  <MASS>82.58</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>10</SCH>
+  <OD>610.00</OD>
+  <WT>6.35</WT>
+  <MASS>94.53</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>7.14</WT>
+  <MASS>106.15</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>7.92</WT>
+  <MASS>117.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>8.74</WT>
+  <MASS>129.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <API>STD</API>
+  <SCH>20</SCH>
+  <OD>610.00</OD>
+  <WT>9.53</WT>
+  <MASS>141.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>10.31</WT>
+  <MASS>152.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>11.13</WT>
+  <MASS>164.38</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>11.91</WT>
+  <MASS>175.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <API>XS</API>
+  <OD>610.00</OD>
+  <WT>12.70</WT>
+  <MASS>187.07</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>30</SCH>
+  <OD>610.00</OD>
+  <WT>14.27</WT>
+  <MASS>209.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>15.88</WT>
+  <MASS>232.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>40</SCH>
+  <OD>610.00</OD>
+  <WT>17.48</WT>
+  <MASS>255.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>19.05</WT>
+  <MASS>277.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>20.62</WT>
+  <MASS>299.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>22.23</WT>
+  <MASS>322.23</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>23.83</WT>
+  <MASS>344.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>60</SCH>
+  <OD>610.00</OD>
+  <WT>24.61</WT>
+  <MASS>355.28</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>25.40</WT>
+  <MASS>366.19</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>26.97</WT>
+  <MASS>387.79</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>28.58</WT>
+  <MASS>409.80</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>30.18</WT>
+  <MASS>431.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>80</SCH>
+  <OD>610.00</OD>
+  <WT>30.96</WT>
+  <MASS>442.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>31.75</WT>
+  <MASS>452.77</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>33.32</WT>
+  <MASS>473.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>34.93</WT>
+  <MASS>495.38</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>36.53</WT>
+  <MASS>516.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>38.10</WT>
+  <MASS>537.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>100</SCH>
+  <OD>610.00</OD>
+  <WT>38.89</WT>
+  <MASS>547.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <OD>610.00</OD>
+  <WT>39.67</WT>
+  <MASS>557.97</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>120</SCH>
+  <OD>610.00</OD>
+  <WT>46.02</WT>
+  <MASS>640.07</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>140</SCH>
+  <OD>610.00</OD>
+  <WT>52.37</WT>
+  <MASS>720.19</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>24.0000</NPS>
+  <DN>600</DN>
+  <SCH>160</SCH>
+  <OD>610.00</OD>
+  <WT>59.54</WT>
+  <MASS>808.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>6.35</WT>
+  <MASS>102.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>7.14</WT>
+  <MASS>114.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <SCH>10</SCH>
+  <OD>660.00</OD>
+  <WT>7.92</WT>
+  <MASS>127.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>8.74</WT>
+  <MASS>140.37</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <API>STD</API>
+  <OD>660.00</OD>
+  <WT>9.53</WT>
+  <MASS>152.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>10.31</WT>
+  <MASS>165.19</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>11.13</WT>
+  <MASS>178.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>11.91</WT>
+  <MASS>190.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <API>XS</API>
+  <SCH>20</SCH>
+  <OD>660.00</OD>
+  <WT>12.70</WT>
+  <MASS>202.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>14.27</WT>
+  <MASS>227.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>15.88</WT>
+  <MASS>252.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>17.48</WT>
+  <MASS>276.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>19.05</WT>
+  <MASS>301.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>20.62</WT>
+  <MASS>325.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>22.23</WT>
+  <MASS>349.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>23.83</WT>
+  <MASS>373.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>26.0000</NPS>
+  <DN>650</DN>
+  <OD>660.00</OD>
+  <WT>25.40</WT>
+  <MASS>397.51</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>6.35</WT>
+  <MASS>110.35</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>7.14</WT>
+  <MASS>123.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <SCH>10</SCH>
+  <OD>711.00</OD>
+  <WT>7.92</WT>
+  <MASS>137.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>8.74</WT>
+  <MASS>151.37</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <API>STD</API>
+  <OD>711.00</OD>
+  <WT>9.53</WT>
+  <MASS>164.86</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>10.31</WT>
+  <MASS>178.16</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>11.13</WT>
+  <MASS>192.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>11.91</WT>
+  <MASS>205.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <API>XS</API>
+  <SCH>20</SCH>
+  <OD>711.00</OD>
+  <WT>12.70</WT>
+  <MASS>218.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>14.27</WT>
+  <MASS>245.19</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <SCH>30</SCH>
+  <OD>711.00</OD>
+  <WT>15.88</WT>
+  <MASS>272.23</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>17.48</WT>
+  <MASS>298.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>19.05</WT>
+  <MASS>325.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>20.62</WT>
+  <MASS>351.07</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>22.23</WT>
+  <MASS>377.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>23.83</WT>
+  <MASS>403.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>28.0000</NPS>
+  <DN>700</DN>
+  <OD>711.00</OD>
+  <WT>25.40</WT>
+  <MASS>429.46</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <SCH>5</SCH>
+  <OD>762.00</OD>
+  <WT>6.35</WT>
+  <MASS>118.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>7.14</WT>
+  <MASS>132.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <SCH>10</SCH>
+  <OD>762.00</OD>
+  <WT>7.92</WT>
+  <MASS>147.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>8.74</WT>
+  <MASS>162.36</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <API>STD</API>
+  <OD>762.00</OD>
+  <WT>9.53</WT>
+  <MASS>176.85</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>10.31</WT>
+  <MASS>191.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>11.13</WT>
+  <MASS>206.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>11.91</WT>
+  <MASS>220.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <API>XS</API>
+  <SCH>20</SCH>
+  <OD>762.00</OD>
+  <WT>12.70</WT>
+  <MASS>234.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>14.27</WT>
+  <MASS>263.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <SCH>30</SCH>
+  <OD>762.00</OD>
+  <WT>15.88</WT>
+  <MASS>292.20</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>17.48</WT>
+  <MASS>320.95</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>19.05</WT>
+  <MASS>349.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>20.62</WT>
+  <MASS>377.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>22.23</WT>
+  <MASS>405.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>23.83</WT>
+  <MASS>433.81</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>25.40</WT>
+  <MASS>461.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>26.97</WT>
+  <MASS>488.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>28.58</WT>
+  <MASS>516.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>30.18</WT>
+  <MASS>544.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>30.0000</NPS>
+  <DN>750</DN>
+  <OD>762.00</OD>
+  <WT>31.75</WT>
+  <MASS>571.79</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>6.35</WT>
+  <MASS>126.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>7.14</WT>
+  <MASS>141.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <SCH>10</SCH>
+  <OD>813.00</OD>
+  <WT>7.92</WT>
+  <MASS>157.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>8.74</WT>
+  <MASS>173.35</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <API>STD</API>
+  <OD>813.00</OD>
+  <WT>9.53</WT>
+  <MASS>188.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>10.31</WT>
+  <MASS>204.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>11.13</WT>
+  <MASS>220.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>11.91</WT>
+  <MASS>235.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <API>XS</API>
+  <SCH>20</SCH>
+  <OD>813.00</OD>
+  <WT>12.70</WT>
+  <MASS>250.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>14.27</WT>
+  <MASS>281.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <SCH>30</SCH>
+  <OD>813.00</OD>
+  <WT>15.88</WT>
+  <MASS>312.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <SCH>40</SCH>
+  <OD>813.00</OD>
+  <WT>17.48</WT>
+  <MASS>342.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>19.05</WT>
+  <MASS>373.00</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>20.62</WT>
+  <MASS>402.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>22.23</WT>
+  <MASS>433.52</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>23.83</WT>
+  <MASS>463.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>25.40</WT>
+  <MASS>493.35</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>26.97</WT>
+  <MASS>522.80</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>28.58</WT>
+  <MASS>552.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>30.18</WT>
+  <MASS>582.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>32.0000</NPS>
+  <DN>800</DN>
+  <OD>813.00</OD>
+  <WT>31.75</WT>
+  <MASS>611.72</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>6.35</WT>
+  <MASS>134.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>7.14</WT>
+  <MASS>150.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <SCH>10</SCH>
+  <OD>864.00</OD>
+  <WT>7.92</WT>
+  <MASS>167.21</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>8.74</WT>
+  <MASS>184.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <API>STD</API>
+  <OD>864.00</OD>
+  <WT>9.53</WT>
+  <MASS>200.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>10.31</WT>
+  <MASS>217.06</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>11.13</WT>
+  <MASS>234.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>11.91</WT>
+  <MASS>250.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <API>XS</API>
+  <SCH>20</SCH>
+  <OD>864.00</OD>
+  <WT>12.70</WT>
+  <MASS>266.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>14.27</WT>
+  <MASS>299.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <SCH>30</SCH>
+  <OD>864.00</OD>
+  <WT>15.88</WT>
+  <MASS>332.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <SCH>40</SCH>
+  <OD>864.00</OD>
+  <WT>17.48</WT>
+  <MASS>364.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>19.05</WT>
+  <MASS>396.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>20.62</WT>
+  <MASS>428.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>22.23</WT>
+  <MASS>461.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>23.83</WT>
+  <MASS>493.75</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>25.40</WT>
+  <MASS>525.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>26.97</WT>
+  <MASS>556.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>28.58</WT>
+  <MASS>588.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>30.18</WT>
+  <MASS>620.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>34.0000</NPS>
+  <DN>850</DN>
+  <OD>864.00</OD>
+  <WT>31.75</WT>
+  <MASS>651.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>6.35</WT>
+  <MASS>142.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>7.14</WT>
+  <MASS>159.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <SCH>10</SCH>
+  <OD>914.00</OD>
+  <WT>7.92</WT>
+  <MASS>176.97</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>8.74</WT>
+  <MASS>195.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <API>STD</API>
+  <OD>914.00</OD>
+  <WT>9.53</WT>
+  <MASS>212.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>10.31</WT>
+  <MASS>229.77</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>11.13</WT>
+  <MASS>247.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>11.91</WT>
+  <MASS>264.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <API>XS</API>
+  <SCH>20</SCH>
+  <OD>914.00</OD>
+  <WT>12.70</WT>
+  <MASS>282.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>14.27</WT>
+  <MASS>316.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <SCH>30</SCH>
+  <OD>914.00</OD>
+  <WT>15.88</WT>
+  <MASS>351.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>17.48</WT>
+  <MASS>386.47</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <SCH>40</SCH>
+  <OD>914.00</OD>
+  <WT>19.05</WT>
+  <MASS>420.45</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>20.62</WT>
+  <MASS>454.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>22.23</WT>
+  <MASS>488.89</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>23.83</WT>
+  <MASS>523.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>25.40</WT>
+  <MASS>556.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>26.97</WT>
+  <MASS>589.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>28.58</WT>
+  <MASS>624.07</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>30.18</WT>
+  <MASS>657.81</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>36.0000</NPS>
+  <DN>900</DN>
+  <OD>914.00</OD>
+  <WT>31.75</WT>
+  <MASS>690.80</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>7.92</WT>
+  <MASS>186.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>8.74</WT>
+  <MASS>206.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <API>STD</API>
+  <OD>965.00</OD>
+  <WT>9.53</WT>
+  <MASS>224.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>10.31</WT>
+  <MASS>242.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>11.13</WT>
+  <MASS>261.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>11.91</WT>
+  <MASS>279.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <API>XS</API>
+  <OD>965.00</OD>
+  <WT>12.70</WT>
+  <MASS>298.26</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>14.27</WT>
+  <MASS>334.58</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>15.88</WT>
+  <MASS>371.70</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>17.48</WT>
+  <MASS>408.46</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>19.05</WT>
+  <MASS>444.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>20.62</WT>
+  <MASS>480.24</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>22.23</WT>
+  <MASS>516.85</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>23.83</WT>
+  <MASS>553.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>25.40</WT>
+  <MASS>588.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>26.97</WT>
+  <MASS>623.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>28.58</WT>
+  <MASS>660.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>30.18</WT>
+  <MASS>695.77</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>38.0000</NPS>
+  <DN>950</DN>
+  <OD>965.00</OD>
+  <WT>31.75</WT>
+  <MASS>730.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>7.92</WT>
+  <MASS>196.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>8.74</WT>
+  <MASS>217.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <API>STD</API>
+  <OD>1016.00</OD>
+  <WT>9.53</WT>
+  <MASS>236.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>10.31</WT>
+  <MASS>255.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>11.13</WT>
+  <MASS>275.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>11.91</WT>
+  <MASS>294.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <API>XS</API>
+  <OD>1016.00</OD>
+  <WT>12.70</WT>
+  <MASS>314.23</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>14.27</WT>
+  <MASS>352.53</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>15.88</WT>
+  <MASS>391.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>17.48</WT>
+  <MASS>430.45</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>19.05</WT>
+  <MASS>468.37</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>20.62</WT>
+  <MASS>506.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>22.23</WT>
+  <MASS>544.81</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>23.83</WT>
+  <MASS>583.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>25.40</WT>
+  <MASS>620.51</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>26.97</WT>
+  <MASS>657.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>28.58</WT>
+  <MASS>695.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>30.18</WT>
+  <MASS>733.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>40.0000</NPS>
+  <DN>1000</DN>
+  <OD>1016.00</OD>
+  <WT>31.75</WT>
+  <MASS>770.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>8.74</WT>
+  <MASS>228.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <API>STD</API>
+  <OD>1067.00</OD>
+  <WT>9.53</WT>
+  <MASS>248.53</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>10.31</WT>
+  <MASS>268.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>11.13</WT>
+  <MASS>289.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>11.91</WT>
+  <MASS>309.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <API>XS</API>
+  <OD>1067.00</OD>
+  <WT>12.70</WT>
+  <MASS>330.21</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>14.27</WT>
+  <MASS>370.48</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>15.88</WT>
+  <MASS>411.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>17.48</WT>
+  <MASS>452.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>19.05</WT>
+  <MASS>492.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>20.62</WT>
+  <MASS>532.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>22.23</WT>
+  <MASS>572.77</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>23.83</WT>
+  <MASS>613.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>25.40</WT>
+  <MASS>652.46</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>26.97</WT>
+  <MASS>691.75</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>28.58</WT>
+  <MASS>731.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>30.18</WT>
+  <MASS>771.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>42.0000</NPS>
+  <DN>1050</DN>
+  <OD>1067.00</OD>
+  <WT>31.75</WT>
+  <MASS>810.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>8.74</WT>
+  <MASS>239.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <API>STD</API>
+  <OD>1118.00</OD>
+  <WT>9.53</WT>
+  <MASS>260.52</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>10.31</WT>
+  <MASS>281.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>11.13</WT>
+  <MASS>303.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>11.91</WT>
+  <MASS>324.88</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <API>XS</API>
+  <OD>1118.00</OD>
+  <WT>12.70</WT>
+  <MASS>346.18</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>14.27</WT>
+  <MASS>388.42</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>15.88</WT>
+  <MASS>431.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>17.48</WT>
+  <MASS>474.42</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>19.05</WT>
+  <MASS>516.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>20.62</WT>
+  <MASS>558.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>22.23</WT>
+  <MASS>600.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>23.83</WT>
+  <MASS>643.03</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>25.40</WT>
+  <MASS>684.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>26.97</WT>
+  <MASS>725.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>28.58</WT>
+  <MASS>767.85</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>30.18</WT>
+  <MASS>809.65</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>44.0000</NPS>
+  <DN>1100</DN>
+  <OD>1118.00</OD>
+  <WT>31.75</WT>
+  <MASS>850.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>8.74</WT>
+  <MASS>249.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <API>STD</API>
+  <OD>1168.00</OD>
+  <WT>9.53</WT>
+  <MASS>272.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>10.31</WT>
+  <MASS>294.35</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>11.13</WT>
+  <MASS>317.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>11.91</WT>
+  <MASS>339.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <API>XS</API>
+  <OD>1168.00</OD>
+  <WT>12.70</WT>
+  <MASS>361.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>14.27</WT>
+  <MASS>406.02</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>15.88</WT>
+  <MASS>451.20</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>17.48</WT>
+  <MASS>495.97</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>19.05</WT>
+  <MASS>539.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>20.62</WT>
+  <MASS>583.47</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>22.23</WT>
+  <MASS>628.14</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>23.83</WT>
+  <MASS>672.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>25.40</WT>
+  <MASS>715.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>26.97</WT>
+  <MASS>758.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>28.58</WT>
+  <MASS>803.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>30.18</WT>
+  <MASS>846.86</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>46.0000</NPS>
+  <DN>1150</DN>
+  <OD>1168.00</OD>
+  <WT>31.75</WT>
+  <MASS>889.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>8.74</WT>
+  <MASS>260.86</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <API>STD</API>
+  <OD>1219.00</OD>
+  <WT>9.53</WT>
+  <MASS>284.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>10.31</WT>
+  <MASS>307.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>11.13</WT>
+  <MASS>331.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>11.91</WT>
+  <MASS>354.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <API>XS</API>
+  <OD>1219.00</OD>
+  <WT>12.70</WT>
+  <MASS>377.81</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>14.27</WT>
+  <MASS>423.97</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>15.88</WT>
+  <MASS>471.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>17.48</WT>
+  <MASS>517.95</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>19.05</WT>
+  <MASS>563.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>20.62</WT>
+  <MASS>609.40</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>22.23</WT>
+  <MASS>656.10</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>23.83</WT>
+  <MASS>702.38</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>25.40</WT>
+  <MASS>747.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>26.97</WT>
+  <MASS>792.84</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>28.58</WT>
+  <MASS>839.04</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>30.18</WT>
+  <MASS>884.82</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>48.0000</NPS>
+  <DN>1200</DN>
+  <OD>1219.00</OD>
+  <WT>31.75</WT>
+  <MASS>929.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>9.53</WT>
+  <MASS>308.23</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>10.31</WT>
+  <MASS>333.26</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>11.13</WT>
+  <MASS>359.54</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>11.91</WT>
+  <MASS>384.50</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>12.70</WT>
+  <MASS>409.76</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>14.27</WT>
+  <MASS>459.86</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>15.88</WT>
+  <MASS>511.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>17.48</WT>
+  <MASS>561.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>19.05</WT>
+  <MASS>611.66</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>20.62</WT>
+  <MASS>661.27</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>22.23</WT>
+  <MASS>712.02</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>23.83</WT>
+  <MASS>762.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>25.40</WT>
+  <MASS>811.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>26.97</WT>
+  <MASS>860.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>28.58</WT>
+  <MASS>910.93</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>30.18</WT>
+  <MASS>960.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>52.0000</NPS>
+  <DN>1300</DN>
+  <OD>1321.00</OD>
+  <WT>31.75</WT>
+  <MASS>1009.49</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>9.53</WT>
+  <MASS>331.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>10.31</WT>
+  <MASS>358.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>11.13</WT>
+  <MASS>387.26</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>11.91</WT>
+  <MASS>414.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>12.70</WT>
+  <MASS>441.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>14.27</WT>
+  <MASS>495.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>15.88</WT>
+  <MASS>550.67</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>17.48</WT>
+  <MASS>605.46</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>19.05</WT>
+  <MASS>659.11</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>20.62</WT>
+  <MASS>712.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>22.23</WT>
+  <MASS>767.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>23.83</WT>
+  <MASS>821.68</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>25.40</WT>
+  <MASS>874.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>26.97</WT>
+  <MASS>927.86</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>28.58</WT>
+  <MASS>982.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>30.18</WT>
+  <MASS>1035.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>56.0000</NPS>
+  <DN>1400</DN>
+  <OD>1422.00</OD>
+  <WT>31.75</WT>
+  <MASS>1088.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>9.53</WT>
+  <MASS>355.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>10.31</WT>
+  <MASS>384.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>11.13</WT>
+  <MASS>415.26</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>11.91</WT>
+  <MASS>444.13</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>12.70</WT>
+  <MASS>473.34</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>14.27</WT>
+  <MASS>531.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>15.88</WT>
+  <MASS>590.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>17.48</WT>
+  <MASS>649.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>19.05</WT>
+  <MASS>707.03</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>20.62</WT>
+  <MASS>764.50</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>22.23</WT>
+  <MASS>823.31</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>23.83</WT>
+  <MASS>881.63</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>25.40</WT>
+  <MASS>938.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>26.97</WT>
+  <MASS>995.71</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>28.58</WT>
+  <MASS>1054.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>30.18</WT>
+  <MASS>1111.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>60.0000</NPS>
+  <DN>1500</DN>
+  <OD>1524.00</OD>
+  <WT>31.75</WT>
+  <MASS>1168.44</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>9.53</WT>
+  <MASS>379.91</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>10.31</WT>
+  <MASS>410.81</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>11.13</WT>
+  <MASS>443.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>11.91</WT>
+  <MASS>474.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>12.70</WT>
+  <MASS>505.29</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>14.27</WT>
+  <MASS>567.20</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>15.88</WT>
+  <MASS>630.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>17.48</WT>
+  <MASS>693.41</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>19.05</WT>
+  <MASS>754.95</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>20.62</WT>
+  <MASS>816.37</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>22.23</WT>
+  <MASS>879.23</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>23.83</WT>
+  <MASS>941.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>25.40</WT>
+  <MASS>1002.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>26.97</WT>
+  <MASS>1063.55</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>28.58</WT>
+  <MASS>1125.90</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>30.18</WT>
+  <MASS>1187.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>64.0000</NPS>
+  <DN>1600</DN>
+  <OD>1626.00</OD>
+  <WT>31.75</WT>
+  <MASS>1248.30</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>11.91</WT>
+  <MASS>503.75</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>12.70</WT>
+  <MASS>536.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>14.27</WT>
+  <MASS>602.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>15.88</WT>
+  <MASS>670.12</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>17.48</WT>
+  <MASS>736.95</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>19.05</WT>
+  <MASS>802.40</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>20.62</WT>
+  <MASS>867.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>22.23</WT>
+  <MASS>934.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>23.83</WT>
+  <MASS>1000.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>25.40</WT>
+  <MASS>1065.89</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>26.97</WT>
+  <MASS>1130.73</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>28.58</WT>
+  <MASS>1197.09</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>30.18</WT>
+  <MASS>1262.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>68.0000</NPS>
+  <DN>1700</DN>
+  <OD>1727.00</OD>
+  <WT>31.75</WT>
+  <MASS>1327.39</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>12.70</WT>
+  <MASS>568.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>14.27</WT>
+  <MASS>638.64</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>15.88</WT>
+  <MASS>710.06</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>17.48</WT>
+  <MASS>780.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>19.05</WT>
+  <MASS>850.32</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>20.62</WT>
+  <MASS>919.60</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>22.23</WT>
+  <MASS>990.52</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>23.83</WT>
+  <MASS>1060.87</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>25.40</WT>
+  <MASS>1129.78</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>26.97</WT>
+  <MASS>1198.57</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>28.58</WT>
+  <MASS>1268.98</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>30.18</WT>
+  <MASS>1338.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>72.0000</NPS>
+  <DN>1800</DN>
+  <OD>1829.00</OD>
+  <WT>31.75</WT>
+  <MASS>1407.25</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>12.70</WT>
+  <MASS>600.50</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>14.27</WT>
+  <MASS>674.18</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>15.88</WT>
+  <MASS>749.62</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>17.48</WT>
+  <MASS>824.45</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>19.05</WT>
+  <MASS>897.77</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>20.62</WT>
+  <MASS>970.96</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>22.23</WT>
+  <MASS>1045.89</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>23.83</WT>
+  <MASS>1120.22</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>25.40</WT>
+  <MASS>1193.05</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>26.97</WT>
+  <MASS>1265.74</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>28.58</WT>
+  <MASS>1340.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>30.18</WT>
+  <MASS>1414.01</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>76.0000</NPS>
+  <DN>1900</DN>
+  <OD>1930.00</OD>
+  <WT>31.75</WT>
+  <MASS>1486.33</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>14.27</WT>
+  <MASS>710.08</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>15.88</WT>
+  <MASS>789.56</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>17.48</WT>
+  <MASS>868.43</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>19.05</WT>
+  <MASS>945.69</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>20.62</WT>
+  <MASS>1022.83</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>22.23</WT>
+  <MASS>1101.81</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>23.83</WT>
+  <MASS>1180.17</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>25.40</WT>
+  <MASS>1256.94</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>26.97</WT>
+  <MASS>1333.59</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>28.58</WT>
+  <MASS>1412.06</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>30.18</WT>
+  <MASS>1489.92</MASS>
+</PIPE>
+<PIPE Standard="ASME B36.10">
+  <NPS>80.0000</NPS>
+  <DN>2000</DN>
+  <OD>2032.00</OD>
+  <WT>31.75</WT>
+  <MASS>1566.20</MASS>
+</PIPE>
+</PIPES>

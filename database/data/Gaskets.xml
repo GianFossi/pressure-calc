@@ -1,0 +1,801 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Gaskets unit="mm" merged="true" source="Merged from ASME_B16_20_Gaskets.xml and ASME_B16_5_RingJoint_Compact.xml">
+  <RingJointGaskets standard="RJ" type="R">
+    <Rings>
+      <Ring id="11" P="34.14" A="6.35" B="11.2" H="9.7" C="4.32" R1="1.5" />
+      <Ring id="12" P="39.67" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="13" P="42.88" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="14" P="44.45" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="15" P="47.63" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="16" P="50.80" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="17" P="57.15" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="18" P="60.33" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="19" P="65.07" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="20" P="68.28" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="21" P="72.24" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="22" P="82.55" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="23" P="82.55" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="24" P="95.25" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="25" P="101.60" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="26" P="101.60" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="27" P="107.95" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="28" P="111.13" A="12.70" B="19.1" H="17.5" C="8.66" R1="1.5" />
+      <Ring id="29" P="114.30" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="30" P="117.48" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="31" P="123.83" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="32" P="127.00" A="12.70" B="19.1" H="17.5" C="8.66" R1="1.5" />
+      <Ring id="33" P="131.78" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="34" P="131.78" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="35" P="136.53" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="36" P="149.23" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="37" P="149.23" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="38" P="157.18" A="15.88" B="22.4" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="39" P="161.93" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="40" P="171.45" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="41" P="180.98" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="42" P="190.50" A="19.05" B="25.4" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="43" P="193.68" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="44" P="193.68" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="45" P="211.12" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="46" P="211.15" A="12.70" B="19.1" H="17.5" C="8.66" R1="1.5" />
+      <Ring id="47" P="228.60" A="19.05" B="25.4" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="48" P="247.65" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="49" P="269.88" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="50" P="269.88" A="15.88" B="22.4" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="51" P="279.40" A="22.23" B="28.7" H="26.9" C="14.81" R1="1.5" />
+      <Ring id="52" P="304.80" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="53" P="323.85" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="54" P="323.85" A="15.88" B="22.4" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="55" P="342.90" A="28.58" B="36.6" H="35.1" C="19.81" R1="2.3" />
+      <Ring id="56" P="381.00" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="57" P="381.00" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="58" P="381.00" A="22.23" B="28.7" H="26.9" C="14.81" R1="1.5" />
+      <Ring id="59" P="396.88" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="60" P="406.40" A="31.75" B="39.6" H="38.1" C="22.33" R1="2.3" />
+      <Ring id="61" P="419.10" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="62" P="419.10" A="15.88" B="22.4" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="63" P="419.10" A="25.40" B="33.3" H="31.8" C="17.30" R1="2.3" />
+      <Ring id="64" P="454.03" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="65" P="469.90" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="66" P="469.90" A="15.88" B="22.4" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="67" P="469.90" A="28.58" B="36.6" H="35.1" C="19.81" R1="2.3" />
+      <Ring id="68" P="517.53" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="69" P="533.40" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="70" P="533.40" A="19.05" B="25.4" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="71" P="533.40" A="28.58" B="36.6" H="35.1" C="19.81" R1="2.3" />
+      <Ring id="72" P="558.80" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="73" P="584.20" A="12.70" B="19.1" H="17.5" C="8.66" R1="1.5" />
+      <Ring id="74" P="584.20" A="19.05" B="25.4" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="75" P="584.20" A="31.75" B="39.6" H="38.1" C="22.33" R1="2.3" />
+      <Ring id="76" P="673.10" A="7.95" B="14.2" H="12.7" C="5.23" R1="1.5" />
+      <Ring id="77" P="692.15" A="15.88" B="22.4" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="78" P="692.15" A="25.40" B="33.3" H="31.8" C="17.30" R1="2.3" />
+      <Ring id="79" P="692.15" A="34.93" B="44.5" H="41.4" C="24.82" R1="2.3" />
+      <Ring id="80" P="615.95" A="7.95" B="…" H="12.7" C="5.23" R1="1.5" note="oval N/A per B16.20-2023" />
+      <Ring id="81" P="635.00" A="14.30" B="…" H="19.1" C="9.58" R1="1.5" note="octagonal only per B16.20-2023" />
+      <Ring id="82" P="57.15" A="11.13" B="…" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="84" P="63.50" A="11.13" B="…" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="85" P="79.38" A="12.70" B="…" H="17.5" C="8.66" R1="1.5" />
+      <Ring id="86" P="90.50" A="15.88" B="…" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="87" P="100.03" A="15.88" B="…" H="20.6" C="10.49" R1="1.5" />
+      <Ring id="88" P="123.83" A="19.05" B="…" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="89" P="114.30" A="19.05" B="…" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="90" P="155.58" A="22.23" B="…" H="26.9" C="14.81" R1="1.5" />
+      <Ring id="91" P="260.35" A="31.75" B="…" H="38.1" C="22.33" R1="2.3" />
+      <Ring id="92" P="228.60" A="11.13" B="17.5" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="93" P="749.30" A="19.05" B="…" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="94" P="800.10" A="19.05" B="…" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="95" P="857.25" A="19.05" B="…" H="23.9" C="12.32" R1="1.5" />
+      <Ring id="96" P="914.40" A="22.23" B="…" H="26.9" C="14.81" R1="1.5" />
+      <Ring id="97" P="965.20" A="22.23" B="…" H="26.9" C="14.81" R1="1.5" />
+      <Ring id="98" P="1022.35" A="22.23" B="…" H="26.9" C="14.81" R1="1.5" />
+      <Ring id="99" P="234.95" A="11.13" B="…" H="16.0" C="7.75" R1="1.5" />
+      <Ring id="100" P="749.30" A="28.58" B="…" H="35.1" C="19.81" R1="2.3" />
+      <Ring id="101" P="800.10" A="31.75" B="…" H="38.1" C="22.33" R1="2.3" />
+      <Ring id="102" P="857.25" A="31.75" B="…" H="38.1" C="22.33" R1="2.3" />
+      <Ring id="103" P="914.40" A="31.75" B="…" H="38.1" C="22.33" R1="2.3" />
+      <Ring id="104" P="965.20" A="34.93" B="…" H="41.4" C="24.82" R1="2.3" />
+      <Ring id="105" P="1022.35" A="34.93" B="…" H="41.4" C="24.82" R1="2.3" />
+    </Rings>
+    <Size NPS="0.5" DN="15">
+      <Rating id="300" RingNumber="11" />
+      <Rating id="600" RingNumber="11" />
+      <Rating id="900" RingNumber="12" />
+      <Rating id="1500" RingNumber="12" />
+      <Rating id="2500" RingNumber="13" />
+    </Size>
+    <Size NPS="0.75" DN="20">
+      <Rating id="300" RingNumber="13" />
+      <Rating id="600" RingNumber="13" />
+      <Rating id="900" RingNumber="14" />
+      <Rating id="1500" RingNumber="14" />
+      <Rating id="2500" RingNumber="16" />
+    </Size>
+    <Size NPS="1" DN="25">
+      <Rating id="150" RingNumber="15" />
+      <Rating id="300" RingNumber="16" />
+      <Rating id="600" RingNumber="16" />
+      <Rating id="900" RingNumber="16" />
+      <Rating id="1500" RingNumber="16" />
+      <Rating id="2500" RingNumber="18" />
+    </Size>
+    <Size NPS="1.25" DN="32">
+      <Rating id="150" RingNumber="17" />
+      <Rating id="300" RingNumber="18" />
+      <Rating id="600" RingNumber="18" />
+      <Rating id="900" RingNumber="18" />
+      <Rating id="1500" RingNumber="18" />
+      <Rating id="2500" RingNumber="21" />
+    </Size>
+    <Size NPS="1.5" DN="40">
+      <Rating id="150" RingNumber="19" />
+      <Rating id="300" RingNumber="20" />
+      <Rating id="600" RingNumber="20" />
+      <Rating id="900" RingNumber="20" />
+      <Rating id="1500" RingNumber="20" />
+      <Rating id="2500" RingNumber="23" />
+    </Size>
+    <Size NPS="2" DN="50">
+      <Rating id="150" RingNumber="22" />
+      <Rating id="300" RingNumber="23" />
+      <Rating id="600" RingNumber="23" />
+      <Rating id="900" RingNumber="24" />
+      <Rating id="1500" RingNumber="24" />
+      <Rating id="2500" RingNumber="26" />
+    </Size>
+    <Size NPS="2.5" DN="65">
+      <Rating id="150" RingNumber="25" />
+      <Rating id="300" RingNumber="26" />
+      <Rating id="600" RingNumber="26" />
+      <Rating id="900" RingNumber="27" />
+      <Rating id="1500" RingNumber="27" />
+      <Rating id="2500" RingNumber="28" />
+    </Size>
+    <Size NPS="3" DN="80" var="A">
+      <Rating id="150" RingNumber="29" />
+      <Rating id="300" RingNumber="30" />
+      <Rating id="600" RingNumber="30" />
+      <Rating id="900" RingNumber="31" />
+      <Rating id="1500" RingNumber="35" />
+      <Rating id="2500" RingNumber="32" />
+    </Size>
+    <Size NPS="3" DN="80" var="B">
+      <Rating id="150" RingNumber="29" />
+      <Rating id="300" RingNumber="31" />
+      <Rating id="600" RingNumber="31" />
+      <Rating id="900" RingNumber="31" />
+      <Rating id="1500" RingNumber="35" />
+      <Rating id="2500" RingNumber="32" />
+    </Size>
+    <Size NPS="3.5" DN="90">
+      <Rating id="150" RingNumber="33" />
+      <Rating id="300" RingNumber="34" />
+      <Rating id="400" RingNumber="34" />
+      <Rating id="600" RingNumber="34" />
+    </Size>
+    <Size NPS="4" DN="100" var="A">
+      <Rating id="150" RingNumber="33" />
+      <Rating id="300" RingNumber="34" />
+      <Rating id="400" RingNumber="34" />
+      <Rating id="600" RingNumber="34" />
+      <Rating id="900" />
+      <Rating id="1500" />
+      <Rating id="2500" />
+    </Size>
+    <Size NPS="4" DN="100" var="B">
+      <Rating id="150" RingNumber="36" />
+      <Rating id="300" RingNumber="37" />
+      <Rating id="400" RingNumber="37" />
+      <Rating id="600" RingNumber="37" />
+      <Rating id="900" RingNumber="37" />
+      <Rating id="1500" RingNumber="39" />
+      <Rating id="2500" RingNumber="38" />
+    </Size>
+    <Size NPS="5" DN="125">
+      <Rating id="150" RingNumber="40" />
+      <Rating id="300" RingNumber="41" />
+      <Rating id="400" RingNumber="41" />
+      <Rating id="600" RingNumber="41" />
+      <Rating id="900" RingNumber="41" />
+      <Rating id="1500" RingNumber="44" />
+      <Rating id="2500" RingNumber="42" />
+    </Size>
+    <Size NPS="6" DN="150">
+      <Rating id="150" RingNumber="43" />
+      <Rating id="300" RingNumber="45" />
+      <Rating id="400" RingNumber="45" />
+      <Rating id="600" RingNumber="45" />
+      <Rating id="900" RingNumber="45" />
+      <Rating id="1500" RingNumber="46" />
+      <Rating id="2500" RingNumber="47" />
+    </Size>
+    <Size NPS="8" DN="200">
+      <Rating id="150" RingNumber="48" />
+      <Rating id="300" RingNumber="49" />
+      <Rating id="400" RingNumber="49" />
+      <Rating id="600" RingNumber="49" />
+      <Rating id="900" RingNumber="49" />
+      <Rating id="1500" RingNumber="50" />
+      <Rating id="2500" RingNumber="51" />
+    </Size>
+    <Size NPS="10" DN="250">
+      <Rating id="150" RingNumber="52" />
+      <Rating id="300" RingNumber="53" />
+      <Rating id="400" RingNumber="53" />
+      <Rating id="600" RingNumber="53" />
+      <Rating id="900" RingNumber="53" />
+      <Rating id="1500" RingNumber="54" />
+      <Rating id="2500" RingNumber="55" />
+    </Size>
+    <Size NPS="12" DN="300">
+      <Rating id="150" RingNumber="56" />
+      <Rating id="300" RingNumber="57" />
+      <Rating id="400" RingNumber="57" />
+      <Rating id="600" RingNumber="57" />
+      <Rating id="900" RingNumber="57" />
+      <Rating id="1500" RingNumber="58" />
+      <Rating id="2500" RingNumber="60" />
+    </Size>
+    <Size NPS="14" DN="350">
+      <Rating id="150" RingNumber="59" />
+      <Rating id="300" RingNumber="61" />
+      <Rating id="400" RingNumber="61" />
+      <Rating id="600" RingNumber="61" />
+      <Rating id="900" RingNumber="62" />
+      <Rating id="1500" RingNumber="63" />
+    </Size>
+    <Size NPS="16" DN="400">
+      <Rating id="150" RingNumber="64" />
+      <Rating id="300" RingNumber="65" />
+      <Rating id="400" RingNumber="65" />
+      <Rating id="600" RingNumber="65" />
+      <Rating id="900" RingNumber="66" />
+      <Rating id="1500" RingNumber="67" />
+    </Size>
+    <Size NPS="18" DN="450">
+      <Rating id="150" RingNumber="68" />
+      <Rating id="300" RingNumber="69" />
+      <Rating id="400" RingNumber="69" />
+      <Rating id="600" RingNumber="69" />
+      <Rating id="900" RingNumber="70" />
+      <Rating id="1500" RingNumber="71" />
+    </Size>
+    <Size NPS="20" DN="500">
+      <Rating id="150" RingNumber="72" />
+      <Rating id="300" RingNumber="73" />
+      <Rating id="400" RingNumber="73" />
+      <Rating id="600" RingNumber="73" />
+      <Rating id="900" RingNumber="74" note="E missing in source; S6 inferred" />
+      <Rating id="1500" RingNumber="75" />
+    </Size>
+    <Size NPS="22" DN="550">
+      <Rating id="150" RingNumber="80" note="Seating dims absent; gasket approx S1 (B unspecified)" />
+      <Rating id="300" RingNumber="81" />
+      <Rating id="400" RingNumber="81" />
+      <Rating id="600" RingNumber="81" />
+      <Rating id="400" />
+      <Rating id="600" />
+      <Rating id="900" />
+      <Rating id="1500" />
+    </Size>
+    <Size NPS="24" DN="600">
+      <Rating id="150" RingNumber="76" />
+      <Rating id="300" RingNumber="77" />
+      <Rating id="400" RingNumber="77" />
+      <Rating id="600" RingNumber="77" />
+      <Rating id="900" RingNumber="78" />
+      <Rating id="1500" RingNumber="79" />
+    </Size>
+    <Assignments standard="B16.5">
+      <A nps="0.5" cls="300-600">11</A>
+      <A nps="0.5" cls="1500">12</A>
+      <A nps="0.5" cls="2500">13</A>
+      <A nps="0.75" cls="300-600">13</A>
+      <A nps="0.75" cls="1500">14</A>
+      <A nps="0.75" cls="2500">16</A>
+      <A nps="1" cls="150">15</A>
+      <A nps="1" cls="300-600">16</A>
+      <A nps="1" cls="1500">18</A>
+      <A nps="1" cls="2500">16</A>
+      <A nps="1.25" cls="150">17</A>
+      <A nps="1.25" cls="300-600">18</A>
+      <A nps="1.25" cls="1500">18</A>
+      <A nps="1.25" cls="2500">21</A>
+      <A nps="1.5" cls="150">19</A>
+      <A nps="1.5" cls="300-600">20</A>
+      <A nps="1.5" cls="1500">20</A>
+      <A nps="2" cls="150">22</A>
+      <A nps="2" cls="300-600">23</A>
+      <A nps="2" cls="1500">24</A>
+      <A nps="2" cls="2500">23</A>
+      <A nps="2.5" cls="150">25</A>
+      <A nps="2.5" cls="300-600">26</A>
+      <A nps="2.5" cls="1500">27</A>
+      <A nps="2.5" cls="2500">28</A>
+      <A nps="3" cls="150">29</A>
+      <A nps="3" cls="300-600">31</A>
+      <A nps="3" cls="1500">35</A>
+      <A nps="3" cls="2500">32</A>
+      <A nps="3.5" cls="150">33</A>
+      <A nps="3.5" cls="300-600">34</A>
+      <A nps="4" cls="150">36</A>
+      <A nps="4" cls="300-600">37</A>
+      <A nps="4" cls="900">37</A>
+      <A nps="4" cls="1500">39</A>
+      <A nps="4" cls="2500">38</A>
+      <A nps="5" cls="150">40</A>
+      <A nps="5" cls="300-600">41</A>
+      <A nps="5" cls="900">41</A>
+      <A nps="5" cls="1500">44</A>
+      <A nps="5" cls="2500">42</A>
+      <A nps="6" cls="150">43</A>
+      <A nps="6" cls="300-600">45</A>
+      <A nps="6" cls="900">45</A>
+      <A nps="6" cls="1500">46</A>
+      <A nps="6" cls="2500">47</A>
+      <A nps="8" cls="150">48</A>
+      <A nps="8" cls="300-600">49</A>
+      <A nps="8" cls="900">49</A>
+      <A nps="8" cls="1500">50</A>
+      <A nps="8" cls="2500">51</A>
+      <A nps="10" cls="150">52</A>
+      <A nps="10" cls="300-600">53</A>
+      <A nps="10" cls="900">53</A>
+      <A nps="10" cls="1500">54</A>
+      <A nps="10" cls="2500">55</A>
+      <A nps="12" cls="150">56</A>
+      <A nps="12" cls="300-600">57</A>
+      <A nps="12" cls="900">57</A>
+      <A nps="12" cls="1500">58</A>
+      <A nps="12" cls="2500">60</A>
+      <A nps="14" cls="150">59</A>
+      <A nps="14" cls="300-600">61</A>
+      <A nps="14" cls="900">62</A>
+      <A nps="14" cls="1500">63</A>
+      <A nps="16" cls="150">64</A>
+      <A nps="16" cls="300-600">65</A>
+      <A nps="16" cls="900">66</A>
+      <A nps="16" cls="1500">67</A>
+      <A nps="18" cls="150">68</A>
+      <A nps="18" cls="300-600">69</A>
+      <A nps="18" cls="900">70</A>
+      <A nps="18" cls="1500">71</A>
+      <A nps="20" cls="150">72</A>
+      <A nps="20" cls="300-600">73</A>
+      <A nps="20" cls="900">74</A>
+      <A nps="20" cls="1500">75</A>
+      <A nps="22" cls="150">80</A>
+      <A nps="22" cls="300-600">81</A>
+      <A nps="24" cls="150">76</A>
+      <A nps="24" cls="300-600">77</A>
+      <A nps="24" cls="900">78</A>
+      <A nps="24" cls="1500">79</A>
+    </Assignments>
+  </RingJointGaskets>
+  <SpiralWoundGaskets standard="B16.5" source="Table SW-2.1-1">
+    <Size NPS="0.5" DN="15">
+      <Rating class="150" RingID="14.2" GasketID="19.1" GasketOD="31.8" RingOD="47.8" />
+      <Rating class="300" RingID="14.2" GasketID="19.1" GasketOD="31.8" RingOD="54.1" />
+      <Rating class="400" RingID="14.2" GasketID="19.1" GasketOD="31.8" RingOD="54.1" />
+      <Rating class="600" RingID="14.2" GasketID="19.1" GasketOD="31.8" RingOD="54.1" />
+      <Rating class="900" RingID="14.2" GasketID="19.1" GasketOD="31.8" RingOD="63.5" />
+      <Rating class="1500" RingID="14.2" GasketID="19.1" GasketOD="31.8" RingOD="63.5" />
+      <Rating class="2500" RingID="14.2" GasketID="19.1" GasketOD="31.8" RingOD="69.9" />
+    </Size>
+    <Size NPS="0.75" DN="20">
+      <Rating class="150" RingID="20.6" GasketID="25.4" GasketOD="39.6" RingOD="57.2" />
+      <Rating class="300" RingID="20.6" GasketID="25.4" GasketOD="39.6" RingOD="66.8" />
+      <Rating class="400" RingID="20.6" GasketID="25.4" GasketOD="39.6" RingOD="66.8" />
+      <Rating class="600" RingID="20.6" GasketID="25.4" GasketOD="39.6" RingOD="66.8" />
+      <Rating class="900" RingID="20.6" GasketID="25.4" GasketOD="39.6" RingOD="69.9" />
+      <Rating class="1500" RingID="20.6" GasketID="25.4" GasketOD="39.6" RingOD="69.9" />
+      <Rating class="2500" RingID="20.6" GasketID="25.4" GasketOD="39.6" RingOD="76.2" />
+    </Size>
+    <Size NPS="1" DN="25">
+      <Rating class="150" RingID="26.9" GasketID="31.8" GasketOD="47.8" RingOD="66.8" />
+      <Rating class="300" RingID="26.9" GasketID="31.8" GasketOD="47.8" RingOD="73.2" />
+      <Rating class="400" RingID="26.9" GasketID="31.8" GasketOD="47.8" RingOD="73.2" />
+      <Rating class="600" RingID="26.9" GasketID="31.8" GasketOD="47.8" RingOD="73.2" />
+      <Rating class="900" RingID="26.9" GasketID="31.8" GasketOD="47.8" RingOD="79.5" />
+      <Rating class="1500" RingID="26.9" GasketID="31.8" GasketOD="47.8" RingOD="79.5" />
+      <Rating class="2500" RingID="26.9" GasketID="31.8" GasketOD="47.8" RingOD="85.9" />
+    </Size>
+    <Size NPS="1.25" DN="32">
+      <Rating class="150" RingID="38.1" GasketID="47.8" GasketOD="60.5" RingOD="76.2" />
+      <Rating class="300" RingID="38.1" GasketID="47.8" GasketOD="60.5" RingOD="82.6" />
+      <Rating class="400" RingID="38.1" GasketID="47.8" GasketOD="60.5" RingOD="82.6" />
+      <Rating class="600" RingID="38.1" GasketID="47.8" GasketOD="60.5" RingOD="82.6" />
+      <Rating class="900" RingID="33.3" GasketID="39.6" GasketOD="60.5" RingOD="88.9" />
+      <Rating class="1500" RingID="33.3" GasketID="39.6" GasketOD="60.5" RingOD="88.9" />
+      <Rating class="2500" RingID="33.3" GasketID="39.6" GasketOD="60.5" RingOD="104.9" />
+    </Size>
+    <Size NPS="1.5" DN="40">
+      <Rating class="150" RingID="44.5" GasketID="54.1" GasketOD="69.9" RingOD="85.9" />
+      <Rating class="300" RingID="44.5" GasketID="54.1" GasketOD="69.9" RingOD="95.3" />
+      <Rating class="400" RingID="44.5" GasketID="54.1" GasketOD="69.9" RingOD="95.3" />
+      <Rating class="600" RingID="44.5" GasketID="54.1" GasketOD="69.9" RingOD="95.3" />
+      <Rating class="900" RingID="41.4" GasketID="47.8" GasketOD="69.9" RingOD="98.6" />
+      <Rating class="1500" RingID="41.4" GasketID="47.8" GasketOD="69.9" RingOD="98.6" />
+      <Rating class="2500" RingID="41.4" GasketID="47.8" GasketOD="69.9" RingOD="117.6" />
+    </Size>
+    <Size NPS="2" DN="50">
+      <Rating class="150" RingID="55.6" GasketID="69.9" GasketOD="85.9" RingOD="104.9" />
+      <Rating class="300" RingID="55.6" GasketID="69.9" GasketOD="85.9" RingOD="111.3" />
+      <Rating class="400" RingID="55.6" GasketID="69.9" GasketOD="85.9" RingOD="111.3" />
+      <Rating class="600" RingID="55.6" GasketID="69.9" GasketOD="85.9" RingOD="111.3" />
+      <Rating class="900" RingID="52.3" GasketID="58.7" GasketOD="85.9" RingOD="143.0" />
+      <Rating class="1500" RingID="52.3" GasketID="58.7" GasketOD="85.9" RingOD="143.0" />
+      <Rating class="2500" RingID="52.3" GasketID="58.7" GasketOD="85.9" RingOD="146.1" />
+    </Size>
+    <Size NPS="2.5" DN="65">
+      <Rating class="150" RingID="66.5" GasketID="82.6" GasketOD="98.6" RingOD="124.0" />
+      <Rating class="300" RingID="66.5" GasketID="82.6" GasketOD="98.6" RingOD="130.3" />
+      <Rating class="400" RingID="66.5" GasketID="82.6" GasketOD="98.6" RingOD="130.3" />
+      <Rating class="600" RingID="66.5" GasketID="82.6" GasketOD="98.6" RingOD="130.3" />
+      <Rating class="900" RingID="63.5" GasketID="69.9" GasketOD="98.6" RingOD="165.1" />
+      <Rating class="1500" RingID="63.5" GasketID="69.9" GasketOD="98.6" RingOD="165.1" />
+      <Rating class="2500" RingID="63.5" GasketID="69.9" GasketOD="98.6" RingOD="168.4" />
+    </Size>
+    <Size NPS="3" DN="80">
+      <Rating class="150" RingID="81.0" GasketID="101.6" GasketOD="120.7" RingOD="136.7" />
+      <Rating class="300" RingID="81.0" GasketID="101.6" GasketOD="120.7" RingOD="149.4" />
+      <Rating class="400" RingID="81.0" GasketID="101.6" GasketOD="120.7" RingOD="149.4" />
+      <Rating class="600" RingID="78.7" GasketID="101.6" GasketOD="120.7" RingOD="149.4" />
+      <Rating class="900" RingID="78.7" GasketID="95.3" GasketOD="120.7" RingOD="168.4" />
+      <Rating class="1500" RingID="78.7" GasketID="92.2" GasketOD="120.7" RingOD="174.8" />
+      <Rating class="2500" RingID="78.7" GasketID="92.2" GasketOD="120.7" RingOD="196.9" />
+    </Size>
+    <Size NPS="3.5" DN="90" note="No Class 900/1500/2500 for NPS 3½ per B16.5">
+      <Rating class="150" RingID="95.3" GasketID="114.3" GasketOD="133.4" RingOD="161.9" />
+      <Rating class="300" RingID="95.3" GasketID="114.3" GasketOD="133.4" RingOD="165.1" />
+      <Rating class="400" RingID="90.5" GasketID="104.8" GasketOD="133.4" RingOD="161.9" />
+      <Rating class="600" RingID="90.5" GasketID="104.8" GasketOD="133.4" RingOD="161.9" />
+    </Size>
+    <Size NPS="4" DN="100">
+      <Rating class="150" RingID="106.4" GasketID="127.0" GasketOD="149.4" RingOD="174.8" />
+      <Rating class="300" RingID="106.4" GasketID="127.0" GasketOD="149.4" RingOD="181.1" />
+      <Rating class="400" RingID="102.6" GasketID="120.7" GasketOD="149.4" RingOD="177.8" />
+      <Rating class="600" RingID="102.6" GasketID="120.7" GasketOD="149.4" RingOD="193.8" />
+      <Rating class="900" RingID="102.6" GasketID="120.7" GasketOD="149.4" RingOD="206.5" />
+      <Rating class="1500" RingID="97.8" GasketID="117.6" GasketOD="149.4" RingOD="209.6" />
+      <Rating class="2500" RingID="97.8" GasketID="117.6" GasketOD="149.4" RingOD="235.0" />
+    </Size>
+    <Size NPS="5" DN="125">
+      <Rating class="150" RingID="131.8" GasketID="155.7" GasketOD="177.8" RingOD="196.9" />
+      <Rating class="300" RingID="131.8" GasketID="155.7" GasketOD="177.8" RingOD="215.9" />
+      <Rating class="400" RingID="128.3" GasketID="147.6" GasketOD="177.8" RingOD="212.9" />
+      <Rating class="600" RingID="128.3" GasketID="147.6" GasketOD="177.8" RingOD="241.3" />
+      <Rating class="900" RingID="128.3" GasketID="147.6" GasketOD="177.8" RingOD="247.7" />
+      <Rating class="1500" RingID="124.5" GasketID="143.0" GasketOD="177.8" RingOD="254.0" />
+      <Rating class="2500" RingID="124.5" GasketID="143.0" GasketOD="177.8" RingOD="279.4" />
+    </Size>
+    <Size NPS="6" DN="150">
+      <Rating class="150" RingID="157.2" GasketID="182.6" GasketOD="209.6" RingOD="222.3" />
+      <Rating class="300" RingID="157.2" GasketID="182.6" GasketOD="209.6" RingOD="251.0" />
+      <Rating class="400" RingID="154.9" GasketID="174.8" GasketOD="209.6" RingOD="247.7" />
+      <Rating class="600" RingID="154.9" GasketID="174.8" GasketOD="209.6" RingOD="266.7" />
+      <Rating class="900" RingID="154.9" GasketID="174.8" GasketOD="209.6" RingOD="289.1" />
+      <Rating class="1500" RingID="147.3" GasketID="171.5" GasketOD="209.6" RingOD="282.7" />
+      <Rating class="2500" RingID="147.3" GasketID="171.5" GasketOD="209.6" RingOD="317.5" />
+    </Size>
+    <Size NPS="8" DN="200">
+      <Rating class="150" RingID="215.9" GasketID="233.4" GasketOD="263.7" RingOD="279.4" />
+      <Rating class="300" RingID="215.9" GasketID="233.4" GasketOD="263.7" RingOD="308.1" />
+      <Rating class="400" RingID="205.7" GasketID="225.6" GasketOD="263.7" RingOD="304.8" />
+      <Rating class="600" RingID="205.7" GasketID="225.6" GasketOD="263.7" RingOD="320.8" />
+      <Rating class="900" RingID="196.9" GasketID="222.3" GasketOD="257.3" RingOD="358.9" />
+      <Rating class="1500" RingID="196.9" GasketID="215.9" GasketOD="257.3" RingOD="352.6" />
+      <Rating class="2500" RingID="196.9" GasketID="215.9" GasketOD="257.3" RingOD="387.4" />
+    </Size>
+    <Size NPS="10" DN="250">
+      <Rating class="150" RingID="268.2" GasketID="287.3" GasketOD="317.5" RingOD="339.9" />
+      <Rating class="300" RingID="268.2" GasketID="287.3" GasketOD="317.5" RingOD="362.0" />
+      <Rating class="400" RingID="255.3" GasketID="274.6" GasketOD="317.5" RingOD="358.9" />
+      <Rating class="600" RingID="255.3" GasketID="274.6" GasketOD="317.5" RingOD="400.1" />
+      <Rating class="900" RingID="246.1" GasketID="276.4" GasketOD="311.2" RingOD="435.1" />
+      <Rating class="1500" RingID="246.1" GasketID="266.7" GasketOD="311.2" RingOD="435.1" />
+      <Rating class="2500" RingID="246.1" GasketID="270.0" GasketOD="311.2" RingOD="476.3" />
+    </Size>
+    <Size NPS="12" DN="300">
+      <Rating class="150" RingID="317.5" GasketID="339.9" GasketOD="374.7" RingOD="409.7" />
+      <Rating class="300" RingID="317.5" GasketID="339.9" GasketOD="374.7" RingOD="422.4" />
+      <Rating class="400" RingID="307.3" GasketID="327.2" GasketOD="374.7" RingOD="419.1" />
+      <Rating class="600" RingID="307.3" GasketID="327.2" GasketOD="374.7" RingOD="457.2" />
+      <Rating class="900" RingID="292.1" GasketID="323.9" GasketOD="368.3" RingOD="498.6" />
+      <Rating class="1500" RingID="292.1" GasketID="323.9" GasketOD="368.3" RingOD="520.7" />
+      <Rating class="2500" RingID="292.1" GasketID="317.5" GasketOD="368.3" RingOD="549.4" />
+    </Size>
+    <Size NPS="14" DN="350" note="No Class 2500 for NPS 14+">
+      <Rating class="150" RingID="349.3" GasketID="371.6" GasketOD="406.4" RingOD="450.9" />
+      <Rating class="300" RingID="349.3" GasketID="371.6" GasketOD="406.4" RingOD="485.9" />
+      <Rating class="400" RingID="342.9" GasketID="362.0" GasketOD="406.4" RingOD="482.6" />
+      <Rating class="600" RingID="342.9" GasketID="362.0" GasketOD="406.4" RingOD="492.3" />
+      <Rating class="900" RingID="320.8" GasketID="355.6" GasketOD="400.1" RingOD="520.7" />
+      <Rating class="1500" RingID="320.8" GasketID="362.0" GasketOD="400.1" RingOD="577.9" />
+    </Size>
+    <Size NPS="16" DN="400">
+      <Rating class="150" RingID="400.1" GasketID="422.4" GasketOD="463.6" RingOD="514.4" />
+      <Rating class="300" RingID="400.1" GasketID="422.4" GasketOD="463.6" RingOD="539.8" />
+      <Rating class="400" RingID="389.9" GasketID="412.8" GasketOD="463.6" RingOD="536.7" />
+      <Rating class="600" RingID="389.9" GasketID="412.8" GasketOD="463.6" RingOD="565.2" />
+      <Rating class="900" RingID="374.7" GasketID="412.8" GasketOD="457.2" RingOD="574.8" />
+      <Rating class="1500" RingID="374.7" GasketID="406.4" GasketOD="457.2" RingOD="641.4" />
+    </Size>
+    <Size NPS="18" DN="450">
+      <Rating class="150" RingID="449.3" GasketID="474.7" GasketOD="527.1" RingOD="549.4" />
+      <Rating class="300" RingID="449.3" GasketID="474.7" GasketOD="527.1" RingOD="596.9" />
+      <Rating class="400" RingID="438.2" GasketID="469.9" GasketOD="527.1" RingOD="593.9" />
+      <Rating class="600" RingID="438.2" GasketID="469.9" GasketOD="527.1" RingOD="612.9" />
+      <Rating class="900" RingID="425.5" GasketID="463.6" GasketOD="520.7" RingOD="638.3" />
+      <Rating class="1500" RingID="425.5" GasketID="463.6" GasketOD="520.7" RingOD="704.9" />
+    </Size>
+    <Size NPS="20" DN="500">
+      <Rating class="150" RingID="500.1" GasketID="525.5" GasketOD="577.9" RingOD="606.6" />
+      <Rating class="300" RingID="500.1" GasketID="525.5" GasketOD="577.9" RingOD="654.1" />
+      <Rating class="400" RingID="489.0" GasketID="520.7" GasketOD="577.9" RingOD="647.7" />
+      <Rating class="600" RingID="489.0" GasketID="520.7" GasketOD="577.9" RingOD="682.8" />
+      <Rating class="900" RingID="482.6" GasketID="520.7" GasketOD="571.5" RingOD="698.5" />
+      <Rating class="1500" RingID="476.3" GasketID="514.4" GasketOD="571.5" RingOD="755.7" />
+    </Size>
+    <Size NPS="22" DN="550" note="No Class 900/1500/2500 for NPS 22 per B16.5">
+      <Rating class="150" RingID="568.4" GasketID="593.8" GasketOD="625.5" RingOD="660.4" />
+      <Rating class="300" RingID="552.5" GasketID="577.9" GasketOD="625.5" RingOD="704.9" />
+      <Rating class="400" RingID="539.8" GasketID="577.9" GasketOD="625.5" RingOD="701.8" />
+      <Rating class="600" RingID="539.8" GasketID="577.9" GasketOD="625.5" RingOD="733.6" />
+    </Size>
+    <Size NPS="24" DN="600">
+      <Rating class="150" RingID="603.3" GasketID="628.7" GasketOD="685.8" RingOD="717.6" />
+      <Rating class="300" RingID="603.3" GasketID="628.7" GasketOD="685.8" RingOD="774.7" />
+      <Rating class="400" RingID="590.6" GasketID="628.7" GasketOD="685.8" RingOD="768.4" />
+      <Rating class="600" RingID="590.6" GasketID="628.7" GasketOD="685.8" RingOD="790.7" />
+      <Rating class="900" RingID="590.6" GasketID="628.7" GasketOD="679.5" RingOD="838.2" />
+      <Rating class="1500" RingID="577.9" GasketID="616.0" GasketOD="679.5" RingOD="901.7" />
+    </Size>
+  </SpiralWoundGaskets>
+  <SpiralWoundGaskets standard="B16.47" source="Tables SW-2.1-2 SW-2.1-3">
+    <Series id="A">
+      <Size NPS="26">
+        <Rating class="150" RingID="654.1" GasketID="673.1" GasketOD="704.9" RingOD="774.7" />
+        <Rating class="300" RingID="654.1" GasketID="685.8" GasketOD="736.6" RingOD="835.2" />
+        <Rating class="400" RingID="660.4" GasketID="685.8" GasketOD="736.6" RingOD="831.9" />
+        <Rating class="600" RingID="647.7" GasketID="685.8" GasketOD="736.6" RingOD="866.9" />
+        <Rating class="900" RingID="660.4" GasketID="685.8" GasketOD="736.6" RingOD="882.7" />
+      </Size>
+      <Size NPS="28">
+        <Rating class="150" RingID="704.9" GasketID="723.9" GasketOD="755.7" RingOD="831.9" />
+        <Rating class="300" RingID="704.9" GasketID="736.6" GasketOD="787.4" RingOD="898.7" />
+        <Rating class="400" RingID="711.2" GasketID="736.6" GasketOD="787.4" RingOD="892.3" />
+        <Rating class="600" RingID="698.5" GasketID="736.6" GasketOD="787.4" RingOD="914.4" />
+        <Rating class="900" RingID="711.2" GasketID="736.6" GasketOD="787.4" RingOD="946.2" />
+      </Size>
+      <Size NPS="30">
+        <Rating class="150" RingID="755.7" GasketID="774.7" GasketOD="806.5" RingOD="882.7" />
+        <Rating class="300" RingID="755.7" GasketID="793.8" GasketOD="844.6" RingOD="952.5" />
+        <Rating class="400" RingID="755.7" GasketID="793.8" GasketOD="844.6" RingOD="946.2" />
+        <Rating class="600" RingID="755.7" GasketID="793.8" GasketOD="844.6" RingOD="971.6" />
+        <Rating class="900" RingID="768.4" GasketID="793.8" GasketOD="844.6" RingOD="1009.7" />
+      </Size>
+      <Size NPS="32">
+        <Rating class="150" RingID="806.5" GasketID="825.5" GasketOD="860.6" RingOD="939.8" />
+        <Rating class="300" RingID="806.5" GasketID="850.9" GasketOD="901.7" RingOD="1006.6" />
+        <Rating class="400" RingID="812.8" GasketID="850.9" GasketOD="901.7" RingOD="1003.3" />
+        <Rating class="600" RingID="812.8" GasketID="850.9" GasketOD="901.7" RingOD="1022.4" />
+        <Rating class="900" RingID="812.8" GasketID="850.9" GasketOD="901.7" RingOD="1073.2" />
+      </Size>
+      <Size NPS="34">
+        <Rating class="150" RingID="857.3" GasketID="876.3" GasketOD="911.4" RingOD="990.6" />
+        <Rating class="300" RingID="857.3" GasketID="901.7" GasketOD="952.5" RingOD="1057.4" />
+        <Rating class="400" RingID="863.6" GasketID="901.7" GasketOD="952.5" RingOD="1054.1" />
+        <Rating class="600" RingID="863.6" GasketID="901.7" GasketOD="952.5" RingOD="1073.2" />
+        <Rating class="900" RingID="863.6" GasketID="901.7" GasketOD="952.5" RingOD="1136.7" />
+      </Size>
+      <Size NPS="36">
+        <Rating class="150" RingID="908.1" GasketID="927.1" GasketOD="968.5" RingOD="1047.8" />
+        <Rating class="300" RingID="908.1" GasketID="955.8" GasketOD="1006.6" RingOD="1117.6" />
+        <Rating class="400" RingID="917.7" GasketID="955.8" GasketOD="1006.6" RingOD="1117.6" />
+        <Rating class="600" RingID="917.7" GasketID="955.8" GasketOD="1006.6" RingOD="1130.3" />
+        <Rating class="900" RingID="920.8" GasketID="958.9" GasketOD="1009.7" RingOD="1200.2" />
+      </Size>
+      <Size NPS="38">
+        <Rating class="150" RingID="958.9" GasketID="977.9" GasketOD="1019.3" RingOD="1111.3" />
+        <Rating class="300" RingID="952.5" GasketID="977.9" GasketOD="1016.0" RingOD="1054.1" />
+        <Rating class="400" RingID="952.5" GasketID="971.6" GasketOD="1022.4" RingOD="1073.2" />
+        <Rating class="600" RingID="952.5" GasketID="990.6" GasketOD="1041.4" RingOD="1104.9" />
+        <Rating class="900" RingID="1009.7" GasketID="1035.1" GasketOD="1085.9" RingOD="1200.2" />
+      </Size>
+      <Size NPS="40">
+        <Rating class="150" RingID="1009.7" GasketID="1028.7" GasketOD="1070.1" RingOD="1162.1" />
+        <Rating class="300" RingID="1003.3" GasketID="1022.4" GasketOD="1070.1" RingOD="1114.6" />
+        <Rating class="400" RingID="1000.3" GasketID="1025.7" GasketOD="1076.5" RingOD="1127.3" />
+        <Rating class="600" RingID="1009.7" GasketID="1047.8" GasketOD="1098.6" RingOD="1155.7" />
+        <Rating class="900" RingID="1060.5" GasketID="1098.6" GasketOD="1149.4" RingOD="1251.0" />
+      </Size>
+      <Size NPS="42">
+        <Rating class="150" RingID="1060.5" GasketID="1079.5" GasketOD="1124.0" RingOD="1219.2" />
+        <Rating class="300" RingID="1054.1" GasketID="1073.2" GasketOD="1120.9" RingOD="1165.4" />
+        <Rating class="400" RingID="1051.1" GasketID="1076.5" GasketOD="1127.3" RingOD="1178.1" />
+        <Rating class="600" RingID="1066.8" GasketID="1104.9" GasketOD="1155.7" RingOD="1219.2" />
+        <Rating class="900" RingID="1111.3" GasketID="1149.4" GasketOD="1200.2" RingOD="1301.8" />
+      </Size>
+      <Size NPS="44">
+        <Rating class="150" RingID="1111.3" GasketID="1130.3" GasketOD="1178.1" RingOD="1276.4" />
+        <Rating class="300" RingID="1104.9" GasketID="1130.3" GasketOD="1181.1" RingOD="1219.2" />
+        <Rating class="400" RingID="1104.9" GasketID="1130.3" GasketOD="1181.1" RingOD="1231.9" />
+        <Rating class="600" RingID="1111.3" GasketID="1162.1" GasketOD="1212.9" RingOD="1270.0" />
+        <Rating class="900" RingID="1155.7" GasketID="1206.5" GasketOD="1257.3" RingOD="1368.6" />
+      </Size>
+      <Size NPS="46">
+        <Rating class="150" RingID="1162.1" GasketID="1181.1" GasketOD="1228.9" RingOD="1327.2" />
+        <Rating class="300" RingID="1152.7" GasketID="1178.1" GasketOD="1228.9" RingOD="1273.3" />
+        <Rating class="400" RingID="1168.4" GasketID="1193.8" GasketOD="1244.6" RingOD="1289.1" />
+        <Rating class="600" RingID="1162.1" GasketID="1212.9" GasketOD="1263.7" RingOD="1327.2" />
+        <Rating class="900" RingID="1219.2" GasketID="1270.0" GasketOD="1320.8" RingOD="1435.1" />
+      </Size>
+      <Size NPS="48">
+        <Rating class="150" RingID="1212.9" GasketID="1231.9" GasketOD="1279.7" RingOD="1384.3" />
+        <Rating class="300" RingID="1209.8" GasketID="1235.2" GasketOD="1286.0" RingOD="1324.1" />
+        <Rating class="400" RingID="1206.5" GasketID="1244.6" GasketOD="1295.4" RingOD="1346.2" />
+        <Rating class="600" RingID="1219.2" GasketID="1270.0" GasketOD="1320.8" RingOD="1390.7" />
+        <Rating class="900" RingID="1270.0" GasketID="1320.8" GasketOD="1371.6" RingOD="1485.9" />
+      </Size>
+      <Size NPS="50">
+        <Rating class="150" RingID="1263.7" GasketID="1282.7" GasketOD="1333.5" RingOD="1435.1" />
+        <Rating class="300" RingID="1244.6" GasketID="1295.4" GasketOD="1346.2" RingOD="1378.0" />
+        <Rating class="400" RingID="1257.3" GasketID="1295.4" GasketOD="1346.2" RingOD="1403.4" />
+        <Rating class="600" RingID="1270.0" GasketID="1320.8" GasketOD="1371.6" RingOD="1447.8" />
+      </Size>
+      <Size NPS="52">
+        <Rating class="150" RingID="1314.5" GasketID="1333.5" GasketOD="1384.3" RingOD="1492.3" />
+        <Rating class="300" RingID="1320.8" GasketID="1346.2" GasketOD="1397.0" RingOD="1428.8" />
+        <Rating class="400" RingID="1308.1" GasketID="1346.2" GasketOD="1397.0" RingOD="1454.2" />
+        <Rating class="600" RingID="1320.8" GasketID="1371.6" GasketOD="1422.4" RingOD="1498.6" />
+      </Size>
+      <Size NPS="54">
+        <Rating class="150" RingID="1358.9" GasketID="1384.3" GasketOD="1435.1" RingOD="1549.4" />
+        <Rating class="300" RingID="1352.6" GasketID="1403.4" GasketOD="1454.2" RingOD="1492.3" />
+        <Rating class="400" RingID="1352.6" GasketID="1403.4" GasketOD="1454.2" RingOD="1517.7" />
+        <Rating class="600" RingID="1378.0" GasketID="1428.8" GasketOD="1479.6" RingOD="1555.8" />
+      </Size>
+      <Size NPS="56">
+        <Rating class="150" RingID="1409.7" GasketID="1435.1" GasketOD="1485.9" RingOD="1606.6" />
+        <Rating class="300" RingID="1403.4" GasketID="1454.2" GasketOD="1505.0" RingOD="1543.1" />
+        <Rating class="400" RingID="1403.4" GasketID="1454.2" GasketOD="1505.0" RingOD="1568.5" />
+        <Rating class="600" RingID="1428.8" GasketID="1479.6" GasketOD="1530.4" RingOD="1612.9" />
+      </Size>
+      <Size NPS="58">
+        <Rating class="150" RingID="1460.5" GasketID="1485.9" GasketOD="1536.7" RingOD="1663.7" />
+        <Rating class="300" RingID="1447.8" GasketID="1511.3" GasketOD="1562.1" RingOD="1593.9" />
+        <Rating class="400" RingID="1454.2" GasketID="1505.0" GasketOD="1555.8" RingOD="1619.3" />
+        <Rating class="600" RingID="1473.2" GasketID="1536.7" GasketOD="1587.5" RingOD="1663.7" />
+      </Size>
+      <Size NPS="60">
+        <Rating class="150" RingID="1511.3" GasketID="1536.7" GasketOD="1587.5" RingOD="1714.5" />
+        <Rating class="300" RingID="1524.0" GasketID="1562.1" GasketOD="1612.9" RingOD="1644.7" />
+        <Rating class="400" RingID="1517.7" GasketID="1568.5" GasketOD="1619.3" RingOD="1682.8" />
+        <Rating class="600" RingID="1530.4" GasketID="1593.9" GasketOD="1644.7" RingOD="1733.6" />
+      </Size>
+    </Series>
+    <Series id="B">
+      <Size NPS="26">
+        <Rating class="150" RingID="660.4" GasketID="635.0" GasketOD="666.8" RingOD="712.7" />
+        <Rating class="300" RingID="654.1" GasketID="673.1" GasketOD="723.9" RingOD="762.0" />
+        <Rating class="400" RingID="654.1" GasketID="647.7" GasketOD="698.5" RingOD="736.7" />
+        <Rating class="600" RingID="644.7" GasketID="663.4" GasketOD="714.2" RingOD="759.0" />
+        <Rating class="900" RingID="666.8" GasketID="698.5" GasketOD="749.3" RingOD="831.9" />
+      </Size>
+      <Size NPS="28">
+        <Rating class="150" RingID="711.2" GasketID="685.8" GasketOD="717.6" RingOD="763.6" />
+        <Rating class="300" RingID="704.9" GasketID="723.9" GasketOD="774.7" RingOD="816.2" />
+        <Rating class="400" RingID="701.8" GasketID="698.5" GasketOD="749.3" RingOD="790.7" />
+        <Rating class="600" RingID="685.8" GasketID="720.9" GasketOD="771.7" RingOD="812.8" />
+        <Rating class="900" RingID="717.6" GasketID="755.7" GasketOD="806.5" RingOD="895.4" />
+      </Size>
+      <Size NPS="30">
+        <Rating class="150" RingID="762.0" GasketID="730.3" GasketOD="762.1" RingOD="814.4" />
+        <Rating class="300" RingID="755.7" GasketID="781.1" GasketOD="831.9" RingOD="876.3" />
+        <Rating class="400" RingID="752.6" GasketID="755.7" GasketOD="806.5" RingOD="844.6" />
+        <Rating class="600" RingID="752.6" GasketID="777.8" GasketOD="828.6" RingOD="876.4" />
+        <Rating class="900" RingID="781.1" GasketID="812.9" GasketOD="863.7" RingOD="958.9" />
+      </Size>
+      <Size NPS="32">
+        <Rating class="150" RingID="813.0" GasketID="774.7" GasketOD="809.8" RingOD="862.1" />
+        <Rating class="300" RingID="806.5" GasketID="838.2" GasketOD="889.0" RingOD="930.4" />
+        <Rating class="400" RingID="800.1" GasketID="809.8" GasketOD="860.6" RingOD="901.7" />
+        <Rating class="600" RingID="793.8" GasketID="831.9" GasketOD="882.7" RingOD="927.2" />
+        <Rating class="900" RingID="838.2" GasketID="863.6" GasketOD="914.4" RingOD="1009.7" />
+      </Size>
+      <Size NPS="34">
+        <Rating class="150" RingID="864.0" GasketID="831.9" GasketOD="867.0" RingOD="919.2" />
+        <Rating class="300" RingID="857.3" GasketID="889.0" GasketOD="939.8" RingOD="984.2" />
+        <Rating class="400" RingID="850.9" GasketID="863.6" GasketOD="914.4" RingOD="952.5" />
+        <Rating class="600" RingID="850.9" GasketID="889.0" GasketOD="939.8" RingOD="997.0" />
+        <Rating class="900" RingID="895.4" GasketID="927.1" GasketOD="977.9" RingOD="1066.9" />
+      </Size>
+      <Size NPS="36">
+        <Rating class="150" RingID="914.0" GasketID="876.3" GasketOD="917.7" RingOD="971.6" />
+        <Rating class="300" RingID="908.1" GasketID="943.1" GasketOD="993.9" RingOD="1038.4" />
+        <Rating class="400" RingID="898.7" GasketID="914.4" GasketOD="965.2" RingOD="1016.0" />
+        <Rating class="600" RingID="901.7" GasketID="943.1" GasketOD="993.9" RingOD="1041.4" />
+        <Rating class="900" RingID="920.8" GasketID="965.3" GasketOD="1016.1" RingOD="1111.3" />
+      </Size>
+      <Size NPS="38">
+        <Rating class="150" RingID="965.0" GasketID="927.1" GasketOD="968.5" RingOD="1031.8" />
+        <Rating class="300" RingID="971.6" GasketID="1009.7" GasketOD="1047.8" RingOD="1101.9" />
+        <Rating class="400" RingID="952.5" GasketID="971.6" GasketOD="1022.4" RingOD="1073.2" />
+        <Rating class="600" RingID="952.5" GasketID="990.6" GasketOD="1041.4" RingOD="1104.9" />
+        <Rating class="900" RingID="1009.7" GasketID="1035.1" GasketOD="1085.9" RingOD="1200.2" />
+      </Size>
+      <Size NPS="40">
+        <Rating class="150" RingID="1016.0" GasketID="984.3" GasketOD="1025.7" RingOD="1082.6" />
+        <Rating class="300" RingID="1022.4" GasketID="1051.1" GasketOD="1098.8" RingOD="1149.7" />
+        <Rating class="400" RingID="1000.3" GasketID="1025.7" GasketOD="1076.5" RingOD="1127.3" />
+        <Rating class="600" RingID="1009.7" GasketID="1047.8" GasketOD="1098.6" RingOD="1155.7" />
+        <Rating class="900" RingID="1060.5" GasketID="1098.6" GasketOD="1149.4" RingOD="1251.0" />
+      </Size>
+      <Size NPS="42">
+        <Rating class="150" RingID="1067.0" GasketID="1016.0" GasketOD="1060.5" RingOD="1133.3" />
+        <Rating class="300" RingID="1085.9" GasketID="1105.0" GasketOD="1152.7" RingOD="1203.5" />
+        <Rating class="400" RingID="1051.1" GasketID="1076.5" GasketOD="1127.3" RingOD="1178.1" />
+        <Rating class="600" RingID="1066.8" GasketID="1104.9" GasketOD="1155.7" RingOD="1219.2" />
+        <Rating class="900" RingID="1111.3" GasketID="1149.4" GasketOD="1200.2" RingOD="1301.8" />
+      </Size>
+      <Size NPS="44">
+        <Rating class="150" RingID="1118.0" GasketID="1066.8" GasketOD="1114.6" RingOD="1184.2" />
+        <Rating class="300" RingID="1124.0" GasketID="1155.7" GasketOD="1206.5" RingOD="1251.0" />
+        <Rating class="400" RingID="1104.9" GasketID="1130.3" GasketOD="1181.1" RingOD="1231.9" />
+        <Rating class="600" RingID="1111.3" GasketID="1162.1" GasketOD="1212.9" RingOD="1270.0" />
+        <Rating class="900" RingID="1155.7" GasketID="1206.5" GasketOD="1257.3" RingOD="1368.6" />
+      </Size>
+      <Size NPS="46">
+        <Rating class="150" RingID="1168.0" GasketID="1120.6" GasketOD="1168.4" RingOD="1246.2" />
+        <Rating class="300" RingID="1178.1" GasketID="1203.5" GasketOD="1254.3" RingOD="1317.8" />
+        <Rating class="400" RingID="1168.4" GasketID="1193.8" GasketOD="1244.6" RingOD="1289.1" />
+        <Rating class="600" RingID="1162.1" GasketID="1212.9" GasketOD="1263.7" RingOD="1327.2" />
+        <Rating class="900" RingID="1219.2" GasketID="1270.0" GasketOD="1320.8" RingOD="1435.1" />
+      </Size>
+      <Size NPS="48">
+        <Rating class="150" RingID="1219.0" GasketID="1162.1" GasketOD="1209.9" RingOD="1296.9" />
+        <Rating class="300" RingID="1231.9" GasketID="1260.6" GasketOD="1311.4" RingOD="1368.6" />
+        <Rating class="400" RingID="1206.5" GasketID="1244.6" GasketOD="1295.4" RingOD="1346.2" />
+        <Rating class="600" RingID="1219.2" GasketID="1270.0" GasketOD="1320.8" RingOD="1390.7" />
+        <Rating class="900" RingID="1270.0" GasketID="1320.8" GasketOD="1371.6" RingOD="1485.9" />
+      </Size>
+      <Size NPS="50">
+        <Rating class="150" RingID="1270.0" GasketID="1212.9" GasketOD="1263.7" RingOD="1341.4" />
+        <Rating class="300" RingID="1267.0" GasketID="1314.5" GasketOD="1365.3" RingOD="1416.1" />
+        <Rating class="400" RingID="1257.3" GasketID="1295.4" GasketOD="1346.2" RingOD="1403.4" />
+        <Rating class="600" RingID="1270.0" GasketID="1320.8" GasketOD="1371.6" RingOD="1447.8" />
+      </Size>
+      <Size NPS="52">
+        <Rating class="150" RingID="1321.0" GasketID="1263.7" GasketOD="1314.5" RingOD="1392.2" />
+        <Rating class="300" RingID="1317.8" GasketID="1365.3" GasketOD="1416.1" RingOD="1466.9" />
+        <Rating class="400" RingID="1308.1" GasketID="1346.2" GasketOD="1397.0" RingOD="1454.2" />
+        <Rating class="600" RingID="1320.8" GasketID="1371.6" GasketOD="1422.4" RingOD="1498.6" />
+      </Size>
+      <Size NPS="54">
+        <Rating class="150" RingID="1372.0" GasketID="1314.5" GasketOD="1365.3" RingOD="1447.8" />
+        <Rating class="300" RingID="1365.3" GasketID="1416.1" GasketOD="1466.9" RingOD="1520.7" />
+        <Rating class="400" RingID="1352.6" GasketID="1403.4" GasketOD="1454.2" RingOD="1517.7" />
+        <Rating class="600" RingID="1378.0" GasketID="1428.8" GasketOD="1479.6" RingOD="1555.8" />
+      </Size>
+      <Size NPS="56">
+        <Rating class="150" RingID="1422.0" GasketID="1352.6" GasketOD="1403.4" RingOD="1498.7" />
+        <Rating class="300" RingID="1428.8" GasketID="1473.3" GasketOD="1524.1" RingOD="1593.9" />
+        <Rating class="400" RingID="1403.4" GasketID="1454.2" GasketOD="1505.0" RingOD="1568.5" />
+        <Rating class="600" RingID="1428.8" GasketID="1479.6" GasketOD="1530.4" RingOD="1612.9" />
+      </Size>
+      <Size NPS="58">
+        <Rating class="150" RingID="1473.0" GasketID="1403.4" GasketOD="1454.2" RingOD="1566.9" />
+        <Rating class="300" RingID="1484.4" GasketID="1530.4" GasketOD="1581.2" RingOD="1655.9" />
+        <Rating class="400" RingID="1454.2" GasketID="1505.0" GasketOD="1555.8" RingOD="1619.3" />
+        <Rating class="600" RingID="1473.2" GasketID="1536.7" GasketOD="1587.5" RingOD="1663.7" />
+      </Size>
+      <Size NPS="60">
+        <Rating class="150" RingID="1524.0" GasketID="1460.5" GasketOD="1511.3" RingOD="1617.7" />
+        <Rating class="300" RingID="1557.3" GasketID="1587.5" GasketOD="1638.3" RingOD="1706.7" />
+        <Rating class="400" RingID="1517.7" GasketID="1568.5" GasketOD="1619.3" RingOD="1682.8" />
+        <Rating class="600" RingID="1530.4" GasketID="1593.9" GasketOD="1644.7" RingOD="1733.6" />
+      </Size>
+    </Series>
+  </SpiralWoundGaskets>
+</Gaskets>
