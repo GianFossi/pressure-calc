@@ -10,7 +10,8 @@
       "Read(//c/tmp/**)"
     ],
     "additionalDirectories": [
-      "C:\\Users\\ganfossi\\pressure-calc\\database\\data"
+      "C:\\Users\\ganfossi\\pressure-calc\\database\\data",
+      "C:\\Users\\ganfossi\\.claude\\projects\\c--Users-ganfossi-pressure-calc"
     ]
   }
 }

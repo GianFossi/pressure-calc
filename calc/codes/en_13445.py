@@ -25,15 +25,16 @@ def thickness_internal(P_bar: float, D_i_mm: float, f_MPa: float, z: float = 1.0
     e_min = P * D_i_mm / denom
 
     return {
-        "code":    "EN 13445-3",
-        "ref":     "§ 7.4.2 Eq. (7.4-1)",
-        "P_MPa":   round(P, 4),
-        "D_i_mm":  D_i_mm,
-        "f_MPa":   f_MPa,
-        "z":       z,
+        "code":     "EN 13445-3",
+        "ref":      "§ 7.4.2 Eq. (7.4-1)",
+        "P_MPa":    round(P, 4),
+        "D_i_mm":   D_i_mm,
+        "f_MPa":    f_MPa,
+        "z":        z,
         "e_min_mm": round(e_min, 3),
-        "governing": "Pressione interna",
-        "latex":   r"e = \frac{P \cdot D_i}{2\,f \cdot z - P}",
+        "t_min_mm": round(e_min, 3),   # alias — consistent key across all code modules
+        "governing": "Internal pressure §7.4.2",
+        "latex":    r"e = \frac{P \cdot D_i}{2\,f \cdot z - P}",
     }
 
 

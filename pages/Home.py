@@ -1,39 +1,60 @@
 import streamlit as st
 
 st.title("🔩 Pressure Vessel Calculator")
-st.markdown("Strumento di calcolo per **componenti in pressione** con comparazione tra codici internazionali.")
-st.markdown("Built by: Dott. Ing. Gian-Luca ANFOSSI")
+st.markdown(
+    "Calculation tool for **pressure components** with multi-code comparison.  \n"
+    "Built by: Dott. Ing. Gian-Luca ANFOSSI"
+)
 st.divider()
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Codici di calcolo")
+    st.subheader("Design Codes")
     st.markdown("""
-| Codice | Stato |
-|--------|-------|
-| ASME VIII Div. 1 | ✅ Attivo |
-| EN 13445-3 | ✅ Attivo |
-| ASME VIII Div. 2 | 🔜 In sviluppo |
-| CODAP 2023 | 🔜 Pianificato |
-| AD 2000 | 🔜 Pianificato |
+| Code | Status |
+|---|---|
+| ASME VIII Div. 1 (UG-27) | ✅ Active |
+| ASME VIII Div. 2 (§4.3.3) | ✅ Active |
+| EN 13445-3 (§7.4.2) | ✅ Active |
+| AD 2000 (B0 §6) | ✅ Active |
+| BS PD 5500 (§3.5.1.2) | ✅ Active |
+| CODAP 2023 (§C2.3) | ✅ Active |
 """)
 
 with col2:
-    st.subheader("Componenti implementati")
+    st.subheader("Implemented Components")
     st.markdown("""
-| Componente | Carico | Stato |
-|------------|--------|-------|
-| Virola cilindrica | Pressione interna | ✅ Attivo |
-| Virola cilindrica | Pressione esterna | 🔜 Fase 2 |
-| Virola cilindrica | Carichi esterni (vento/sisma) | 🔜 Fase 2 |
-| Transizione conica | P interna / esterna | 🔜 Fase 3 |
-| Fondi saldati (ellittici, torisferici, emisferici) | P interna | 🔜 Fase 3 |
-| Bocchellame e rinforzi | P interna | 🔜 Fase 4 |
-| Fondi imbullonati (flange) | P interna | 🔜 Fase 5 |
-| Piastre tubiere | P interna | 🔜 Fase 5 |
-| Supporti (selle, gambe, skirt) | Carichi statici | 🔜 Fase 6 |
+| Component | Load | Status |
+|---|---|---|
+| Cylindrical shell | Internal pressure | ✅ Active — all 6 codes |
+| Cylindrical shell | External pressure | 🔜 Phase 2 |
+| Cylindrical shell | Wind / seismic loads | 🔜 Phase 2 |
+| Conical transition | Internal / external P | 🔜 Phase 3 |
+| Heads (ellipsoidal, torispherical, hemispherical) | Internal P | 🔜 Phase 3 |
+| Nozzles & reinforcements | Internal P | 🔜 Phase 4 |
+| Flanges (bolted heads) | Internal P | 🔜 Phase 5 |
+| Tubesheets | Internal P | 🔜 Phase 5 |
+| Supports (saddles, legs, skirt) | Static loads | 🔜 Phase 6 |
 """)
 
 st.divider()
-st.caption("Versione 0.1 — Fase 1: Virola cilindrica | Pressione interna | ASME VIII-1 + EN 13445-3")
+
+with st.container(border=True):
+    st.subheader("Material Database")
+    st.markdown("""
+The calculator draws on the embedded **ASME II Part D** material database:
+
+| Table | Content |
+|---|---|
+| Materials | SMYS, SMTS, Ar, density — all ASME listed materials |
+| Table 1A / Table 5A | Allowable stresses — ASME VIII-1 and VIII-2 |
+| Table Y-1 | Yield strength vs. temperature |
+| Table U | Ultimate strength vs. temperature |
+
+European allowable stresses (EN 13445, AD 2000, BS PD 5500, CODAP) are computed
+automatically from Rp0.2\_T and Rm\_20°C using code-specific safety factors.
+""")
+
+st.divider()
+st.caption("Version 1.0 — Cylindrical shell · Internal pressure · 6 codes · Material database")
