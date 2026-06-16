@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 pg = st.navigation({
-    "": [
+    "Home": [
         st.Page("pages/Home.py", title="Home", icon="🏠"),
     ],
     "Codici di calcolo": [
