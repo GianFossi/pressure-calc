@@ -5,15 +5,13 @@ import os
 import xml.etree.ElementTree as ET
 from fractions import Fraction
 
-st.set_page_config(page_title="Pipe Dimensions — ASME B36.10", layout="wide")
-
 # ─── XML loader ───────────────────────────────────────────────────────────────
 
 @st.cache_data
 def load_pipes() -> list[dict]:
     xml_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "database", "data", "Pipes.xml",
+        "database", "Pipes.xml",
     )
     root = ET.parse(xml_path).getroot()
     pipes = []

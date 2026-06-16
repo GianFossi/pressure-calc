@@ -6,7 +6,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from calc.codes import asme_viii_1, en_13445
 
-st.set_page_config(page_title="Virola Cilindrica — Pressione Interna", layout="wide")
+
 
 st.title("Virola Cilindrica — Pressione Interna")
 st.caption("ASME VIII Div.1 (UG-27) · EN 13445-3 (§ 7.4.2) | Confronto codici")

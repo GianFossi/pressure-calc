@@ -4,8 +4,6 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-st.set_page_config(page_title="Standards", layout="wide")
-
 st.title("Standards")
 st.caption("Piping dimensions and engineering standards reference.")
 
