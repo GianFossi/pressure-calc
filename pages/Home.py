@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("🔩 Pressure Vessel Calculator")
 st.markdown("Strumento di calcolo per **componenti in pressione** con comparazione tra codici internazionali.")
-
+st.markdown("Built by: Dott. Ing. Gian-Luca ANFOSSI")
 st.divider()
 
 col1, col2 = st.columns(2)
