@@ -7,7 +7,10 @@
       "Bash(cd \"c:/Users/ganfossi/pressure-calc\" && mv database/data/* database/ && rm -r database/data && rm database/pipes_b3610.json && find database -type f | sort)",
       "Skill(run)",
       "Skill(run:*)",
-      "Read(//c/tmp/**)"
+      "Read(//c/tmp/**)",
+      "WebSearch",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:www.pexels.com)"
     ],
     "additionalDirectories": [
       "C:\\Users\\ganfossi\\pressure-calc\\database\\data",

@@ -1,4 +1,6 @@
 import streamlit as st
+import base64
+from pathlib import Path
 
 # ── Page config (must be the very first Streamlit call) ────────────────────────
 st.set_page_config(
@@ -7,6 +9,26 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# ── Background plant image (base64-injected so it works locally + on Cloud) ────
+def _bg_image_css() -> str:
+    img = Path(__file__).parent / "static" / "bg_plant.jpg"
+    if not img.exists():
+        return ""
+    data = base64.b64encode(img.read_bytes()).decode()
+    return (
+        ".stApp {"
+        f' background-image: url("data:image/jpeg;base64,{data}") !important;'
+        " background-size: cover !important;"
+        " background-position: center center !important;"
+        " background-attachment: fixed !important;"
+        " background-repeat: no-repeat !important;"
+        "}"
+    )
+
+_BG_CSS = _bg_image_css()
+if _BG_CSS:
+    st.markdown(f"<style>{_BG_CSS}</style>", unsafe_allow_html=True)
 
 # ── Global CSS + persistent top banner ────────────────────────────────────────
 st.markdown(
@@ -18,11 +40,10 @@ st.markdown(
     header[data-testid="stHeader"]     { display: none !important; }
     #MainMenu                          { display: none !important; }
     footer                             { display: none !important; }
-    /* remove the orange/blue "running" top bar flash */
     div[data-testid="stStatusWidget"]  { display: none !important; }
 
     /* ═══════════════════════════════════════════════════════════
-       2.  Fixed top banner  (title + author)
+       2.  Fixed top banner  (title + revision + author)
     ═══════════════════════════════════════════════════════════ */
     .pvc-banner {
         position: fixed;
@@ -54,6 +75,18 @@ st.markdown(
         letter-spacing: 0.3px;
         white-space: nowrap;
     }
+    /* ── Revision badge ── */
+    .pvc-banner-rev {
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        opacity: 0.80;
+        background: rgba(255, 255, 255, 0.13);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 4px;
+        padding: 2px 8px;
+        white-space: nowrap;
+    }
     .pvc-banner-author {
         font-size: 0.76rem;
         opacity: 0.75;
@@ -62,19 +95,26 @@ st.markdown(
     }
     @media (max-width: 640px) {
         .pvc-banner-author { display: none; }
+        .pvc-banner-rev    { display: none; }
     }
 
     /* ═══════════════════════════════════════════════════════════
-       3.  Sidebar  — push it below the banner
+       3.  Sidebar  — push it below the banner + always-visible
+           separator (same approach as Claude's sidebar divider)
     ═══════════════════════════════════════════════════════════ */
     section[data-testid="stSidebar"] {
         top: 52px !important;
         height: calc(100vh - 52px) !important;
-        border-right: 1px solid #dde2ea;
+        /* Solid opaque background so the plant image doesn't bleed through */
+        background: #f0f4f9 !important;
+        /* Separator: thin line + soft drop-shadow on the right edge */
+        border-right: 1px solid rgba(0, 0, 0, 0.14) !important;
+        box-shadow: 2px 0 8px -2px rgba(0, 0, 0, 0.10),
+                    1px 0 0 0 rgba(0, 0, 0, 0.06) !important;
     }
     section[data-testid="stSidebar"] > div:first-child {
         padding-top: 6px !important;
-        background: #f7f9fc !important;
+        background: #f0f4f9 !important;
     }
 
     /* Sidebar collapse / expand arrow — keep it visible below banner */
@@ -83,7 +123,8 @@ st.markdown(
     }
 
     /* ═══════════════════════════════════════════════════════════
-       4.  Main content area — push below banner
+       4.  Main content area — push below banner + overlay so
+           the plant background remains subtly visible
     ═══════════════════════════════════════════════════════════ */
     .main .block-container,
     [data-testid="stMainBlockContainer"] {
@@ -92,17 +133,21 @@ st.markdown(
         padding-right: 2rem  !important;
         max-width: 100% !important;
     }
+    /* Semi-transparent frosted overlay on the main content pane */
+    [data-testid="stMain"] {
+        background: rgba(240, 245, 251, 0.86) !important;
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+    }
 
     /* ═══════════════════════════════════════════════════════════
        5.  Sidebar navigation TREE  styling
     ═══════════════════════════════════════════════════════════ */
 
-    /* ── overall nav container ── */
     [data-testid="stSidebarNavItems"] {
         padding: 4px 0 12px 0 !important;
     }
 
-    /* ── section / group header  (e.g. "CALCULATIONS") ── */
     [data-testid="stSidebarNavSectionHeader"] {
         padding: 14px 12px 3px 12px !important;
     }
@@ -115,12 +160,10 @@ st.markdown(
         margin: 0 !important;
         padding: 0 !important;
     }
-    /* separator line above each group (except first) */
     [data-testid="stSidebarNavSectionHeader"] + * {
         border-top: none;
     }
 
-    /* ── tree branch vertical connector on the left ── */
     [data-testid="stSidebarNavItems"] ul {
         padding-left: 0 !important;
         margin: 0 !important;
@@ -133,7 +176,6 @@ st.markdown(
         position: relative;
     }
 
-    /* ── individual page link ── */
     [data-testid="stSidebarNavLink"] {
         display: flex !important;
         align-items: center !important;
@@ -147,7 +189,6 @@ st.markdown(
         position: relative;
         transition: background 0.15s ease, color 0.15s ease;
     }
-    /* horizontal tree connector */
     [data-testid="stSidebarNavLink"]::before {
         content: "";
         position: absolute;
@@ -163,7 +204,6 @@ st.markdown(
         color: #1f6aa5 !important;
     }
 
-    /* ── active / selected page ── */
     [data-testid="stSidebarNavLink"][aria-current="page"] {
         background: rgba(31, 106, 165, 0.13) !important;
         color: #1255a0 !important;
@@ -174,27 +214,24 @@ st.markdown(
         background: #1f6aa5;
     }
 
-    /* ── link text / icon spacing ── */
     [data-testid="stSidebarNavLink"] span[data-testid="stSidebarNavLinkIcon"] {
         font-size: 1rem !important;
     }
 
-    /* ── Pipe Dimensions & Tube Dimensions: child nodes of Standards ── */
     [data-testid="stSidebarNavLink"][href*="pipe-dimensions"],
     [data-testid="stSidebarNavLink"][href*="tube-dimensions"] {
-        padding-left: 32px !important;   /* deeper indent than siblings (16 px) */
+        padding-left: 32px !important;
         font-size:  0.83rem !important;
         color: #4a5d72 !important;
         margin-left: 10px !important;
     }
-    /* longer horizontal branch — connects visually from Standards' vertical line */
     [data-testid="stSidebarNavLink"][href*="pipe-dimensions"]::before,
     [data-testid="stSidebarNavLink"][href*="tube-dimensions"]::before {
         left: -24px;
         width: 22px;
     }
 
-    /* ── sidebar footer  (version label, etc.) ── */
+    /* ── sidebar footer ── */
     .sidebar-footer {
         position: absolute;
         bottom: 12px;
@@ -212,6 +249,7 @@ st.markdown(
         <div class="pvc-banner-left">
             <span class="pvc-banner-icon">🔩</span>
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
+            <span class="pvc-banner-rev">Rev.&nbsp;01 &nbsp;·&nbsp; 2026-06-17</span>
         </div>
         <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI</span>
     </div>

@@ -119,7 +119,9 @@ def get_all_materials() -> list[dict]:
     result = []
     for row in rows:
         (mid, spec, grade, cls, alloy, comp, pform, smts, smys, ar) = row
-        parts = [str(p) for p in [spec, grade, cls] if p]
+        # When TypeGrade is absent, use UNS/AlloyDesignation as the identifier
+        id_part = grade if grade else alloy
+        parts = [str(p) for p in [spec, id_part, cls] if p]
         name = " ".join(parts)
         result.append({
             "id":    mid,

@@ -150,8 +150,8 @@ with st.container(border=True):
     ms1, ms2 = st.columns([1, 2])
 
     with ms1:
-        search = st.text_input("Search (spec / grade / composition)",
-                                placeholder="e.g.  SA-516  or  N06625")
+        search = st.text_input("Filter for Material Selection (spec / grade / UNS / composition)",
+                                placeholder="e.g.  SA-516 or N06625 or 1.4404 or 1.25Cr", )
 
     # Filter material list
     if search.strip():
@@ -159,9 +159,17 @@ with st.container(border=True):
         filtered = [m for m in ALL_MATS
                     if q in m["name"].lower()
                     or q in m["comp"].lower()
-                    or q in m["alloy"].lower()]
+                    or q in m["alloy"].lower()
+                    or q in m["grade"].lower()]
     else:
         filtered = ALL_MATS
+
+    # Clamp selectbox index to valid range after filtering (prevents stale-index errors)
+    n_filtered = len(filtered)
+    if n_filtered > 0:
+        current_idx = st.session_state.get("mat_select", 0)
+        if not isinstance(current_idx, int) or current_idx >= n_filtered:
+            st.session_state["mat_select"] = 0
 
     with ms2:
         if not filtered:
@@ -169,6 +177,10 @@ with st.container(border=True):
             mat_id = None
         else:
             mat_names = [m["name"] for m in filtered]
+
+            if len(filtered) == 1:
+                st.success(f"Single match — auto-selected: **{mat_names[0]}**")
+
             mat_idx = st.selectbox(
                 "Material",
                 options=range(len(mat_names)),
