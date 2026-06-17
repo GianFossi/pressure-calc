@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import base64
 from pathlib import Path
 
@@ -117,10 +118,10 @@ st.markdown(
         background: #f0f4f9 !important;
     }
 
-    /* Hide Streamlit's native sidebar toggle — replaced by banner buttons */
-    [data-testid="stSidebarCollapseButton"],
+    /* Streamlit's native expand button (when sidebar is collapsed) —
+       keep it as a fallback, positioned below our banner */
     [data-testid="collapsedControl"] {
-        display: none !important;
+        top: 60px !important;
     }
 
     /* ═══════════════════════════════════════════════════════════
@@ -304,28 +305,23 @@ st.markdown(
         <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI</span>
     </div>
 
-    <script>
-    /* Sidebar toggle — state lives on document.body (React doesn't touch it)
-       and is persisted in sessionStorage across Streamlit reruns.            */
-    (function () {
-        function _pvApply() {
-            if (sessionStorage.getItem('pvSbHidden') === '1') {
-                document.body.classList.add('pv-sb-hidden');
-            } else {
-                document.body.classList.remove('pv-sb-hidden');
-            }
-        }
-        _pvApply();   /* restore state every time Streamlit re-injects the banner */
-
-        window.pvToggle = function () {
-            const nowHidden = document.body.classList.toggle('pv-sb-hidden');
-            sessionStorage.setItem('pvSbHidden', nowHidden ? '1' : '0');
-        };
-    })();
-    </script>
     """,
     unsafe_allow_html=True,
 )
+
+# ── Sidebar toggle JavaScript (injected via iframe — the only way to guarantee
+#    script execution in Streamlit; st.markdown scripts are swallowed by React) ──
+components.html("""
+<script>
+(function () {
+    var p = window.parent;
+    if (!p) return;
+    p.pvToggle = function () {
+        p.document.body.classList.toggle('pv-sb-hidden');
+    };
+})();
+</script>
+""", height=0, scrolling=False)
 
 # ── Disclaimer modal (shown once per session) ─────────────────────────────────
 @st.dialog("⚠️  Disclaimer — Legal Notice", width="large")
