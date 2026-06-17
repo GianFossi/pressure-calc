@@ -106,6 +106,7 @@ st.markdown(
     section[data-testid="stSidebar"] {
         top: 52px !important;
         height: calc(100vh - 52px) !important;
+        min-width: 160px !important;
         /* Solid opaque background so the plant image doesn't bleed through */
         background: #f0f4f9 !important;
         /* Separator: thin line + soft drop-shadow on the right edge */
@@ -295,8 +296,8 @@ st.markdown(
         <div class="pvc-banner-left">
             <!-- Sidebar toggle buttons (« collapse / » expand) -->
             <div class="pvc-nav-toggle">
-                <button class="pvc-toggle-btn pvc-btn-collapse" onclick="pvToggle()" title="Hide navigation tree">&#171;</button>
-                <button class="pvc-toggle-btn pvc-btn-expand"   onclick="pvToggle()" title="Show navigation tree">&#187;</button>
+                <button class="pvc-toggle-btn pvc-btn-collapse" title="Hide navigation tree">&#171;</button>
+                <button class="pvc-toggle-btn pvc-btn-expand"   title="Show navigation tree">&#187;</button>
             </div>
             <span class="pvc-banner-icon">🔩</span>
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
@@ -309,16 +310,32 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ── Sidebar toggle JavaScript (injected via iframe — the only way to guarantee
-#    script execution in Streamlit; st.markdown scripts are swallowed by React) ──
+# ── Sidebar toggle JavaScript ─────────────────────────────────────────────────
+# components.html is the only way JS runs in Streamlit (st.markdown strips
+# onclick / script tags via DOMPurify).  From inside the iframe we find the
+# banner buttons in the parent frame and attach click listeners.
 components.html("""
 <script>
 (function () {
     var p = window.parent;
-    if (!p) return;
-    p.pvToggle = function () {
+    if (!p || p === window) return;
+
+    function toggle() {
         p.document.body.classList.toggle('pv-sb-hidden');
-    };
+    }
+
+    function attach() {
+        p.document.querySelectorAll('.pvc-toggle-btn').forEach(function (btn) {
+            if (!btn._pvAttached) {
+                btn.addEventListener('click', toggle);
+                btn._pvAttached = true;
+            }
+        });
+    }
+
+    // Attach now, then re-attach whenever React re-renders the DOM.
+    attach();
+    new p.MutationObserver(attach).observe(p.document.body, { childList: true, subtree: true });
 })();
 </script>
 """, height=0, scrolling=False)
