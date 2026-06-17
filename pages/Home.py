@@ -2,8 +2,7 @@ import streamlit as st
 
 st.title("🔩 Pressure Vessel Calculator")
 st.markdown(
-    "Calculation tool for **pressure components** with multi-code comparison.  \n"
-    "Built by: Dott. Ing. Gian-Luca ANFOSSI"
+    "Calculation tool for **pressure components** with multi-code comparison.  \n"    
 )
 st.divider()
 
@@ -45,12 +44,13 @@ with st.container(border=True):
     st.markdown("""
 The calculator draws on the embedded **ASME II Part D** material database:
 
-| Table | Content |
-|---|---|
-| Materials | SMYS, SMTS, Ar, density — all ASME listed materials |
-| Table 1A / Table 5A | Allowable stresses — ASME VIII-1 and VIII-2 |
-| Table Y-1 | Yield strength vs. temperature |
-| Table U | Ultimate strength vs. temperature |
+| Table                    | Content                                             |
+|---                       |---                                                  |
+| Materials                | SMYS, SMTS, Ar, density — all ASME listed materials |
+| Table 1A/5A, 1B/5B and 3 | Allowable stresses — ASME VIII-1 and VIII-2         |
+| Table Y                  | Yield strength vs. temperature                      |
+| Table U                  | Ultimate strength vs. temperature                   |
+| Physical/Thermal Tables  | Physical and thermal properties                     |                
 
 European allowable stresses (EN 13445, AD 2000, BS PD 5500, CODAP) are computed
 automatically from Rp0.2\_T and Rm\_20°C using code-specific safety factors.

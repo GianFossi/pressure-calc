@@ -146,12 +146,12 @@ with st.container(border=True):
 
 # ─── MATERIAL SELECTION ───────────────────────────────────────────────────────
 with st.container(border=True):
-    st.subheader("Material")
+    st.subheader("Material Selection")
     ms1, ms2 = st.columns([1, 2])
 
     with ms1:
         search = st.text_input("Filter for Material Selection (spec / grade / UNS / composition)",
-                                placeholder="e.g.  SA-516 or N06625 or 1.4404 or 1.25Cr", )
+                                placeholder="e.g. SA-516 or N06625 or 1.4404 or 1¼Cr-½Mo-Si", )
 
     # Filter material list
     if search.strip():
