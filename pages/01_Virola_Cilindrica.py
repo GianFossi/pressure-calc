@@ -182,7 +182,7 @@ with st.container(border=True):
                 st.success(f"Single match — auto-selected: **{mat_names[0]}**")
 
             mat_idx = st.selectbox(
-                "Material",
+                "Select the Material",
                 options=range(len(mat_names)),
                 format_func=lambda i: mat_names[i],
                 key="mat_select",

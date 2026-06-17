@@ -117,9 +117,58 @@ st.markdown(
         background: #f0f4f9 !important;
     }
 
-    /* Sidebar collapse / expand arrow — keep it visible below banner */
+    /* Hide Streamlit's native sidebar toggle — replaced by banner buttons */
+    [data-testid="stSidebarCollapseButton"],
     [data-testid="collapsedControl"] {
-        top: 60px !important;
+        display: none !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       3b. Banner sidebar-toggle  « / »  buttons
+    ═══════════════════════════════════════════════════════════ */
+    .pvc-nav-toggle {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        margin-right: 10px;
+        padding-right: 12px;
+        border-right: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .pvc-toggle-btn {
+        background: rgba(255, 255, 255, 0.10);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 1.05rem;
+        font-weight: 700;
+        line-height: 1;
+        padding: 3px 9px 4px 9px;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        transition: background 0.15s ease, border-color 0.15s ease;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    .pvc-toggle-btn:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(255, 255, 255, 0.44);
+    }
+    .pvc-toggle-btn:active {
+        background: rgba(255, 255, 255, 0.32);
+    }
+    /* Show / hide each button based on sidebar state class on <body> */
+    body.pv-sb-hidden  .pvc-btn-collapse { display: none  !important; }
+    body.pv-sb-hidden  .pvc-btn-expand   { display: flex  !important; }
+    body:not(.pv-sb-hidden) .pvc-btn-collapse { display: flex  !important; }
+    body:not(.pv-sb-hidden) .pvc-btn-expand   { display: none  !important; }
+
+    /* Sidebar-hidden state: collapse the pane + let main content fill width */
+    body.pv-sb-hidden section[data-testid="stSidebar"] {
+        display: none !important;
+        width: 0 !important;
+        min-width: 0 !important;
     }
 
     /* ═══════════════════════════════════════════════════════════
@@ -247,12 +296,37 @@ st.markdown(
     <!-- Fixed top banner -->
     <div class="pvc-banner">
         <div class="pvc-banner-left">
+            <!-- Sidebar toggle buttons (« collapse / » expand) -->
+            <div class="pvc-nav-toggle">
+                <button class="pvc-toggle-btn pvc-btn-collapse" onclick="pvToggle()" title="Hide navigation tree">&#171;</button>
+                <button class="pvc-toggle-btn pvc-btn-expand"   onclick="pvToggle()" title="Show navigation tree">&#187;</button>
+            </div>
             <span class="pvc-banner-icon">🔩</span>
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
             <span class="pvc-banner-rev">Rev.&nbsp;01 &nbsp;·&nbsp; 2026-06-17</span>
         </div>
         <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI</span>
     </div>
+
+    <script>
+    /* Sidebar toggle — state lives on document.body (React doesn't touch it)
+       and is persisted in sessionStorage across Streamlit reruns.            */
+    (function () {
+        function _pvApply() {
+            if (sessionStorage.getItem('pvSbHidden') === '1') {
+                document.body.classList.add('pv-sb-hidden');
+            } else {
+                document.body.classList.remove('pv-sb-hidden');
+            }
+        }
+        _pvApply();   /* restore state every time Streamlit re-injects the banner */
+
+        window.pvToggle = function () {
+            const nowHidden = document.body.classList.toggle('pv-sb-hidden');
+            sessionStorage.setItem('pvSbHidden', nowHidden ? '1' : '0');
+        };
+    })();
+    </script>
     """,
     unsafe_allow_html=True,
 )
