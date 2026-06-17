@@ -5,7 +5,7 @@ from pathlib import Path
 
 # ── Page config (must be the very first Streamlit call) ────────────────────────
 st.set_page_config(
-    page_title="Pressure Vessel Calculator",
+    page_title="Calculator of Pressure Vessel Components",
     page_icon="🔩",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -106,7 +106,7 @@ st.markdown(
     section[data-testid="stSidebar"] {
         top: 52px !important;
         height: calc(100vh - 52px) !important;
-        min-width: 160px !important;
+        min-width: 60px !important;
         /* Solid opaque background so the plant image doesn't bleed through */
         background: #f0f4f9 !important;
         /* Separator: thin line + soft drop-shadow on the right edge */
@@ -188,106 +188,89 @@ st.markdown(
     }
 
     /* ═══════════════════════════════════════════════════════════
-       5.  Sidebar navigation TREE  styling
+       5.  Custom sidebar treeview  (Streamlit 1.58)
+           • stSidebarNavSectionHeader is gone in 1.58 → replace
+             the whole built-in nav with st.page_link widgets
+           • data-testid confirmed from PageLink bundle:
+             stPageLink (container) / stPageLink-NavLink (anchor)
     ═══════════════════════════════════════════════════════════ */
 
-    [data-testid="stSidebarNavItems"] {
-        padding: 4px 0 12px 0 !important;
+    /* Hide Streamlit's auto-rendered sidebar navigation */
+    [data-testid="stSidebarNav"] { display: none !important; }
+
+    /* Tighten the top gap in the user-content area */
+    [data-testid="stSidebarUserContent"] > div:first-child {
+        padding-top: 4px !important;
     }
 
-    [data-testid="stSidebarNavSectionHeader"] {
-        padding: 14px 12px 3px 12px !important;
-    }
-    [data-testid="stSidebarNavSectionHeader"] p {
-        font-size: 0.67rem !important;
-        font-weight: 800 !important;
-        letter-spacing: 1.2px !important;
+    /* ── Section / group label ── */
+    .pvc-nav-group {
+        font-size:      0.65rem !important;
+        font-weight:    800     !important;
+        letter-spacing: 1.2px  !important;
         text-transform: uppercase !important;
-        color: #1f6aa5 !important;
-        margin: 0 !important;
+        color:   #1f6aa5 !important;
+        margin:  14px 0 2px 14px !important;
         padding: 0 !important;
-    }
-    [data-testid="stSidebarNavSectionHeader"] + * {
-        border-top: none;
+        line-height: 1.3 !important;
     }
 
-    [data-testid="stSidebarNavItems"] ul {
-        padding-left: 0 !important;
-        margin: 0 !important;
-        list-style: none !important;
-        border-left: 2px solid #dce3ed;
-        margin-left: 18px !important;
-    }
-    [data-testid="stSidebarNavItems"] li {
-        list-style: none !important;
-        position: relative;
+    /* ── Page-link container: left branch line ── */
+    [data-testid="stSidebar"] [data-testid="stPageLink"] {
+        margin:  0 0 0 20px !important;
+        padding: 0 !important;
+        border-left: 2px solid #dce3ed !important;
     }
 
-    [data-testid="stSidebarNavLink"] {
-        display: flex !important;
-        align-items: center !important;
-        gap: 7px !important;
-        padding: 7px 10px 7px 16px !important;
-        margin: 1px 6px 1px 0 !important;
-        border-radius: 0 6px 6px 0 !important;
-        font-size: 0.88rem !important;
-        color: #2c3a4e !important;
+    /* ── Anchor inside st.page_link ── */
+    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] {
+        display:         flex !important;
+        align-items:     center !important;
+        gap:             7px !important;
+        padding:         7px 10px 7px 18px !important;
+        margin:          1px 6px 1px 0 !important;
+        border-radius:   0 6px 6px 0 !important;
+        font-size:       0.88rem !important;
+        color:           #2c3a4e !important;
         text-decoration: none !important;
-        position: relative;
-        transition: background 0.15s ease, color 0.15s ease;
+        position:        relative !important;
+        transition:      background 0.15s ease, color 0.15s ease;
     }
-    [data-testid="stSidebarNavLink"]::before {
-        content: "";
-        position: absolute;
-        left: -14px;
-        top: 50%;
-        width: 12px;
-        height: 2px;
-        background: #dce3ed;
-        transform: translateY(-50%);
+    /* Horizontal connector ─┤ */
+    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"]::before {
+        content:    "" !important;
+        position:   absolute !important;
+        left:       -14px !important;
+        top:        50% !important;
+        width:      12px !important;
+        height:     2px !important;
+        background: #dce3ed !important;
+        transform:  translateY(-50%) !important;
     }
-    [data-testid="stSidebarNavLink"]:hover {
+    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"]:hover {
         background: rgba(31, 106, 165, 0.09) !important;
-        color: #1f6aa5 !important;
+        color:      #1f6aa5 !important;
     }
-
-    [data-testid="stSidebarNavLink"][aria-current="page"] {
-        background: rgba(31, 106, 165, 0.13) !important;
-        color: #1255a0 !important;
-        font-weight: 600 !important;
+    /* Active page highlight */
+    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"][aria-current="page"] {
+        background:   rgba(31, 106, 165, 0.13) !important;
+        color:        #1255a0 !important;
+        font-weight:  600 !important;
         border-right: 3px solid #1f6aa5 !important;
     }
-    [data-testid="stSidebarNavLink"][aria-current="page"]::before {
-        background: #1f6aa5;
-    }
-
-    [data-testid="stSidebarNavLink"] span[data-testid="stSidebarNavLinkIcon"] {
-        font-size: 1rem !important;
-    }
-
-    [data-testid="stSidebarNavLink"][href*="pipe-dimensions"],
-    [data-testid="stSidebarNavLink"][href*="tube-dimensions"] {
-        padding-left: 32px !important;
-        font-size:  0.83rem !important;
-        color: #4a5d72 !important;
-        margin-left: 10px !important;
-    }
-    [data-testid="stSidebarNavLink"][href*="pipe-dimensions"]::before,
-    [data-testid="stSidebarNavLink"][href*="tube-dimensions"]::before {
-        left: -24px;
-        width: 22px;
+    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"][aria-current="page"]::before {
+        background: #1f6aa5 !important;
     }
 
     /* ── sidebar footer ── */
     .sidebar-footer {
-        position: absolute;
-        bottom: 12px;
-        left: 0;
-        right: 0;
+        position:   absolute;
+        bottom:     12px;
+        left: 0; right: 0;
         text-align: center;
-        font-size: 0.67rem;
-        color: #9aa5b4;
-        padding: 0 8px;
+        font-size:  0.67rem;
+        color:      #9aa5b4;
+        padding:    0 8px;
     }
     </style>
 
@@ -387,30 +370,53 @@ def _show_disclaimer() -> None:
 if not st.session_state.get("disclaimer_accepted", False):
     _show_disclaimer()
 
-# ── Sidebar footer label (version) ────────────────────────────────────────────
-st.sidebar.markdown(
-    '<div class="sidebar-footer">v 1.0 — 2026</div>',
-    unsafe_allow_html=True,
-)
-
-# ── Page navigation tree ───────────────────────────────────────────────────────
+# ── Page routing (must come before sidebar content) ───────────────────────────
 pg = st.navigation(
     {
         "Home": [
-            st.Page("pages/Home.py", title="Home", icon="🏠"),
+            st.Page("pages/1_Home/Home.py", title="Home", icon="🏠"),
         ],
         "Calculations": [
-            st.Page("pages/01_Virola_Cilindrica.py", title="Cylindrical Shell", icon="🔵"),
+            st.Page("pages/2_Calculations/01_Virola_Cilindrica.py", title="Cylindrical Shell", icon="🔵"),
         ],
         "Standards": [
-            st.Page("pages/Standards.py",       title="Standards",              icon="📋",
+            st.Page("pages/3_Standards/00_Standards.py",        title="Standards",              icon="📋",
                     url_path="standards"),
-            st.Page("pages/Standards_Pipes.py", title="Pipe Dimensions B36.10", icon="🔧",
+            st.Page("pages/3_Standards/01_Standards_Pipes.py",  title="Pipe Dimensions B36.10", icon="🔧",
                     url_path="pipe-dimensions"),
-            st.Page("pages/Standards_Tubes.py", title="Tube Dimensions BWG",    icon="⭕",
+            st.Page("pages/3_Standards/02_Standards_Tubes.py",  title="Tube Dimensions BWG",    icon="⭕",
                     url_path="tube-dimensions"),
+        ],
+        "Materials": [
+            st.Page("pages/4_Materials/00_Materials.py", title="Materials DB", icon="📦",
+                    url_path="materials"),
         ],
     }
 )
+
+# ── Custom sidebar treeview ────────────────────────────────────────────────────
+_NAV = {
+    "Home": [
+        ("pages/1_Home/Home.py", "🏠", "Home"),
+    ],
+    "Calculations": [
+        ("pages/2_Calculations/01_Virola_Cilindrica.py", "🔵", "Cylindrical Shell"),
+    ],
+    "Standards": [
+        ("pages/3_Standards/00_Standards.py",       "📋", "Standards"),
+        ("pages/3_Standards/01_Standards_Pipes.py", "🔧", "Pipe Dimensions B36.10"),
+        ("pages/3_Standards/02_Standards_Tubes.py", "⭕", "Tube Dimensions BWG"),
+    ],
+    "Materials": [
+        ("pages/4_Materials/00_Materials.py", "📦", "Materials DB"),
+    ],
+}
+
+with st.sidebar:
+    for group, pages in _NAV.items():
+        st.markdown(f'<p class="pvc-nav-group">{group}</p>', unsafe_allow_html=True)
+        for path, icon, label in pages:
+            st.page_link(path, label=label, icon=icon)
+    st.markdown('<div class="sidebar-footer">v 1.0 — 2026</div>', unsafe_allow_html=True)
 
 pg.run()

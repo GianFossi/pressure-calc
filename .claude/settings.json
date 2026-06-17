@@ -10,7 +10,9 @@
       "Read(//c/tmp/**)",
       "WebSearch",
       "WebFetch(domain:commons.wikimedia.org)",
-      "WebFetch(domain:www.pexels.com)"
+      "WebFetch(domain:www.pexels.com)",
+      "Read(//c/Users/ganfossi/AppData/Local/Programs/Python/Python313/Lib/site-packages/streamlit/**)",
+      "Bash(python -m py_compile pages/47_Materials/00_Materials.py)"
     ],
     "additionalDirectories": [
       "C:\\Users\\ganfossi\\pressure-calc\\database\\data",
