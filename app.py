@@ -158,11 +158,7 @@ st.markdown(
     .pvc-toggle-btn:active {
         background: rgba(255, 255, 255, 0.32);
     }
-    /* Show / hide each button based on sidebar state class on <body> */
-    body.pv-sb-hidden  .pvc-btn-collapse { display: none  !important; }
-    body.pv-sb-hidden  .pvc-btn-expand   { display: flex  !important; }
-    body:not(.pv-sb-hidden) .pvc-btn-collapse { display: flex  !important; }
-    body:not(.pv-sb-hidden) .pvc-btn-expand   { display: none  !important; }
+    /* Both « and » are always visible — clicking either one toggles the sidebar */
 
     /* Sidebar-hidden state: collapse the pane + let main content fill width */
     body.pv-sb-hidden section[data-testid="stSidebar"] {

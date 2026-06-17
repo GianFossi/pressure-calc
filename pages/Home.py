@@ -57,4 +57,3 @@ automatically from Rp0.2\_T and Rm\_20°C using code-specific safety factors.
 """)
 
 st.divider()
-st.caption("Version 1.0 — Cylindrical shell · Internal pressure · 6 codes · Material database")
