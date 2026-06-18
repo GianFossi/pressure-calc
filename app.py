@@ -50,7 +50,7 @@ st.markdown(
         position: fixed;
         top: 0; left: 0; right: 0;
         height: 52px;
-        background: linear-gradient(90deg, #12213d 0%, #1f6aa5 100%);
+        background: linear-gradient(90deg, #4a4a4a 0%, #e0e0e0 100%);
         color: #ffffff;
         display: flex;
         align-items: center;
@@ -281,9 +281,9 @@ st.markdown(
             </div>
             <span class="pvc-banner-icon">🔩</span>
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
-            <span class="pvc-banner-rev">Rev.&nbsp;01 &nbsp;·&nbsp; 2026-06-17</span>
+            <span class="pvc-banner-rev">Rev.&nbsp;01 &nbsp;·&nbsp; 2026-Jun-18</span>
         </div>
-        <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI</span>
+        <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI ( <a href="https://www.linkedin.com/in/gian-luca-anfossi-a3797a18" target="_blank">LinkedIn</a> - <a href="https://github.com/GianFossi" target="_blank">GitHub</a> )</span> )   
     </div>
 
     """,

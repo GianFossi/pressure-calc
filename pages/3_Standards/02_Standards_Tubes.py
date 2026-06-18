@@ -46,7 +46,7 @@ ROUGHNESS_PRESETS: dict[str, float] = {
 def load_bwg() -> dict[int, float]:
     """Return {BWG gauge → wall thickness mm} from TubesBWGSerie.xml."""
     xml_path = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
         "database", "TubesBWGSerie.xml",
     )
     root = ET.parse(xml_path).getroot()

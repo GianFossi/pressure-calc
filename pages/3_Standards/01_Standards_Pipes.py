@@ -10,7 +10,7 @@ from fractions import Fraction
 @st.cache_data
 def load_pipes() -> list[dict]:
     xml_path = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
         "database", "Pipes.xml",
     )
     root = ET.parse(xml_path).getroot()
