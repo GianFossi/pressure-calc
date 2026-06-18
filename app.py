@@ -133,13 +133,13 @@ st.markdown(
         text-align:center; font-size:0.67rem; color:#9aa5b4; padding:0 8px;
     }}
 
-    /* Delay disclaimer dialog so JS auto-accept can run before it's visible */
+    /* Brief fade-in delay — gives JS auto-accept time to run before the dialog is visible */
     [data-testid="stDialog"] {{
-        animation: pvc-dialog-fade 0.35s forwards;
+        animation: pvc-dialog-fade 0.25s forwards;
     }}
     @keyframes pvc-dialog-fade {{
-        0%,75% {{ opacity:0; pointer-events:none; }}
-        100%   {{ opacity:1; pointer-events:auto; }}
+        0%, 60% {{ opacity: 0; }}
+        100%    {{ opacity: 1; }}
     }}
     </style>
 
@@ -219,7 +219,7 @@ components.html(r"""
         function tryClick() {
             var btns = p.document.querySelectorAll('button');
             for (var i = 0; i < btns.length; i++) {
-                if (btns[i].textContent && btns[i].textContent.includes('Accept')) {
+                if (btns[i].textContent && btns[i].textContent.includes('I Accept')) {
                     btns[i].click();
                     return true;
                 }
@@ -282,9 +282,13 @@ def _disclaimer() -> None:
         unsafe_allow_html=True,
     )
     st.divider()
-    col_l, col_r = st.columns([4, 1])
+    col_l, col_m, col_r = st.columns([3, 1, 1])
     with col_l:
         st.caption("By clicking **I Accept** you acknowledge having read the above disclaimer.")
+    with col_m:
+        if st.button("✖  I Decline", type="secondary", use_container_width=True):
+            st.session_state["_disclaimer_declined"] = True
+            st.rerun()
     with col_r:
         if st.button("✔  I Accept", type="primary", use_container_width=True):
             st.session_state["_disclaimer_ok"] = True
@@ -295,7 +299,8 @@ def _disclaimer() -> None:
 if st.query_params.get("_da") == "1":
     st.session_state["_disclaimer_ok"] = True
 
-if not st.session_state.get("_disclaimer_ok"):
+if (not st.session_state.get("_disclaimer_ok")
+        and not st.session_state.get("_disclaimer_declined")):
     _disclaimer()
 
 # ── Page routing ───────────────────────────────────────────────────────────────
@@ -324,4 +329,13 @@ pg = st.navigation(
     position="hidden",
 )
 
-pg.run()
+if st.session_state.get("_disclaimer_declined"):
+    st.error(
+        "You declined the legal disclaimer. "
+        "Access to this tool requires acceptance of the terms."
+    )
+    if st.button("↩  Review & Accept Disclaimer", type="primary"):
+        del st.session_state["_disclaimer_declined"]
+        st.rerun()
+else:
+    pg.run()
