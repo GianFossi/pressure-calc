@@ -17,7 +17,7 @@ import math
 import streamlit as st
 import pandas as pd
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from calc.db.materials import (
     get_all_materials, get_material,

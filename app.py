@@ -1,16 +1,19 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import base64
 from pathlib import Path
 
-# ── Page config (must be the very first Streamlit call) ────────────────────────
+_NAV_W = 200  # fixed left nav panel width (px)
+
+# ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Calculator of Pressure Vessel Components",
     page_icon="🔩",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
-# ── Background plant image (base64-injected so it works locally + on Cloud) ────
+# ── Background plant image ─────────────────────────────────────────────────────
 def _bg_image_css() -> str:
     img = Path(__file__).parent / "static" / "bg_plant.jpg"
     if not img.exists():
@@ -30,22 +33,20 @@ _BG_CSS = _bg_image_css()
 if _BG_CSS:
     st.markdown(f"<style>{_BG_CSS}</style>", unsafe_allow_html=True)
 
-# ── Global CSS + persistent top banner ────────────────────────────────────────
+# ── Global CSS + banner + nav panel ───────────────────────────────────────────
 st.markdown(
-    """
+    f"""
     <style>
-    /* ═══════════════════════════════════════════════════════════
-       1.  Hide / reset default Streamlit chrome
-    ═══════════════════════════════════════════════════════════ */
-    header[data-testid="stHeader"]     { display: none !important; }
-    #MainMenu                          { display: none !important; }
-    footer                             { display: none !important; }
-    div[data-testid="stStatusWidget"]  { display: none !important; }
+    /* 1. Hide Streamlit chrome and sidebar */
+    header[data-testid="stHeader"]     {{ display: none !important; }}
+    #MainMenu                          {{ display: none !important; }}
+    footer                             {{ display: none !important; }}
+    div[data-testid="stStatusWidget"]  {{ display: none !important; }}
+    section[data-testid="stSidebar"],
+    [data-testid="collapsedControl"]   {{ display: none !important; }}
 
-    /* ═══════════════════════════════════════════════════════════
-       2.  Fixed top banner  (title + revision + author)
-    ═══════════════════════════════════════════════════════════ */
-    .pvc-banner {
+    /* 2. Fixed top banner */
+    .pvc-banner {{
         position: fixed;
         top: 0; left: 0; right: 0;
         height: 52px;
@@ -59,170 +60,110 @@ st.markdown(
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
         border-bottom: 1px solid rgba(255, 255, 255, 0.10);
         font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-    }
-    .pvc-banner-left {
+    }}
+    .pvc-banner-left {{
         display: flex;
         align-items: center;
         gap: 10px;
-    }
-    .pvc-banner-icon {
-        font-size: 1.35rem;
-        line-height: 1;
-    }
-    .pvc-banner-title {
-        font-size: 1.05rem;
-        font-weight: 700;
-        letter-spacing: 0.3px;
-        white-space: nowrap;
-    }
-    /* ── Revision badge ── */
-    .pvc-banner-rev {
-        font-size: 0.68rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        opacity: 0.80;
-        background: rgba(255, 255, 255, 0.13);
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 4px;
-        padding: 2px 8px;
-        white-space: nowrap;
-    }
-    .pvc-banner-author {
-        font-size: 0.76rem;
-        opacity: 0.75;
-        font-style: italic;
-        white-space: nowrap;
-    }
-    @media (max-width: 640px) {
-        .pvc-banner-author { display: none; }
-        .pvc-banner-rev    { display: none; }
-    }
+    }}
+    .pvc-banner-icon  {{ font-size: 1.35rem; line-height: 1; }}
+    .pvc-banner-title {{ font-size: 1.05rem; font-weight: 700; letter-spacing: 0.3px; white-space: nowrap; }}
+    .pvc-banner-rev {{
+        font-size: 0.68rem; font-weight: 500; letter-spacing: 0.5px; opacity: 0.80;
+        background: rgba(255, 255, 255, 0.13); border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 4px; padding: 2px 8px; white-space: nowrap;
+    }}
+    .pvc-banner-author {{ font-size: 0.76rem; opacity: 0.75; font-style: italic; white-space: nowrap; }}
+    @media (max-width: 640px) {{
+        .pvc-banner-author {{ display: none; }}
+        .pvc-banner-rev    {{ display: none; }}
+    }}
 
-    /* ═══════════════════════════════════════════════════════════
-       3.  Sidebar  — push it below the banner + always-visible
-           separator (same approach as Claude's sidebar divider)
-    ═══════════════════════════════════════════════════════════ */
-    section[data-testid="stSidebar"] {
-        top: 52px !important;
-        height: calc(100vh - 52px) !important;
-        min-width: 60px !important;
-        /* Solid opaque background so the plant image doesn't bleed through */
-        background: #f0f4f9 !important;
-        /* Separator: thin line + soft drop-shadow on the right edge */
-        border-right: 1px solid rgba(0, 0, 0, 0.14) !important;
+    /* 3. Fixed left navigation panel */
+    .pvc-nav {{
+        position: fixed;
+        top: 52px; left: 0;
+        width: {_NAV_W}px;
+        height: calc(100vh - 52px);
+        background: #f0f4f9;
+        border-right: 1px solid rgba(0, 0, 0, 0.14);
         box-shadow: 2px 0 8px -2px rgba(0, 0, 0, 0.10),
-                    1px 0 0 0 rgba(0, 0, 0, 0.06) !important;
-    }
-    section[data-testid="stSidebar"] > div:first-child {
-        padding-top: 6px !important;
-        background: #f0f4f9 !important;
-    }
+                    1px 0 0 0 rgba(0, 0, 0, 0.06);
+        overflow-y: auto;
+        font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+        z-index: 99999;
+    }}
+    .pvc-nav-group {{
+        font-size: 0.63rem;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: #1f6aa5;
+        margin: 14px 0 2px 14px;
+        padding: 0;
+        line-height: 1.3;
+    }}
+    .pvc-nav-branch {{
+        margin-left: 20px;
+        border-left: 2px solid #dce3ed;
+    }}
+    .pvc-nav-link {{
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 7px 10px 7px 18px;
+        margin: 1px 6px 1px 0;
+        border-radius: 0 6px 6px 0;
+        font-size: 0.88rem;
+        color: #2c3a4e;
+        text-decoration: none;
+        position: relative;
+        transition: background 0.15s ease, color 0.15s ease;
+    }}
+    .pvc-nav-link::before {{
+        content: "";
+        position: absolute;
+        left: -14px; top: 50%;
+        width: 12px; height: 2px;
+        background: #dce3ed;
+        transform: translateY(-50%);
+    }}
+    .pvc-nav-link:hover {{
+        background: rgba(31, 106, 165, 0.09);
+        color: #1f6aa5;
+    }}
+    .pvc-nav-link[aria-current="page"] {{
+        background: rgba(31, 106, 165, 0.13);
+        color: #1255a0;
+        font-weight: 600;
+        border-right: 3px solid #1f6aa5;
+    }}
+    .pvc-nav-link[aria-current="page"]::before {{
+        background: #1f6aa5;
+    }}
+    .pvc-nav-footer {{
+        position: absolute;
+        bottom: 12px; left: 0; right: 0;
+        text-align: center;
+        font-size: 0.67rem;
+        color: #9aa5b4;
+        padding: 0 8px;
+    }}
 
-    /* Hide Streamlit's native sidebar collapse/expand button */
-    [data-testid="collapsedControl"] {
-        display: none !important;
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       4.  Main content area — push below banner + overlay so
-           the plant background remains subtly visible
-    ═══════════════════════════════════════════════════════════ */
-    .main .block-container,
-    [data-testid="stMainBlockContainer"] {
-        padding-top: 72px !important;
-        padding-left: 2rem   !important;
-        padding-right: 2rem  !important;
-        max-width: 100% !important;
-    }
-    /* Semi-transparent frosted overlay on the main content pane */
-    [data-testid="stMain"] {
+    /* 4. Main content — pushed right of the nav panel, below banner */
+    [data-testid="stMain"] {{
+        margin-left: {_NAV_W}px !important;
         background: rgba(240, 245, 251, 0.86) !important;
         backdrop-filter: blur(1px);
         -webkit-backdrop-filter: blur(1px);
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       5.  Custom sidebar treeview  (Streamlit 1.58)
-           • stSidebarNavSectionHeader is gone in 1.58 → replace
-             the whole built-in nav with st.page_link widgets
-           • data-testid confirmed from PageLink bundle:
-             stPageLink (container) / stPageLink-NavLink (anchor)
-    ═══════════════════════════════════════════════════════════ */
-
-    /* Tighten the top gap in the user-content area */
-    [data-testid="stSidebarUserContent"] > div:first-child {
-        padding-top: 4px !important;
-    }
-
-    /* ── Section / group label ── */
-    .pvc-nav-group {
-        font-size:      0.65rem !important;
-        font-weight:    800     !important;
-        letter-spacing: 1.2px  !important;
-        text-transform: uppercase !important;
-        color:   #1f6aa5 !important;
-        margin:  14px 0 2px 14px !important;
-        padding: 0 !important;
-        line-height: 1.3 !important;
-    }
-
-    /* ── Page-link container: left branch line ── */
-    [data-testid="stSidebar"] [data-testid="stPageLink"] {
-        margin:  0 0 0 20px !important;
-        padding: 0 !important;
-        border-left: 2px solid #dce3ed !important;
-    }
-
-    /* ── Anchor inside st.page_link ── */
-    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] {
-        display:         flex !important;
-        align-items:     center !important;
-        gap:             7px !important;
-        padding:         7px 10px 7px 18px !important;
-        margin:          1px 6px 1px 0 !important;
-        border-radius:   0 6px 6px 0 !important;
-        font-size:       0.88rem !important;
-        color:           #2c3a4e !important;
-        text-decoration: none !important;
-        position:        relative !important;
-        transition:      background 0.15s ease, color 0.15s ease;
-    }
-    /* Horizontal connector ─┤ */
-    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"]::before {
-        content:    "" !important;
-        position:   absolute !important;
-        left:       -14px !important;
-        top:        50% !important;
-        width:      12px !important;
-        height:     2px !important;
-        background: #dce3ed !important;
-        transform:  translateY(-50%) !important;
-    }
-    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"]:hover {
-        background: rgba(31, 106, 165, 0.09) !important;
-        color:      #1f6aa5 !important;
-    }
-    /* Active page highlight */
-    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"][aria-current="page"] {
-        background:   rgba(31, 106, 165, 0.13) !important;
-        color:        #1255a0 !important;
-        font-weight:  600 !important;
-        border-right: 3px solid #1f6aa5 !important;
-    }
-    [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"][aria-current="page"]::before {
-        background: #1f6aa5 !important;
-    }
-
-    /* ── sidebar footer ── */
-    .sidebar-footer {
-        position:   absolute;
-        bottom:     12px;
-        left: 0; right: 0;
-        text-align: center;
-        font-size:  0.67rem;
-        color:      #9aa5b4;
-        padding:    0 8px;
-    }
+    }}
+    .main .block-container,
+    [data-testid="stMainBlockContainer"] {{
+        padding-top: 72px !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        max-width: 100% !important;
+    }}
     </style>
 
     <!-- Fixed top banner -->
@@ -232,12 +173,63 @@ st.markdown(
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
             <span class="pvc-banner-rev">Rev.&nbsp;01 &nbsp;·&nbsp; 2026-Jun-18</span>
         </div>
-        <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI ( <a href="https://www.linkedin.com/in/gian-luca-anfossi-a3797a18" target="_blank">LinkedIn</a> - <a href="https://github.com/GianFossi" target="_blank">GitHub</a> )</span> )
+        <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI ( <a href="https://www.linkedin.com/in/gian-luca-anfossi-a3797a18" target="_blank" style="color:inherit">LinkedIn</a> &ndash; <a href="https://github.com/GianFossi" target="_blank" style="color:inherit">GitHub</a> )</span>
     </div>
 
+    <!-- Fixed left navigation panel -->
+    <div class="pvc-nav">
+        <p class="pvc-nav-group">Home</p>
+        <div class="pvc-nav-branch">
+            <a class="pvc-nav-link" href="/" data-path="/">🏠&nbsp;Home</a>
+        </div>
+
+        <p class="pvc-nav-group">Calculations</p>
+        <div class="pvc-nav-branch">
+            <a class="pvc-nav-link" href="/cylindrical-shell" data-path="/cylindrical-shell">🔵&nbsp;Cylindrical Shell</a>
+        </div>
+
+        <p class="pvc-nav-group">Standards</p>
+        <div class="pvc-nav-branch">
+            <a class="pvc-nav-link" href="/standards"       data-path="/standards">📋&nbsp;Standards</a>
+            <a class="pvc-nav-link" href="/pipe-dimensions" data-path="/pipe-dimensions">🔧&nbsp;Pipe Dim. B36.10</a>
+            <a class="pvc-nav-link" href="/tube-dimensions" data-path="/tube-dimensions">⭕&nbsp;Tube Dim. BWG</a>
+        </div>
+
+        <p class="pvc-nav-group">Materials</p>
+        <div class="pvc-nav-branch">
+            <a class="pvc-nav-link" href="/materials" data-path="/materials">📦&nbsp;Materials DB</a>
+        </div>
+
+        <div class="pvc-nav-footer">v 1.0 — 2026</div>
+    </div>
     """,
     unsafe_allow_html=True,
 )
+
+# ── Active-page highlighting ───────────────────────────────────────────────────
+components.html(r"""
+<script>
+(function () {
+    var p = window.parent;
+    if (!p || p === window) return;
+
+    function mark() {
+        var path = p.location.pathname.replace(/\/+$/, '') || '/';
+        p.document.querySelectorAll('.pvc-nav-link').forEach(function (a) {
+            var dp = (a.dataset.path || '').replace(/\/+$/, '') || '/';
+            if (dp === path) {
+                a.setAttribute('aria-current', 'page');
+            } else {
+                a.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    mark();
+    new p.MutationObserver(mark).observe(p.document.body, { childList: true, subtree: true });
+})();
+</script>
+""", height=0, scrolling=False)
 
 # ── Disclaimer modal (shown once per session) ─────────────────────────────────
 @st.dialog("⚠️  Disclaimer — Legal Notice", width="large")
@@ -245,11 +237,9 @@ def _show_disclaimer() -> None:
     st.markdown(
         """
         <div style="line-height:1.7; font-size:0.93rem;">
-
         <p>
         This tool is for <strong>informational and preliminary estimation purposes only</strong>.
         </p>
-
         <p>
         This application is an <strong>independent, third-party resource</strong> and is
         <strong>not affiliated with, sponsored, or endorsed</strong> by
@@ -257,18 +247,15 @@ def _show_disclaimer() -> None:
         AD-2000 Merkblatt</em>, or any other national or international
         standardization body.
         </p>
-
         <p>
         Calculations are provided <strong>"as is" without warranty</strong>.<br>
         All results must be <strong>validated by a qualified professional engineer</strong>
         in accordance with the latest official code editions.
         </p>
-
         <p>
         The developer assumes <strong>no liability</strong> for any errors, omissions,
         or consequences resulting from the use of this tool.
         </p>
-
         </div>
         """,
         unsafe_allow_html=True,
@@ -286,14 +273,15 @@ def _show_disclaimer() -> None:
 if not st.session_state.get("disclaimer_accepted", False):
     _show_disclaimer()
 
-# ── Page routing (must come before sidebar content) ───────────────────────────
+# ── Page routing ───────────────────────────────────────────────────────────────
 pg = st.navigation(
     {
         "Home": [
             st.Page("pages/1_Home/Home.py", title="Home", icon="🏠"),
         ],
         "Calculations": [
-            st.Page("pages/2_Calculations/01_Virola_Cilindrica.py", title="Cylindrical Shell", icon="🔵"),
+            st.Page("pages/2_Calculations/01_Virola_Cilindrica.py", title="Cylindrical Shell", icon="🔵",
+                    url_path="cylindrical-shell"),
         ],
         "Standards": [
             st.Page("pages/3_Standards/00_Standards.py",        title="Standards",              icon="📋",
@@ -310,30 +298,5 @@ pg = st.navigation(
     },
     position="hidden",
 )
-
-# ── Custom sidebar treeview ────────────────────────────────────────────────────
-_NAV = {
-    "Home": [
-        ("pages/1_Home/Home.py", "🏠", "Home"),
-    ],
-    "Calculations": [
-        ("pages/2_Calculations/01_Virola_Cilindrica.py", "🔵", "Cylindrical Shell"),
-    ],
-    "Standards": [
-        ("pages/3_Standards/00_Standards.py",       "📋", "Standards"),
-        ("pages/3_Standards/01_Standards_Pipes.py", "🔧", "Pipe Dimensions B36.10"),
-        ("pages/3_Standards/02_Standards_Tubes.py", "⭕", "Tube Dimensions BWG"),
-    ],
-    "Materials": [
-        ("pages/4_Materials/00_Materials.py", "📦", "Materials DB"),
-    ],
-}
-
-with st.sidebar:
-    for group, pages in _NAV.items():
-        st.markdown(f'<p class="pvc-nav-group">{group}</p>', unsafe_allow_html=True)
-        for path, icon, label in pages:
-            st.page_link(path, label=label, icon=icon)
-    st.markdown('<div class="sidebar-footer">v 1.0 — 2026</div>', unsafe_allow_html=True)
 
 pg.run()

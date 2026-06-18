@@ -1,8 +1,4 @@
 import streamlit as st
-import sys
-import os
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 st.title("Standards")
 st.caption("Piping, tubing and engineering standards reference.")
@@ -18,7 +14,7 @@ with col1:
             "view geometry, section properties, flow velocity and stress check."
         )
         st.markdown("**Standard:** ASME B36.10M  |  **Sizes:** NPS ⅛\" – 48\"")
-        st.page_link("pages/Standards_Pipes.py", label="Open Pipe Dimensions →", icon="🔧")
+        st.page_link("pages/3_Standards/01_Standards_Pipes.py", label="Open Pipe Dimensions →", icon="🔧")
 
 with col2:
     with st.container(border=True):
@@ -29,7 +25,7 @@ with col2:
             "full Darcy-Weisbach pressure drop."
         )
         st.markdown("**Gauge system:** BWG 0–25  |  **OD range:** ¼\" – 2\"")
-        st.page_link("pages/Standards_Tubes.py", label="Open Tube Dimensions →", icon="⭕")
+        st.page_link("pages/3_Standards/02_Standards_Tubes.py", label="Open Tube Dimensions →", icon="⭕")
 
 with col3:
     with st.container(border=True):
