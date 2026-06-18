@@ -119,10 +119,10 @@ st.markdown(
         background: #f0f4f9 !important;
     }
 
-    /* Streamlit's native expand button (when sidebar is collapsed) —
-       keep it as a fallback, positioned below our banner */
+    /* Hide Streamlit's native sidebar collapse/expand button —
+       the banner « » buttons handle this instead */
     [data-testid="collapsedControl"] {
-        top: 60px !important;
+        display: none !important;
     }
 
     /* ═══════════════════════════════════════════════════════════
@@ -194,9 +194,6 @@ st.markdown(
            • data-testid confirmed from PageLink bundle:
              stPageLink (container) / stPageLink-NavLink (anchor)
     ═══════════════════════════════════════════════════════════ */
-
-    /* Hide Streamlit's auto-rendered sidebar navigation */
-    [data-testid="stSidebarNav"] { display: none !important; }
 
     /* Tighten the top gap in the user-content area */
     [data-testid="stSidebarUserContent"] > div:first-child {
@@ -391,7 +388,8 @@ pg = st.navigation(
             st.Page("pages/4_Materials/00_Materials.py", title="Materials DB", icon="📦",
                     url_path="materials"),
         ],
-    }
+    },
+    position="hidden",
 )
 
 # ── Custom sidebar treeview ────────────────────────────────────────────────────
