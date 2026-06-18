@@ -133,14 +133,6 @@ st.markdown(
         text-align:center; font-size:0.67rem; color:#9aa5b4; padding:0 8px;
     }}
 
-    /* Brief fade-in delay — gives JS auto-accept time to run before the dialog is visible */
-    [data-testid="stDialog"] {{
-        animation: pvc-dialog-fade 0.25s forwards;
-    }}
-    @keyframes pvc-dialog-fade {{
-        0%, 60% {{ opacity: 0; }}
-        100%    {{ opacity: 1; }}
-    }}
     </style>
 
     <div class="pvc-banner">
@@ -206,52 +198,32 @@ components.html(r"""
         });
     }
 
-    // ── Disclaimer localStorage persistence ────────────────────────────────
-    // If Python signalled acceptance via ?_da=1, persist it to localStorage
+    // ── Disclaimer: persist acceptance as cookie + localStorage ───────────────
     if (new URL(p.location.href).searchParams.has('_da')) {
+        // Python signalled acceptance — write a 1-year cookie so Python can read
+        // it on every future load without needing the query param.
+        p.document.cookie = 'pvc_da=1; max-age=31536000; path=/; SameSite=Lax';
         localStorage.setItem('pvc_da', '1');
     }
 
-    // For returning users: auto-click Accept so disclaimer never re-shows.
-    // The dialog has a CSS fade-in delay (0.35s) so the user never sees the flash.
-    function autoAccept() {
-        if (localStorage.getItem('pvc_da') !== '1') return;
-        function tryClick() {
-            var btns = p.document.querySelectorAll('button');
-            for (var i = 0; i < btns.length; i++) {
-                if (btns[i].textContent && btns[i].textContent.includes('I Accept')) {
-                    btns[i].click();
-                    return true;
-                }
-            }
-            return false;
-        }
-        if (!tryClick()) {
-            var aObs = new p.MutationObserver(function () {
-                if (tryClick()) aObs.disconnect();
-            });
-            aObs.observe(p.document.body, { childList: true, subtree: true });
-        }
-    }
-    autoAccept();
-
-    // After acceptance, stamp ?_da=1 onto all nav link hrefs so subsequent
-    // page loads skip the disclaimer without an extra round-trip.
-    function updateNavLinks() {
-        if (localStorage.getItem('pvc_da') !== '1') return;
-        p.document.querySelectorAll('.pvc-nav-link').forEach(function (a) {
-            try {
-                var u = new URL(a.getAttribute('href'), p.location.href);
-                if (!u.searchParams.has('_da')) {
-                    u.searchParams.set('_da', '1');
-                    a.setAttribute('href', u.toString());
-                }
-            } catch (e) {}
-        });
+    // ── Nav clicks: use history API so Streamlit reuses the same session ───────
+    // pushState + popstate triggers Streamlit's router without an HTTP reload,
+    // keeping session_state alive (and _disclaimer_ok = True) across all pages.
+    if (!p._pvcNavReady) {
+        p._pvcNavReady = true;
+        p.document.addEventListener('click', function (e) {
+            var link = e.target.closest('.pvc-nav-link');
+            if (!link) return;
+            e.preventDefault();
+            var dest = link.getAttribute('data-path') || '/';
+            p.history.pushState({}, '', dest);
+            p.dispatchEvent(new p.PopStateEvent('popstate', { state: {} }));
+            setTimeout(mark, 30);
+        }, true);
     }
 
-    inject(); mark(); updateNavLinks();
-    new p.MutationObserver(function () { inject(); mark(); updateNavLinks(); })
+    inject(); mark();
+    new p.MutationObserver(function () { inject(); mark(); })
         .observe(p.document.body, { childList: true, subtree: true });
 })();
 </script>
@@ -278,13 +250,19 @@ def _disclaimer() -> None:
         <p>The developer assumes <strong>no liability</strong> for any errors, omissions,
         or consequences arising from use of this tool.</p>
         </div>
+        <hr style="margin:0.5rem 0;">
+        <p style="font-size:0.78rem;color:#666;margin:0;">
+        ℹ️ <strong>Browser storage notice:</strong> your acceptance is saved as a
+        cookie and in localStorage so this dialog is not repeated on future visits.
+        To reset, clear site data for this page in your browser settings.
+        </p>
         """,
         unsafe_allow_html=True,
     )
     st.divider()
     col_l, col_m, col_r = st.columns([3, 1, 1])
     with col_l:
-        st.caption("By clicking **I Accept** you acknowledge having read the above disclaimer.")
+        st.caption("Read the disclaimer above before choosing.")
     with col_m:
         if st.button("✖  I Decline", type="secondary", use_container_width=True):
             st.session_state["_disclaimer_declined"] = True
@@ -292,11 +270,28 @@ def _disclaimer() -> None:
     with col_r:
         if st.button("✔  I Accept", type="primary", use_container_width=True):
             st.session_state["_disclaimer_ok"] = True
-            st.query_params["_da"] = "1"   # JS will persist this to localStorage
+            st.query_params["_da"] = "1"   # JS persists this to localStorage
             st.rerun()
 
-# Auto-accept if returning user signalled via ?_da=1 (set by JS from localStorage)
-if st.query_params.get("_da") == "1":
+def _previously_accepted() -> bool:
+    """True if the user accepted the disclaimer in a previous browser session.
+
+    Checks the 'pvc_da' cookie written by JS after the first acceptance.
+    Falls back to the ?_da=1 query param for the first rerun after acceptance.
+    """
+    # Cookie path — reliable for every new HTTP request / Streamlit session
+    try:
+        raw = st.context.headers.get("Cookie", "")
+        for chunk in raw.split(";"):
+            name, _, val = chunk.strip().partition("=")
+            if name.strip() == "pvc_da" and val.strip() == "1":
+                return True
+    except Exception:
+        pass
+    # Query-param path — set by Python immediately after the user clicks Accept
+    return st.query_params.get("_da") == "1"
+
+if _previously_accepted():
     st.session_state["_disclaimer_ok"] = True
 
 if (not st.session_state.get("_disclaimer_ok")
@@ -330,12 +325,23 @@ pg = st.navigation(
 )
 
 if st.session_state.get("_disclaimer_declined"):
-    st.error(
-        "You declined the legal disclaimer. "
-        "Access to this tool requires acceptance of the terms."
+    st.markdown(
+        """
+        <div style="text-align:center;padding:4rem 1rem 2rem;">
+            <div style="font-size:4rem;line-height:1;">🚫</div>
+            <h1 style="color:#c0392b;font-size:2.4rem;margin:0.4rem 0 0.6rem;">ACCESS DENIED</h1>
+            <p style="font-size:1.05rem;color:#555;max-width:480px;margin:0 auto 1.5rem;">
+                You have declined the legal disclaimer.<br>
+                Access to this tool requires acceptance of the terms of use.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
-    if st.button("↩  Review & Accept Disclaimer", type="primary"):
-        del st.session_state["_disclaimer_declined"]
-        st.rerun()
+    col1, col2, col3 = st.columns([2, 1, 2])
+    with col2:
+        if st.button("↩  Review Disclaimer", type="primary", use_container_width=True):
+            del st.session_state["_disclaimer_declined"]
+            st.rerun()
 else:
     pg.run()
