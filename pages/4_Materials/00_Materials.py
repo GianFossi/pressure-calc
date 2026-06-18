@@ -237,37 +237,30 @@ all_mats = _load_all()
 
 
 def _reset_filters() -> None:
-    for k in ("mat_search", "mat_spec", "mat_pform"):
+    for k in ("mat_search", "mat_pform"):
         st.session_state.pop(k, None)
 
 
 # ── Pre-compute cascading options from current session values ─────────────────
 _cur_search = st.session_state.get("mat_search", "")
 
-# Pool after text search (feeds Specification options)
-_pool_spec = all_mats.copy()
+# Pool after text search (feeds Product Form options)
+_pool_pform = all_mats.copy()
 if _cur_search:
     _q = _cur_search.lower()
-    _pool_spec = _pool_spec[
-        _pool_spec["Specification"].str.lower().str.contains(_q, na=False)
-        | _pool_spec["Grade"].str.lower().str.contains(_q, na=False)
-        | _pool_spec["NominalComposition"].str.lower().str.contains(_q, na=False)
-        | _pool_spec["ClassCondTemper"].str.lower().str.contains(_q, na=False)
+    _pool_pform = _pool_pform[
+        _pool_pform["Specification"].str.lower().str.contains(_q, na=False)
+        | _pool_pform["Grade"].str.lower().str.contains(_q, na=False)
+        | _pool_pform["NominalComposition"].str.lower().str.contains(_q, na=False)
+        | _pool_pform["ClassCondTemper"].str.lower().str.contains(_q, na=False)
     ]
 
-avail_specs = ["All"] + sorted(_pool_spec["Specification"].dropna().unique().tolist())
-if st.session_state.get("mat_spec", "All") not in avail_specs:
-    st.session_state["mat_spec"] = "All"
-_cur_spec = st.session_state.get("mat_spec", "All")
-
-# Pool after text search + Specification (feeds Product Form options)
-_pool_pform = _pool_spec if _cur_spec == "All" else _pool_spec[_pool_spec["Specification"] == _cur_spec]
 avail_pforms = ["All"] + sorted(_pool_pform["ProductForm"].dropna().unique().tolist())
 if st.session_state.get("mat_pform", "All") not in avail_pforms:
     st.session_state["mat_pform"] = "All"
 
 # ── Filters ───────────────────────────────────────────────────────────────────
-fc1, fc2, fc3, fc4 = st.columns([3, 2, 2, 1])
+fc1, fc3, fc4 = st.columns([3, 2, 1])
 
 with fc1:
     search = st.text_input(
@@ -276,19 +269,12 @@ with fc1:
         placeholder="e.g. SA-516, carbon, Grade 70…",
         help="Full-text search across Specification, Grade, Class/Condition/Temper and Nominal Composition.",
     )
-with fc2:
-    sel_spec = st.selectbox(
-        "Specification",
-        avail_specs,
-        key="mat_spec",
-        help="ASME material specification (e.g. SA-516). List updates to match the current search.",
-    )
 with fc3:
     sel_pform = st.selectbox(
         "Product Form",
         avail_pforms,
         key="mat_pform",
-        help="Product form (e.g. Plate, Pipe, Forging). List updates to match the selected Specification.",
+        help="Product form (e.g. Plate, Pipe, Forging). List updates to match the current search.",
     )
 with fc4:
     st.markdown("<div style='padding-top:1.72rem'>", unsafe_allow_html=True)
@@ -306,8 +292,6 @@ if search:
         | df["NominalComposition"].str.lower().str.contains(_q, na=False)
         | df["ClassCondTemper"].str.lower().str.contains(_q, na=False)
     ]
-if sel_spec != "All":
-    df = df[df["Specification"] == sel_spec]
 if sel_pform != "All":
     df = df[df["ProductForm"] == sel_pform]
 df = df.reset_index(drop=True)
