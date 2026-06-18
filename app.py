@@ -132,6 +132,15 @@ st.markdown(
         position:absolute; bottom:12px; left:0; right:0;
         text-align:center; font-size:0.67rem; color:#9aa5b4; padding:0 8px;
     }}
+
+    /* Delay disclaimer dialog so JS auto-accept can run before it's visible */
+    [data-testid="stDialog"] {{
+        animation: pvc-dialog-fade 0.35s forwards;
+    }}
+    @keyframes pvc-dialog-fade {{
+        0%,75% {{ opacity:0; pointer-events:none; }}
+        100%   {{ opacity:1; pointer-events:auto; }}
+    }}
     </style>
 
     <div class="pvc-banner">
@@ -198,18 +207,36 @@ components.html(r"""
     }
 
     // ── Disclaimer localStorage persistence ────────────────────────────────
-    var _durl = new URL(p.location.href);
-    if (localStorage.getItem('pvc_da') === '1' && !_durl.searchParams.has('_da')) {
-        // Returning user, new Streamlit session — signal Python to skip disclaimer
-        _durl.searchParams.set('_da', '1');
-        p.location.assign(_durl.toString());
-        return;
-    }
-    if (_durl.searchParams.has('_da')) {
-        // Python already auto-accepted — also persist to localStorage (idempotent)
+    // If Python signalled acceptance via ?_da=1, persist it to localStorage
+    if (new URL(p.location.href).searchParams.has('_da')) {
         localStorage.setItem('pvc_da', '1');
     }
 
+    // For returning users: auto-click Accept so disclaimer never re-shows.
+    // The dialog has a CSS fade-in delay (0.35s) so the user never sees the flash.
+    function autoAccept() {
+        if (localStorage.getItem('pvc_da') !== '1') return;
+        function tryClick() {
+            var btns = p.document.querySelectorAll('button');
+            for (var i = 0; i < btns.length; i++) {
+                if (btns[i].textContent && btns[i].textContent.includes('Accept')) {
+                    btns[i].click();
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!tryClick()) {
+            var aObs = new p.MutationObserver(function () {
+                if (tryClick()) aObs.disconnect();
+            });
+            aObs.observe(p.document.body, { childList: true, subtree: true });
+        }
+    }
+    autoAccept();
+
+    // After acceptance, stamp ?_da=1 onto all nav link hrefs so subsequent
+    // page loads skip the disclaimer without an extra round-trip.
     function updateNavLinks() {
         if (localStorage.getItem('pvc_da') !== '1') return;
         p.document.querySelectorAll('.pvc-nav-link').forEach(function (a) {
