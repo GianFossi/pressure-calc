@@ -21,8 +21,8 @@ with col2:
         st.markdown("### ⭕ Tube Dimensions")
         st.markdown(
             "**TEMA / ASME HEI** heat-exchanger and condenser tubes — "
-            "standard OD ¼\"…2\" × BWG gauge, with velocity, ρv² and "
-            "full Darcy-Weisbach pressure drop."
+            "browse by standard OD ¼\"…2\" × BWG gauge and view geometry,"
+            "flow velocity, ρv² and full Darcy-Weisbach pressure drop."
         )
         st.markdown("**Gauge system:** BWG 0–25  |  **OD range:** ¼\" – 2\"")
         st.page_link("pages/3_Standards/02_Standards_Tubes.py", label="Open Tube Dimensions →", icon="⭕")

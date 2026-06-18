@@ -61,7 +61,7 @@ with st.container(border=True):
         P = st.number_input("Design Pressure P (bar)", min_value=0.1,
                              value=10.0, step=0.5, format="%.2f", key="P")
         T = st.number_input("Design Temperature T (°C)", min_value=-50.0,
-                             value=100.0, step=5.0, format="%.1f", key="T")
+                             value=200.0, step=5.0, format="%.1f", key="T")
         T_F = T * 9 / 5 + 32
         st.caption(f"T = {T:.1f} °C = {T_F:.1f} °F")
 
@@ -100,7 +100,7 @@ with st.container(border=True):
     with ac1:
         c_int = st.number_input(
             "Internal corrosion / erosion c₁ (mm)",
-            min_value=0.0, value=1.0, step=0.5, format="%.2f",
+            min_value=0.0, value=3.0, step=0.5, format="%.2f",
             help="Corrosion or erosion allowance on the process side",
         )
         c_ext = st.number_input(
@@ -149,9 +149,15 @@ with st.container(border=True):
     st.subheader("Material Selection")
     ms1, ms2 = st.columns([1, 2])
 
+    if "mat_search_vc" not in st.session_state:
+        st.session_state["mat_search_vc"] = "SA-516 70"
+
     with ms1:
-        search = st.text_input("Filter for Material Selection (spec / grade / UNS / composition)",
-                                placeholder="e.g. SA-516 or N06625 or 1.4404 or 1¼Cr-½Mo-Si", )
+        search = st.text_input(
+            "Filter for Material Selection (spec / grade / UNS / composition)",
+            key="mat_search_vc",
+            placeholder="e.g. SA-516 or N06625 or 1.4404 or 1¼Cr-½Mo-Si",
+        )
 
     # Filter material list
     if search.strip():
@@ -179,15 +185,17 @@ with st.container(border=True):
             mat_names = [m["name"] for m in filtered]
 
             if len(filtered) == 1:
-                st.success(f"Single match — auto-selected: **{mat_names[0]}**")
-
-            mat_idx = st.selectbox(
-                "Select the Material",
-                options=range(len(mat_names)),
-                format_func=lambda i: mat_names[i],
-                key="mat_select",
-            )
-            mat_id = filtered[mat_idx]["id"]
+                st.success(f"✔ Single match — auto-selected: **{mat_names[0]}**")
+                st.session_state["mat_select"] = 0
+                mat_id = filtered[0]["id"]
+            else:
+                mat_idx = st.selectbox(
+                    "Select the Material",
+                    options=range(len(mat_names)),
+                    format_func=lambda i: mat_names[i],
+                    key="mat_select",
+                )
+                mat_id = filtered[mat_idx]["id"]
 
 # ─── MATERIAL PROPERTIES ─────────────────────────────────────────────────────
 mat_props = None
