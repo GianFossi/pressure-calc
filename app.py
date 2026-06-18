@@ -197,8 +197,34 @@ components.html(r"""
         });
     }
 
-    inject(); mark();
-    new p.MutationObserver(function () { inject(); mark(); })
+    // ── Disclaimer localStorage persistence ────────────────────────────────
+    var _durl = new URL(p.location.href);
+    if (localStorage.getItem('pvc_da') === '1' && !_durl.searchParams.has('_da')) {
+        // Returning user, new Streamlit session — signal Python to skip disclaimer
+        _durl.searchParams.set('_da', '1');
+        p.location.assign(_durl.toString());
+        return;
+    }
+    if (_durl.searchParams.has('_da')) {
+        // Python already auto-accepted — also persist to localStorage (idempotent)
+        localStorage.setItem('pvc_da', '1');
+    }
+
+    function updateNavLinks() {
+        if (localStorage.getItem('pvc_da') !== '1') return;
+        p.document.querySelectorAll('.pvc-nav-link').forEach(function (a) {
+            try {
+                var u = new URL(a.getAttribute('href'), p.location.href);
+                if (!u.searchParams.has('_da')) {
+                    u.searchParams.set('_da', '1');
+                    a.setAttribute('href', u.toString());
+                }
+            } catch (e) {}
+        });
+    }
+
+    inject(); mark(); updateNavLinks();
+    new p.MutationObserver(function () { inject(); mark(); updateNavLinks(); })
         .observe(p.document.body, { childList: true, subtree: true });
 })();
 </script>
@@ -235,7 +261,12 @@ def _disclaimer() -> None:
     with col_r:
         if st.button("✔  I Accept", type="primary", use_container_width=True):
             st.session_state["_disclaimer_ok"] = True
+            st.query_params["_da"] = "1"   # JS will persist this to localStorage
             st.rerun()
+
+# Auto-accept if returning user signalled via ?_da=1 (set by JS from localStorage)
+if st.query_params.get("_da") == "1":
+    st.session_state["_disclaimer_ok"] = True
 
 if not st.session_state.get("_disclaimer_ok"):
     _disclaimer()
