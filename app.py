@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import base64
 from pathlib import Path
 
@@ -119,54 +118,9 @@ st.markdown(
         background: #f0f4f9 !important;
     }
 
-    /* Hide Streamlit's native sidebar collapse/expand button —
-       the banner « » buttons handle this instead */
+    /* Hide Streamlit's native sidebar collapse/expand button */
     [data-testid="collapsedControl"] {
         display: none !important;
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       3b. Banner sidebar-toggle  « / »  buttons
-    ═══════════════════════════════════════════════════════════ */
-    .pvc-nav-toggle {
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        margin-right: 10px;
-        padding-right: 12px;
-        border-right: 1px solid rgba(255, 255, 255, 0.18);
-    }
-    .pvc-toggle-btn {
-        background: rgba(255, 255, 255, 0.10);
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 5px;
-        color: #ffffff;
-        cursor: pointer;
-        font-size: 1.05rem;
-        font-weight: 700;
-        line-height: 1;
-        padding: 3px 9px 4px 9px;
-        letter-spacing: 1px;
-        display: flex;
-        align-items: center;
-        transition: background 0.15s ease, border-color 0.15s ease;
-        user-select: none;
-        -webkit-user-select: none;
-    }
-    .pvc-toggle-btn:hover {
-        background: rgba(255, 255, 255, 0.22);
-        border-color: rgba(255, 255, 255, 0.44);
-    }
-    .pvc-toggle-btn:active {
-        background: rgba(255, 255, 255, 0.32);
-    }
-    /* Both « and » are always visible — clicking either one toggles the sidebar */
-
-    /* Sidebar-hidden state: collapse the pane + let main content fill width */
-    body.pv-sb-hidden section[data-testid="stSidebar"] {
-        display: none !important;
-        width: 0 !important;
-        min-width: 0 !important;
     }
 
     /* ═══════════════════════════════════════════════════════════
@@ -274,51 +228,16 @@ st.markdown(
     <!-- Fixed top banner -->
     <div class="pvc-banner">
         <div class="pvc-banner-left">
-            <!-- Sidebar toggle buttons (« collapse / » expand) -->
-            <div class="pvc-nav-toggle">
-                <button class="pvc-toggle-btn pvc-btn-collapse" title="Hide navigation tree">&#171;</button>
-                <button class="pvc-toggle-btn pvc-btn-expand"   title="Show navigation tree">&#187;</button>
-            </div>
             <span class="pvc-banner-icon">🔩</span>
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
             <span class="pvc-banner-rev">Rev.&nbsp;01 &nbsp;·&nbsp; 2026-Jun-18</span>
         </div>
-        <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI ( <a href="https://www.linkedin.com/in/gian-luca-anfossi-a3797a18" target="_blank">LinkedIn</a> - <a href="https://github.com/GianFossi" target="_blank">GitHub</a> )</span> )   
+        <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI ( <a href="https://www.linkedin.com/in/gian-luca-anfossi-a3797a18" target="_blank">LinkedIn</a> - <a href="https://github.com/GianFossi" target="_blank">GitHub</a> )</span> )
     </div>
 
     """,
     unsafe_allow_html=True,
 )
-
-# ── Sidebar toggle JavaScript ─────────────────────────────────────────────────
-# components.html is the only way JS runs in Streamlit (st.markdown strips
-# onclick / script tags via DOMPurify).  From inside the iframe we find the
-# banner buttons in the parent frame and attach click listeners.
-components.html("""
-<script>
-(function () {
-    var p = window.parent;
-    if (!p || p === window) return;
-
-    function toggle() {
-        p.document.body.classList.toggle('pv-sb-hidden');
-    }
-
-    function attach() {
-        p.document.querySelectorAll('.pvc-toggle-btn').forEach(function (btn) {
-            if (!btn._pvAttached) {
-                btn.addEventListener('click', toggle);
-                btn._pvAttached = true;
-            }
-        });
-    }
-
-    // Attach now, then re-attach whenever React re-renders the DOM.
-    attach();
-    new p.MutationObserver(attach).observe(p.document.body, { childList: true, subtree: true });
-})();
-</script>
-""", height=0, scrolling=False)
 
 # ── Disclaimer modal (shown once per session) ─────────────────────────────────
 @st.dialog("⚠️  Disclaimer — Legal Notice", width="large")
