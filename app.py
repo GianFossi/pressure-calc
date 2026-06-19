@@ -139,7 +139,7 @@ st.markdown(
         <div class="pvc-banner-left">
             <span class="pvc-banner-icon">🔩</span>
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
-            <span class="pvc-banner-rev">Rev.&nbsp;01&nbsp;·&nbsp;2026-Jun-18</span>
+            <span class="pvc-banner-rev">v1.1.0&nbsp;·&nbsp;2026-Jun-19</span>
         </div>
         <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI
             (&thinsp;<a href="https://www.linkedin.com/in/gian-luca-anfossi-a3797a18"
@@ -178,7 +178,7 @@ components.html(r"""
       + '<div class="pvc-nav-branch">'
       +   '<a class="pvc-nav-link" href="/materials"         data-path="/materials">📦 Materials DB</a>'
       + '</div>'
-      + '<div class="pvc-nav-footer">v 1.0 — 2026</div>';
+      + '<div class="pvc-nav-footer">v1.1.0 — 2026-Jun-19</div>';
 
     function inject() {
         if (p.document.getElementById('pvc-nav')) return;

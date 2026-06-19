@@ -20,7 +20,7 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from calc.db.materials import (
-    get_all_materials, get_material,
+    MaterialSearch, get_material,
     get_yield_at_T, get_ultimate_at_T, get_S_div1, get_S_div2,
     allowable_EN13445, allowable_AD2000, allowable_BS5500, allowable_CODAP,
 )
@@ -30,9 +30,23 @@ from calc.codes import asme_viii_2, ad_2000, bs_5500, codap as codap_mod
 # ─── Cached data ─────────────────────────────────────────────────────────────
 @st.cache_data(ttl=3600)
 def _all_materials():
-    return get_all_materials()
+    return MaterialSearch().search().to_list()
+
+
+@st.cache_data(ttl=3600)
+def _search_materials(text: str):
+    return MaterialSearch().search(text.strip()).to_list()
 
 ALL_MATS = _all_materials()
+
+CODE_LABELS = {
+    "d1": "ASME VIII-1",
+    "d2": "ASME VIII-2",
+    "en": "EN 13445-3",
+    "ad": "AD 2000",
+    "bs": "BS PD 5500",
+    "cp": "CODAP 2023",
+}
 
 # ─── Page title ──────────────────────────────────────────────────────────────
 st.title("Cylindrical Shell — Internal Pressure")
@@ -44,7 +58,7 @@ st.caption(
 with st.container(border=True):
     st.subheader("Input Data")
 
-    # ── Geometry & Conditions ─────────────────────────────────────────────────
+    # ── Geometry & default conditions ─────────────────────────────────────────
     gc1, gc2, gc3 = st.columns(3)
 
     with gc1:
@@ -57,18 +71,18 @@ with st.container(border=True):
         st.info(f"Calculated OD = **{D_o:.1f} mm**")
 
     with gc2:
-        st.markdown("**Operating Conditions**")
-        P = st.number_input("Design Pressure P (bar)", min_value=0.1,
-                             value=10.0, step=0.5, format="%.2f", key="P")
-        T = st.number_input("Design Temperature T (°C)", min_value=-50.0,
-                             value=200.0, step=5.0, format="%.1f", key="T")
-        T_F = T * 9 / 5 + 32
-        st.caption(f"T = {T:.1f} °C = {T_F:.1f} °F")
+        st.markdown("**Default Operating Conditions**")
+        P_default = st.number_input("Default design pressure P (bar)", min_value=0.1,
+                                    value=10.0, step=0.5, format="%.2f", key="P_default")
+        T_default = st.number_input("Default design temperature T (°C)", min_value=-50.0,
+                                    value=200.0, step=5.0, format="%.1f", key="T_default")
+        T_F_default = T_default * 9 / 5 + 32
+        st.caption(f"T = {T_default:.1f} °C = {T_F_default:.1f} °F")
 
     with gc3:
-        st.markdown("**Weld Joint Efficiency / Coefficient**")
-        E_asme = st.selectbox(
-            "E — ASME (joint efficiency)",
+        st.markdown("**Default Joint Efficiency / Coefficient**")
+        E_asme_default = st.selectbox(
+            "Default E — ASME (joint efficiency)",
             options=[1.0, 0.85, 0.70],
             format_func=lambda x: {
                 1.0:  "1.00 — Full RT (Cat. A)",
@@ -77,13 +91,13 @@ with st.container(border=True):
             }[x],
             help="UW-12: full RT → 1.0, partial → 0.85, none → 0.70",
         )
-        link_z = st.checkbox("Use same value for European codes (z = E)", value=True)
-        if link_z:
-            z_eu = E_asme
-            st.info(f"z = {z_eu}")
+        link_z_default = st.checkbox("Use same value for European codes (z = E)", value=True)
+        if link_z_default:
+            z_eu_default = E_asme_default
+            st.info(f"z = {z_eu_default}")
         else:
-            z_eu = st.selectbox(
-                "z — European codes (joint coefficient)",
+            z_eu_default = st.selectbox(
+                "Default z — European codes (joint coefficient)",
                 options=[1.0, 0.85, 0.70],
                 format_func=lambda x: {
                     1.0:  "1.00 — Cat. A/B examined",
@@ -91,6 +105,69 @@ with st.container(border=True):
                     0.70: "0.70 — No examination",
                 }[x],
             )
+
+    st.markdown("**Calculation Input by Code**")
+    st.caption("Each selected code uses its own pressure, temperature, and weld/joint coefficient.")
+    code_inputs = {}
+    code_tabs = st.tabs(list(CODE_LABELS.values()))
+    for tab, (code_key, code_label) in zip(code_tabs, CODE_LABELS.items()):
+        with tab:
+            enabled = st.checkbox("Include in calculation", value=True, key=f"{code_key}_enabled")
+            ci1, ci2, ci3 = st.columns(3)
+            with ci1:
+                P_code = st.number_input(
+                    "Design pressure P (bar)",
+                    min_value=0.1,
+                    value=P_default,
+                    step=0.5,
+                    format="%.2f",
+                    key=f"{code_key}_P",
+                    disabled=not enabled,
+                )
+            with ci2:
+                T_code = st.number_input(
+                    "Design temperature T (°C)",
+                    min_value=-50.0,
+                    value=T_default,
+                    step=5.0,
+                    format="%.1f",
+                    key=f"{code_key}_T",
+                    disabled=not enabled,
+                )
+                st.caption(f"{T_code * 9 / 5 + 32:.1f} °F")
+            with ci3:
+                if code_key in ("d1", "d2"):
+                    Ez_code = st.selectbox(
+                        "E — ASME joint efficiency",
+                        options=[1.0, 0.85, 0.70],
+                        index=[1.0, 0.85, 0.70].index(E_asme_default),
+                        format_func=lambda x: {
+                            1.0:  "1.00 — Full RT (Cat. A)",
+                            0.85: "0.85 — Partial RT",
+                            0.70: "0.70 — No RT",
+                        }[x],
+                        key=f"{code_key}_Ez",
+                        disabled=not enabled,
+                    )
+                else:
+                    Ez_code = st.selectbox(
+                        "z — joint coefficient",
+                        options=[1.0, 0.85, 0.70],
+                        index=[1.0, 0.85, 0.70].index(z_eu_default),
+                        format_func=lambda x: {
+                            1.0:  "1.00 — Cat. A/B examined",
+                            0.85: "0.85 — Cat. C/D",
+                            0.70: "0.70 — No examination",
+                        }[x],
+                        key=f"{code_key}_Ez",
+                        disabled=not enabled,
+                    )
+            code_inputs[code_key] = {
+                "enabled": enabled,
+                "P": P_code,
+                "T": T_code,
+                "Ez": Ez_code,
+            }
 
 # ─── ALLOWANCES ──────────────────────────────────────────────────────────────
 with st.container(border=True):
@@ -150,7 +227,7 @@ with st.container(border=True):
     ms1, ms2 = st.columns([1, 2])
 
     if "mat_search_vc" not in st.session_state:
-        st.session_state["mat_search_vc"] = "SA-516 70"
+        st.session_state["mat_search_vc"] = "spec:SA-516 AND grade:70"
 
     with ms1:
         search = st.text_input(
@@ -158,17 +235,18 @@ with st.container(border=True):
             key="mat_search_vc",
             placeholder="e.g. SA-516 or N06625 or 1.4404 or 1¼Cr-½Mo-Si",
         )
+        st.caption(
+            'Examples: spec:SA-516 AND grade:70, composition:"Carbon steel", '
+            'SMYS>=260, MaximumAllowableTemperature>=538'
+        )
 
-    # Filter material list
-    if search.strip():
-        q = search.strip().lower()
-        filtered = [m for m in ALL_MATS
-                    if q in m["name"].lower()
-                    or q in m["comp"].lower()
-                    or q in m["alloy"].lower()
-                    or q in m["grade"].lower()]
-    else:
-        filtered = ALL_MATS
+    # Filter material list with the common ASME material search parser.
+    search_error = None
+    try:
+        filtered = _search_materials(search) if search.strip() else ALL_MATS
+    except ValueError as exc:
+        filtered = []
+        search_error = str(exc)
 
     # Clamp selectbox index to valid range after filtering (prevents stale-index errors)
     n_filtered = len(filtered)
@@ -179,7 +257,10 @@ with st.container(border=True):
 
     with ms2:
         if not filtered:
-            st.warning("No materials match the search term.")
+            if search_error:
+                st.error(f"Invalid material search: {search_error}")
+            else:
+                st.warning("No materials match the search criteria.")
             mat_id = None
         else:
             mat_names = [m["name"] for m in filtered]
@@ -199,31 +280,41 @@ with st.container(border=True):
 
 # ─── MATERIAL PROPERTIES ─────────────────────────────────────────────────────
 mat_props = None
-Sy_T = Su_T = S_d1 = S_d2 = None
-allow_en = allow_ad = allow_bs = allow_cp = None
+SMYS = SMTS = Ar = None
+Sy_by_code = {}
+Su_by_code = {}
+allowable_by_code = {key: None for key in CODE_LABELS}
 
 if mat_id is not None:
     mat_props = get_material(mat_id)
 
     if mat_props:
-        Sy_T  = get_yield_at_T(mat_id, T, thk_mm=WT)
-        Su_T  = get_ultimate_at_T(mat_id, T, thk_mm=WT)
-        S_d1  = get_S_div1(mat_id, T, thk_mm=WT)
-        S_d2  = get_S_div2(mat_id, T, thk_mm=WT)
-
         SMYS  = mat_props["SMYS"]
         SMTS  = mat_props["SMTS"]
         Ar    = mat_props["Ar"]
 
-        # European allowables  (need Sy at T; fall back to SMYS if unavailable)
-        Rp_T  = Sy_T  if Sy_T  is not None else SMYS
-        Rm_20 = SMTS
+        for code_key, code_input in code_inputs.items():
+            T_code = code_input["T"]
+            Sy_code = get_yield_at_T(mat_id, T_code, thk_mm=WT)
+            Su_code = get_ultimate_at_T(mat_id, T_code, thk_mm=WT)
+            Sy_by_code[code_key] = Sy_code
+            Su_by_code[code_key] = Su_code
 
-        if Rp_T is not None and Rm_20 is not None:
-            allow_en = allowable_EN13445(Rp_T, Rm_20, Ar)
-            allow_ad = allowable_AD2000(Rp_T, Rm_20)
-            allow_bs = allowable_BS5500(Rp_T, Rm_20)
-            allow_cp = allowable_CODAP(Rp_T, Rm_20, Ar)
+            if code_key == "d1":
+                allowable_by_code[code_key] = get_S_div1(mat_id, T_code, thk_mm=WT)
+            elif code_key == "d2":
+                allowable_by_code[code_key] = get_S_div2(mat_id, T_code, thk_mm=WT)
+            else:
+                Rp_T = Sy_code if Sy_code is not None else SMYS
+                if Rp_T is not None and SMTS is not None:
+                    if code_key == "en":
+                        allowable_by_code[code_key] = allowable_EN13445(Rp_T, SMTS, Ar)
+                    elif code_key == "ad":
+                        allowable_by_code[code_key] = allowable_AD2000(Rp_T, SMTS)
+                    elif code_key == "bs":
+                        allowable_by_code[code_key] = allowable_BS5500(Rp_T, SMTS)
+                    elif code_key == "cp":
+                        allowable_by_code[code_key] = allowable_CODAP(Rp_T, SMTS, Ar)
 
 with st.expander("Material Properties", expanded=(mat_props is not None)):
     if mat_props is None:
@@ -262,17 +353,26 @@ with st.expander("Material Properties", expanded=(mat_props is not None)):
                 st.warning(f"⚠ Ar = {Ar:.1f}% < 14% — verify code requirements for low-ductility materials.")
 
         with mp3:
-            st.markdown(f"**At design temperature ({T:.0f} °C)**")
-            at_rows = [
-                ("Sy  Rp0.2_T (MPa)",    f"{Sy_T:.1f}"  if Sy_T  is not None else "—"),
-                ("Su  Rm_T    (MPa)",    f"{Su_T:.1f}"  if Su_T  is not None else "—"),
-                ("S — ASME VIII-1 (MPa)", f"{S_d1:.1f}"  if S_d1  is not None else "Not listed"),
-                ("S — ASME VIII-2 (MPa)", f"{S_d2:.1f}"  if S_d2  is not None else "Not listed"),
-            ]
-            st.dataframe(pd.DataFrame(at_rows, columns=["Property", "Value"]),
-                         hide_index=True, use_container_width=True)
-            if Sy_T is None:
-                st.warning("Rp0.2 at temperature not found — using SMYS for European allowables.")
+            st.markdown("**At design temperature by code**")
+            at_rows = []
+            for code_key, code_label in CODE_LABELS.items():
+                if not code_inputs[code_key]["enabled"]:
+                    continue
+                allow = allowable_by_code.get(code_key)
+                if isinstance(allow, dict):
+                    allow_value = allow["f"]
+                else:
+                    allow_value = allow
+                at_rows.append({
+                    "Code": code_label,
+                    "T (°C)": f"{code_inputs[code_key]['T']:.1f}",
+                    "Sy/Rp0.2_T (MPa)": f"{Sy_by_code.get(code_key):.1f}" if Sy_by_code.get(code_key) is not None else "—",
+                    "Su/Rm_T (MPa)": f"{Su_by_code.get(code_key):.1f}" if Su_by_code.get(code_key) is not None else "—",
+                    "S/f (MPa)": f"{allow_value:.1f}" if allow_value is not None else "Not listed",
+                })
+            st.dataframe(pd.DataFrame(at_rows), hide_index=True, use_container_width=True)
+            if any(Sy_by_code.get(k) is None for k, v in code_inputs.items() if v["enabled"]):
+                st.warning("Rp0.2 at temperature not found for one or more codes — using SMYS for European allowables where needed.")
 
 # ─── ALLOWABLE STRESSES BY CODE ──────────────────────────────────────────────
 with st.expander("Allowable Stress by Code", expanded=True):
@@ -287,99 +387,71 @@ with st.expander("Allowable Stress by Code", expanded=True):
 
         sf_rows = []
 
-        # ASME VIII-1
-        sf_rows.append({
-            "Code":          "ASME VIII-1",
-            "S / f  (MPa)":  _fmt(S_d1),
-            "Criterion 1":   f"Rm/3.5 ≈ {SMTS/3.5:.1f}" if SMTS else "—",
-            "Criterion 2":   f"Sy/1.5 ≈ {SMYS/1.5:.1f}" if SMYS else "—",
-            "Governing":     "From ASME II-D Table 1A",
-            "SF (UTS)":      "3.5",
-            "SF (Yield)":    "1.5",
-        })
+        for code_key, code_label in CODE_LABELS.items():
+            if not code_inputs[code_key]["enabled"]:
+                continue
 
-        # ASME VIII-2
-        sf_rows.append({
-            "Code":          "ASME VIII-2",
-            "S / f  (MPa)":  _fmt(S_d2),
-            "Criterion 1":   f"Rm/2.4 ≈ {SMTS/2.4:.1f}" if SMTS else "—",
-            "Criterion 2":   f"Sy/1.5 ≈ {SMYS/1.5:.1f}" if SMYS else "—",
-            "Governing":     "From ASME II-D Table 5A",
-            "SF (UTS)":      "2.4",
-            "SF (Yield)":    "1.5",
-        })
-
-        # EN 13445
-        sf_rows.append({
-            "Code":          "EN 13445-3",
-            "S / f  (MPa)":  _fmt(allow_en["f"] if allow_en else None),
-            "Criterion 1":   _fmt(allow_en["cand_yield"] if allow_en else None) + " (Rp0.2_T/1.5)",
-            "Criterion 2":   _fmt(allow_en["cand_uts"]   if allow_en else None) + f" (Rm/{allow_en['sf_uts'] if allow_en else '—'})",
-            "Governing":     _gov(allow_en),
-            "SF (UTS)":      str(allow_en["sf_uts"]) if allow_en else "—",
-            "SF (Yield)":    "1.5",
-        })
-
-        # AD 2000
-        sf_rows.append({
-            "Code":          "AD 2000",
-            "S / f  (MPa)":  _fmt(allow_ad["f"] if allow_ad else None),
-            "Criterion 1":   _fmt(allow_ad["cand_yield"] if allow_ad else None) + " (Rp0.2_T/1.5)",
-            "Criterion 2":   _fmt(allow_ad["cand_uts"]   if allow_ad else None) + " (Rm/2.4)",
-            "Governing":     _gov(allow_ad),
-            "SF (UTS)":      "2.4",
-            "SF (Yield)":    "1.5",
-        })
-
-        # BS PD 5500
-        sf_rows.append({
-            "Code":          "BS PD 5500",
-            "S / f  (MPa)":  _fmt(allow_bs["f"] if allow_bs else None),
-            "Criterion 1":   _fmt(allow_bs["cand_yield"] if allow_bs else None) + " (Rp0.2_T/1.5)",
-            "Criterion 2":   _fmt(allow_bs["cand_uts"]   if allow_bs else None) + " (Rm/2.5)",
-            "Governing":     _gov(allow_bs),
-            "SF (UTS)":      "2.5",
-            "SF (Yield)":    "1.5",
-        })
-
-        # CODAP
-        sf_rows.append({
-            "Code":          "CODAP 2023",
-            "S / f  (MPa)":  _fmt(allow_cp["f"] if allow_cp else None),
-            "Criterion 1":   _fmt(allow_cp["cand_yield"] if allow_cp else None) + " (Rp0.2_T/1.5)",
-            "Criterion 2":   _fmt(allow_cp["cand_uts"]   if allow_cp else None) + f" (Rm/{allow_cp['sf_uts'] if allow_cp else '—'})",
-            "Governing":     _gov(allow_cp),
-            "SF (UTS)":      str(allow_cp["sf_uts"]) if allow_cp else "—",
-            "SF (Yield)":    "1.5",
-        })
+            allow = allowable_by_code.get(code_key)
+            if code_key == "d1":
+                sf_rows.append({
+                    "Code":          code_label,
+                    "T (°C)":        f"{code_inputs[code_key]['T']:.1f}",
+                    "S / f  (MPa)":  _fmt(allow),
+                    "Criterion 1":   f"Rm/3.5 ≈ {SMTS/3.5:.1f}" if SMTS else "—",
+                    "Criterion 2":   f"Sy/1.5 ≈ {SMYS/1.5:.1f}" if SMYS else "—",
+                    "Governing":     "S1 from ASME II-D Table 1A",
+                    "SF (UTS)":      "3.5",
+                    "SF (Yield)":    "1.5",
+                })
+            elif code_key == "d2":
+                sf_rows.append({
+                    "Code":          code_label,
+                    "T (°C)":        f"{code_inputs[code_key]['T']:.1f}",
+                    "S / f  (MPa)":  _fmt(allow),
+                    "Criterion 1":   f"Rm/2.4 ≈ {SMTS/2.4:.1f}" if SMTS else "—",
+                    "Criterion 2":   f"Sy/1.5 ≈ {SMYS/1.5:.1f}" if SMYS else "—",
+                    "Governing":     "S2 from ASME II-D Table 5A",
+                    "SF (UTS)":      "2.4",
+                    "SF (Yield)":    "1.5",
+                })
+            else:
+                sf_rows.append({
+                    "Code":          code_label,
+                    "T (°C)":        f"{code_inputs[code_key]['T']:.1f}",
+                    "S / f  (MPa)":  _fmt(allow["f"] if allow else None),
+                    "Criterion 1":   _fmt(allow["cand_yield"] if allow else None) + " (Rp0.2_T/1.5)",
+                    "Criterion 2":   _fmt(allow["cand_uts"] if allow else None) + f" (Rm/{allow['sf_uts'] if allow else '—'})",
+                    "Governing":     _gov(allow),
+                    "SF (UTS)":      str(allow["sf_uts"]) if allow else "—",
+                    "SF (Yield)":    "1.5",
+                })
 
         st.dataframe(
             pd.DataFrame(sf_rows).set_index("Code"),
             use_container_width=True,
         )
 
-        if S_d1 is None and S_d2 is None:
+        if allowable_by_code.get("d1") is None and allowable_by_code.get("d2") is None:
             st.warning("This material is not listed in ASME II-D stress tables. "
                        "Enter allowable stress manually if needed.")
 
 # ─── CALCULATION ENGINE ───────────────────────────────────────────────────────
-def _run_code(code_key: str, S: float | None, E_z: float) -> dict | None:
+def _run_code(code_key: str, P_bar: float, S: float | None, E_z: float) -> dict | None:
     """Run thickness formula for a single code.  Returns result dict or None."""
     if S is None or S <= 0:
         return None
-    P_mpa = P * 0.1
     if code_key == "d1":
-        return asme_viii_1.thickness_internal(P, D_i, S, E_z)
+        return asme_viii_1.thickness_internal(P_bar, D_i, S, E_z)
     if code_key == "d2":
-        return asme_viii_2.thickness_internal(P, D_i, S, E_z)
+        return asme_viii_2.thickness_internal(P_bar, D_i, S, E_z)
     if code_key == "en":
-        return en_13445.thickness_internal(P, D_i, S, E_z)
+        return en_13445.thickness_internal(P_bar, D_i, S, E_z)
     if code_key == "ad":
-        return ad_2000.thickness_internal(P, D_i, S, E_z)
+        return ad_2000.thickness_internal(P_bar, D_i, S, E_z)
     if code_key == "bs":
-        return bs_5500.thickness_internal(P, D_i, S, E_z)
+        return bs_5500.thickness_internal(P_bar, D_i, S, E_z)
     if code_key == "cp":
-        return codap_mod.thickness_internal(P, D_i, S, E_z)
+        return codap_mod.thickness_internal(P_bar, D_i, S, E_z)
     return None
 
 
@@ -400,19 +472,47 @@ def _mawp(code_key: str, t_struct: float, S: float, E_z: float) -> float:
     return 0.0
 
 
-CODE_DEFS = [
-    ("d1", "ASME VIII-1",  S_d1,                            E_asme, "UG-27(c)(1)",      r"t = \dfrac{P \cdot R}{S \cdot E - 0.6\,P}"),
-    ("d2", "ASME VIII-2",  S_d2,                            E_asme, "Part 4 §4.3.3",    r"t = \dfrac{P \cdot R_i}{S \cdot E - 0.5\,P}"),
-    ("en", "EN 13445-3",   allow_en["f"] if allow_en else None, z_eu, "§7.4.2",          r"e = \dfrac{P \cdot D_i}{2\,f \cdot z - P}"),
-    ("ad", "AD 2000",      allow_ad["f"] if allow_ad else None, z_eu, "B0 §6",           r"s = \dfrac{p \cdot D_i}{2\,\sigma_{zul} \cdot v - p}"),
-    ("bs", "BS PD 5500",   allow_bs["f"] if allow_bs else None, z_eu, "§3.5.1.2",        r"e = \dfrac{p \cdot D_i}{2\,f \cdot z - p}"),
-    ("cp", "CODAP 2023",   allow_cp["f"] if allow_cp else None, z_eu, "§C2.3",           r"e = \dfrac{p \cdot D_i}{2\,f \cdot z - p}"),
-]
+CODE_REFS = {
+    "d1": ("UG-27(c)(1)", r"t = \dfrac{P \cdot R}{S \cdot E - 0.6\,P}"),
+    "d2": ("Part 4 §4.3.3", r"t = \dfrac{P \cdot R_i}{S \cdot E - 0.5\,P}"),
+    "en": ("§7.4.2", r"e = \dfrac{P \cdot D_i}{2\,f \cdot z - P}"),
+    "ad": ("B0 §6", r"s = \dfrac{p \cdot D_i}{2\,\sigma_{zul} \cdot v - p}"),
+    "bs": ("§3.5.1.2", r"e = \dfrac{p \cdot D_i}{2\,f \cdot z - p}"),
+    "cp": ("§C2.3", r"e = \dfrac{p \cdot D_i}{2\,f \cdot z - p}"),
+}
+
+CODE_DEFS = []
+for code_key, code_label in CODE_LABELS.items():
+    allow = allowable_by_code.get(code_key)
+    S_value = allow["f"] if isinstance(allow, dict) else allow
+    ref, latex = CODE_REFS[code_key]
+    code_input = code_inputs[code_key]
+    CODE_DEFS.append((
+        code_key,
+        code_label,
+        code_input["enabled"],
+        code_input["P"],
+        code_input["T"],
+        S_value,
+        code_input["Ez"],
+        ref,
+        latex,
+    ))
 
 results = {}
-for key, label, S, Ez, ref, ltx in CODE_DEFS:
-    r = _run_code(key, S, Ez)
-    results[key] = {"label": label, "S": S, "ref": ref, "latex": ltx, "res": r}
+for key, label, enabled, P_code, T_code, S, Ez, ref, ltx in CODE_DEFS:
+    r = _run_code(key, P_code, S, Ez) if enabled else None
+    results[key] = {
+        "label": label,
+        "enabled": enabled,
+        "P": P_code,
+        "T": T_code,
+        "S": S,
+        "Ez": Ez,
+        "ref": ref,
+        "latex": ltx,
+        "res": r,
+    }
 
 # ─── RESULTS ─────────────────────────────────────────────────────────────────
 st.divider()
@@ -421,15 +521,23 @@ st.subheader("Results — Minimum Required Thickness")
 if mat_props is None:
     st.info("Select a material and fill in the inputs above to see results.")
 else:
+    enabled_results = [(key, info) for key, info in results.items() if info["enabled"]]
+    if not enabled_results:
+        st.info("Enable at least one code to see results.")
+        st.stop()
+
     # ── Summary table ──────────────────────────────────────────────────────────
     summary_rows = []
-    for key, info in results.items():
+    for key, info in enabled_results:
         r   = info["res"]
         S   = info["S"]
-        Ez  = next(ez for k, _, _, ez, _, _ in CODE_DEFS if k == key)
+        Ez  = info["Ez"]
         if r is None or "error" in r:
             summary_rows.append({
                 "Code":               info["label"],
+                "P (bar)":            f"{info['P']:.2f}",
+                "T (°C)":             f"{info['T']:.1f}",
+                "E / z":              f"{Ez:.2f}",
                 "S / f  (MPa)":       f"{S:.2f}" if S else "N/A",
                 "t_struct (mm)":      "N/A",
                 "t_total (mm)":       "N/A",
@@ -444,6 +552,9 @@ else:
             ok   = t_avail >= t_st
             summary_rows.append({
                 "Code":               info["label"],
+                "P (bar)":            f"{info['P']:.2f}",
+                "T (°C)":             f"{info['T']:.1f}",
+                "E / z":              f"{Ez:.2f}",
                 "S / f  (MPa)":       f"{S:.2f}",
                 "t_struct (mm)":      f"{t_st:.2f}",
                 "t_total (mm)":       f"{t_to:.2f}",
@@ -460,7 +571,7 @@ else:
     # Highlight most / least conservative
     valid_t = [
         (info["label"], info["res"]["t_min_mm"])
-        for info in results.values()
+        for _, info in enabled_results
         if info["res"] and "t_min_mm" in info["res"]
     ]
     if len(valid_t) >= 2:
@@ -475,14 +586,14 @@ else:
     st.divider()
     st.subheader("Per-code Details")
 
-    tab_labels = [info["label"] for info in results.values()]
+    tab_labels = [info["label"] for _, info in enabled_results]
     tabs = st.tabs(tab_labels)
 
-    for tab, (key, info) in zip(tabs, results.items()):
+    for tab, (key, info) in zip(tabs, enabled_results):
         with tab:
             r  = info["res"]
             S  = info["S"]
-            Ez = next(ez for k, _, _, ez, _, _ in CODE_DEFS if k == key)
+            Ez = info["Ez"]
 
             st.caption(f"Reference: **{info['ref']}**")
             st.latex(info["latex"])
@@ -506,9 +617,11 @@ else:
 
             with col_a:
                 st.markdown("**Calculation**")
-                P_mpa = P * 0.1
+                P_bar = info["P"]
+                P_mpa = P_bar * 0.1
                 rows = [
-                    ("Design pressure P",   f"{P_mpa:.4f} MPa  ({P:.2f} bar)"),
+                    ("Design pressure P",   f"{P_mpa:.4f} MPa  ({P_bar:.2f} bar)"),
+                    ("Design temperature T", f"{info['T']:.1f} °C"),
                     ("Allowable stress S/f", f"{S:.2f} MPa"),
                     ("Joint eff. E / z",     f"{Ez:.2f}"),
                 ]

@@ -7,6 +7,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+from calc.db.materials import MaterialSearch
+
 # ─────────────────────────────────────────────────────────────────────────────
 _DB       = Path(__file__).resolve().parents[2] / "database" / "asme_materials.db"
 _PASSWORD = "asme2026"   # ← change this to your preferred password
@@ -85,27 +87,47 @@ def _thk_label(row: dict) -> str:
 
 @st.cache_data(ttl=3600)
 def _load_all() -> pd.DataFrame:
-    conn = _conn()
-    df = pd.read_sql_query(
-        """
-        SELECT
-            ID,
-            Specification,
-            TypeGrade                AS Grade,
-            ClassConditionTemper     AS ClassCondTemper,
-            AlloyDesignationNumber   AS UNS,
-            NominalComposition,
-            ProductForm,
-            SMYS,
-            SMTS,
-            RuptureElongationLong    AS Ar
-        FROM Materials
-        ORDER BY Specification, TypeGrade, ClassConditionTemper
-        """,
-        conn,
+    return _materials_to_df(MaterialSearch().search())
+
+
+@st.cache_data(ttl=3600)
+def _search_materials(text: str) -> pd.DataFrame:
+    return _materials_to_df(MaterialSearch().search(text.strip()))
+
+
+def _materials_to_df(materials) -> pd.DataFrame:
+    rows = [
+        {
+            "ID": material["id"],
+            "Specification": material["spec"],
+            "Grade": material["grade"],
+            "ClassCondTemper": material["cls"],
+            "UNS": material["alloy"],
+            "NominalComposition": material["comp"],
+            "ProductForm": material["pform"],
+            "SMYS": material["SMYS"],
+            "SMTS": material["SMTS"],
+            "Ar": material["Ar"],
+            "MaximumAllowableTemperature": material["MaximumAllowableTemperature"],
+        }
+        for material in materials
+    ]
+    return pd.DataFrame(
+        rows,
+        columns=[
+            "ID",
+            "Specification",
+            "Grade",
+            "ClassCondTemper",
+            "UNS",
+            "NominalComposition",
+            "ProductForm",
+            "SMYS",
+            "SMTS",
+            "Ar",
+            "MaximumAllowableTemperature",
+        ],
     )
-    conn.close()
-    return df
 
 
 @st.cache_data(ttl=3600)
@@ -245,15 +267,12 @@ def _reset_filters() -> None:
 _cur_search = st.session_state.get("mat_search", "")
 
 # Pool after text search (feeds Product Form options)
-_pool_pform = all_mats.copy()
-if _cur_search:
-    _q = _cur_search.lower()
-    _pool_pform = _pool_pform[
-        _pool_pform["Specification"].str.lower().str.contains(_q, na=False)
-        | _pool_pform["Grade"].str.lower().str.contains(_q, na=False)
-        | _pool_pform["NominalComposition"].str.lower().str.contains(_q, na=False)
-        | _pool_pform["ClassCondTemper"].str.lower().str.contains(_q, na=False)
-    ]
+try:
+    _pool_pform = _search_materials(_cur_search) if _cur_search.strip() else all_mats.copy()
+    _search_error = None
+except ValueError as exc:
+    _pool_pform = _materials_to_df([])
+    _search_error = str(exc)
 
 avail_pforms = ["All"] + sorted(_pool_pform["ProductForm"].dropna().unique().tolist())
 if st.session_state.get("mat_pform", "All") not in avail_pforms:
@@ -283,15 +302,14 @@ with fc4:
     st.markdown("</div>", unsafe_allow_html=True)
 
 # ── Apply filters to build the displayed dataframe ────────────────────────────
-df = all_mats.copy()
-if search:
-    _q = search.lower()
-    df = df[
-        df["Specification"].str.lower().str.contains(_q, na=False)
-        | df["Grade"].str.lower().str.contains(_q, na=False)
-        | df["NominalComposition"].str.lower().str.contains(_q, na=False)
-        | df["ClassCondTemper"].str.lower().str.contains(_q, na=False)
-    ]
+st.caption(
+    'Search examples: spec:SA-516 AND grade:70, composition:"Carbon steel", '
+    'SMYS>=260, SMTS=485~0.1, MaximumAllowableTemperature>=538'
+)
+
+df = _pool_pform.copy()
+if _search_error:
+    st.error(f"Invalid material search: {_search_error}")
 if sel_pform != "All":
     df = df[df["ProductForm"] == sel_pform]
 df = df.reset_index(drop=True)
@@ -313,6 +331,7 @@ with col_list:
         "SMYS":               "SMYS [MPa]",
         "SMTS":               "SMTS [MPa]",
         "Ar":                 "Ar [%]",
+        "MaximumAllowableTemperature": "Max Allow Temp [C]",
     }
     df_disp = df[list(col_map.keys())].rename(columns=col_map)
 
@@ -328,6 +347,10 @@ with col_list:
             "SMYS [MPa]":  st.column_config.NumberColumn("SMYS [MPa]", format="%.1f"),
             "SMTS [MPa]":  st.column_config.NumberColumn("SMTS [MPa]", format="%.1f"),
             "Ar [%]":      st.column_config.NumberColumn("Ar [%]",     format="%.1f"),
+            "Max Allow Temp [C]": st.column_config.NumberColumn(
+                "Max Allow Temp [C]",
+                format="%.0f",
+            ),
         },
     )
     sel_rows = evt.selection.rows

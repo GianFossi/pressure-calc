@@ -6,7 +6,11 @@ Design temperature input is always in °C and converted internally.
 """
 
 import sqlite3
+import re
+from collections.abc import Iterable, Sequence
+from dataclasses import dataclass
 from pathlib import Path
+from typing import Literal
 
 DB_PATH = Path(__file__).resolve().parent.parent.parent / "database" / "asme_materials.db"
 
@@ -63,6 +67,546 @@ def _interp(data: dict[float, float], T_F: float) -> float | None:
             v1, v2 = data[t1], data[t2]
             return v1 + (v2 - v1) * (T_F - t1) / (t2 - t1)
     return None
+
+
+def _material_row_to_dict(row: sqlite3.Row | tuple) -> dict:
+    """Normalize a Materials row into the compact public material dict."""
+    if isinstance(row, sqlite3.Row):
+        data = dict(row)
+    else:
+        (
+            mid, spec, grade, cls, alloy, comp, pform,
+            smts, smys, ar_l, ar_t, density,
+        ) = row
+        data = {
+            "ID": mid,
+            "Specification": spec,
+            "TypeGrade": grade,
+            "ClassConditionTemper": cls,
+            "AlloyDesignationNumber": alloy,
+            "NominalComposition": comp,
+            "ProductForm": pform,
+            "SMTS": smts,
+            "SMYS": smys,
+            "RuptureElongationLong": ar_l,
+            "RuptureElongationTransv": ar_t,
+            "Density": density,
+            "MaximumAllowableTemperature": None,
+        }
+
+    grade = data.get("TypeGrade")
+    alloy = data.get("AlloyDesignationNumber")
+    id_part = grade if grade else alloy
+    parts = [
+        str(p)
+        for p in [
+            data.get("Specification"),
+            id_part,
+            data.get("ClassConditionTemper"),
+        ]
+        if p
+    ]
+    return {
+        "id": data.get("ID"),
+        "name": " ".join(parts),
+        "spec": data.get("Specification") or "",
+        "grade": grade or "",
+        "cls": data.get("ClassConditionTemper") or "",
+        "alloy": alloy or "",
+        "comp": data.get("NominalComposition") or "",
+        "pform": data.get("ProductForm") or "",
+        "SMTS": data.get("SMTS"),
+        "SMYS": data.get("SMYS"),
+        "Ar": data.get("RuptureElongationLong"),
+        "Ar_t": data.get("RuptureElongationTransv"),
+        "density": data.get("Density"),
+        "MaximumAllowableTemperature": data.get("MaximumAllowableTemperature"),
+    }
+
+
+BooleanOperator = Literal["AND", "OR", "NOT"]
+ComparisonOperator = Literal[">=", "<=", "=", "==", ">", "<"]
+TextField = Literal[
+    "Specification",
+    "TypeGrade",
+    "AlloyDesignationNumber",
+    "ClassConditionTemper",
+    "NominalComposition",
+]
+NumericField = Literal[
+    "SMYS",
+    "SMTS",
+    "RuptureElongationLong",
+    "MaximumAllowableTemperature",
+]
+
+MAX_ALLOWABLE_TEMPERATURE_EXPR = """
+(
+    SELECT MAX(MaxTemp)
+    FROM (
+        SELECT MaximumTemperature AS MaxTemp
+        FROM AllowableStress1Table
+        WHERE MaterialID = Materials.ID
+        UNION ALL
+        SELECT MaxTemp_VIII1
+        FROM AllowableStress1Table
+        WHERE MaterialID = Materials.ID
+        UNION ALL
+        SELECT MaximumTemperature
+        FROM AllowableStress2Table
+        WHERE MaterialID = Materials.ID
+        UNION ALL
+        SELECT MaxTemp_VIII1
+        FROM AllowableStress3Table
+        WHERE MaterialID = Materials.ID
+        UNION ALL
+        SELECT MaxTemp_VIII2
+        FROM AllowableStress3Table
+        WHERE MaterialID = Materials.ID
+    )
+    WHERE MaxTemp IS NOT NULL
+)
+"""
+
+
+@dataclass(frozen=True)
+class MaterialCriterion:
+    """SQL fragment and parameters for one material search condition."""
+
+    sql: str
+    params: tuple[object, ...] = ()
+
+    def __and__(self, other: "MaterialCriterion") -> "MaterialCriterion":
+        return combine_material_criteria("AND", self, other)
+
+    def __or__(self, other: "MaterialCriterion") -> "MaterialCriterion":
+        return combine_material_criteria("OR", self, other)
+
+    def __invert__(self) -> "MaterialCriterion":
+        return combine_material_criteria("NOT", self)
+
+
+def combine_material_criteria(
+    operator: BooleanOperator,
+    *criteria: MaterialCriterion,
+) -> MaterialCriterion:
+    """Combine criteria with AND, OR, or NOT."""
+    op = operator.upper()
+    if op not in {"AND", "OR", "NOT"}:
+        raise ValueError(f"Unsupported boolean operator: {operator}")
+    if not criteria:
+        raise ValueError("At least one criterion is required.")
+    if op == "NOT":
+        if len(criteria) != 1:
+            raise ValueError("NOT accepts exactly one criterion.")
+        return MaterialCriterion(
+            f"NOT ({criteria[0].sql})",
+            criteria[0].params,
+        )
+
+    joined_sql = f" {op} ".join(f"({c.sql})" for c in criteria)
+    params: list[object] = []
+    for criterion in criteria:
+        params.extend(criterion.params)
+    return MaterialCriterion(joined_sql, tuple(params))
+
+
+class MaterialSearchResult(Sequence[dict]):
+    """List-like search result with a count property."""
+
+    def __init__(self, materials: Iterable[dict]):
+        self._materials = list(materials)
+
+    @property
+    def count(self) -> int:
+        return len(self._materials)
+
+    def first(self) -> dict | None:
+        return self._materials[0] if self._materials else None
+
+    def one(self) -> dict:
+        if self.count != 1:
+            raise ValueError(f"Expected exactly one material, found {self.count}.")
+        return self._materials[0]
+
+    def to_list(self) -> list[dict]:
+        return list(self._materials)
+
+    def __iter__(self):
+        return iter(self._materials)
+
+    def __len__(self) -> int:
+        return len(self._materials)
+
+    def __getitem__(self, index):
+        return self._materials[index]
+
+
+class MaterialSearch:
+    """
+    Search ASME materials by text, identity fields, composition, and properties.
+
+    Text searches support simple boolean operators:
+        "SA-516 AND grade:70"
+        "composition:carbon AND SMYS>=260 AND SMTS=485"
+        "spec:SA-516 AND NOT grade:55"
+    """
+
+    _TEXT_FIELDS = {
+        "spec": "Specification",
+        "specification": "Specification",
+        "grade": "TypeGrade",
+        "type": "TypeGrade",
+        "typegrade": "TypeGrade",
+        "uns": "AlloyDesignationNumber",
+        "alloy": "AlloyDesignationNumber",
+        "class": "ClassConditionTemper",
+        "temper": "ClassConditionTemper",
+        "condition": "ClassConditionTemper",
+        "composition": "NominalComposition",
+        "comp": "NominalComposition",
+        "chemical": "NominalComposition",
+    }
+    _NUMERIC_FIELDS = {
+        "smys": "SMYS",
+        "sy": "SMYS",
+        "smus": "SMTS",
+        "smts": "SMTS",
+        "su": "SMTS",
+        "ar": "RuptureElongationLong",
+        "elongation": "RuptureElongationLong",
+        "mat": "MaximumAllowableTemperature",
+        "maxtemp": "MaximumAllowableTemperature",
+        "max_temp": "MaximumAllowableTemperature",
+        "maxallowabletemp": "MaximumAllowableTemperature",
+        "maximumallowabletemperature": "MaximumAllowableTemperature",
+        "maximum_allowable_temperature": "MaximumAllowableTemperature",
+    }
+    _TOKEN_RE = re.compile(
+        r'\w+:"[^"]+"|"[^"]+"|\(|\)|\bAND\b|\bOR\b|\bNOT\b|[^\s()]+',
+        re.IGNORECASE,
+    )
+    _NUMERIC_RE = re.compile(
+        r"^(?P<field>smys|sy|smus|smts|su|ar|elongation|mat|maxtemp|max_temp|"
+        r"maxallowabletemp|maximumallowabletemperature|maximum_allowable_temperature)\s*"
+        r"(?P<op>>=|<=|==|=|>|<)\s*"
+        r"(?P<value>-?\d+(?:\.\d+)?)"
+        r"(?:(?:\+/-|~|:tol=|:tol)\s*(?P<tol>\d+(?:\.\d+)?))?$",
+        re.IGNORECASE,
+    )
+
+    def __init__(self, db_path: Path | str = DB_PATH):
+        self.db_path = Path(db_path)
+
+    @property
+    def count(self) -> int:
+        return self.search().count
+
+    @staticmethod
+    def identification(
+        value: str,
+        *,
+        field: TextField | None = None,
+        exact: bool = False,
+    ) -> MaterialCriterion:
+        fields = [
+            "Specification",
+            "TypeGrade",
+            "AlloyDesignationNumber",
+            "ClassConditionTemper",
+        ]
+        return MaterialSearch._text_criterion(fields if field is None else [field], value, exact)
+
+    @staticmethod
+    def composition(value: str, *, exact: bool = False) -> MaterialCriterion:
+        return MaterialSearch._text_criterion(["NominalComposition"], value, exact)
+
+    @staticmethod
+    def property(
+        field: NumericField,
+        operator: ComparisonOperator,
+        value: float,
+        *,
+        tolerance: float | None = None,
+    ) -> MaterialCriterion:
+        return MaterialSearch._numeric_criterion(field, operator, value, tolerance)
+
+    @staticmethod
+    def smys(
+        operator: ComparisonOperator,
+        value: float,
+        *,
+        tolerance: float | None = None,
+    ) -> MaterialCriterion:
+        return MaterialSearch.property("SMYS", operator, value, tolerance=tolerance)
+
+    @staticmethod
+    def smus(
+        operator: ComparisonOperator,
+        value: float,
+        *,
+        tolerance: float | None = None,
+    ) -> MaterialCriterion:
+        return MaterialSearch.property("SMTS", operator, value, tolerance=tolerance)
+
+    @staticmethod
+    def ar(
+        operator: ComparisonOperator,
+        value: float,
+        *,
+        tolerance: float | None = None,
+    ) -> MaterialCriterion:
+        return MaterialSearch.property("RuptureElongationLong", operator, value, tolerance=tolerance)
+
+    @staticmethod
+    def maximum_allowable_temperature(
+        operator: ComparisonOperator,
+        value: float,
+        *,
+        tolerance: float | None = None,
+    ) -> MaterialCriterion:
+        return MaterialSearch.property(
+            "MaximumAllowableTemperature",
+            operator,
+            value,
+            tolerance=tolerance,
+        )
+
+    def search(
+        self,
+        text: str | None = None,
+        *,
+        criteria: MaterialCriterion | Sequence[MaterialCriterion] | None = None,
+        operator: Literal["AND", "OR"] = "AND",
+        limit: int | None = None,
+    ) -> MaterialSearchResult:
+        """Return matching materials as a MaterialSearchResult."""
+        built: list[MaterialCriterion] = []
+        if text:
+            built.append(self.parse(text))
+        if criteria:
+            if isinstance(criteria, MaterialCriterion):
+                built.append(criteria)
+            else:
+                built.extend(criteria)
+
+        where = ""
+        params: tuple[object, ...] = ()
+        if built:
+            combined = built[0] if len(built) == 1 else combine_material_criteria(operator, *built)
+            where = f"WHERE {combined.sql}"
+            params = combined.params
+
+        limit_sql = "" if limit is None else " LIMIT ?"
+        if limit is not None and limit < 0:
+            raise ValueError("limit must be greater than or equal to zero.")
+
+        conn = sqlite3.connect(str(self.db_path))
+        conn.row_factory = sqlite3.Row
+        conn.text_factory = lambda b: b.decode("utf-8", errors="replace")
+        cur = conn.cursor()
+        query_params = params + (() if limit is None else (limit,))
+        cur.execute(
+            f"""
+            SELECT ID, Specification, TypeGrade, ClassConditionTemper,
+                   AlloyDesignationNumber, NominalComposition, ProductForm,
+                   SMTS, SMYS, RuptureElongationLong, RuptureElongationTransv,
+                   Density,
+                   {MAX_ALLOWABLE_TEMPERATURE_EXPR} AS MaximumAllowableTemperature
+            FROM Materials
+            {where}
+            ORDER BY Specification, TypeGrade, ClassConditionTemper, ID
+            {limit_sql}
+            """,
+            query_params,
+        )
+        rows = cur.fetchall()
+        conn.close()
+        return MaterialSearchResult(_material_row_to_dict(row) for row in rows)
+
+    def one(
+        self,
+        text: str | None = None,
+        *,
+        criteria: MaterialCriterion | Sequence[MaterialCriterion] | None = None,
+    ) -> dict:
+        return self.search(text, criteria=criteria).one()
+
+    def parse(self, text: str) -> MaterialCriterion:
+        text = self._normalize_numeric_expressions(text)
+        tokens = [self._clean_token(t) for t in self._TOKEN_RE.findall(text)]
+        tokens = [t for t in tokens if t]
+        if not tokens:
+            raise ValueError("Search text is empty.")
+
+        output: list[MaterialCriterion | str] = []
+        ops: list[str] = []
+        previous_was_criterion = False
+        precedence = {"OR": 1, "AND": 2, "NOT": 3}
+
+        def push_operator(op: str) -> None:
+            while (
+                ops
+                and ops[-1] != "("
+                and precedence[ops[-1]] >= precedence[op]
+                and op != "NOT"
+            ):
+                output.append(ops.pop())
+            ops.append(op)
+
+        for token in tokens:
+            upper = token.upper()
+            if upper in {"AND", "OR", "NOT"}:
+                push_operator(upper)
+                previous_was_criterion = False
+            elif token == "(":
+                if previous_was_criterion:
+                    push_operator("AND")
+                ops.append(token)
+                previous_was_criterion = False
+            elif token == ")":
+                while ops and ops[-1] != "(":
+                    output.append(ops.pop())
+                if not ops:
+                    raise ValueError("Unbalanced closing parenthesis in search text.")
+                ops.pop()
+                previous_was_criterion = True
+            else:
+                if previous_was_criterion:
+                    push_operator("AND")
+                output.append(self._criterion_from_token(token))
+                previous_was_criterion = True
+
+        while ops:
+            op = ops.pop()
+            if op == "(":
+                raise ValueError("Unbalanced opening parenthesis in search text.")
+            output.append(op)
+
+        stack: list[MaterialCriterion] = []
+        for item in output:
+            if isinstance(item, MaterialCriterion):
+                stack.append(item)
+            elif item == "NOT":
+                if not stack:
+                    raise ValueError("NOT requires a following criterion.")
+                stack.append(combine_material_criteria("NOT", stack.pop()))
+            else:
+                if len(stack) < 2:
+                    raise ValueError(f"{item} requires two criteria.")
+                right = stack.pop()
+                left = stack.pop()
+                stack.append(combine_material_criteria(item, left, right))
+        if len(stack) != 1:
+            raise ValueError("Could not parse search text.")
+        return stack[0]
+
+    @classmethod
+    def _criterion_from_token(cls, token: str) -> MaterialCriterion:
+        numeric_match = cls._NUMERIC_RE.match(token)
+        if numeric_match:
+            field = cls._NUMERIC_FIELDS[numeric_match.group("field").lower()]
+            tol = numeric_match.group("tol")
+            return cls._numeric_criterion(
+                field,
+                numeric_match.group("op"),
+                float(numeric_match.group("value")),
+                float(tol) if tol is not None else None,
+            )
+
+        if ":" in token:
+            raw_field, value = token.split(":", 1)
+            field = cls._TEXT_FIELDS.get(raw_field.lower())
+            if field is None:
+                raise ValueError(f"Unsupported search field: {raw_field}")
+            return cls._text_criterion([field], cls._clean_token(value))
+
+        return cls.identification(token) | cls.composition(token)
+
+    @staticmethod
+    def _clean_token(token: str) -> str:
+        token = token.strip()
+        if len(token) >= 2 and token[0] == '"' and token[-1] == '"':
+            return token[1:-1]
+        return token
+
+    @staticmethod
+    def _normalize_numeric_expressions(text: str) -> str:
+        def compact(match: re.Match) -> str:
+            field, operator, value, tolerance_marker, tolerance = match.groups()
+            expr = f"{field}{operator}{value}"
+            if tolerance_marker and tolerance:
+                expr += f"{tolerance_marker}{tolerance}"
+            return expr
+
+        return re.sub(
+            r"\b(smys|sy|smus|smts|su|ar|elongation|mat|maxtemp|max_temp|"
+            r"maxallowabletemp|maximumallowabletemperature|maximum_allowable_temperature)\s*"
+            r"(>=|<=|==|=|>|<)\s*"
+            r"(-?\d+(?:\.\d+)?)"
+            r"(?:\s*(\+/-|~|:tol=|:tol)\s*(\d+(?:\.\d+)?))?",
+            compact,
+            text,
+            flags=re.IGNORECASE,
+        )
+
+    @staticmethod
+    def _text_criterion(
+        fields: Sequence[str],
+        value: str,
+        exact: bool = False,
+    ) -> MaterialCriterion:
+        if not value:
+            raise ValueError("Text criterion value cannot be empty.")
+        comparator = "=" if exact else "LIKE"
+        needle = value if exact else f"%{value}%"
+        sql = " OR ".join(f"COALESCE({field}, '') {comparator} ? COLLATE NOCASE" for field in fields)
+        return MaterialCriterion(sql, tuple(needle for _ in fields))
+
+    @staticmethod
+    def _numeric_criterion(
+        field: str,
+        operator: str,
+        value: float,
+        tolerance: float | None = None,
+    ) -> MaterialCriterion:
+        if operator not in {">=", "<=", "=", "==", ">", "<"}:
+            raise ValueError(f"Unsupported comparison operator: {operator}")
+        if tolerance is not None and tolerance < 0:
+            raise ValueError("tolerance must be greater than or equal to zero.")
+        if field == "MaximumAllowableTemperature":
+            return MaterialSearch._derived_numeric_criterion(
+                MAX_ALLOWABLE_TEMPERATURE_EXPR,
+                operator,
+                value,
+                tolerance,
+            )
+        if tolerance is not None:
+            low = float(value) - tolerance
+            high = float(value) + tolerance
+            return MaterialCriterion(f"{field} IS NOT NULL AND {field} BETWEEN ? AND ?", (low, high))
+        op = "=" if operator == "==" else operator
+        return MaterialCriterion(f"{field} IS NOT NULL AND {field} {op} ?", (float(value),))
+
+    @staticmethod
+    def _derived_numeric_criterion(
+        expression: str,
+        operator: str,
+        value: float,
+        tolerance: float | None = None,
+    ) -> MaterialCriterion:
+        if tolerance is not None:
+            low = float(value) - tolerance
+            high = float(value) + tolerance
+            return MaterialCriterion(
+                f"{expression} IS NOT NULL AND {expression} BETWEEN ? AND ?",
+                (low, high),
+            )
+        op = "=" if operator == "==" else operator
+        return MaterialCriterion(
+            f"{expression} IS NOT NULL AND {expression} {op} ?",
+            (float(value),),
+        )
 
 
 def _first_row(table: str, material_id: int,
