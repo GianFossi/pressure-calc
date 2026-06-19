@@ -43,7 +43,8 @@ st.markdown(
     div[data-testid="stStatusWidget"],
     section[data-testid="stSidebar"],
     [data-testid="collapsedControl"],
-    iframe[title="components.html"]          {{ display:none !important; }}
+    iframe[title="components.html"],
+    iframe[title="st.iframe"]               {{ display:none !important; }}
 
     /* ── Full-page layout ── */
     [data-testid="stApp"] {{
@@ -226,7 +227,7 @@ st.iframe(r"""
         .observe(p.document.body, { childList: true, subtree: true });
 })();
 </script>
-""", height=0)
+""", height=1)
 
 # ── Disclaimer — shown once per session on first site access ───────────────────
 @st.dialog("⚠️  Disclaimer — Legal Notice", width="large")
