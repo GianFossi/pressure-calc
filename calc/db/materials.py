@@ -422,7 +422,10 @@ class MaterialSearch:
         )
         rows = cur.fetchall()
         conn.close()
-        return MaterialSearchResult(_material_row_to_dict(row) for row in rows)
+        materials = [_material_row_to_dict(row) for row in rows]
+        if text:
+            materials = self._prefer_exact_class_match(text, materials)
+        return MaterialSearchResult(materials)
 
     def one(
         self,
@@ -549,6 +552,30 @@ class MaterialSearch:
             text,
             flags=re.IGNORECASE,
         )
+
+    @staticmethod
+    def _prefer_exact_class_match(text: str, materials: list[dict]) -> list[dict]:
+        """Prefer exact Class/Condition/Temper tokens in free-text searches.
+
+        A search such as "SA-336 F11 3" should resolve Class/Cond/T = 3.
+        Without this, the token "3" also matches the specification text
+        "SA-336", so classes 1, 2, and 3 can all remain in the result set.
+        """
+        if len(materials) <= 1:
+            return materials
+        tokens = [
+            token.strip().strip('"').lower()
+            for token in text.replace("(", " ").replace(")", " ").split()
+            if ":" not in token and token.upper() not in {"AND", "OR", "NOT"}
+        ]
+        if len(tokens) < 2:
+            return materials
+        exact_cls = [
+            material
+            for material in materials
+            if str(material.get("cls", "")).strip().lower() in tokens
+        ]
+        return exact_cls or materials
 
     @staticmethod
     def _text_criterion(

@@ -89,6 +89,15 @@ class MaterialSearchTests(unittest.TestCase):
 
         self.assertEqual(538.0, material["MaximumAllowableTemperature"])
 
+    def test_free_text_can_identify_class_condition_temper(self):
+        result = self.search.search("SA-336 F11 3")
+
+        self.assertEqual(1, result.count)
+        material = result.one()
+        self.assertEqual("SA-336", material["spec"])
+        self.assertEqual("F11", material["grade"])
+        self.assertEqual("3", material["cls"])
+
 
 if __name__ == "__main__":
     unittest.main()

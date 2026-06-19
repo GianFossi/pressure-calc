@@ -43,7 +43,7 @@ def _all_materials():
 def _search_materials(text: str):
     query = text.strip()
     if MaterialSearch is not None:
-        return MaterialSearch().search(query).to_list()
+        return _prefer_exact_class_match(query, MaterialSearch().search(query).to_list())
     if not query:
         return get_all_materials()
 
@@ -80,7 +80,27 @@ def _search_materials(text: str):
                 return False
         return True
 
-    return [material for material in get_all_materials() if _matches(material)]
+    return _prefer_exact_class_match(
+        query,
+        [material for material in get_all_materials() if _matches(material)],
+    )
+
+
+def _prefer_exact_class_match(query: str, materials: list[dict]) -> list[dict]:
+    """Resolve free-text searches like 'SA-336 F11 3' to Class/Cond/T = 3."""
+    if len(materials) <= 1:
+        return materials
+    tokens = [
+        token.strip().strip('"').lower()
+        for token in query.replace("(", " ").replace(")", " ").split()
+        if ":" not in token and token.upper() not in {"AND", "OR", "NOT"}
+    ]
+    exact_cls = [
+        material
+        for material in materials
+        if str(material.get("cls", "")).strip().lower() in tokens
+    ]
+    return exact_cls or materials
 
 ALL_MATS = _all_materials()
 
