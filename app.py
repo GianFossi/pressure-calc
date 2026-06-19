@@ -179,7 +179,7 @@ st.iframe(r"""
       +   '<a class="pvc-nav-link" href="/pipe-dimensions"   data-path="/pipe-dimensions">🔧 Pipe Dim. B36.10</a>'
       +   '<a class="pvc-nav-link" href="/tube-dimensions"   data-path="/tube-dimensions">⭕ Tube Dim. BWG</a>'
       +   '<a class="pvc-nav-link" href="/flanges"           data-path="/flanges">🔩 Flanges</a>'
-      +   '<a class="pvc-nav-link" href="/gaskets"           data-path="/gaskets">◉ Gaskets</a>'
+      +   '<a class="pvc-nav-link" href="/gaskets"           data-path="/gaskets">🧩 Gaskets</a>'
       +   '<a class="pvc-nav-link" href="/facings"           data-path="/facings">📐 Facings</a>'
       +   '<a class="pvc-nav-link" href="/asme-b16-ratings"  data-path="/asme-b16-ratings">📊 B16 Ratings</a>'
       + '</div>'
@@ -326,7 +326,7 @@ pg = st.navigation(
                     url_path="tube-dimensions"),
             st.Page("pages/3_Standards/03_Standards_Flanges.py", title="Flanges",                icon="🔩",
                     url_path="flanges"),
-            st.Page("pages/3_Standards/04_Standards_Gaskets.py", title="Gaskets",                icon="◉",
+            st.Page("pages/3_Standards/04_Standards_Gaskets.py", title="Gaskets",                icon="🧩",
                     url_path="gaskets"),
             st.Page("pages/3_Standards/05_Standards_Facings.py", title="Facings",                icon="📐",
                     url_path="facings"),

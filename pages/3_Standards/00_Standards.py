@@ -36,7 +36,7 @@ cards = [
         "meta": "Standards: ASME B16.5 / B16.47",
         "page": "pages/3_Standards/04_Standards_Gaskets.py",
         "label": "Open Gaskets",
-        "icon": "◉",
+        "icon": "🧩",
     },
     {
         "title": "Facings",
