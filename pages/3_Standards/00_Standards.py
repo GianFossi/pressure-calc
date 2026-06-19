@@ -1,38 +1,67 @@
 import streamlit as st
 
+
 st.title("Standards")
 st.caption("Piping, tubing and engineering standards reference.")
 st.divider()
 
-col1, col2, col3 = st.columns(3)
+cards = [
+    {
+        "title": "Pipe Dimensions",
+        "body": "Full ASME B36.10M schedule database. Browse by NPS and schedule, with geometry and checks.",
+        "meta": "Standard: ASME B36.10M",
+        "page": "pages/3_Standards/01_Standards_Pipes.py",
+        "label": "Open Pipe Dimensions",
+        "icon": "🔧",
+    },
+    {
+        "title": "Tube Dimensions",
+        "body": "TEMA / ASME HEI heat-exchanger and condenser tubes by OD and BWG gauge.",
+        "meta": "Gauge system: BWG 0-25",
+        "page": "pages/3_Standards/02_Standards_Tubes.py",
+        "label": "Open Tube Dimensions",
+        "icon": "⭕",
+    },
+    {
+        "title": "Flanges",
+        "body": "Browse flange dimensions from Flanges.xml with search, filters, reset and CSV export.",
+        "meta": "Standards: ASME B16.5 / B16.47",
+        "page": "pages/3_Standards/03_Standards_Flanges.py",
+        "label": "Open Flanges",
+        "icon": "🔩",
+    },
+    {
+        "title": "Gaskets",
+        "body": "Browse ring-joint and spiral-wound gasket data from Gaskets.xml.",
+        "meta": "Standards: ASME B16.5 / B16.47",
+        "page": "pages/3_Standards/04_Standards_Gaskets.py",
+        "label": "Open Gaskets",
+        "icon": "◉",
+    },
+    {
+        "title": "Facings",
+        "body": "Browse raised-face, male/female, tongue/groove and RTJ facing data.",
+        "meta": "Source: Facings.xml, derived from Flanges.xml where noted",
+        "page": "pages/3_Standards/05_Standards_Facings.py",
+        "label": "Open Facings",
+        "icon": "📐",
+    },
+    {
+        "title": "ASME B16 Ratings",
+        "body": "Browse pressure-temperature ratings by standard, class, material group and temperature.",
+        "meta": "Standards: ASME B16.5 / B16.47",
+        "page": "pages/3_Standards/06_Standards_ASME_B16_Ratings.py",
+        "label": "Open Ratings",
+        "icon": "📊",
+    },
+]
 
-with col1:
-    with st.container(border=True):
-        st.markdown("### 🔧 Pipe Dimensions")
-        st.markdown(
-            "Full **ASME B36.10M** schedule database — browse by NPS and schedule, "
-            "view geometry, section properties, flow velocity and stress check."
-        )
-        st.markdown("**Standard:** ASME B36.10M  |  **Sizes:** NPS ⅛\" – 48\"")
-        st.page_link("pages/3_Standards/01_Standards_Pipes.py", label="Open Pipe Dimensions →", icon="🔧")
-
-with col2:
-    with st.container(border=True):
-        st.markdown("### ⭕ Tube Dimensions")
-        st.markdown(
-            "**TEMA / ASME HEI** heat-exchanger and condenser tubes — "
-            "browse by standard OD ¼\"…2\" × BWG gauge and view geometry,"
-            "flow velocity, ρv² and full Darcy-Weisbach pressure drop."
-        )
-        st.markdown("**Gauge system:** BWG 0–25  |  **OD range:** ¼\" – 2\"")
-        st.page_link("pages/3_Standards/02_Standards_Tubes.py", label="Open Tube Dimensions →", icon="⭕")
-
-with col3:
-    with st.container(border=True):
-        st.markdown("### 🔩 Flanges & Fittings")
-        st.markdown(
-            "ASME B16.5 / B16.47 flange dimensions and pressure-temperature ratings. "
-            "*(coming soon)*"
-        )
-        st.markdown("**Standard:** ASME B16.5 / B16.47")
-        st.button("Coming soon", disabled=True, key="flanges")
+for row_start in range(0, len(cards), 3):
+    cols = st.columns(3)
+    for col, card in zip(cols, cards[row_start : row_start + 3]):
+        with col:
+            with st.container(border=True):
+                st.markdown(f"### {card['icon']} {card['title']}")
+                st.markdown(card["body"])
+                st.markdown(f"**{card['meta']}**")
+                st.page_link(card["page"], label=f"{card['label']} ->", icon=card["icon"])
