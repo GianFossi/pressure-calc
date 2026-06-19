@@ -653,16 +653,17 @@ def get_all_materials() -> list[dict]:
     cur.execute("""
         SELECT ID, Specification, TypeGrade, ClassConditionTemper,
                AlloyDesignationNumber, NominalComposition, ProductForm,
-               SMTS, SMYS, RuptureElongationLong
+               SMTS, SMYS, RuptureElongationLong,
+               {max_temp_expr} AS MaximumAllowableTemperature
         FROM Materials
         ORDER BY Specification, TypeGrade, ClassConditionTemper
-    """)
+    """.format(max_temp_expr=MAX_ALLOWABLE_TEMPERATURE_EXPR))
     rows = cur.fetchall()
     conn.close()
 
     result = []
     for row in rows:
-        (mid, spec, grade, cls, alloy, comp, pform, smts, smys, ar) = row
+        (mid, spec, grade, cls, alloy, comp, pform, smts, smys, ar, max_allow_temp) = row
         # When TypeGrade is absent, use UNS/AlloyDesignation as the identifier
         id_part = grade if grade else alloy
         parts = [str(p) for p in [spec, id_part, cls] if p]
@@ -679,6 +680,7 @@ def get_all_materials() -> list[dict]:
             "SMTS":  smts,
             "SMYS":  smys,
             "Ar":    ar,
+            "MaximumAllowableTemperature": max_allow_temp,
         })
     return result
 
@@ -690,15 +692,16 @@ def get_material(material_id: int) -> dict | None:
     cur.execute("""
         SELECT ID, Specification, TypeGrade, ClassConditionTemper,
                AlloyDesignationNumber, NominalComposition, ProductForm,
-               SMTS, SMYS, RuptureElongationLong, RuptureElongationTransv, Density
+               SMTS, SMYS, RuptureElongationLong, RuptureElongationTransv, Density,
+               {max_temp_expr} AS MaximumAllowableTemperature
         FROM Materials WHERE ID = ?
-    """, (material_id,))
+    """.format(max_temp_expr=MAX_ALLOWABLE_TEMPERATURE_EXPR), (material_id,))
     row = cur.fetchone()
     conn.close()
     if not row:
         return None
     (mid, spec, grade, cls, alloy, comp, pform,
-     smts, smys, ar_l, ar_t, density) = row
+     smts, smys, ar_l, ar_t, density, max_allow_temp) = row
     parts = [str(p) for p in [spec, grade, cls] if p]
     return {
         "id":      mid,
@@ -714,6 +717,7 @@ def get_material(material_id: int) -> dict | None:
         "Ar":      ar_l,
         "Ar_t":    ar_t,
         "density": density,
+        "MaximumAllowableTemperature": max_allow_temp,
     }
 
 

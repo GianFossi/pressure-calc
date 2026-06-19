@@ -7,7 +7,17 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from calc.db.materials import get_all_materials
+from calc.db.materials import (
+    allowable_AD2000,
+    allowable_BS5500,
+    allowable_CODAP,
+    allowable_EN13445,
+    get_S_div1,
+    get_S_div2,
+    get_all_materials,
+    get_ultimate_at_T,
+    get_yield_at_T,
+)
 try:
     from calc.db.materials import MaterialSearch
 except ImportError:
@@ -72,6 +82,45 @@ def _xy(row: dict, temps: list[int], to_celsius: bool = False) -> tuple[list, li
             xs.append(round(_f2c(t) if to_celsius else float(t), 1))
             ys.append(float(v))
     return xs, ys
+
+
+def _interp_series(xs: list[float], ys: list[float], x: float) -> float | None:
+    if not xs or not ys:
+        return None
+    pairs = sorted(zip(xs, ys), key=lambda item: item[0])
+    if x < pairs[0][0] or x > pairs[-1][0]:
+        return None
+    if x == pairs[0][0]:
+        return pairs[0][1]
+    for (x1, y1), (x2, y2) in zip(pairs, pairs[1:]):
+        if x1 <= x <= x2:
+            if x2 == x1:
+                return y1
+            return y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+    return None
+
+
+def _interp_row(row: dict | None, temps: list[int], T_C: float, to_celsius: bool = False) -> float | None:
+    if not row:
+        return None
+    xs, ys = _xy(row, temps, to_celsius=to_celsius)
+    return _interp_series(xs, ys, T_C)
+
+
+def _pick_size_row(rows: list[dict], size_mm: float | None) -> dict | None:
+    if not rows:
+        return None
+    if size_mm is None:
+        return rows[0]
+    for row in rows:
+        lo, hi = row.get("SizeThkMIN"), row.get("SizeThkMAX")
+        lo_inc = bool(row.get("SizeThkMIN_Included", 1))
+        hi_inc = bool(row.get("SizeThkMAX_Included", 1))
+        above_min = lo is None or (size_mm >= lo if lo_inc else size_mm > lo)
+        below_max = hi is None or (size_mm <= hi if hi_inc else size_mm < hi)
+        if above_min and below_max:
+            return row
+    return rows[0]
 
 
 def _thk_label(row: dict) -> str:
@@ -404,7 +453,8 @@ with col_detail:
     if not sel_rows:
         st.info("👈  Select a row from the list to view material details.")
     else:
-        mat_id = int(df.iloc[sel_rows[0]]["ID"])
+        selected_summary = df.iloc[sel_rows[0]]
+        mat_id = int(selected_summary["ID"])
         md = _load_detail(mat_id)
 
         title_parts = [
@@ -414,11 +464,12 @@ with col_detail:
         ]
         st.subheader(" · ".join(p for p in title_parts if p), divider="blue")
 
-        tab1, tab2, tab3, tab4 = st.tabs([
+        tab1, tab2, tab3, tab4, tab5 = st.tabs([
             "📋 Material Data",
             "📈 Sy & Su vs T",
             "📊 Allowable Stress",
             "🔬 Physical Properties",
+            "🧮 Calculated Values",
         ])
 
         # ── Tab 1 — Material Data ─────────────────────────────────────────────
@@ -454,6 +505,11 @@ with col_detail:
                             "Elong. Transv [%]": [_v(md, "RuptureElongationTransv", ".1f")],
                             "Density [kg/m³]":   [_v(md, "Density",                 ".0f")],
                             "Poisson Factor":    [_v(md, "PoissonFactor",            ".3f")],
+                            "Max Allow Temp [°C]": [
+                                f"{selected_summary['MaximumAllowableTemperature']:.0f}"
+                                if pd.notna(selected_summary.get("MaximumAllowableTemperature"))
+                                else "—"
+                            ],
                         }
                     ).T.rename(columns={0: "Value"})
                 )
@@ -599,3 +655,88 @@ with col_detail:
                     st.plotly_chart(fig_cp, use_container_width=True)
                 else:
                     st.caption("Cp — no data")
+
+        # ── Tab 5 — Calculated Values ─────────────────────────────────────────
+        with tab5:
+            cv1, cv2 = st.columns(2)
+            with cv1:
+                calc_T = st.number_input(
+                    "Temperature [°C]",
+                    min_value=-200.0,
+                    max_value=900.0,
+                    value=200.0,
+                    step=5.0,
+                    format="%.1f",
+                    key=f"calc_T_{mat_id}",
+                )
+            with cv2:
+                calc_size = st.number_input(
+                    "Size / thickness [mm]",
+                    min_value=0.0,
+                    value=20.0,
+                    step=0.5,
+                    format="%.2f",
+                    key=f"calc_size_{mat_id}",
+                    help="Used to select thickness-dependent strength and allowable-stress rows.",
+                )
+
+            sy_val = get_yield_at_T(mat_id, calc_T, thk_mm=calc_size)
+            su_val = get_ultimate_at_T(mat_id, calc_T, thk_mm=calc_size)
+            s1_val = get_S_div1(mat_id, calc_T, thk_mm=calc_size)
+            s2_val = get_S_div2(mat_id, calc_T, thk_mm=calc_size)
+
+            props = _load_physical(mat_id)
+            e_val = _interp_row(props.get("E"), _TC_E, calc_T)
+            alpha_val = _interp_row(props.get("alpha"), _TC_PHYS, calc_T)
+            lambda_val = _interp_row(props.get("lambda"), _TC_PHYS, calc_T)
+            diff_val = _interp_row(props.get("diff"), _TC_PHYS, calc_T)
+            cp_val = _interp_row(props.get("Cp"), _TC_PHYS, calc_T)
+
+            s3_row = _pick_size_row(_load_strength(mat_id, "AllowableStress3Table"), calc_size)
+            s3_val = _interp_row(s3_row, _TF, calc_T, to_celsius=True)
+
+            Rp_T = sy_val if sy_val is not None else md.get("SMYS")
+            Rm_20 = md.get("SMTS")
+            Ar = md.get("RuptureElongationLong")
+            allow_en = allow_ad = allow_bs = allow_cp = None
+            if Rp_T is not None and Rm_20 is not None:
+                allow_en = allowable_EN13445(Rp_T, Rm_20, Ar)
+                allow_ad = allowable_AD2000(Rp_T, Rm_20)
+                allow_bs = allowable_BS5500(Rp_T, Rm_20)
+                allow_cp = allowable_CODAP(Rp_T, Rm_20, Ar)
+
+            def _fmt_num(value: float | None, fmt: str = ".2f") -> str:
+                return format(value, fmt) if value is not None else "—"
+
+            max_allow_temp = selected_summary.get("MaximumAllowableTemperature")
+            max_allow_temp = float(max_allow_temp) if pd.notna(max_allow_temp) else None
+
+            calc_rows = [
+                ("SMYS", "Room-temperature yield strength", _fmt_num(md.get("SMYS")), "MPa"),
+                ("SMTS", "Room-temperature tensile strength", _fmt_num(md.get("SMTS")), "MPa"),
+                ("Sy / Rp0.2_T", "Yield strength at temperature", _fmt_num(sy_val), "MPa"),
+                ("Su / Rm_T", "Ultimate strength at temperature", _fmt_num(su_val), "MPa"),
+                ("S1", "ASME VIII-1 allowable stress", _fmt_num(s1_val), "MPa"),
+                ("S2", "ASME VIII-2 allowable stress", _fmt_num(s2_val), "MPa"),
+                ("S3", "ASME bolting allowable stress", _fmt_num(s3_val), "MPa"),
+                ("EN 13445 f", "Design stress", _fmt_num(allow_en["f"] if allow_en else None), "MPa"),
+                ("AD 2000", "Allowable stress", _fmt_num(allow_ad["f"] if allow_ad else None), "MPa"),
+                ("BS PD 5500 f", "Design stress", _fmt_num(allow_bs["f"] if allow_bs else None), "MPa"),
+                ("CODAP f", "Design stress", _fmt_num(allow_cp["f"] if allow_cp else None), "MPa"),
+                ("Elastic modulus E", "Interpolated physical property", _fmt_num(e_val), "MPa"),
+                ("Thermal expansion α", "Interpolated physical property", _fmt_num(alpha_val), "µm/(m·°C)"),
+                ("Thermal conductivity λ", "Interpolated physical property", _fmt_num(lambda_val), "W/(m·°C)"),
+                ("Thermal diffusivity a", "Interpolated physical property", _fmt_num(diff_val), "mm²/s"),
+                ("Specific heat Cp", "Interpolated physical property", _fmt_num(cp_val), "J/(kg·°C)"),
+                ("Density", "Room-temperature database value", _fmt_num(md.get("Density"), ".0f"), "kg/m³"),
+                ("Max allowable temperature", "Maximum listed allowable-stress temperature", _fmt_num(max_allow_temp, ".0f"), "°C"),
+            ]
+
+            st.dataframe(
+                pd.DataFrame(calc_rows, columns=["Property", "Basis", "Value", "Unit"]),
+                hide_index=True,
+                use_container_width=True,
+            )
+
+            if max_allow_temp is not None and calc_T > max_allow_temp:
+                st.warning("The entered temperature is above the maximum listed allowable-stress temperature for this material.")

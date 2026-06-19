@@ -1,6 +1,6 @@
 import unittest
 
-from calc.db.materials import MaterialSearch, combine_material_criteria
+from calc.db.materials import MaterialSearch, combine_material_criteria, get_all_materials
 
 
 class MaterialSearchTests(unittest.TestCase):
@@ -83,6 +83,11 @@ class MaterialSearchTests(unittest.TestCase):
 
         self.assertEqual(1, result.count)
         self.assertEqual(177, result.one()["id"])
+
+    def test_get_all_materials_includes_maximum_allowable_temperature(self):
+        material = next(m for m in get_all_materials() if m["id"] == 177)
+
+        self.assertEqual(538.0, material["MaximumAllowableTemperature"])
 
 
 if __name__ == "__main__":
