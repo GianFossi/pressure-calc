@@ -1,6 +1,12 @@
 import unittest
 
-from calc.db.materials import MaterialSearch, combine_material_criteria, get_all_materials
+from calc.db.materials import (
+    MaterialSearch,
+    combine_material_criteria,
+    get_S_div1,
+    get_S_div2,
+    get_all_materials,
+)
 
 
 class MaterialSearchTests(unittest.TestCase):
@@ -97,6 +103,19 @@ class MaterialSearchTests(unittest.TestCase):
         self.assertEqual("SA-336", material["spec"])
         self.assertEqual("F11", material["grade"])
         self.assertEqual("3", material["cls"])
+
+    def test_asme_allowable_stress_uses_celsius_temperature_breakpoints(self):
+        examples = [
+            ("SA-336 F11 3", 148.0, 175.0),
+            ("SA-336 F22 3", 141.0, 176.0),
+        ]
+
+        for query, expected_s1, expected_s2 in examples:
+            with self.subTest(query=query):
+                material = self.search.search(query).one()
+
+                self.assertEqual(expected_s1, get_S_div1(material["id"], 200.0))
+                self.assertEqual(expected_s2, get_S_div2(material["id"], 200.0))
 
 
 if __name__ == "__main__":

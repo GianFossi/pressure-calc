@@ -1,8 +1,8 @@
 """
 ASME materials database access.
 
-Temperature columns in the DB are in °F; stress values are in MPa.
-Design temperature input is always in °C and converted internally.
+Temperature columns in the DB are in °C; stress values are in MPa.
+Design temperature input is always in °C.
 """
 
 import sqlite3
@@ -14,8 +14,8 @@ from typing import Literal
 
 DB_PATH = Path(__file__).resolve().parent.parent.parent / "database" / "asme_materials.db"
 
-# Temperature breakpoints available in stress/property tables [°F]
-TEMP_F = [
+# Temperature breakpoints available in stress/property tables [°C]
+TEMP_C = [
     40, 65, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350,
     375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625, 650, 675,
     700, 725, 750, 775, 800, 825, 850, 875, 900,
@@ -38,9 +38,9 @@ def _col_idx(col_names: list[str], col: str) -> int:
 
 
 def _extract_temps(row: tuple, col_names: list[str]) -> dict[float, float]:
-    """Build {temp_F: value_MPa} from a DB row, skipping None entries."""
+    """Build {temp_C: value_MPa} from a DB row, skipping None entries."""
     d: dict[float, float] = {}
-    for t in TEMP_F:
+    for t in TEMP_C:
         col = f"T_{t}"
         idx = _col_idx(col_names, col)
         if idx >= 0 and row[idx] is not None:
@@ -48,24 +48,24 @@ def _extract_temps(row: tuple, col_names: list[str]) -> dict[float, float]:
     return d
 
 
-def _interp(data: dict[float, float], T_F: float) -> float | None:
+def _interp(data: dict[float, float], T_C: float) -> float | None:
     """
-    Linear interpolation at T_F [°F].
+    Linear interpolation at T_C [°C].
     Below the lowest available temperature: returns the lowest value.
     Above the highest: returns None (outside design range — don't extrapolate).
     """
     if not data:
         return None
     ts = sorted(data)
-    if T_F <= ts[0]:
+    if T_C <= ts[0]:
         return data[ts[0]]
-    if T_F > ts[-1]:
+    if T_C > ts[-1]:
         return None
     for i in range(len(ts) - 1):
         t1, t2 = ts[i], ts[i + 1]
-        if t1 <= T_F <= t2:
+        if t1 <= T_C <= t2:
             v1, v2 = data[t1], data[t2]
-            return v1 + (v2 - v1) * (T_F - t1) / (t2 - t1)
+            return v1 + (v2 - v1) * (T_C - t1) / (t2 - t1)
     return None
 
 
@@ -755,7 +755,7 @@ def get_yield_at_T(material_id: int, T_C: float,
     if not res:
         return None
     col_names, row = res
-    return _interp(_extract_temps(row, col_names), T_C * 9 / 5 + 32)
+    return _interp(_extract_temps(row, col_names), T_C)
 
 
 def get_ultimate_at_T(material_id: int, T_C: float,
@@ -765,13 +765,12 @@ def get_ultimate_at_T(material_id: int, T_C: float,
     if not res:
         return None
     col_names, row = res
-    return _interp(_extract_temps(row, col_names), T_C * 9 / 5 + 32)
+    return _interp(_extract_temps(row, col_names), T_C)
 
 
 def get_S_div1(material_id: int, T_C: float,
                thk_mm: float | None = None) -> float | None:
     """ASME VIII-1 allowable stress (Table 1A) at T_C [°C] [MPa]."""
-    T_F = T_C * 9 / 5 + 32
     res = _first_row("AllowableStress1Table", material_id, thk_mm)
     if not res:
         return None
@@ -780,17 +779,16 @@ def get_S_div1(material_id: int, T_C: float,
     # Respect MaxTemp_VIII1 field when present
     mt_idx = _col_idx(col_names, "MaxTemp_VIII1")
     if mt_idx >= 0 and row[mt_idx] is not None:
-        max_T_F = float(row[mt_idx])
-        if T_F > max_T_F:
+        max_T_C = float(row[mt_idx])
+        if T_C > max_T_C:
             return None  # beyond rated max temperature for VIII-1
 
-    return _interp(_extract_temps(row, col_names), T_F)
+    return _interp(_extract_temps(row, col_names), T_C)
 
 
 def get_S_div2(material_id: int, T_C: float,
                thk_mm: float | None = None) -> float | None:
     """ASME VIII-2 allowable stress (Table 5A) at T_C [°C] [MPa]."""
-    T_F = T_C * 9 / 5 + 32
     res = _first_row("AllowableStress2Table", material_id, thk_mm)
     if not res:
         return None
@@ -798,11 +796,11 @@ def get_S_div2(material_id: int, T_C: float,
 
     mt_idx = _col_idx(col_names, "MaximumTemperature")
     if mt_idx >= 0 and row[mt_idx] is not None:
-        max_T_F = float(row[mt_idx])
-        if T_F > max_T_F:
+        max_T_C = float(row[mt_idx])
+        if T_C > max_T_C:
             return None
 
-    return _interp(_extract_temps(row, col_names), T_F)
+    return _interp(_extract_temps(row, col_names), T_C)
 
 
 # ── European allowable stress helpers ─────────────────────────────────────────

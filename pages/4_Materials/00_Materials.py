@@ -40,11 +40,11 @@ if not st.session_state.get("_mat_unlocked", False):
     st.stop()
 
 # Temperature breakpoints used in each table family
-_TF = [
+_TC_STRENGTH = [
     40, 65, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350,
     375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625, 650, 675,
     700, 725, 750, 775, 800, 825, 850, 875, 900,
-]  # °F — Yield / Ultimate / Allowable stress tables
+]  # °C — Yield / Ultimate / Allowable stress tables
 
 _TC_PHYS = [
     20, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350,
@@ -69,17 +69,13 @@ def _conn() -> sqlite3.Connection:
     return c
 
 
-def _f2c(tf: float) -> float:
-    return (tf - 32.0) * 5.0 / 9.0
-
-
-def _xy(row: dict, temps: list[int], to_celsius: bool = False) -> tuple[list, list]:
+def _xy(row: dict, temps: list[int]) -> tuple[list, list]:
     """Extract (x=temperature, y=value) pairs from a wide row, dropping NULLs."""
     xs, ys = [], []
     for t in temps:
         v = row.get(f"T_{t}")
         if v is not None:
-            xs.append(round(_f2c(t) if to_celsius else float(t), 1))
+            xs.append(float(t))
             ys.append(float(v))
     return xs, ys
 
@@ -100,10 +96,10 @@ def _interp_series(xs: list[float], ys: list[float], x: float) -> float | None:
     return None
 
 
-def _interp_row(row: dict | None, temps: list[int], T_C: float, to_celsius: bool = False) -> float | None:
+def _interp_row(row: dict | None, temps: list[int], T_C: float) -> float | None:
     if not row:
         return None
-    xs, ys = _xy(row, temps, to_celsius=to_celsius)
+    xs, ys = _xy(row, temps)
     return _interp_series(xs, ys, T_C)
 
 
@@ -302,9 +298,9 @@ def _base_fig(y_title: str, height: int = 350) -> go.Figure:
     return fig
 
 
-def _add_series(fig: go.Figure, row: dict, temps: list[int], to_celsius: bool,
+def _add_series(fig: go.Figure, row: dict, temps: list[int],
                 name: str, color: str, dash: str = "solid") -> None:
-    xs, ys = _xy(row, temps, to_celsius)
+    xs, ys = _xy(row, temps)
     if xs:
         fig.add_trace(go.Scatter(
             x=xs, y=ys, name=name, mode="lines+markers",
@@ -314,10 +310,10 @@ def _add_series(fig: go.Figure, row: dict, temps: list[int], to_celsius: bool,
 
 
 def _mini_fig(data: dict | None, temps: list[int], y_title: str,
-              name: str, color: str, to_celsius: bool = False) -> go.Figure | None:
+              name: str, color: str) -> go.Figure | None:
     if not data:
         return None
-    xs, ys = _xy(data, temps, to_celsius)
+    xs, ys = _xy(data, temps)
     if not xs:
         return None
     fig = _base_fig(y_title, height=280)
@@ -538,9 +534,9 @@ with col_detail:
 
                 fig = _base_fig("Stress [MPa]", height=400)
                 if idx < len(sy_rows):
-                    _add_series(fig, sy_rows[idx], _TF, True, "Sy — Rp0.2", "#1f6aa5")
+                    _add_series(fig, sy_rows[idx], _TC_STRENGTH, "Sy — Rp0.2", "#1f6aa5")
                 if idx < len(su_rows):
-                    _add_series(fig, su_rows[idx], _TF, True, "Su — Rm", "#d62728", dash="dash")
+                    _add_series(fig, su_rows[idx], _TC_STRENGTH, "Su — Rm", "#d62728", dash="dash")
                 st.plotly_chart(fig, use_container_width=True)
 
         # ── Tab 3 — Allowable Stress ──────────────────────────────────────────
@@ -572,18 +568,18 @@ with col_detail:
 
                 fig = _base_fig("Allowable Stress  S  [MPa]", height=400)
                 if s1 and i1 < len(s1):
-                    _add_series(fig, s1[i1], _TF, True, "S1 — Div 1",  "#2ca02c")
+                    _add_series(fig, s1[i1], _TC_STRENGTH, "S1 — Div 1",  "#2ca02c")
                 if s2 and i2 < len(s2):
-                    _add_series(fig, s2[i2], _TF, True, "S2 — Div 2",  "#ff7f0e")
+                    _add_series(fig, s2[i2], _TC_STRENGTH, "S2 — Div 2",  "#ff7f0e")
                 if s3 and i3 < len(s3):
-                    _add_series(fig, s3[i3], _TF, True, "S3 — Bolting", "#9467bd")
+                    _add_series(fig, s3[i3], _TC_STRENGTH, "S3 — Bolting", "#9467bd")
                 st.plotly_chart(fig, use_container_width=True)
 
                 def _max_t(rows, idx, field):
                     if rows and idx < len(rows):
                         v = rows[idx].get(field)
                         if v is not None:
-                            return f"{_f2c(float(v)):.0f} °C"
+                            return f"{float(v):.0f} °C"
                     return "—"
 
                 mc1, mc2, mc3 = st.columns(3)
@@ -693,7 +689,7 @@ with col_detail:
             cp_val = _interp_row(props.get("Cp"), _TC_PHYS, calc_T)
 
             s3_row = _pick_size_row(_load_strength(mat_id, "AllowableStress3Table"), calc_size)
-            s3_val = _interp_row(s3_row, _TF, calc_T, to_celsius=True)
+            s3_val = _interp_row(s3_row, _TC_STRENGTH, calc_T)
 
             Rp_T = sy_val if sy_val is not None else md.get("SMYS")
             Rm_20 = md.get("SMTS")
