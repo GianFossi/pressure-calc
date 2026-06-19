@@ -93,6 +93,11 @@ CODE_LABELS = {
     "cp": "CODAP 2023",
 }
 
+ASME_STRESS_SOURCE = {
+    "d1": "AllowableStress1Table / ASME II-D Table 1A (S1)",
+    "d2": "AllowableStress2Table / ASME II-D Table 5A (S2)",
+}
+
 # ─── Page title ──────────────────────────────────────────────────────────────
 st.title("Cylindrical Shell — Internal Pressure")
 st.caption(
@@ -442,22 +447,22 @@ with st.expander("Allowable Stress by Code", expanded=True):
                     "Code":          code_label,
                     "T (°C)":        f"{code_inputs[code_key]['T']:.1f}",
                     "S / f  (MPa)":  _fmt(allow),
-                    "Criterion 1":   f"Rm/3.5 ≈ {SMTS/3.5:.1f}" if SMTS else "—",
-                    "Criterion 2":   f"Sy/1.5 ≈ {SMYS/1.5:.1f}" if SMYS else "—",
-                    "Governing":     "S1 from ASME II-D Table 1A",
-                    "SF (UTS)":      "3.5",
-                    "SF (Yield)":    "1.5",
+                    "Criterion 1":   "Table lookup",
+                    "Criterion 2":   "Not recalculated from SMYS/SMTS",
+                    "Governing":     ASME_STRESS_SOURCE[code_key],
+                    "SF (UTS)":      "per table",
+                    "SF (Yield)":    "per table",
                 })
             elif code_key == "d2":
                 sf_rows.append({
                     "Code":          code_label,
                     "T (°C)":        f"{code_inputs[code_key]['T']:.1f}",
                     "S / f  (MPa)":  _fmt(allow),
-                    "Criterion 1":   f"Rm/2.4 ≈ {SMTS/2.4:.1f}" if SMTS else "—",
-                    "Criterion 2":   f"Sy/1.5 ≈ {SMYS/1.5:.1f}" if SMYS else "—",
-                    "Governing":     "S2 from ASME II-D Table 5A",
-                    "SF (UTS)":      "2.4",
-                    "SF (Yield)":    "1.5",
+                    "Criterion 1":   "Table lookup",
+                    "Criterion 2":   "Not recalculated from SMYS/SMTS",
+                    "Governing":     ASME_STRESS_SOURCE[code_key],
+                    "SF (UTS)":      "per table",
+                    "SF (Yield)":    "per table",
                 })
             else:
                 sf_rows.append({
@@ -670,6 +675,8 @@ else:
                     ("Allowable stress S/f", f"{S:.2f} MPa"),
                     ("Joint eff. E / z",     f"{Ez:.2f}"),
                 ]
+                if key in ASME_STRESS_SOURCE:
+                    rows.append(("Allowable stress source", ASME_STRESS_SOURCE[key]))
                 if key == "d1":
                     rows += [
                         ("Inside radius R",      f"{D_i/2:.2f} mm"),
@@ -748,6 +755,17 @@ All other codes use **0.5·P** — but vary in their allowable stress definition
 
 ### Allowable stress — key differences
 
+For ASME VIII-1 and VIII-2 this app does **not** recalculate allowable stress from
+SMYS/SMTS. It reads the listed ASME allowable stress directly from the embedded
+database:
+
+| Code | App source for S |
+|---|---|
+| ASME VIII-1 | `AllowableStress1Table` / ASME II-D Table 1A (`S1`) |
+| ASME VIII-2 | `AllowableStress2Table` / ASME II-D Table 5A (`S2`) |
+
+The following factors are code background for comparison of design philosophy:
+
 | Code | UTS safety factor | Yield safety factor |
 |---|---|---|
 | ASME VIII-1 | Rm / **3.5** | Sy / 1.5 |
@@ -757,9 +775,9 @@ All other codes use **0.5·P** — but vary in their allowable stress definition
 | BS PD 5500  | Rm / **2.5** | Rp0.2_T / 1.5 |
 | CODAP 2023  | Rm / **2.4** (3.0 for group M6) | Rp0.2_T / 1.5 |
 
-ASME VIII-1 is the most conservative code globally (Rm/3.5 on UTS).
-ASME VIII-2 and European codes converge toward Rm/2.4 with Rp0.2_T/1.5,
-the governing criterion depending on material class and temperature.
+ASME VIII-1 and VIII-2 may reflect additional table rules and limits in the listed
+ASME II-D values. European code values shown above are calculated by the app from
+the available material properties.
 
 ### Allowances
 
