@@ -20,22 +20,67 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from calc.db.materials import (
-    MaterialSearch, get_material,
+    get_all_materials, get_material,
     get_yield_at_T, get_ultimate_at_T, get_S_div1, get_S_div2,
     allowable_EN13445, allowable_AD2000, allowable_BS5500, allowable_CODAP,
 )
+try:
+    from calc.db.materials import MaterialSearch
+except ImportError:
+    MaterialSearch = None
 from calc.codes import asme_viii_1, en_13445
 from calc.codes import asme_viii_2, ad_2000, bs_5500, codap as codap_mod
 
 # ─── Cached data ─────────────────────────────────────────────────────────────
 @st.cache_data(ttl=3600)
 def _all_materials():
-    return MaterialSearch().search().to_list()
+    if MaterialSearch is not None:
+        return MaterialSearch().search().to_list()
+    return get_all_materials()
 
 
 @st.cache_data(ttl=3600)
 def _search_materials(text: str):
-    return MaterialSearch().search(text.strip()).to_list()
+    query = text.strip()
+    if MaterialSearch is not None:
+        return MaterialSearch().search(query).to_list()
+    if not query:
+        return get_all_materials()
+
+    terms = [
+        part.strip().lower()
+        for part in query.replace(" AND ", " and ").split(" and ")
+        if part.strip()
+    ]
+
+    def _matches(material: dict) -> bool:
+        haystack = " ".join(
+            str(material.get(field, ""))
+            for field in ("name", "spec", "grade", "cls", "alloy", "comp", "pform")
+        ).lower()
+        for term in terms:
+            if ":" in term:
+                field, value = [part.strip() for part in term.split(":", 1)]
+                field_map = {
+                    "spec": "spec",
+                    "grade": "grade",
+                    "class": "cls",
+                    "cls": "cls",
+                    "uns": "alloy",
+                    "alloy": "alloy",
+                    "composition": "comp",
+                    "comp": "comp",
+                    "pform": "pform",
+                    "productform": "pform",
+                }
+                key = field_map.get(field)
+                if key is None or value.strip('"') not in str(material.get(key, "")).lower():
+                    return False
+            elif term not in haystack:
+                return False
+        return True
+
+    return [material for material in get_all_materials() if _matches(material)]
 
 ALL_MATS = _all_materials()
 

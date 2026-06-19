@@ -7,7 +7,11 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from calc.db.materials import MaterialSearch
+from calc.db.materials import get_all_materials
+try:
+    from calc.db.materials import MaterialSearch
+except ImportError:
+    MaterialSearch = None
 
 # ─────────────────────────────────────────────────────────────────────────────
 _DB       = Path(__file__).resolve().parents[2] / "database" / "asme_materials.db"
@@ -87,28 +91,69 @@ def _thk_label(row: dict) -> str:
 
 @st.cache_data(ttl=3600)
 def _load_all() -> pd.DataFrame:
-    return _materials_to_df(MaterialSearch().search())
+    if MaterialSearch is not None:
+        return _materials_to_df(MaterialSearch().search())
+    return _materials_to_df(get_all_materials())
 
 
 @st.cache_data(ttl=3600)
 def _search_materials(text: str) -> pd.DataFrame:
-    return _materials_to_df(MaterialSearch().search(text.strip()))
+    query = text.strip()
+    if MaterialSearch is not None:
+        return _materials_to_df(MaterialSearch().search(query))
+    if not query:
+        return _materials_to_df(get_all_materials())
+
+    terms = [
+        part.strip().lower()
+        for part in query.replace(" AND ", " and ").split(" and ")
+        if part.strip()
+    ]
+
+    def _matches(material: dict) -> bool:
+        haystack = " ".join(
+            str(material.get(field, ""))
+            for field in ("name", "spec", "grade", "cls", "alloy", "comp", "pform")
+        ).lower()
+        for term in terms:
+            if ":" in term:
+                field, value = [part.strip() for part in term.split(":", 1)]
+                field_map = {
+                    "spec": "spec",
+                    "grade": "grade",
+                    "class": "cls",
+                    "cls": "cls",
+                    "uns": "alloy",
+                    "alloy": "alloy",
+                    "composition": "comp",
+                    "comp": "comp",
+                    "pform": "pform",
+                    "productform": "pform",
+                }
+                key = field_map.get(field)
+                if key is None or value.strip('"') not in str(material.get(key, "")).lower():
+                    return False
+            elif term not in haystack:
+                return False
+        return True
+
+    return _materials_to_df(material for material in get_all_materials() if _matches(material))
 
 
 def _materials_to_df(materials) -> pd.DataFrame:
     rows = [
         {
-            "ID": material["id"],
-            "Specification": material["spec"],
-            "Grade": material["grade"],
-            "ClassCondTemper": material["cls"],
-            "UNS": material["alloy"],
-            "NominalComposition": material["comp"],
-            "ProductForm": material["pform"],
-            "SMYS": material["SMYS"],
-            "SMTS": material["SMTS"],
-            "Ar": material["Ar"],
-            "MaximumAllowableTemperature": material["MaximumAllowableTemperature"],
+            "ID": material.get("id"),
+            "Specification": material.get("spec"),
+            "Grade": material.get("grade"),
+            "ClassCondTemper": material.get("cls"),
+            "UNS": material.get("alloy"),
+            "NominalComposition": material.get("comp"),
+            "ProductForm": material.get("pform"),
+            "SMYS": material.get("SMYS"),
+            "SMTS": material.get("SMTS"),
+            "Ar": material.get("Ar"),
+            "MaximumAllowableTemperature": material.get("MaximumAllowableTemperature"),
         }
         for material in materials
     ]

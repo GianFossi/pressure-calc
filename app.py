@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import base64
 from pathlib import Path
 
@@ -31,7 +30,7 @@ def _bg_css() -> str:
 
 # ── Global CSS + top banner ────────────────────────────────────────────────────
 # The nav panel DIV is NOT here — it is appended to document.body via JS
-# (components.html below) so position:fixed works across all Streamlit versions.
+# (st.iframe below) so position:fixed works across all Streamlit versions.
 _bg = _bg_css()
 st.markdown(
     f"""
@@ -153,7 +152,7 @@ st.markdown(
 )
 
 # ── Nav panel + active-page highlight (JS → document.body) ────────────────────
-components.html(r"""
+st.iframe(r"""
 <script>
 (function () {
     var p = window.parent;
@@ -227,7 +226,7 @@ components.html(r"""
         .observe(p.document.body, { childList: true, subtree: true });
 })();
 </script>
-""", height=0, scrolling=False)
+""", height=0)
 
 # ── Disclaimer — shown once per session on first site access ───────────────────
 @st.dialog("⚠️  Disclaimer — Legal Notice", width="large")
