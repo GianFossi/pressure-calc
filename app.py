@@ -89,7 +89,12 @@ st.markdown(
         background:rgba(255,255,255,0.13); border:1px solid rgba(255,255,255,0.22);
         border-radius:4px; padding:2px 8px; white-space:nowrap;
     }}
-    .pvc-banner-author {{ font-size:0.76rem; opacity:0.75; font-style:italic; white-space:nowrap; }}
+    .pvc-banner-author {{
+        font-size:0.76rem; color:#111111; opacity:1;
+        font-style:italic; white-space:nowrap;
+    }}
+    .pvc-banner-author a {{ color:#003b73; text-decoration:none; font-weight:600; }}
+    .pvc-banner-author a:hover {{ color:#00264a; text-decoration:underline; }}
     @media (max-width:640px) {{
         .pvc-banner-author, .pvc-banner-rev {{ display:none; }}
     }}
@@ -139,13 +144,13 @@ st.markdown(
         <div class="pvc-banner-left">
             <span class="pvc-banner-icon">🔩</span>
             <span class="pvc-banner-title">Pressure Vessel Calculator</span>
-            <span class="pvc-banner-rev">v1.1.0&nbsp;·&nbsp;2026-Jun-19</span>
+            <span class="pvc-banner-rev">v1.1.1&nbsp;·&nbsp;2026-Jun-19</span>
         </div>
         <span class="pvc-banner-author">Dott. Ing. Gian-Luca ANFOSSI
             (&thinsp;<a href="https://www.linkedin.com/in/gian-luca-anfossi-a3797a18"
-                        target="_blank" style="color:inherit">LinkedIn</a>&thinsp;&ndash;&thinsp;
+                        target="_blank">LinkedIn</a>&thinsp;&ndash;&thinsp;
                       <a href="https://github.com/GianFossi"
-                         target="_blank" style="color:inherit">GitHub</a>&thinsp;)
+                         target="_blank">GitHub</a>&thinsp;)
         </span>
     </div>
     """,
@@ -178,7 +183,7 @@ st.iframe(r"""
       + '<div class="pvc-nav-branch">'
       +   '<a class="pvc-nav-link" href="/materials"         data-path="/materials">📦 Materials DB</a>'
       + '</div>'
-      + '<div class="pvc-nav-footer">v1.1.0 — 2026-Jun-19</div>';
+      + '<div class="pvc-nav-footer">v1.1.1 — 2026-Jun-19</div>';
 
     function inject() {
         if (p.document.getElementById('pvc-nav')) return;

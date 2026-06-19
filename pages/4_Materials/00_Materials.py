@@ -407,7 +407,7 @@ df = df.reset_index(drop=True)
 st.caption(f"{len(df):,} / {len(all_mats):,} materials  — select a row to view details")
 
 # ── Split: list (left) + detail panel (right) ─────────────────────────────────
-col_list, col_detail = st.columns([5, 7], gap="medium")
+col_list, col_detail = st.columns([8, 4], gap="medium")
 
 with col_list:
     col_map = {
@@ -416,12 +416,12 @@ with col_list:
         "Grade":              "Grade",
         "ClassCondTemper":    "Class/Cond/T",
         "UNS":                "UNS",
-        "NominalComposition": "Composition",
-        "ProductForm":        "Product Form",
         "SMYS":               "SMYS [MPa]",
         "SMTS":               "SMTS [MPa]",
         "Ar":                 "Ar [%]",
         "MaximumAllowableTemperature": "Max Allow Temp [C]",
+        "NominalComposition": "Composition",
+        "ProductForm":        "Product Form",
     }
     df_disp = df[list(col_map.keys())].rename(columns=col_map)
 
@@ -440,6 +440,7 @@ with col_list:
             "Max Allow Temp [C]": st.column_config.NumberColumn(
                 "Max Allow Temp [C]",
                 format="%.0f",
+                width="medium",
             ),
         },
     )
